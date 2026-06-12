@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow internal Next.js paths
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://centraltexasholisticcarepllc.com/sitemap.xml
+Host: https://centraltexasholisticcarepllc.com

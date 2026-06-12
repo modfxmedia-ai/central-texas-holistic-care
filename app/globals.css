@@ -1,26 +1,96 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Dark forest green + warm cream palette */
+  --color-primary: #2d5016;          /* deep holistic green */
+  --color-primary-dark: #1a3a0a;
+  --color-primary-light: #8BAD5A;
+  --color-accent: #C4A862;            /* warm gold accent */
+  --color-sage: #8a9a5b;
+  --color-cream: #FAF6EE;             /* warm cream */
+  --color-cream-dark: #F0EBE0;
+  --color-cream-soft: #faf6ec;
+  --color-soft-green: #f0f5eb;        /* whisper-soft green for section variety */
+  --color-background: #faf6ec;
+  --color-foreground: #1C1C1C;
+  --color-text: #1C1C1C;
+  --color-text-muted: #6B6B6B;
+  --color-muted: #6b7a55;
+  --color-border: rgba(45, 80, 22, 0.12);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-primary-light: var(--color-primary-light);
+  --color-accent: var(--color-accent);
+  --color-sage: var(--color-sage);
+  --color-cream: var(--color-cream);
+  --color-cream-dark: var(--color-cream-dark);
+  --color-soft-green: var(--color-soft-green);
+  --color-cream-soft: var(--color-cream-soft);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+  --color-muted: var(--color-muted);
+  --color-border: var(--color-border);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-cormorant);
+
+  /* Custom animations exposed as Tailwind utilities */
+  --animate-shimmer: shimmer 2.4s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+  font-family: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  letter-spacing: -0.02em;
+  font-feature-settings: "ss01", "ss02", "kern";
+  font-optical-sizing: auto;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Custom keyframes — exposed as Tailwind utilities via @theme
+   ───────────────────────────────────────────────────────────── */
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.6; }
+}
+
+/* Radix Accordion open/close animation */
+@keyframes faq-down {
+  from { height: 0; opacity: 0; }
+  to   { height: var(--radix-accordion-content-height); opacity: 1; }
+}
+@keyframes faq-up {
+  from { height: var(--radix-accordion-content-height); opacity: 1; }
+  to   { height: 0; opacity: 0; }
+}
+.animate-faq-down { animation: faq-down 0.28s cubic-bezier(0.22, 1, 0.36, 1); }
+.animate-faq-up   { animation: faq-up   0.22s cubic-bezier(0.22, 1, 0.36, 1); }
