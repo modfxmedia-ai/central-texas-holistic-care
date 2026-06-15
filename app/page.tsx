@@ -87,12 +87,12 @@ export default function Home() {
       <HomeAbout />
       <HomeApproach />
       <HomeHormoneSigns />
-      <HomeTestimonial />
       <HomeHRT />
       <HomeServices />
-      <HomeJourney />
       <HomeInsurance />
+      <HomeJourney />
       <HomeCTACard />
+      <HomeTestimonial />
       <HomeInsights />
       <HomeTrustBar />
       <HomeLocation />

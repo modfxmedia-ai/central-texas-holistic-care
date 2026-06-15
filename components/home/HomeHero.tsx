@@ -12,6 +12,9 @@ import {
 import {
   ArrowRight,
   Calendar,
+  Droplet,
+  Flame,
+  HeartPulse,
   Leaf,
   Phone,
   ShieldCheck,
@@ -50,24 +53,61 @@ const ROTATING_WORDS = [
   "Vitality at Every Age",
 ];
 
-const COLLAGE_CHIPS = [
+type HeroSlide = {
+  image: string;
+  alt: string;
+  eyebrow: string;
+  title: string;
+  sub: string;
+  Icon: typeof Leaf;
+  features: string[];
+};
+
+const HERO_SLIDES: HeroSlide[] = [
   {
-    image: "/images/source/iv-nutrition-vitamins.webp",
-    title: "IV Nutrition",
-    sub: "Myers' Cocktail",
-    side: "tl" as const,
+    image: "/images/source/hero-medical-assistant.webp",
+    alt: "Medical assistant preparing daily vitamins and supplements for a patient",
+    eyebrow: "Whole-Person Care",
+    title: "Personalized Wellness",
+    sub: "Traditional medicine + holistic therapies",
+    Icon: Leaf,
+    features: ["Custom Plans", "Family Medicine", "Holistic Care", "All Ages", "Whole-Body"],
+  },
+  {
+    image: "/images/source/iv-infusion-therapy.jpg",
+    alt: "Patient receiving an IV nutrition infusion",
+    eyebrow: "IV Nutrition Therapy",
+    title: "Hydrate · Replenish · Recover",
+    sub: "Myers' Cocktail · Immune · Hangover",
+    Icon: Droplet,
+    features: ["Myers' Cocktail", "Immune Boost", "Fast Recovery", "Hydration", "Energy"],
   },
   {
     image: "/images/source/portrait-women-hormone.jpg",
-    title: "Hormone Therapy",
-    sub: "BHRT & Pellets",
-    side: "br" as const,
+    alt: "Woman feeling balanced after hormone replacement therapy",
+    eyebrow: "Hormone Replacement",
+    title: "Bioidentical BHRT & Pellets",
+    sub: "Restore balance, energy, and mood",
+    Icon: HeartPulse,
+    features: ["Bioidentical", "Pellet Therapy", "Mood & Energy", "BHRT", "Hot Flash Relief"],
+  },
+  {
+    image: "/images/source/medical-weight-loss-peptides.jpg",
+    alt: "Patient on a medical weight-loss program",
+    eyebrow: "Medical Weight Loss",
+    title: "Peptide-Guided Programs",
+    sub: "Sustainable, physician-supervised results",
+    Icon: Flame,
+    features: ["Peptide Therapy", "MD-Supervised", "Lasting Results", "Custom Macros", "GLP-1"],
   },
   {
     image: "/images/source/portrait-men-health.jpg",
-    title: "Men's Health",
-    sub: "Testosterone",
-    side: "bl" as const,
+    alt: "Man showing renewed vitality from testosterone therapy",
+    eyebrow: "Men's Health",
+    title: "Testosterone Optimization",
+    sub: "Energy, focus, and lean muscle",
+    Icon: Stethoscope,
+    features: ["Testosterone", "Lean Muscle", "Sharper Focus", "Vitality", "Libido"],
   },
 ];
 
@@ -184,59 +224,87 @@ function RotatingWord({ words }: { words: string[] }) {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                          Collage chip card                                  */
+/*                  ECG / heartbeat motion graph (continuous)                  */
 /* -------------------------------------------------------------------------- */
 
-function CollageChip({
-  image,
-  title,
-  sub,
-  position,
-  delay,
+function ECGLine({
+  width = 200,
+  height = 40,
+  color = "#6CBE45",
+  speed = 2.4,
+  strokeWidth = 2,
 }: {
-  image: string;
-  title: string;
-  sub: string;
-  position: string;
-  delay: number;
+  width?: number;
+  height?: number;
+  color?: string;
+  speed?: number;
+  strokeWidth?: number;
+}) {
+  // One heartbeat cycle is 100 viewBox units wide. We render two cycles
+  // back-to-back (viewBox 200 wide) and slide the SVG left by half its
+  // pixel width so the trace loops seamlessly.
+  return (
+    <div
+      className="relative overflow-hidden"
+      style={{ width, height }}
+      aria-hidden
+    >
+      <motion.svg
+        viewBox="0 0 200 40"
+        preserveAspectRatio="none"
+        className="absolute inset-y-0 left-0 h-full"
+        style={{ width: width * 2 }}
+        animate={{ x: [0, -width] }}
+        transition={{ duration: speed, ease: "linear", repeat: Infinity }}
+      >
+        <defs>
+          <linearGradient id="ecg-fade" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%" stopColor={color} stopOpacity="0.05" />
+            <stop offset="60%" stopColor={color} stopOpacity="1" />
+            <stop offset="100%" stopColor={color} stopOpacity="1" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M0 20 H28 L32 20 L36 6 L40 34 L44 12 L48 24 L52 20 H100 L128 20 L132 20 L136 6 L140 34 L144 12 L148 24 L152 20 H200"
+          fill="none"
+          stroke="url(#ecg-fade)"
+          strokeWidth={strokeWidth}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </motion.svg>
+    </div>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*                       Live equalizer / vitals bars                          */
+/* -------------------------------------------------------------------------- */
+
+function VitalsBars({
+  bars = 4,
+  color = "#6CBE45",
+}: {
+  bars?: number;
+  color?: string;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30, scale: 0.92 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.9, ease: EASE, delay }}
-      className={`absolute z-20 ${position}`}
-    >
-      <motion.div
-        animate={{ y: [0, -8, 0] }}
-        transition={{
-          duration: 5.5,
-          ease: "easeInOut",
-          repeat: Infinity,
-          delay: delay + 0.4,
-        }}
-        className="group flex items-center gap-2.5 rounded-2xl border border-white/80 bg-white/95 p-2.5 pr-4 shadow-xl shadow-[#1a3a0a]/15 backdrop-blur-md transition-transform hover:-translate-y-0.5"
-      >
-        <div className="relative size-11 shrink-0 overflow-hidden rounded-xl bg-[#f0f5eb] ring-1 ring-[#1a3a0a]/8">
-          <Image
-            src={image}
-            alt=""
-            fill
-            sizes="44px"
-            className="object-cover"
-            aria-hidden
-          />
-        </div>
-        <div className="min-w-0">
-          <div className="truncate text-[13px] font-semibold leading-tight text-[#1a3a0a]">
-            {title}
-          </div>
-          <div className="truncate text-[11px] leading-tight text-stone-500">
-            {sub}
-          </div>
-        </div>
-      </motion.div>
-    </motion.div>
+    <div className="flex items-end gap-0.5" aria-hidden>
+      {Array.from({ length: bars }).map((_, i) => (
+        <motion.span
+          key={i}
+          className="block w-1 rounded-sm"
+          style={{ backgroundColor: color }}
+          animate={{ height: [4, 12, 6, 14, 8, 4] }}
+          transition={{
+            duration: 1.4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: i * 0.18,
+          }}
+        />
+      ))}
+    </div>
   );
 }
 
@@ -270,6 +338,37 @@ export default function HomeHero() {
     btnY.set(0);
   };
 
+  // ── Rotating hero slide ──
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  useEffect(() => {
+    if (isPaused) return;
+    const id = setInterval(
+      () => setSlideIndex((v) => (v + 1) % HERO_SLIDES.length),
+      4200,
+    );
+    return () => clearInterval(id);
+  }, [isPaused]);
+  const activeSlide = HERO_SLIDES[slideIndex];
+
+  // ── Mouse-tracked 3D tilt for the visual card ──
+  const tiltRX = useMotionValue(0);
+  const tiltRY = useMotionValue(0);
+  const rotateX = useSpring(tiltRX, { stiffness: 120, damping: 14, mass: 0.6 });
+  const rotateY = useSpring(tiltRY, { stiffness: 120, damping: 14, mass: 0.6 });
+  const onCardMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    tiltRY.set(px * 14);
+    tiltRX.set(-py * 12);
+  };
+  const onCardLeave = () => {
+    tiltRX.set(0);
+    tiltRY.set(0);
+    setIsPaused(false);
+  };
+
   const marquee = useMemo(() => [...MARQUEE_TAGS, ...MARQUEE_TAGS], []);
 
   return (
@@ -291,6 +390,38 @@ export default function HomeHero() {
 
       {/* Neural network synapse canvas — drifting nodes, connecting lines, traveling pulses */}
       <NeuralBackground />
+
+      {/* Floating gradient orbs (parallax mood lighting) */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -left-24 top-32 h-72 w-72 rounded-full opacity-50 blur-3xl"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(108,190,69,0.55) 0%, rgba(108,190,69,0) 70%)",
+        }}
+        animate={{ x: [0, 40, -20, 0], y: [0, -30, 20, 0], scale: [1, 1.1, 0.95, 1] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -right-20 top-10 h-80 w-80 rounded-full opacity-40 blur-3xl"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(157,210,112,0.55) 0%, rgba(157,210,112,0) 70%)",
+        }}
+        animate={{ x: [0, -50, 30, 0], y: [0, 40, -20, 0], scale: [1, 0.9, 1.15, 1] }}
+        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute bottom-0 left-1/3 h-64 w-64 rounded-full opacity-35 blur-3xl"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(196,168,98,0.45) 0%, rgba(196,168,98,0) 70%)",
+        }}
+        animate={{ x: [0, 30, -30, 0], y: [0, -20, 30, 0], scale: [1, 1.08, 0.92, 1] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 2.4 }}
+      />
 
       {/* Soft vignette to keep edges grounded */}
       <div
@@ -397,6 +528,67 @@ export default function HomeHero() {
         />
       </motion.svg>
 
+      {/* Extra leaves on the right side */}
+      <motion.svg
+        aria-hidden
+        viewBox="0 0 100 100"
+        className="pointer-events-none absolute right-[3%] top-44 hidden h-14 w-14 text-[#6CBE45]/45 lg:block"
+        animate={{ y: [0, 12, 0], rotate: [0, -8, 6, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+      >
+        <path
+          d="M50 10 C30 28, 22 50, 50 90 C78 50, 70 28, 50 10 Z"
+          fill="currentColor"
+        />
+      </motion.svg>
+      <motion.svg
+        aria-hidden
+        viewBox="0 0 100 100"
+        className="pointer-events-none absolute bottom-44 right-[7%] hidden h-9 w-9 text-[#8BAD5A]/55 lg:block"
+        animate={{ y: [0, -10, 0], rotate: [0, 14, -8, 0] }}
+        transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      >
+        <path
+          d="M50 10 C30 28, 22 50, 50 90 C78 50, 70 28, 50 10 Z"
+          fill="currentColor"
+        />
+      </motion.svg>
+
+      {/* Drifting particle dots */}
+      {[
+        { left: "12%", top: "42%", size: 6, dur: 9, delay: 0 },
+        { left: "22%", top: "68%", size: 4, dur: 11, delay: 1.5 },
+        { left: "78%", top: "30%", size: 5, dur: 10, delay: 0.8 },
+        { left: "88%", top: "60%", size: 7, dur: 12, delay: 2.2 },
+        { left: "55%", top: "85%", size: 4, dur: 8, delay: 1.1 },
+        { left: "45%", top: "18%", size: 5, dur: 13, delay: 0.3 },
+      ].map((p, i) => (
+        <motion.span
+          key={i}
+          aria-hidden
+          className="pointer-events-none absolute hidden rounded-full bg-[#6CBE45] md:block"
+          style={{
+            left: p.left,
+            top: p.top,
+            width: p.size,
+            height: p.size,
+            boxShadow: "0 0 12px rgba(108,190,69,0.6)",
+          }}
+          animate={{
+            y: [0, -24, 0],
+            x: [0, 12, -8, 0],
+            opacity: [0.3, 0.85, 0.3],
+            scale: [0.9, 1.3, 0.9],
+          }}
+          transition={{
+            duration: p.dur,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: p.delay,
+          }}
+        />
+      ))}
+
       {/* ─── Main content ─── */}
       <div className="relative mx-auto max-w-7xl px-4 pb-14 pt-16 sm:px-6 sm:pt-20 lg:px-8 lg:pt-24">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-20">
@@ -444,12 +636,48 @@ export default function HomeHero() {
             >
               <motion.span
                 aria-hidden
-                className="block h-[3px] origin-left rounded-full bg-gradient-to-r from-[#2D5016] via-[#6CBE45] to-transparent"
+                className="relative block h-[3px] origin-left overflow-hidden rounded-full bg-gradient-to-r from-[#2D5016] via-[#6CBE45] to-transparent"
                 initial={{ width: 0 }}
                 animate={{ width: 96 }}
                 transition={{ duration: 1.1, ease: EASE, delay: 0.4 }}
-              />
-              <Leaf className="size-4 text-[#6CBE45]" />
+              >
+                <motion.span
+                  aria-hidden
+                  className="absolute inset-y-0 left-0 block w-8 bg-white/70"
+                  animate={{ x: ["-100%", "260%"] }}
+                  transition={{
+                    duration: 2.4,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                    repeatDelay: 1.4,
+                  }}
+                />
+              </motion.span>
+              <motion.span
+                animate={{ rotate: [0, 14, -10, 0], y: [0, -2, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Leaf className="size-4 text-[#6CBE45]" />
+              </motion.span>
+            </motion.div>
+
+            {/* Live ECG / heartbeat motion graph */}
+            <motion.div
+              variants={fadeUp}
+              className="mt-4 flex items-center gap-3 lg:justify-start"
+              style={{ justifyContent: "center" }}
+            >
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#1a3a0a]/12 bg-white/80 px-3 py-1.5 shadow-sm backdrop-blur">
+                <span className="relative flex size-2">
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#6CBE45] opacity-75" />
+                  <span className="relative inline-flex size-2 rounded-full bg-[#2D5016]" />
+                </span>
+                <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#1a3a0a]">
+                  Live · Vitals
+                </span>
+                <ECGLine width={120} height={20} strokeWidth={1.6} />
+                <VitalsBars bars={3} />
+              </span>
             </motion.div>
 
             {/* Sub */}
@@ -529,119 +757,452 @@ export default function HomeHero() {
             </motion.div>
           </motion.div>
 
-          {/* ────────── RIGHT: visual composition ────────── */}
+          {/* ────────── RIGHT: orbital wellness dashboard ────────── */}
           <motion.div
-            style={{ y: visualY }}
-            initial={{ opacity: 0, scale: 0.95 }}
+            style={{ y: visualY, perspective: 1400 }}
+            initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.1, ease: EASE, delay: 0.25 }}
-            className="relative mx-auto aspect-[4/5] w-full max-w-[460px] lg:mx-0 lg:max-w-none"
+            className="relative mx-auto aspect-square w-full max-w-[520px] lg:mx-0 lg:max-w-none"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
-            {/* Background card stack — deep forest (tilted behind) */}
+            {/* Pulsing aura */}
             <motion.div
               aria-hidden
-              animate={{ rotate: [-4, -3, -4] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-[#2D5016] to-[#1a3a0a] opacity-90"
-              style={{ transformOrigin: "center" }}
-            />
-            {/* Mid card — lime accent (tilted other way) */}
-            <motion.div
-              aria-hidden
-              animate={{ rotate: [3, 2, 3] }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.4,
+              className="pointer-events-none absolute -inset-6 rounded-full"
+              style={{
+                background:
+                  "radial-gradient(closest-side, rgba(108,190,69,0.35), rgba(108,190,69,0) 70%)",
               }}
-              className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-[#6CBE45] to-[#8BAD5A]"
-              style={{ transformOrigin: "center" }}
+              animate={{ scale: [1, 1.08, 1], opacity: [0.55, 0.85, 0.55] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
             />
 
-            {/* Main image — fills the box, sits on top */}
-            <div className="absolute inset-0 overflow-hidden rounded-[2.5rem] shadow-2xl shadow-[#1a3a0a]/25 ring-1 ring-white/40">
-              <Image
-                src="/images/source/hero-medical-assistant.webp"
-                alt="Medical assistant preparing daily vitamins and supplements for a patient"
-                fill
-                priority
-                quality={92}
-                sizes="(min-width: 1024px) 520px, 90vw"
-                className="object-cover"
-              />
-              {/* Color grade overlay */}
-              <div
-                aria-hidden
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(45,80,22,0) 35%, rgba(26,58,10,0.65) 100%)",
-                }}
-              />
-              {/* Caption pill on image */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="flex items-center gap-2 rounded-2xl border border-white/30 bg-white/15 px-3 py-2 backdrop-blur-md">
-                  <span className="inline-flex size-7 items-center justify-center rounded-xl bg-[#6CBE45] text-[#1a3a0a]">
-                    <Leaf className="size-4" />
-                  </span>
-                  <div className="min-w-0">
-                    <div className="truncate text-xs font-semibold uppercase tracking-[0.18em] text-white/90">
-                      Whole-Person Care
-                    </div>
-                    <div className="truncate text-[11px] text-white/70">
-                      Traditional medicine + holistic therapies
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Decorative ring around composition */}
+            {/* Outer dashed orbit track (slow rotate) */}
             <motion.svg
               aria-hidden
-              viewBox="0 0 100 100"
-              className="pointer-events-none absolute -right-6 -top-6 size-20 text-[#6CBE45]"
+              viewBox="0 0 400 400"
+              className="absolute inset-0 size-full text-[#2D5016]/30"
               animate={{ rotate: 360 }}
-              transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
             >
               <circle
-                cx="50"
-                cy="50"
-                r="46"
+                cx="200"
+                cy="200"
+                r="195"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                strokeDasharray="2 8"
+              />
+            </motion.svg>
+
+            {/* Mid dashed orbit track (counter-rotate, brighter) */}
+            <motion.svg
+              aria-hidden
+              viewBox="0 0 400 400"
+              className="absolute inset-[10%] size-[80%] text-[#6CBE45]/55"
+              animate={{ rotate: -360 }}
+              transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+            >
+              <circle
+                cx="200"
+                cy="200"
+                r="190"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.5"
-                strokeDasharray="3 4"
+                strokeDasharray="6 10"
               />
-              <circle cx="50" cy="4" r="3.5" fill="currentColor" />
+              {/* travelling pulse on the track */}
+              <circle cx="200" cy="10" r="4" fill="#6CBE45" />
             </motion.svg>
 
-            {/* Floating collage chips */}
-            <CollageChip
-              {...COLLAGE_CHIPS[0]}
-              position="-left-4 top-8 sm:-left-10"
-              delay={0.7}
-            />
-            <CollageChip
-              {...COLLAGE_CHIPS[1]}
-              position="-right-3 top-1/2 sm:-right-8"
-              delay={0.95}
-            />
-            <CollageChip
-              {...COLLAGE_CHIPS[2]}
-              position="-left-2 -bottom-2 sm:-left-6 sm:-bottom-4"
-              delay={1.2}
-            />
+            {/* Innermost faint orbit track (slow) */}
+            <motion.svg
+              aria-hidden
+              viewBox="0 0 400 400"
+              className="absolute inset-[22%] size-[56%] text-[#9DD270]/50"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 48, repeat: Infinity, ease: "linear" }}
+            >
+              <circle
+                cx="200"
+                cy="200"
+                r="180"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+                strokeDasharray="1 5"
+              />
+            </motion.svg>
 
-            {/* Sparkle accent */}
+            {/* Orbiting service tiles — ring rotates so the active tile sits at top */}
+            <motion.div
+              className="absolute inset-0"
+              animate={{ rotate: -slideIndex * (360 / HERO_SLIDES.length) }}
+              transition={{ duration: 1.1, ease: EASE }}
+            >
+              {HERO_SLIDES.map((s, i) => {
+                const angle =
+                  (i / HERO_SLIDES.length) * 2 * Math.PI - Math.PI / 2;
+                const radius = 44; // % of half width from center
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+                const Icon = s.Icon;
+                const active = i === slideIndex;
+                return (
+                  <motion.button
+                    key={s.eyebrow}
+                    type="button"
+                    onClick={() => setSlideIndex(i)}
+                    aria-label={`Show ${s.eyebrow}`}
+                    className="group/orb absolute"
+                    style={{
+                      left: `calc(50% + ${x}%)`,
+                      top: `calc(50% + ${y}%)`,
+                      transform: "translate(-50%, -50%)",
+                    }}
+                    whileHover={{ scale: 1.12 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <motion.span
+                      // Counter-rotate so the tile stays upright as the ring rotates
+                      animate={{
+                        rotate: slideIndex * (360 / HERO_SLIDES.length),
+                      }}
+                      transition={{ duration: 1.1, ease: EASE }}
+                      className="relative inline-block"
+                    >
+                      <span
+                        className={`relative flex size-16 items-center justify-center rounded-2xl border bg-white/95 shadow-lg backdrop-blur-sm transition-all sm:size-[68px] ${
+                          active
+                            ? "border-[#6CBE45] shadow-[0_8px_30px_rgba(108,190,69,0.45)] ring-2 ring-[#6CBE45]/40"
+                            : "border-white/80 ring-1 ring-[#1a3a0a]/10 hover:border-[#6CBE45]/60"
+                        }`}
+                      >
+                        {/* gentle bob */}
+                        <motion.span
+                          animate={{ y: [0, -3, 0] }}
+                          transition={{
+                            duration: 3.2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: i * 0.3,
+                          }}
+                          className={`flex size-10 items-center justify-center rounded-xl text-white shadow-md ${
+                            active
+                              ? "bg-gradient-to-br from-[#6CBE45] to-[#2D5016]"
+                              : "bg-gradient-to-br from-[#2D5016] to-[#1a3a0a]"
+                          }`}
+                        >
+                          <Icon className="size-5" />
+                        </motion.span>
+
+                        {/* active glow ring */}
+                        {active ? (
+                          <motion.span
+                            aria-hidden
+                            className="pointer-events-none absolute -inset-1 rounded-2xl"
+                            style={{
+                              background:
+                                "radial-gradient(closest-side, rgba(108,190,69,0.45), transparent 70%)",
+                            }}
+                            animate={{ opacity: [0.6, 1, 0.6] }}
+                            transition={{
+                              duration: 1.8,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                            }}
+                          />
+                        ) : null}
+                      </span>
+
+                      {/* Feature content chip — one per tile, pointing outward */}
+                      <AnimatePresence>
+                        {(() => {
+                          const N = HERO_SLIDES.length;
+                          // Relative position around the ring, counted clockwise
+                          // from the active (top) tile. 0 = active, 1..N-1 = others.
+                          const relPos = (i - slideIndex + N) % N;
+                          const feature = activeSlide.features[relPos];
+                          if (!feature) return null;
+
+                          // World-frame angle of this tile after ring rotation.
+                          // Active tile sits at -90deg (top); each step adds 360/N.
+                          const worldAngleDeg = (relPos * 360) / N - 90;
+                          const rad = (worldAngleDeg * Math.PI) / 180;
+                          const offset = 56; // px outward from tile center
+                          const dx = Math.cos(rad) * offset;
+                          const dy = Math.sin(rad) * offset;
+                          const dirX = Math.cos(rad);
+                          const dirY = Math.sin(rad);
+
+                          return (
+                            <motion.span
+                              key={`chip-${slideIndex}-${i}`}
+                              initial={{
+                                opacity: 0,
+                                x: 0,
+                                y: 0,
+                                scale: 0.5,
+                              }}
+                              animate={{
+                                opacity: 1,
+                                x: dx,
+                                y: dy,
+                                scale: 1,
+                              }}
+                              exit={{
+                                opacity: 0,
+                                x: dx * 0.4,
+                                y: dy * 0.4,
+                                scale: 0.6,
+                              }}
+                              transition={{
+                                duration: 0.55,
+                                ease: EASE,
+                                delay: 0.18 + relPos * 0.07,
+                              }}
+                              className="pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2"
+                            >
+                              <motion.span
+                                animate={{
+                                  x: [0, dirX * 3, 0],
+                                  y: [0, dirY * 3, 0],
+                                }}
+                                transition={{
+                                  duration: 3.2,
+                                  repeat: Infinity,
+                                  ease: "easeInOut",
+                                  delay: relPos * 0.25,
+                                }}
+                                className="relative inline-flex items-center"
+                              >
+                                {/* Pulsing glow halo behind the chip */}
+                                <motion.span
+                                  aria-hidden
+                                  className="absolute inset-0 -z-10 rounded-full blur-md"
+                                  style={{
+                                    background:
+                                      "radial-gradient(closest-side, rgba(108,190,69,0.85), rgba(108,190,69,0.25) 60%, transparent 75%)",
+                                  }}
+                                  initial={{ scale: 0.6, opacity: 0 }}
+                                  animate={{
+                                    scale: [1, 1.45, 1],
+                                    opacity: [0.55, 0.95, 0.55],
+                                  }}
+                                  transition={{
+                                    duration: 2.2,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                    delay: 0.3 + relPos * 0.08,
+                                  }}
+                                />
+                                {/* Sparkle accent */}
+                                <motion.span
+                                  aria-hidden
+                                  className="absolute -right-1 -top-1 size-1.5 rounded-full bg-white"
+                                  style={{
+                                    boxShadow:
+                                      "0 0 8px rgba(255,255,255,0.95), 0 0 14px rgba(108,190,69,0.85)",
+                                  }}
+                                  animate={{
+                                    scale: [0.6, 1.2, 0.6],
+                                    opacity: [0.4, 1, 0.4],
+                                  }}
+                                  transition={{
+                                    duration: 1.6,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                    delay: 0.4 + relPos * 0.1,
+                                  }}
+                                />
+                                <span className="relative inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-[#6CBE45]/50 bg-white/95 px-2.5 py-1 text-[10px] font-semibold text-[#1a3a0a] shadow-md shadow-[#1a3a0a]/15 backdrop-blur">
+                                  <motion.span
+                                    className="size-1 rounded-full bg-[#6CBE45]"
+                                    animate={{
+                                      boxShadow: [
+                                        "0 0 0 0 rgba(108,190,69,0)",
+                                        "0 0 0 4px rgba(108,190,69,0)",
+                                      ],
+                                    }}
+                                    transition={{
+                                      duration: 1.4,
+                                      repeat: Infinity,
+                                      ease: "easeOut",
+                                      delay: relPos * 0.2,
+                                    }}
+                                  />
+                                  {feature}
+                                </span>
+                              </motion.span>
+                            </motion.span>
+                          );
+                        })()}
+                      </AnimatePresence>
+                    </motion.span>
+                  </motion.button>
+                );
+              })}
+            </motion.div>
+
+            {/* Connector lines from each orbital tile to the core (animated dashed) */}
+            <svg
+              aria-hidden
+              viewBox="0 0 400 400"
+              className="pointer-events-none absolute inset-0 size-full"
+            >
+              {HERO_SLIDES.map((_, i) => {
+                const angle =
+                  (i / HERO_SLIDES.length) * 2 * Math.PI - Math.PI / 2;
+                const r1 = 90; // edge of core
+                const r2 = 176; // inner edge of orbital tile
+                const x1 = 200 + Math.cos(angle) * r1;
+                const y1 = 200 + Math.sin(angle) * r1;
+                const x2 = 200 + Math.cos(angle) * r2;
+                const y2 = 200 + Math.sin(angle) * r2;
+                return (
+                  <motion.line
+                    key={i}
+                    x1={x1}
+                    y1={y1}
+                    x2={x2}
+                    y2={y2}
+                    stroke={i === slideIndex ? "#6CBE45" : "#2D5016"}
+                    strokeOpacity={i === slideIndex ? 0.85 : 0.18}
+                    strokeWidth={i === slideIndex ? 2 : 1}
+                    strokeLinecap="round"
+                    strokeDasharray="4 6"
+                    animate={{ strokeDashoffset: [0, -20] }}
+                    transition={{
+                      duration: 1.4,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
+                );
+              })}
+            </svg>
+
+            {/* Center disk — active service photo + HUD overlay */}
+            <motion.div
+              role="group"
+              aria-label="Featured services carousel"
+              onMouseMove={onCardMove}
+              onMouseLeave={onCardLeave}
+              style={{
+                rotateX,
+                rotateY,
+                transformStyle: "preserve-3d",
+              }}
+              className="absolute left-1/2 top-1/2 size-[46%] -translate-x-1/2 -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-2xl shadow-[#1a3a0a]/40 ring-2 ring-white/60"
+            >
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeSlide.image}
+                  initial={{ scale: 0.85, opacity: 0, rotate: -8 }}
+                  animate={{ scale: 1, opacity: 1, rotate: 0 }}
+                  exit={{ scale: 1.12, opacity: 0, rotate: 6 }}
+                  transition={{ duration: 0.7, ease: EASE }}
+                  className="absolute inset-0"
+                >
+                  <motion.div
+                    className="absolute inset-0"
+                    initial={{ scale: 1.06 }}
+                    animate={{ scale: 1.18 }}
+                    transition={{ duration: 5, ease: "easeOut" }}
+                  >
+                    <Image
+                      src={activeSlide.image}
+                      alt={activeSlide.alt}
+                      fill
+                      priority={slideIndex === 0}
+                      quality={92}
+                      sizes="(min-width: 1024px) 360px, 60vw"
+                      className="object-cover"
+                    />
+                  </motion.div>
+                  {/* radial vignette */}
+                  <div
+                    aria-hidden
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "radial-gradient(closest-side, transparent 45%, rgba(26,58,10,0.78) 100%)",
+                    }}
+                  />
+                  {/* shimmer scan */}
+                  <motion.div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0"
+                    initial={{ x: "-110%" }}
+                    animate={{ x: "110%" }}
+                    transition={{
+                      duration: 2.6,
+                      ease: "easeInOut",
+                      delay: 0.6,
+                      repeat: Infinity,
+                      repeatDelay: 2.4,
+                    }}
+                    style={{
+                      background:
+                        "linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.28) 50%, transparent 65%)",
+                      mixBlendMode: "overlay",
+                    }}
+                  />
+                  {/* Bottom info */}
+                  <div className="absolute inset-x-3 bottom-5 text-center">
+                    <div className="text-[9px] font-semibold uppercase tracking-[0.22em] text-white/85">
+                      {activeSlide.eyebrow}
+                    </div>
+                    <div className="mt-1 text-sm font-semibold leading-tight text-white sm:text-base">
+                      {activeSlide.title}
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* HUD: ECG + vitals at the top of the disk */}
+              <div className="pointer-events-none absolute inset-x-3 top-3 flex items-center justify-between">
+                <div className="flex items-center gap-1.5 rounded-full bg-black/45 px-2 py-1 backdrop-blur-md ring-1 ring-white/10">
+                  <span className="size-1.5 rounded-full bg-[#6CBE45] shadow-[0_0_8px_rgba(108,190,69,0.9)]" />
+                  <ECGLine width={64} height={14} strokeWidth={1.5} />
+                </div>
+                <div className="flex items-center gap-1.5 rounded-full bg-black/45 px-2 py-1 backdrop-blur-md ring-1 ring-white/10">
+                  <VitalsBars bars={4} />
+                </div>
+              </div>
+
+              {/* HUD bottom corner: rotating service index */}
+              <div className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-black/45 px-2 py-0.5 text-[9px] font-mono uppercase tracking-[0.22em] text-white/80 backdrop-blur-md ring-1 ring-white/10">
+                {String(slideIndex + 1).padStart(2, "0")}/
+                {String(HERO_SLIDES.length).padStart(2, "0")}
+              </div>
+            </motion.div>
+
+            {/* Floating sparkle accent */}
             <motion.div
               aria-hidden
-              className="absolute -bottom-6 right-10"
-              animate={{ scale: [1, 1.2, 1], rotate: [0, 20, 0] }}
+              className="pointer-events-none absolute right-4 top-2"
+              animate={{ scale: [1, 1.25, 1], rotate: [0, 24, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
               <Sparkles className="size-7 text-[#C4A862]" />
+            </motion.div>
+            <motion.div
+              aria-hidden
+              className="pointer-events-none absolute bottom-4 left-2"
+              animate={{ scale: [1, 1.2, 1], rotate: [0, -18, 0] }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1.2,
+              }}
+            >
+              <Sparkles className="size-5 text-[#6CBE45]" />
             </motion.div>
           </motion.div>
         </div>

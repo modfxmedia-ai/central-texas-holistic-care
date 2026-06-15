@@ -13,9 +13,11 @@ import {
   Menu,
   Phone,
   ShieldPlus,
+  Star,
   Stethoscope,
   Thermometer,
   UserCheck,
+  Users,
   Wine,
   X,
   type LucideIcon,
@@ -43,11 +45,36 @@ type NavItem = {
   label: string;
   href: string;
   children?: NavChild[];
+  hideOverview?: boolean;
 };
 
 const NAV: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about-us/" },
+  {
+    label: "About Us",
+    href: "/about-us/",
+    hideOverview: true,
+    children: [
+      {
+        label: "Meet the Providers",
+        href: "/about-us/providers/",
+        description: "Get to know our board-certified clinicians.",
+        icon: UserCheck,
+      },
+      {
+        label: "Meet the Team",
+        href: "/about-us/team/",
+        description: "The friendly faces behind your care.",
+        icon: Users,
+      },
+      {
+        label: "Testimonials",
+        href: "/about-us/testimonials/",
+        description: "Real stories from our patients.",
+        icon: Star,
+      },
+    ],
+  },
   {
     label: "Men",
     href: "/men/",
@@ -127,8 +154,9 @@ const NAV: NavItem[] = [
     ],
   },
   { label: "Hormone Therapy", href: "/hormone-therapy/" },
-  { label: "Products", href: "/products/" },
+  { label: "Blog", href: "/blog/" },
   { label: "Payment Plans", href: "/payment-plans/" },
+  { label: "Contact", href: "/contact/" },
 ];
 
 function isActive(pathname: string, href: string): boolean {
@@ -230,24 +258,26 @@ function DesktopMenu({ pathname }: { pathname: string }) {
                   className="absolute left-0 top-full mt-3 w-[380px] rounded-2xl border border-stone-200/70 bg-white/95 p-3 shadow-xl backdrop-blur-md"
                 >
                   <ul className="grid gap-1">
-                    <li>
-                      <Link
-                        href={item.href}
-                        className="flex items-start gap-3 rounded-xl px-3 py-2.5 hover:bg-[#1a3a0a]/5"
-                      >
-                        <span className="mt-0.5 inline-flex size-8 items-center justify-center rounded-lg bg-[#1a3a0a]/10 text-[#1a3a0a]">
-                          <Leaf className="size-4" />
-                        </span>
-                        <span className="flex-1">
-                          <span className="block text-sm font-semibold text-stone-900">
-                            Overview
+                    {!item.hideOverview && (
+                      <li>
+                        <Link
+                          href={item.href}
+                          className="flex items-start gap-3 rounded-xl px-3 py-2.5 hover:bg-[#1a3a0a]/5"
+                        >
+                          <span className="mt-0.5 inline-flex size-8 items-center justify-center rounded-lg bg-[#1a3a0a]/10 text-[#1a3a0a]">
+                            <Leaf className="size-4" />
                           </span>
-                          <span className="block text-xs text-stone-500">
-                            All {item.label} services at a glance.
+                          <span className="flex-1">
+                            <span className="block text-sm font-semibold text-stone-900">
+                              Overview
+                            </span>
+                            <span className="block text-xs text-stone-500">
+                              All {item.label} services at a glance.
+                            </span>
                           </span>
-                        </span>
-                      </Link>
-                    </li>
+                        </Link>
+                      </li>
+                    )}
                     {item.children.map((child) => {
                       const Icon = child.icon;
                       return (
@@ -406,15 +436,17 @@ function MobileDrawer({
                             transition={{ duration: 0.2 }}
                             className="overflow-hidden pl-3"
                           >
-                            <li>
-                              <Link
-                                href={item.href}
-                                onClick={onClose}
-                                className="block rounded-md px-3 py-2 text-sm text-stone-600 hover:bg-stone-100"
-                              >
-                                Overview
-                              </Link>
-                            </li>
+                            {!item.hideOverview && (
+                              <li>
+                                <Link
+                                  href={item.href}
+                                  onClick={onClose}
+                                  className="block rounded-md px-3 py-2 text-sm text-stone-600 hover:bg-stone-100"
+                                >
+                                  Overview
+                                </Link>
+                              </li>
+                            )}
                             {item.children.map((child) => (
                               <li key={child.href}>
                                 <Link

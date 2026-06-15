@@ -1,15 +1,13 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import {
-  BadgeCheck,
   CheckCircle2,
-  Clock,
-  CreditCard,
   Phone,
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 type Status = "approved" | "in-process" | "closed";
@@ -38,20 +36,9 @@ const CARRIERS: Carrier[] = [
 
 const APPROVED = CARRIERS.filter((c) => c.status === "approved");
 const IN_PROCESS = CARRIERS.filter((c) => c.status === "in-process");
-const CLOSED = CARRIERS.filter((c) => c.status === "closed");
 
 const CHERRY_URL = "https://withcherry.com/";
 const EASE = [0.22, 1, 0.36, 1] as const;
-
-const pillContainer: Variants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.025 } },
-};
-
-const pillItem: Variants = {
-  hidden: { opacity: 0, y: 10, scale: 0.96 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, ease: EASE } },
-};
 
 export default function HomeInsurance() {
   return (
@@ -75,6 +62,64 @@ export default function HomeInsurance() {
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* ─── Rolling carrier banner ─── */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10% 0px" }}
+          transition={{ duration: 0.6, ease: EASE }}
+          className="relative mb-14 sm:mb-16"
+        >
+          {/* heading chip floating over the banner (outside the overflow-hidden marquee) */}
+          <div className="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-1/2">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#6CBE45]/40 bg-[#0f2706] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#FAF6EE] shadow-md">
+              <ShieldCheck className="size-3 text-[#6CBE45]" />
+              In-Network Carriers
+            </span>
+          </div>
+
+          {/* The actual scrolling marquee — overflow-hidden lives here, not the wrapper */}
+          <div className="relative overflow-hidden rounded-2xl border border-[#1a3a0a]/12 bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0f2706] py-4 shadow-lg shadow-[#1a3a0a]/15">
+            {/* edge fade masks */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-[#0f2706] to-transparent"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-[#0f2706] to-transparent"
+            />
+
+            <motion.div
+              className="flex shrink-0 items-center gap-10 whitespace-nowrap"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ duration: 42, ease: "linear", repeat: Infinity }}
+            >
+              {[...APPROVED, ...IN_PROCESS, ...APPROVED, ...IN_PROCESS].map(
+                (c, i) => (
+                  <span
+                    key={`${c.name}-${i}`}
+                    className="flex items-center gap-3 text-sm font-medium tracking-wide text-[#FAF6EE]/90"
+                  >
+                    <CheckCircle2
+                      className={`size-4 ${
+                        c.status === "approved"
+                          ? "text-[#6CBE45]"
+                          : "text-[#C4A862]"
+                      }`}
+                      strokeWidth={2.4}
+                    />
+                    <span className="font-heading text-base font-medium">
+                      {c.name}
+                    </span>
+                    <span className="text-[#6CBE45]/70">✦</span>
+                  </span>
+                ),
+              )}
+            </motion.div>
+          </div>
+        </motion.div>
+
         <div className="grid items-stretch gap-14 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
           {/* ─── Left: copy ─── */}
           <motion.div
@@ -157,179 +202,281 @@ export default function HomeInsurance() {
             </p>
           </motion.div>
 
-          {/* ─── Right: rich carrier card ─── */}
+          {/* ─── Right: motion-graphic insurance visual ─── */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-15% 0px" }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
-            className="relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-stone-200 bg-gradient-to-br from-[color:var(--color-cream-soft)] to-white p-7 shadow-sm sm:p-9"
+            className="relative isolate flex min-h-[520px] items-center justify-center"
+            style={{ perspective: 1200 }}
           >
-            {/* corner gradient accents */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -right-20 -top-20 size-56 rounded-full bg-gradient-to-br from-[#6CBE45]/25 to-transparent blur-2xl"
-            />
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -bottom-24 -left-16 size-52 rounded-full bg-gradient-to-tr from-[#C4A862]/20 to-transparent blur-2xl"
-            />
+            {/* Inner stage that all decorations anchor to */}
+            <div className="relative mx-auto w-full max-w-[520px]">
+              {/* Soft elliptical halo behind image */}
+              <motion.div
+                aria-hidden
+                className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[78%] w-[110%] -translate-x-1/2 -translate-y-1/2 rounded-[50%]"
+                style={{
+                  background:
+                    "radial-gradient(50% 50% at 50% 50%, rgba(108,190,69,0.32), rgba(108,190,69,0) 70%)",
+                  filter: "blur(8px)",
+                }}
+                animate={{
+                  scale: [1, 1.05, 1],
+                  opacity: [0.55, 0.85, 0.55],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
 
-            {/* header */}
-            <div className="relative flex items-center justify-between">
-              <div className="flex items-center gap-2.5">
-                <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#2D5016] to-[#1a3a0a] text-[#FAF6EE] ring-1 ring-[#6CBE45]/30">
-                  <ShieldCheck className="size-4" />
-                </span>
-                <p className="font-heading text-lg font-medium text-[#1a3a0a]">
-                  In-Network Carriers
-                </p>
-              </div>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-br from-[#2D5016] to-[#1a3a0a] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-[#FAF6EE] ring-1 ring-[#6CBE45]/25">
-                <Sparkles className="size-3 text-[#6CBE45]" />
-                {APPROVED.length} Approved
-              </span>
-            </div>
+              {/* Slow orbiting dashed ring */}
+              <motion.svg
+                aria-hidden
+                viewBox="0 0 400 400"
+                className="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[112%] -translate-x-1/2 -translate-y-1/2 text-[#6CBE45]/30"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
+              >
+                <ellipse
+                  cx="200"
+                  cy="200"
+                  rx="190"
+                  ry="150"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  strokeDasharray="2 8"
+                />
+                <circle cx="390" cy="200" r="3.5" fill="#6CBE45" />
+              </motion.svg>
 
-            {/* legend */}
-            <div className="relative mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] font-medium uppercase tracking-[0.14em] text-stone-500">
-              <span className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-[#6CBE45] ring-2 ring-[#6CBE45]/25" />
-                Approved · {APPROVED.length}
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-[#C4A862] ring-2 ring-[#C4A862]/25" />
-                In Process · {IN_PROCESS.length}
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-stone-400 ring-2 ring-stone-300" />
-                Currently Closed · {CLOSED.length}
-              </span>
-            </div>
+              {/* Floor reflection */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute bottom-2 left-1/2 -z-10 h-6 w-[70%] -translate-x-1/2 rounded-[50%] bg-[#1a3a0a]/15 blur-2xl"
+              />
 
-            {/* approved pills */}
-            <motion.div
-              variants={pillContainer}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "-15% 0px" }}
-              className="relative mt-5 flex flex-wrap gap-2"
-            >
-              {APPROVED.map((c) => (
-                <motion.span
-                  key={c.name}
-                  variants={pillItem}
-                  whileHover={{ y: -2 }}
-                  className="group inline-flex items-center gap-1.5 rounded-full border border-[#6CBE45]/30 bg-white px-3 py-1.5 text-xs font-medium text-stone-700 shadow-sm transition-all hover:border-[#6CBE45] hover:bg-[#f0f5eb] hover:text-[#1a3a0a] hover:shadow-md"
+              {/* Insurance image */}
+              <motion.div
+                initial={{ opacity: 0, y: 30, rotateX: -8 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: EASE, delay: 0.25 }}
+                className="relative z-10 w-full"
+                style={{ transformStyle: "preserve-3d" }}
+              >
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="relative w-full"
                 >
-                  <CheckCircle2 className="size-3 text-[#2D5016]" strokeWidth={2.4} />
-                  {c.name}
-                </motion.span>
-              ))}
-              {IN_PROCESS.map((c) => (
-                <motion.span
-                  key={c.name}
-                  variants={pillItem}
-                  whileHover={{ y: -2 }}
-                  title={c.note}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-[#C4A862]/40 bg-[#FAF6EE] px-3 py-1.5 text-xs font-medium text-[#7a6730] shadow-sm transition-all hover:border-[#C4A862] hover:shadow-md"
-                >
-                  <Clock className="size-3" strokeWidth={2.4} />
-                  {c.name}
-                </motion.span>
-              ))}
-            </motion.div>
-
-            {/* closed footnote — collapsible visual style */}
-            <div className="relative mt-5">
-              <details className="group rounded-2xl border border-stone-200 bg-white/60 px-4 py-3 transition-colors hover:bg-white">
-                <summary className="flex cursor-pointer items-center justify-between gap-3 text-[11px] font-medium uppercase tracking-[0.14em] text-stone-500 marker:hidden [&::-webkit-details-marker]:hidden">
-                  <span className="flex items-center gap-2">
-                    <span className="size-2 rounded-full bg-stone-400 ring-2 ring-stone-300" />
-                    Currently unavailable ({CLOSED.length})
-                  </span>
-                  <span className="text-stone-400 transition-transform group-open:rotate-180">
-                    ▾
-                  </span>
-                </summary>
-                <ul className="mt-3 space-y-1.5 text-xs text-stone-500">
-                  {CLOSED.map((c) => (
-                    <li key={c.name} className="flex items-baseline gap-2">
-                      <span className="font-medium text-stone-600">{c.name}</span>
-                      {c.note ? (
-                        <span className="text-stone-400">— {c.note}</span>
-                      ) : null}
-                    </li>
-                  ))}
-                </ul>
-              </details>
-            </div>
-
-            {/* divider */}
-            <div className="relative mt-6 h-px bg-gradient-to-r from-transparent via-[#1a3a0a]/15 to-transparent" />
-
-            {/* 3-up benefits */}
-            <div className="relative mt-6 grid grid-cols-3 gap-3">
-              {[
-                {
-                  icon: BadgeCheck,
-                  big: `${APPROVED.length}`,
-                  label: "Plans Approved",
-                  tint: "from-[#6CBE45]/25 to-transparent",
-                  iconBg: "from-[#6CBE45] to-[#2D5016]",
-                },
-                {
-                  icon: CreditCard,
-                  big: "0%",
-                  label: "APR via Cherry",
-                  tint: "from-[#C4A862]/25 to-transparent",
-                  iconBg: "from-[#C4A862] to-[#9C8344]",
-                },
-                {
-                  icon: Clock,
-                  big: "1 wk",
-                  label: "Avg. wait time",
-                  tint: "from-[#8BAD5A]/25 to-transparent",
-                  iconBg: "from-[#8BAD5A] to-[#2D5016]",
-                },
-              ].map(({ icon: Icon, big, label, tint, iconBg }) => (
-                <div
-                  key={label}
-                  className="group relative overflow-hidden rounded-2xl border border-stone-200/80 bg-white/70 p-4 backdrop-blur-sm transition-all hover:border-[#6CBE45]/40 hover:shadow-md"
-                >
-                  <div
-                    aria-hidden
-                    className={`pointer-events-none absolute -right-8 -top-8 size-24 rounded-full bg-gradient-to-br blur-xl ${tint}`}
+                  <Image
+                    src="/images/source/insurance.png"
+                    alt="Accepted insurance carriers — BCBS Texas, Aetna, UnitedHealthcare, Medicare, Cigna and more"
+                    width={1000}
+                    height={700}
+                    className="relative z-0 block h-auto w-full"
+                    style={{
+                      filter:
+                        "drop-shadow(0 18px 28px rgba(26,58,10,0.18)) drop-shadow(0 6px 10px rgba(26,58,10,0.10))",
+                    }}
+                    priority={false}
                   />
-                  <span
-                    className={`relative flex size-9 items-center justify-center rounded-xl bg-gradient-to-br text-white ${iconBg}`}
-                  >
-                    <Icon className="size-4" />
-                  </span>
-                  <div className="relative mt-3 font-heading text-2xl font-semibold leading-none text-[#1a3a0a]">
-                    {big}
-                  </div>
-                  <div className="relative mt-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-stone-500">
-                    {label}
-                  </div>
-                </div>
-              ))}
-            </div>
 
-            {/* verification footer */}
-            <div className="relative mt-auto pt-6">
-              <div className="flex items-start gap-3 rounded-2xl border border-[#6CBE45]/30 bg-gradient-to-br from-[#f0f5eb] to-white p-4">
-                <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#6CBE45] to-[#2D5016] text-white">
-                  <CheckCircle2 className="size-4" />
-                </span>
-                <p className="text-sm leading-relaxed text-stone-700">
-                  <span className="font-semibold text-[#1a3a0a]">
-                    Verification is quick
-                  </span>{" "}
-                  — share your member ID at booking and our front desk will
-                  run benefits before your first visit.
-                </p>
-              </div>
+                  {/* shimmer beam over the image */}
+                  <motion.div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 z-10 mix-blend-overlay"
+                    initial={{ x: "-110%" }}
+                    animate={{ x: "110%" }}
+                    transition={{
+                      duration: 2.8,
+                      ease: "easeInOut",
+                      delay: 0.6,
+                      repeat: Infinity,
+                      repeatDelay: 3.4,
+                    }}
+                    style={{
+                      background:
+                        "linear-gradient(110deg, transparent 40%, rgba(255,255,255,0.55) 50%, transparent 60%)",
+                    }}
+                  />
+                </motion.div>
+
+                {/* Floating carrier mini-pills — hug the image edges */}
+                {[
+                  {
+                    label: "BCBS Texas",
+                    pos: "left-[4%] top-[14%]",
+                    delay: 0.4,
+                  },
+                  {
+                    label: "Aetna",
+                    pos: "right-[2%] top-[6%]",
+                    delay: 0.55,
+                  },
+                  {
+                    label: "United",
+                    pos: "right-[-2%] bottom-[28%]",
+                    delay: 0.7,
+                  },
+                  {
+                    label: "Medicare",
+                    pos: "left-[8%] bottom-[10%]",
+                    delay: 0.85,
+                  },
+                ].map((p) => (
+                  <motion.span
+                    key={p.label}
+                    initial={{ opacity: 0, scale: 0.6, y: 12 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.55,
+                      ease: EASE,
+                      delay: p.delay,
+                    }}
+                    className={`pointer-events-none absolute z-20 ${p.pos}`}
+                  >
+                    <motion.span
+                      animate={{ y: [0, -5, 0] }}
+                      transition={{
+                        duration: 4 + p.delay,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: p.delay,
+                      }}
+                      className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-[#6CBE45]/30 bg-white/95 px-2.5 py-1 text-[10px] font-semibold text-[#1a3a0a] shadow-[0_8px_20px_-8px_rgba(26,58,10,0.35)] backdrop-blur"
+                    >
+                      <CheckCircle2
+                        className="size-3 text-[#2D5016]"
+                        strokeWidth={2.6}
+                      />
+                      {p.label}
+                    </motion.span>
+                  </motion.span>
+                ))}
+
+                {/* Verified badge — anchored to image, top-right */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.6 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.55,
+                    ease: EASE,
+                    delay: 0.55,
+                    type: "spring",
+                  }}
+                  className="absolute -right-3 -top-3 z-30"
+                >
+                  <motion.span
+                    animate={{ y: [0, -3, 0] }}
+                    transition={{
+                      duration: 3.2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="relative flex items-center gap-1.5 rounded-full bg-gradient-to-br from-[#2D5016] to-[#1a3a0a] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#FAF6EE] shadow-lg shadow-[#1a3a0a]/30 ring-1 ring-[#6CBE45]/40"
+                  >
+                    <motion.span
+                      aria-hidden
+                      className="absolute inset-0 -z-10 rounded-full"
+                      style={{
+                        background:
+                          "radial-gradient(closest-side, rgba(108,190,69,0.65), transparent 70%)",
+                      }}
+                      animate={{
+                        scale: [1, 1.4, 1],
+                        opacity: [0.5, 0.9, 0.5],
+                      }}
+                      transition={{
+                        duration: 2.2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
+                    <CheckCircle2 className="size-3 text-[#6CBE45]" />
+                    Verified
+                  </motion.span>
+                </motion.div>
+
+                {/* Coverage meter — anchored to image, bottom-left */}
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, ease: EASE, delay: 0.6 }}
+                  className="absolute -bottom-4 -left-3 z-30 flex items-center gap-2.5 rounded-2xl border border-[#1a3a0a]/10 bg-white/95 px-3 py-2 shadow-[0_12px_28px_-10px_rgba(26,58,10,0.35)] backdrop-blur"
+                >
+                  <div className="relative size-9">
+                    <svg viewBox="0 0 36 36" className="size-9 -rotate-90">
+                      <circle
+                        cx="18"
+                        cy="18"
+                        r="14"
+                        fill="none"
+                        stroke="#1a3a0a"
+                        strokeOpacity="0.12"
+                        strokeWidth="3"
+                      />
+                      <motion.circle
+                        cx="18"
+                        cy="18"
+                        r="14"
+                        fill="none"
+                        stroke="#6CBE45"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeDasharray={2 * Math.PI * 14}
+                        initial={{ strokeDashoffset: 2 * Math.PI * 14 }}
+                        whileInView={{
+                          strokeDashoffset: 2 * Math.PI * 14 * 0.06,
+                        }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 1.6,
+                          ease: "easeOut",
+                          delay: 0.7,
+                        }}
+                      />
+                    </svg>
+                    <span className="absolute inset-0 flex items-center justify-center font-heading text-[10px] font-semibold text-[#1a3a0a]">
+                      94%
+                    </span>
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-[9px] font-semibold uppercase tracking-[0.22em] text-[#8BAD5A]">
+                      Avg. Coverage
+                    </div>
+                    <div className="text-xs font-semibold text-[#1a3a0a]">
+                      Across {APPROVED.length} carriers
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Tiny shield accent — replaces stray sparkles */}
+                <motion.span
+                  aria-hidden
+                  className="pointer-events-none absolute right-[6%] bottom-[6%] z-20 flex size-7 items-center justify-center rounded-full bg-[#1a3a0a] ring-2 ring-white shadow-md"
+                  animate={{ scale: [1, 1.08, 1] }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <ShieldCheck className="size-3.5 text-[#9DD270]" />
+                </motion.span>
+              </motion.div>
             </div>
           </motion.div>
         </div>
