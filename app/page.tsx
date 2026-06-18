@@ -5,14 +5,11 @@ import HomeApproach from "@/components/home/HomeApproach";
 import HomeCTACard from "@/components/home/HomeCTACard";
 import HomeHRT from "@/components/home/HomeHRT";
 import HomeHero from "@/components/home/HomeHero";
-import HomeHormoneSigns from "@/components/home/HomeHormoneSigns";
-import HomeInsights from "@/components/home/HomeInsights";
-import HomeInsurance from "@/components/home/HomeInsurance";
+import HomeInsuranceBand from "@/components/home/HomeInsuranceBand";
 import HomeJourney from "@/components/home/HomeJourney";
 import HomeLocation from "@/components/home/HomeLocation";
 import HomeServices from "@/components/home/HomeServices";
 import HomeTestimonial from "@/components/home/HomeTestimonial";
-import HomeTrustBar from "@/components/home/HomeTrustBar";
 
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const PAGE_TITLE =
@@ -84,17 +81,14 @@ export default function Home() {
       />
 
       <HomeHero />
+      <HomeInsuranceBand />
       <HomeAbout />
       <HomeApproach />
-      <HomeHormoneSigns />
-      <HomeHRT />
       <HomeServices />
-      <HomeInsurance />
+      <HomeHRT />
       <HomeJourney />
-      <HomeCTACard />
       <HomeTestimonial />
-      <HomeInsights />
-      <HomeTrustBar />
+      <HomeCTACard />
       <HomeLocation />
     </>
   );

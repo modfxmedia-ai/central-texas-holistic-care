@@ -101,7 +101,7 @@ export default function NewsletterForm() {
         aria-live="polite"
         className="sr-only"
       >
-        {state === "success" && "Thanks — you're subscribed."}
+        {state === "success" && "Thanks, you're subscribed."}
         {state === "error" && "Please enter a valid email address."}
       </p>
     </form>

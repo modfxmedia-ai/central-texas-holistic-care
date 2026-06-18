@@ -126,7 +126,7 @@ export default function NotFound() {
             </p>
             <p className="mt-6 max-w-md text-base leading-relaxed text-stone-600">
               The page may have moved, been renamed, or no longer exists. Use the
-              links here to get to the section you need — or call us at{" "}
+              links here to get to the section you need, or call us at{" "}
               <a
                 href="tel:+12542132423"
                 className="font-medium text-[#2D5016] underline-offset-4 hover:underline"

@@ -33,7 +33,7 @@ export default function WomenHealthPage() {
   return (
     <PageHero
       title="Women's Health"
-      subtitle="Personalized care for every stage of life — from cycle health to menopause, hormones to heart health."
+      subtitle="Personalized care for every stage of life: from cycle health to menopause, hormones to heart health."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Women", href: "/women/" },

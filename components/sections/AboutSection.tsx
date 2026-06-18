@@ -83,7 +83,7 @@ export default function AboutSection() {
               </svg>
               <div className="absolute inset-x-6 bottom-6 rounded-2xl bg-white/80 p-5 backdrop-blur-md">
                 <p className="font-heading text-lg leading-snug text-[#1a3a0a]">
-                  “Root-cause care that treats the whole person — not just symptoms.”
+                  “Root-cause care that treats the whole person, not just symptoms.”
                 </p>
                 <p className="mt-2 text-xs uppercase tracking-[0.25em] text-[#5b7d33]">
                   Our Philosophy

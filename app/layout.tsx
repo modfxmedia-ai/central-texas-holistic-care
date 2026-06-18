@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import Script from "next/script";
 
 import Footer from "@/components/layout/Footer";
@@ -11,13 +11,6 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const cormorant = Fraunces({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -82,10 +75,10 @@ const organizationSchema = {
   email: "info@centraltexasholisticcarepllc.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "2025 Memory Lane Suite 300",
-    addressLocality: "Harker Heights",
+    streetAddress: "311 E. Stan Schlueter Loop #207",
+    addressLocality: "Killeen",
     addressRegion: "TX",
-    postalCode: "76548",
+    postalCode: "76542",
     addressCountry: "US",
   },
   medicalSpecialty: [
@@ -105,7 +98,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${cormorant.variable} h-full antialiased`}
+      className={`${inter.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col" suppressHydrationWarning>

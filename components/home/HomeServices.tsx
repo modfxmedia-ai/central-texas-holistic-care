@@ -31,14 +31,14 @@ const SERVICES: Service[] = [
     image: "/images/source/hormone-pelleting.jpg",
     title: "Hormone Pelleting",
     blurb:
-      "Long-lasting, bioidentical hormone delivery through pellet insertion—ideal for steady, consistent hormone support.",
+      "Long-lasting, bioidentical hormone delivery through pellet insertion, ideal for steady, consistent hormone support.",
     href: "/hormone-therapy/",
   },
   {
     image: "/images/source/acute-care-services.jpg",
     title: "Acute Care Services",
     blurb:
-      "Immediate medical care for sudden illnesses, infections, or injuries—when you need it most.",
+      "Immediate medical care for sudden illnesses, infections, or injuries, when you need it most.",
     href: "/about-us/",
   },
   {
@@ -118,7 +118,7 @@ export default function HomeServices() {
             </span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-stone-600 sm:text-lg">
-            A full spectrum of evidence-based, holistic medicine — delivered
+            A full spectrum of evidence-based, holistic medicine, delivered
             in a warm, individualized setting at our Harker Heights clinic.
           </p>
         </motion.div>

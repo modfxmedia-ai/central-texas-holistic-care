@@ -15,19 +15,19 @@ const BOOKING_URL =
 const PHONE_TEL = "+12542132423";
 const PHONE_DISPLAY = "(254) 213-2423";
 
-const ADDRESS_LINE_1 = "2025 Memory Lane, Suite 300";
-const ADDRESS_LINE_2 = "Harker Heights, TX 76548";
+const ADDRESS_LINE_1 = "311 E. Stan Schlueter Loop #207";
+const ADDRESS_LINE_2 = "Killeen, TX 76542";
 const DIRECTIONS_URL =
   "https://www.google.com/maps/dir/?api=1&destination=" +
-  encodeURIComponent("2025 Memory Lane Suite 300, Harker Heights, TX 76548");
+  encodeURIComponent("311 E. Stan Schlueter Loop #207, Killeen, TX 76542");
 
 const MAP_EMBED_URL =
   "https://www.google.com/maps?q=" +
-  encodeURIComponent("2025 Memory Lane Suite 300, Harker Heights, TX 76548") +
+  encodeURIComponent("311 E. Stan Schlueter Loop #207, Killeen, TX 76542") +
   "&z=15&output=embed";
 
 const HOURS = [
-  { day: "Mon — Fri", time: "8:00 AM – 5:00 PM" },
+  { day: "Mon to Fri", time: "8:00 AM to 5:00 PM" },
   { day: "Saturday", time: "By appointment" },
   { day: "Sunday", time: "Closed" },
 ];

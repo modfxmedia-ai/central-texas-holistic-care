@@ -34,7 +34,7 @@ export default function ProductsPage() {
   return (
     <PageHero
       title="The Shop"
-      subtitle="Practitioner-grade supplements, peptides, and wellness essentials — vetted by our clinical team and built to support the work we do together."
+      subtitle="Practitioner-grade supplements, peptides, and wellness essentials, vetted by our clinical team and built to support the work we do together."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Products", href: "/products/" },

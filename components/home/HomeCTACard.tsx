@@ -124,8 +124,8 @@ export default function HomeCTACard() {
               {/* Image with overlay */}
               <div className="absolute inset-0 overflow-hidden rounded-l-[2.5rem]">
                 <Image
-                  src="/images/source/nurse-consultation.webp"
-                  alt="Compassionate care at Central Texas Holistic Care"
+                  src="/images/source/ready-to-feel-your-best-self.jpeg"
+                  alt="A woman with arms outstretched, joyful and ready to feel her best self with care from Central Texas Holistic Care"
                   fill
                   sizes="(min-width: 1024px) 480px, 0px"
                   className="object-cover"
@@ -240,7 +240,7 @@ export default function HomeCTACard() {
                 className="mt-5 max-w-xl text-base leading-relaxed text-[#FAF6EE]/85 sm:text-lg"
               >
                 Most patients are seen within one week of reaching out. Book
-                online, give us a call, or send a message — we&apos;ll guide
+                online, give us a call, or send a message, we&apos;ll guide
                 you through the next step.
               </motion.p>
 

@@ -25,7 +25,7 @@ const BOOKING_URL =
 const PAGE_TITLE =
   "Sitemap | Browse All Pages | Central Texas Holistic Care";
 const PAGE_DESCRIPTION =
-  "Find every page on the Central Texas Holistic Care website — services, products, patient resources, and care information in one place.";
+  "Find every page on the Central Texas Holistic Care website: services, products, patient resources, and care information in one place.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -284,7 +284,7 @@ export default function SitemapPage() {
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-stone-600 sm:text-lg">
             Every page on our site, organized by topic. Whether you&rsquo;re
             looking for a specific service, a product, or a quick way to
-            contact us — start here.
+            contact us, start here.
           </p>
 
           {/* Stat strip */}

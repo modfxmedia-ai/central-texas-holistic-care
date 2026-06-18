@@ -25,7 +25,7 @@ const SERVICES: Service[] = [
   {
     title: "IV Infusion Therapy",
     description:
-      "Targeted IV blends — Myers' cocktail, immune, recovery, and more — for fast, deep cellular nutrition.",
+      "Targeted IV blends (Myers' cocktail, immune, recovery, and more) for fast, deep cellular nutrition.",
     href: "/iv-nutrition/",
     icon: Droplet,
   },
@@ -46,7 +46,7 @@ const SERVICES: Service[] = [
   {
     title: "Acute Care Services",
     description:
-      "Same-week acute visits for everyday concerns — colds, injuries, infections, and more.",
+      "Same-week acute visits for everyday concerns: colds, injuries, infections, and more.",
     href: "/about-us/",
     icon: Stethoscope,
   },
@@ -60,7 +60,7 @@ const SERVICES: Service[] = [
   {
     title: "Chronic Care Management",
     description:
-      "Whole-person plans for hormone, metabolic, and inflammatory conditions — not just symptoms.",
+      "Whole-person plans for hormone, metabolic, and inflammatory conditions, not just symptoms.",
     href: "/women/",
     icon: HeartPulse,
   },
@@ -99,7 +99,7 @@ export default function ServicesGrid() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mt-5 text-base text-stone-600 sm:text-lg">
-              Modern, evidence-based care delivered with a holistic lens — so every plan
+              Modern, evidence-based care delivered with a holistic lens, so every plan
               fits the person, not the population.
             </p>
           </Reveal>

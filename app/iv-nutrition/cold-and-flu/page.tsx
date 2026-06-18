@@ -33,7 +33,7 @@ export default function ColdAndFluPage() {
   return (
     <PageHero
       title="Cold & Flu"
-      subtitle="Rapid rehydration, high-dose vitamin C, zinc, and symptom relief — designed to shorten viral illness and get you back on your feet."
+      subtitle="Rapid rehydration, high-dose vitamin C, zinc, and symptom relief, designed to shorten viral illness and get you back on your feet."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "IV Nutrition", href: "/iv-nutrition/" },

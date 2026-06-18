@@ -7,7 +7,7 @@ const CANONICAL = `${SITE_URL}/about-us/`;
 
 const PAGE_TITLE = "About Us | Central Texas Holistic Care | Harker Heights, TX";
 const PAGE_DESCRIPTION =
-  "About Central Texas Holistic Care in Harker Heights, TX — our mission, our integrative medicine team, and the values that shape every patient visit. Bio-identical hormones, IV nutrition, and preventive care under one roof.";
+  "About Central Texas Holistic Care in Harker Heights, TX: our mission, our integrative medicine team, and the values that shape every patient visit. Bio-identical hormones, IV nutrition, and preventive care under one roof.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -33,7 +33,7 @@ export default function AboutUsPage() {
   return (
     <PageHero
       title="About Central Texas Holistic Care"
-      subtitle="Modern integrative medicine in Harker Heights — built around the time, attention, and root-cause thinking that real healthcare requires."
+      subtitle="Modern integrative medicine in Harker Heights, built around the time, attention, and root-cause thinking that real healthcare requires."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "About Us", href: "/about-us/" },

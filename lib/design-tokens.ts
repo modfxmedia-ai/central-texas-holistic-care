@@ -28,7 +28,7 @@ export const colors = {
 export type ColorToken = keyof typeof colors;
 
 export const typography = {
-  heading: '"Cormorant Garamond", Georgia, "Times New Roman", serif',
+  heading: '"Inter", ui-sans-serif, system-ui, sans-serif',
   body: '"Inter", ui-sans-serif, system-ui, sans-serif',
   // Fluid heading sizes
   h1: "clamp(2.5rem, 6vw, 4.5rem)",

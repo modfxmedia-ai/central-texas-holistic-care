@@ -20,10 +20,10 @@ export const PRODUCTS: Product[] = [
     longDescription:
       "BPC-157 LPT is derived from gastric juices and has been shown to have remarkable healing properties in laboratory studies. BPC-157, short for Body Protection Compound-157, is a stable pentadecapeptide consisting of 15 amino acids.",
     benefits: [
-      "Total Body Support — health of tendons, ligaments, bones, muscles, skin",
-      "Exercise Recovery — supports post-workout repair (not WADA-approved)",
-      "Gastrointestinal Support — gastric ulcers, IBS, leaky gut, Crohn's",
-      "Neural Support — protection and regeneration of neural tissues",
+      "Total Body Support: health of tendons, ligaments, bones, muscles, skin",
+      "Exercise Recovery: supports post-workout repair (not WADA-approved)",
+      "Gastrointestinal Support: gastric ulcers, IBS, leaky gut, Crohn's",
+      "Neural Support: protection and regeneration of neural tissues",
     ],
     category: "Peptides",
     image: "/products/bpc-157.png",
@@ -70,7 +70,7 @@ export const PRODUCTS: Product[] = [
     name: "Thyroid Support",
     price: 49.99,
     shortDescription:
-      "A vegetarian blend of Tyrosine, herbal extracts, vitamins, and minerals — featuring ForsLean® Coleus forskohlii.",
+      "A vegetarian blend of Tyrosine, herbal extracts, vitamins, and minerals, featuring ForsLean® Coleus forskohlii.",
     longDescription:
       "THYROID SUPPORT is a vegetarian blend of Tyrosine with herbal extracts, vitamins and minerals not found in other supplements. It includes patented ForsLean® Coleus forskohlii to support the maintenance and proper function of a healthy thyroid.",
     benefits: [
@@ -106,7 +106,7 @@ export const PRODUCTS: Product[] = [
     shortDescription:
       "Balanced Vitamins A, D3, and K2 working together to maximize bone, calcium, and cardiovascular health.",
     longDescription:
-      "ADK is a balanced formulation of nutrients — vitamins A, D3 and K2 — that work together to maximize bone building, calcium optimization, and cardiovascular health. The synergistic ratio ensures calcium ends up in bones and teeth rather than arterial walls.",
+      "ADK is a balanced formulation of nutrients (vitamins A, D3 and K2) that work together to maximize bone building, calcium optimization, and cardiovascular health. The synergistic ratio ensures calcium ends up in bones and teeth rather than arterial walls.",
     benefits: [
       "Facilitate absorption of calcium for bone and heart health",
       "Reduce calcium build-up in blood vessels",
@@ -125,7 +125,7 @@ export const PRODUCTS: Product[] = [
     shortDescription:
       "Foundational nutrients designed to optimize the benefits of pellet hormone therapy.",
     longDescription:
-      "The EvexiPEL Complete formula includes several vital nutrients — or fuel — the body needs to use hormones efficiently and optimize the benefits of pellet therapy. These key nutrients have been shown to support healthy hormone metabolism, body composition, and cardiovascular wellness in both men and women.",
+      "The EvexiPEL Complete formula includes several vital nutrients (or fuel) the body needs to use hormones efficiently and optimize the benefits of pellet therapy. These key nutrients have been shown to support healthy hormone metabolism, body composition, and cardiovascular wellness in both men and women.",
     benefits: [
       "Healthy testosterone levels",
       "Estrogen balance for women and men",
@@ -143,14 +143,14 @@ export const PRODUCTS: Product[] = [
     name: "Glutaryl",
     price: 99.0,
     shortDescription:
-      "Topical glutathione spray — the body's master antioxidant delivered transdermally for optimal absorption.",
+      "Topical glutathione spray, the body's master antioxidant delivered transdermally for optimal absorption.",
     longDescription:
-      "Glutaryl is a unique topical glutathione spray that bypasses the digestive system and delivers reduced glutathione directly through the skin. Glutathione is the body's master antioxidant — central to detoxification, immune function, and cellular repair.",
+      "Glutaryl is a unique topical glutathione spray that bypasses the digestive system and delivers reduced glutathione directly through the skin. Glutathione is the body's master antioxidant, central to detoxification, immune function, and cellular repair.",
     benefits: [
       "Replenishes the body's master antioxidant",
       "Supports liver and detoxification pathways",
       "Promotes immune resilience",
-      "Easy transdermal delivery — no needles, no gut absorption issues",
+      "Easy transdermal delivery: no needles, no gut absorption issues",
     ],
     category: "Antioxidants",
     image: "/products/glutaryl.png",
@@ -160,7 +160,7 @@ export const PRODUCTS: Product[] = [
     name: "KOI CBD",
     price: 70.0,
     shortDescription:
-      "Premium broad-spectrum CBD from a trusted, lab-tested source — for stress, sleep, and recovery support.",
+      "Premium broad-spectrum CBD from a trusted, lab-tested source, for stress, sleep, and recovery support.",
     longDescription:
       "KOI CBD is one of the most respected names in the cannabidiol space, with rigorous third-party testing and consistent product quality. We carry KOI CBD as part of our integrative toolkit for patients managing anxiety, sleep, chronic pain, and recovery.",
     benefits: [
@@ -196,7 +196,7 @@ export const PRODUCTS: Product[] = [
     shortDescription:
       "Liposomal liquid zinc throat spray with quercetin, luteolin, and propolis for targeted upper-respiratory support.",
     longDescription:
-      "Immune Support Liquid Zinc Supplement with Quercetin — a 'Throat Coat' with Liposomal Absorption Technology. A highly bioavailable zinc-based spray designed to provide immune support right at the site of viral entry. NET WT 0.9 FL OZ (27 mL).",
+      "Immune Support Liquid Zinc Supplement with Quercetin, a 'Throat Coat' with Liposomal Absorption Technology. A highly bioavailable zinc-based spray designed to provide immune support right at the site of viral entry. NET WT 0.9 FL OZ (27 mL).",
     benefits: [
       "Liposomal zinc for superior absorption",
       "Targeted throat coverage where infections start",
@@ -211,7 +211,7 @@ export const PRODUCTS: Product[] = [
     name: "Sleep Gummies",
     price: 45.0,
     shortDescription:
-      "Superfood gummies with botanicals and herbal extracts to calm the mind and promote rest — without melatonin.",
+      "Superfood gummies with botanicals and herbal extracts to calm the mind and promote rest, without melatonin.",
     longDescription:
       "Our Superfood Gummies were formulated with botanicals and herbal extracts designed to calm the mind and promote rest without melatonin. Servings: 30 per jar. Flavor: Tart Cherry. Made with 7 organic ingredients, ethically sourced from 6 independent farms. Use: Enjoy 1 gummy before bed.",
     benefits: [
@@ -228,14 +228,14 @@ export const PRODUCTS: Product[] = [
     name: "Dream Tea",
     price: 30.0,
     shortDescription:
-      "Calming superfood tea with chamomile, lemon, and ginger — designed to promote rest without melatonin.",
+      "Calming superfood tea with chamomile, lemon, and ginger, designed to promote rest without melatonin.",
     longDescription:
       "This Superfood Powder was formulated with botanicals and herbal extracts designed to calm the mind and promote rest without melatonin. Servings: 45 per jar. Flavor: Soothing Chamomile with notes of Lemon and Ginger. Made with 10 organic ingredients, ethically sourced from 7 independent farms. Use: Add 1 scoop (2g) to 8oz of hot water.",
     benefits: [
       "Melatonin-free sleep support",
       "Warming chamomile, lemon, and ginger",
       "10 organic ingredients from independent farms",
-      "45 servings — ritual you can rely on nightly",
+      "45 servings: ritual you can rely on nightly",
     ],
     category: "Sleep & Stress",
     image: "/products/dream-tea.png",

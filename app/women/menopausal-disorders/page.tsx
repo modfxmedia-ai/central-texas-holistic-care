@@ -33,7 +33,7 @@ export default function MenopausalDisordersPage() {
   return (
     <PageHero
       title="Menopausal Disorders"
-      subtitle="Modern perimenopause and menopause care — symptom relief today, long-term protection for tomorrow."
+      subtitle="Modern perimenopause and menopause care: symptom relief today, long-term protection for tomorrow."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Women", href: "/women/" },

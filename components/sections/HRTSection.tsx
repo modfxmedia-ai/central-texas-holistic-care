@@ -50,8 +50,8 @@ export default function HRTSection() {
             <Reveal delay={0.12}>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-stone-700 sm:text-lg">
                 Whether you're navigating peri-menopause, low testosterone, or a thyroid
-                that's lost its rhythm, modern bio-identical HRT — including pellet
-                therapy — can re-establish the chemistry your body once produced on its
+                that's lost its rhythm, modern bio-identical HRT (including pellet
+                therapy) can re-establish the chemistry your body once produced on its
                 own.
               </p>
             </Reveal>

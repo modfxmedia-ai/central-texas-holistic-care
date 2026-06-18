@@ -93,10 +93,10 @@ const LOCAL_BUSINESS_SCHEMA = {
   email: "info@centraltexasholisticcarepllc.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "2025 Memory Lane Suite 300",
-    addressLocality: "Harker Heights",
+    streetAddress: "311 E. Stan Schlueter Loop #207",
+    addressLocality: "Killeen",
     addressRegion: "TX",
-    postalCode: "76548",
+    postalCode: "76542",
     addressCountry: "US",
   },
   openingHoursSpecification: [
@@ -222,7 +222,7 @@ export default function Footer() {
               Stay Informed About Your Health
             </h2>
             <p className="mt-1 text-sm text-white/60">
-              Monthly wellness tips, hormone insights, and clinic updates — no spam.
+              Monthly wellness tips, hormone insights, and clinic updates. No spam.
             </p>
           </div>
           <NewsletterForm />
@@ -237,7 +237,7 @@ export default function Footer() {
             <Link
               href="/"
               className="inline-flex items-center text-white"
-              aria-label="Central Texas Holistic Care — Home"
+              aria-label="Central Texas Holistic Care, Home"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -304,9 +304,9 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-[#8BAD5A]" aria-hidden />
                 <address className="not-italic text-white/70">
-                  2025 Memory Lane Suite 300
+                  311 E. Stan Schlueter Loop #207
                   <br />
-                  Harker Heights, TX 76548
+                  Killeen, TX 76542
                 </address>
               </li>
               <li className="flex items-start gap-3">
@@ -331,7 +331,7 @@ export default function Footer() {
                 <Clock className="mt-0.5 size-4 shrink-0 text-[#8BAD5A]" aria-hidden />
                 <div className="text-white/70">
                   <p className="font-medium text-white/85">Hours</p>
-                  <p>Mon–Fri · 8:00 am – 5:00 pm</p>
+                  <p>Mon to Fri · 8:00 am to 5:00 pm</p>
                 </div>
               </li>
             </ul>

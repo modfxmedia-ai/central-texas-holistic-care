@@ -7,7 +7,7 @@ const CANONICAL = `${SITE_URL}/iv-nutrition/myers-cocktail/`;
 
 const PAGE_TITLE = "Myer's Cocktail IV | The Original Wellness Infusion | CTHC";
 const PAGE_DESCRIPTION =
-  "Myer's Cocktail IV in Harker Heights, TX. The classic Dr. John Myers formulation — magnesium, calcium, B-vitamins, and vitamin C — for energy, immunity, and whole-body wellness.";
+  "Myer's Cocktail IV in Harker Heights, TX. The classic Dr. John Myers formulation (magnesium, calcium, B-vitamins, and vitamin C) for energy, immunity, and whole-body wellness.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -33,7 +33,7 @@ export default function MyersCocktailPage() {
   return (
     <PageHero
       title="Myer's Cocktail"
-      subtitle="The original wellness IV — magnesium, calcium, B-vitamins, and vitamin C in the classic Dr. John Myers formulation."
+      subtitle="The original wellness IV: magnesium, calcium, B-vitamins, and vitamin C in the classic Dr. John Myers formulation."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "IV Nutrition", href: "/iv-nutrition/" },

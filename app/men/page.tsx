@@ -33,7 +33,7 @@ export default function MenHealthPage() {
   return (
     <PageHero
       title="Men's Health"
-      subtitle="Strength, energy, performance, and longevity — supported with evidence-based holistic medicine for every life stage."
+      subtitle="Strength, energy, performance, and longevity, supported with evidence-based holistic medicine for every life stage."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Men", href: "/men/" },

@@ -33,7 +33,7 @@ export default function IvNutritionPage() {
   return (
     <PageHero
       title="IV Nutrition Therapy"
-      subtitle="Physician-supervised IV infusions for immunity, recovery, energy, and resilience — delivered in a calm, private setting."
+      subtitle="Physician-supervised IV infusions for immunity, recovery, energy, and resilience, delivered in a calm, private setting."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "IV Nutrition", href: "/iv-nutrition/" },

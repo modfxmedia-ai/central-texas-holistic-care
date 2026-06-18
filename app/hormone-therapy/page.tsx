@@ -8,7 +8,7 @@ const CANONICAL = `${SITE_URL}/hormone-therapy/`;
 const PAGE_TITLE =
   "Hormone Therapy | Bio-Identical HRT in Harker Heights, TX | CTHC";
 const PAGE_DESCRIPTION =
-  "Bio-identical hormone replacement therapy (BHRT) at Central Texas Holistic Care in Harker Heights, TX. Testosterone, estrogen, progesterone, and thyroid optimization with pellet, injection, oral, and topical delivery — personalized to your labs.";
+  "Bio-identical hormone replacement therapy (BHRT) at Central Texas Holistic Care in Harker Heights, TX. Testosterone, estrogen, progesterone, and thyroid optimization with pellet, injection, oral, and topical delivery, personalized to your labs.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -34,7 +34,7 @@ export default function HormoneTherapyPage() {
   return (
     <PageHero
       title="Hormone Therapy"
-      subtitle="Bio-identical hormone optimization for men and women — personalized to your labs, your symptoms, and your goals."
+      subtitle="Bio-identical hormone optimization for men and women, personalized to your labs, your symptoms, and your goals."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Hormone Therapy", href: "/hormone-therapy/" },

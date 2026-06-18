@@ -33,7 +33,7 @@ export default function WorkoutRecoveryPage() {
   return (
     <PageHero
       title="Workout Recovery"
-      subtitle="Refuel, rebuild, and bounce back — amino acids and electrolytes delivered when your muscles can actually use them."
+      subtitle="Refuel, rebuild, and bounce back: amino acids and electrolytes delivered when your muscles can actually use them."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "IV Nutrition", href: "/iv-nutrition/" },

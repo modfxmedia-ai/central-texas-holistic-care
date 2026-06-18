@@ -37,7 +37,7 @@
   --color-border: var(--color-border);
 
   --font-sans: var(--font-inter);
-  --font-heading: var(--font-cormorant);
+  --font-heading: var(--font-inter);
 
   /* Custom animations exposed as Tailwind utilities */
   --animate-shimmer: shimmer 2.4s linear infinite;
@@ -58,9 +58,9 @@ h4,
 h5,
 h6,
 .font-heading {
-  font-family: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   letter-spacing: -0.02em;
-  font-feature-settings: "ss01", "ss02", "kern";
+  font-feature-settings: "kern";
   font-optical-sizing: auto;
 }
 

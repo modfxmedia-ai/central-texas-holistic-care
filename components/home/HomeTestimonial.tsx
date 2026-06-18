@@ -48,10 +48,38 @@ export default function HomeTestimonial() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#244010] py-24 text-[#FAF6EE] sm:py-28 lg:py-32"
+      className="relative isolate w-full overflow-hidden bg-[#0f2706] py-24 text-[#FAF6EE] sm:py-28 lg:py-32"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
+      {/* Soothing looping background video */}
+      <video
+        aria-hidden
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="pointer-events-none absolute inset-0 -z-20 size-full object-cover"
+      >
+        <source src="/videos/testimonial-bg.mp4" type="video/mp4" />
+      </video>
+
+      {/* Brand-green wash over the footage (keeps copy legible, sets the mood) */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-gradient-to-br from-[#0f2706]/70 via-[#1a3a0a]/60 to-[#244010]/70"
+      />
+      {/* Center scrim so the quote stays crisp over the moving footage */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(120% 90% at 50% 45%, rgba(15,39,6,0.55) 0%, rgba(15,39,6,0.2) 55%, transparent 100%)",
+        }}
+      />
+
       {/* aurora glows */}
       <motion.div
         aria-hidden
@@ -133,8 +161,11 @@ export default function HomeTestimonial() {
                 ))}
               </div>
               <blockquote
-                className="mx-auto mt-7 max-w-3xl font-heading font-normal italic leading-[1.4] text-[#FAF6EE]"
-                style={{ fontSize: "clamp(1.125rem, 2vw, 1.5rem)" }}
+                className="mx-auto mt-7 max-w-3xl font-heading font-normal italic leading-[1.4] text-white"
+                style={{
+                  fontSize: "clamp(1.125rem, 2vw, 1.5rem)",
+                  textShadow: "0 2px 14px rgba(10,22,5,0.85), 0 1px 3px rgba(10,22,5,0.9)",
+                }}
               >
                 &ldquo;{review.quote}&rdquo;
               </blockquote>

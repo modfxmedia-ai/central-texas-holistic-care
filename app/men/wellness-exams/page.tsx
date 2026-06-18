@@ -33,7 +33,7 @@ export default function MenWellnessExamsPage() {
   return (
     <PageHero
       title="Men's Wellness Exams"
-      subtitle="A complete annual look at heart, metabolic, hormonal, and cancer-risk markers — built around modern preventive medicine."
+      subtitle="A complete annual look at heart, metabolic, hormonal, and cancer-risk markers, built around modern preventive medicine."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Men", href: "/men/" },

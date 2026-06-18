@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useSpring, useTransform, type Variants } from "framer-motion";
-import { ArrowRight, Calendar, Compass, FlaskConical, HeartPulse, Phone } from "lucide-react";
+import { Calendar, Compass, FlaskConical, HeartPulse } from "lucide-react";
 import { useRef } from "react";
 
 type Step = {
@@ -20,8 +20,7 @@ const STEPS: Step[] = [
       "Call us at (254) 213-2423, fill out a contact form, or book directly through our online portal. We respond same or next business day.",
     icon: Calendar,
     badge: "Day 1",
-  },
-  {
+  },  {
     index: "02",
     title: "Personal Consult",
     blurb:
@@ -41,14 +40,11 @@ const STEPS: Step[] = [
     index: "04",
     title: "Heal & Thrive",
     blurb:
-      "Ongoing follow-ups, IV menu, supplements, and pellet refills — your provider adjusts the plan as your body responds.",
+      "Ongoing follow-ups, IV menu, supplements, and pellet refills: your provider adjusts the plan as your body responds.",
     icon: HeartPulse,
     badge: "Ongoing",
   },
 ];
-
-const BOOKING_URL =
-  "https://www.tebra.com/care/practice/central-texas-holistic-care-163683";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -136,7 +132,7 @@ export default function HomeJourney() {
             </span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-stone-600 sm:text-lg">
-            From first call to thriving — here&apos;s how a typical journey
+            From first call to thriving, here&apos;s how a typical journey
             with CTHC unfolds.
           </p>
         </motion.div>
@@ -254,49 +250,6 @@ export default function HomeJourney() {
             @keyframes journey-spin-3 { from { transform: rotate(0); } to { transform: rotate(-360deg); } }
           `}</style>
         </div>
-
-        {/* ─── Footer CTA strip ─── */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-12% 0px" }}
-          className="relative mt-16 overflow-hidden rounded-[2rem] border border-[#1a3a0a]/12 bg-gradient-to-br from-white via-white to-[#f0f5eb] p-6 shadow-sm sm:p-7"
-        >
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -right-16 -top-16 size-48 rounded-full bg-gradient-to-br from-[#6CBE45]/22 to-transparent blur-2xl"
-          />
-          <div className="relative flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.32em] text-[#8BAD5A]">
-                Ready when you are
-              </p>
-              <p className="mt-2 font-heading text-xl font-semibold text-[#1a3a0a] sm:text-2xl">
-                Take the first step today —{" "}
-                <span className="italic text-[#2D5016]">we&apos;ll guide you the rest of the way.</span>
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-[#2D5016] via-[#1a3a0a] to-[#0f2706] px-6 py-3 text-sm font-semibold text-white shadow-xl shadow-[#1a3a0a]/25 ring-1 ring-[#6CBE45]/25 transition-shadow hover:shadow-2xl hover:shadow-[#6CBE45]/20"
-              >
-                Book Appointment
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-              </a>
-              <a
-                href="tel:+12542132423"
-                className="inline-flex items-center gap-2 rounded-full border border-[#1a3a0a]/20 bg-white px-6 py-3 text-sm font-semibold text-[#1a3a0a] transition-colors hover:border-[#6CBE45] hover:bg-[#f0f5eb]"
-              >
-                <Phone className="size-4 text-[#6CBE45]" />
-                (254) 213-2423
-              </a>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -80,20 +80,20 @@ export const seoData = {
     bodyContent: [
       "WELCOME TO CENTRAL TEXAS HOLISTIC CARE",
       "Experience Personalized Wellness and Preventive Care",
-      "At Central Texas Holistic Care (CTHC), we specialize in providing individualized health plans tailored to your unique needs. Our experienced providers combine the best of traditional family medicine with proven natural and holistic therapies to support your overall well-being. We welcome patients of all ages and accept most insurance plans—because your path to better health should be both effective and accessible.",
+      "At Central Texas Holistic Care (CTHC), we specialize in providing individualized health plans tailored to your unique needs. Our experienced providers combine the best of traditional family medicine with proven natural and holistic therapies to support your overall well-being. We welcome patients of all ages and accept most insurance plans, because your path to better health should be both effective and accessible.",
       "Hormonal fluctuations are a natural part of life, from the teenage years to adulthood and beyond. However, when hormone levels become imbalanced, they can lead to a wide range of physical and emotional symptoms that impact daily well-being and quality of life.",
       "Common Signs of Hormonal Imbalance Include:",
       "At Central Texas Holistic Care, we identify and address the root causes of hormonal imbalances through personalized treatment plans that restore your body's natural balance.",
       "Live Your Best Life",
-      "Address: 2025 Memory Lane Suite 300, Harker Heights, TX 76548",
+      "Address: 311 E. Stan Schlueter Loop #207, Killeen, TX 76542",
       "Contact: 254 213 2423 · info@centraltexasholisticcarepllc.com",
-      "Pay over time — No hard credit checks • 0% APR options (powered by Cherry).",
+      "Pay over time: No hard credit checks • 0% APR options (powered by Cherry).",
     ].join("\n\n"),
     navLinks: PRIMARY_NAV,
   },
 
   men: {
-    title: "Men – central holistic care",
+    title: "Men | central holistic care",
     description: "",
     ogTitle: "",
     ogDescription: "",
@@ -125,7 +125,7 @@ export const seoData = {
   },
 
   women: {
-    title: "Women – central holistic care",
+    title: "Women | central holistic care",
     description: "",
     ogTitle: "",
     ogDescription: "",
@@ -157,7 +157,7 @@ export const seoData = {
   },
 
   "iv-nutrition": {
-    title: "IV Nutrition – central holistic care",
+    title: "IV Nutrition | central holistic care",
     description: "",
     ogTitle: "",
     ogDescription: "",
@@ -189,7 +189,7 @@ export const seoData = {
   },
 
   "hormone-therapy": {
-    title: "Hormone Therapy – central holistic care",
+    title: "Hormone Therapy | central holistic care",
     description: "",
     ogTitle: "",
     ogDescription: "",
@@ -221,7 +221,7 @@ export const seoData = {
   },
 
   "about-us": {
-    title: "About Us – central holistic care",
+    title: "About Us | central holistic care",
     description: "",
     ogTitle: "",
     ogDescription: "",
@@ -253,7 +253,7 @@ export const seoData = {
   },
 
   "payment-plans": {
-    title: "Payment Plans – central holistic care",
+    title: "Payment Plans | central holistic care",
     description: "",
     ogTitle: "",
     ogDescription: "",
@@ -275,7 +275,7 @@ export const seoData = {
       "See an example of what you could pay",
       "Example payments for $1,000. Get personalized options. No hard credit checks. 60 seconds to apply. 0% APR and other promotional rates subject to eligibility. See footer for details.",
       "How Cherry works",
-      "1. See if you qualify — it only takes 60 seconds to complete the application. 2. Get care — use your approval to pay for your treatment. 3. Pay over time — choose a plan length that fits your needs with 0% APR options.",
+      "1. See if you qualify: it only takes 60 seconds to complete the application. 2. Get care: use your approval to pay for your treatment. 3. Pay over time: choose a plan length that fits your needs with 0% APR options.",
       "Questions?",
       "What is Cherry? Cherry is a buy now, pay later company making it fast and easy to pay for health and wellness purchases over time. View all FAQs / Visit help center.",
       "These are examples only. 0% APR and other promotional rates subject to eligibility. Exact terms and APR depend on credit score and other factors. For example, a $400 payment plan with Cherry may cost $100/month over 3 months at 0% APR with down payment in the amount of the monthly payment due at the time of purchase. Not every provider that uses Cherry will offer the payment plan terms listed above.",
@@ -286,7 +286,7 @@ export const seoData = {
   },
 
   products: {
-    title: "Supplements – central holistic care",
+    title: "Supplements | central holistic care",
     description: "",
     ogTitle: "",
     ogDescription: "",
@@ -334,20 +334,20 @@ export const seoData = {
       "Supplements",
       "Home › Supplements",
       "Product catalog (14 SKUs):",
-      "• ADK — $37.50",
-      "• BPC-157 — $10.00",
-      "• Complete Mag — $32.99",
-      "• Curcumin Support — $46.99",
-      "• Dream Tea — $30.00",
-      "• EvexiPEL Complete — $99.99",
-      "• Glutaryl — $99.00",
-      "• IMMUNE CHARGE® 100 ML — $95.00",
-      "• IMMUNE CHARGER THROAT SPRAY — $46.99",
-      "• KOI CBD — $70.00",
-      "• Methyl Support — $57.99",
-      "• Sleep Gummies — $45.00",
-      "• Thyroid Support — $49.99",
-      "• Turmeric Latte Mix — $30.00",
+      "• ADK: $37.50",
+      "• BPC-157: $10.00",
+      "• Complete Mag: $32.99",
+      "• Curcumin Support: $46.99",
+      "• Dream Tea: $30.00",
+      "• EvexiPEL Complete: $99.99",
+      "• Glutaryl: $99.00",
+      "• IMMUNE CHARGE® 100 ML: $95.00",
+      "• IMMUNE CHARGER THROAT SPRAY: $46.99",
+      "• KOI CBD: $70.00",
+      "• Methyl Support: $57.99",
+      "• Sleep Gummies: $45.00",
+      "• Thyroid Support: $49.99",
+      "• Turmeric Latte Mix: $30.00",
     ].join("\n"),
     navLinks: PRIMARY_NAV,
   },

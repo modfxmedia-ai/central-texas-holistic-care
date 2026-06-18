@@ -119,8 +119,8 @@ export default function HomeHRT() {
             {/* main image */}
             <div className="absolute inset-0 overflow-hidden rounded-[2.5rem] shadow-2xl shadow-[#1a3a0a]/25 ring-1 ring-white/40">
               <Image
-                src="/images/source/portrait-women-hormone.jpg"
-                alt="Hormone Replacement Therapy restores balance, energy, mood, and quality of life"
+                src="/images/source/hormone-replacement-therapy-hrt.jpg"
+                alt="A woman feeling balanced and energized outdoors after restoring her hormones with HRT at Central Texas Holistic Care"
                 fill
                 sizes="(max-width: 1024px) 100vw, 460px"
                 className="object-cover"

@@ -81,7 +81,7 @@ export default function CTABanner() {
                 <span className="italic text-[#8BAD5A]">starts today</span>
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-base text-white/80 sm:text-lg">
-                Book an appointment online in under a minute, or call us — most insurance
+                Book an appointment online in under a minute, or call us. Most insurance
                 plans accepted.
               </p>
 

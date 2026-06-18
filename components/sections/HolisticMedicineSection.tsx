@@ -8,7 +8,7 @@ const PRINCIPLES = [
   "Root-cause diagnostics, not symptom suppression",
   "Bio-identical hormone optimization",
   "Nutrition, lifestyle, and stress alongside medication",
-  "Insurance accepted — care that's actually accessible",
+  "Insurance accepted: care that's actually accessible",
 ];
 
 export default function HolisticMedicineSection() {
@@ -61,8 +61,8 @@ export default function HolisticMedicineSection() {
             </Reveal>
             <Reveal delay={0.12}>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
-                Holistic medicine treats the whole person — body, hormones, lifestyle,
-                and environment — and uses the right tool for the job, whether that's a
+                Holistic medicine treats the whole person (body, hormones, lifestyle,
+                and environment) and uses the right tool for the job, whether that's a
                 prescription, an IV protocol, a peptide, or a conversation about sleep.
                 It's traditional medicine, done thoughtfully.
               </p>

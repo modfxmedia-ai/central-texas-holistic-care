@@ -16,14 +16,14 @@ const PILLARS: Pillar[] = [
     icon: "/images/source/icon1.png",
     title: "What Is Holistic Medicine?",
     body:
-      "Holistic medicine focuses on treating the entire body—not just isolated symptoms or conditions. This whole-body approach promotes long-term health, balance, and a deeper sense of well-being. By addressing physical, emotional, and lifestyle factors, holistic care supports healing from the inside out.",
+      "Holistic medicine focuses on treating the entire body, not just isolated symptoms or conditions. This whole-body approach promotes long-term health, balance, and a deeper sense of well-being. By addressing physical, emotional, and lifestyle factors, holistic care supports healing from the inside out.",
     accent: "from-[#6CBE45]/20 to-transparent",
   },
   {
     icon: "/images/source/icon2.png",
     title: "Supplement-Based Therapies: IV Hydration Therapy",
     body:
-      "Boost your energy, immunity, and wellness with IV Hydration Therapy—also known as an \u201cIV Cocktail.\u201d This nutrient-rich treatment delivers essential vitamins, minerals, and fluids directly into your bloodstream for faster absorption and maximum effectiveness. It\u2019s a quick and efficient way to recharge your body and feel your best.",
+      "Boost your energy, immunity, and wellness with IV Hydration Therapy, also known as an \u201cIV Cocktail.\u201d This nutrient-rich treatment delivers essential vitamins, minerals, and fluids directly into your bloodstream for faster absorption and maximum effectiveness. It\u2019s a quick and efficient way to recharge your body and feel your best.",
     accent: "from-[#8BAD5A]/20 to-transparent",
   },
   {
@@ -93,7 +93,7 @@ export default function HomeApproach() {
             </span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-stone-600 sm:text-lg">
-            Three core pillars guide every plan we build at CTHC — holistic
+            Three core pillars guide every plan we build at CTHC: holistic
             medicine, supplement-based therapies, and consistent preventive
             care.
           </p>

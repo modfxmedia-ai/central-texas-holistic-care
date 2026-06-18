@@ -30,7 +30,7 @@ const INSIGHTS: Insight[] = [
     category: "IV Therapy",
     title: "What to Expect from Your First Myers' Cocktail",
     excerpt:
-      "From the IV blend itself to how you'll feel in the hours and days after — a friendly walkthrough of our most popular drip.",
+      "From the IV blend itself to how you'll feel in the hours and days after, a friendly walkthrough of our most popular drip.",
     date: "March 5, 2026",
     read: "5 min read",
     href: "/iv-nutrition/myers-cocktail/",
@@ -40,7 +40,7 @@ const INSIGHTS: Insight[] = [
     category: "Men's Health",
     title: "Low T Symptoms: When Fatigue Means More Than 'Just Tired'",
     excerpt:
-      "Stubborn weight, low drive, and brain fog can quietly point to low testosterone. Here's what to ask your provider — and the labs that actually matter.",
+      "Stubborn weight, low drive, and brain fog can quietly point to low testosterone. Here's what to ask your provider, and the labs that actually matter.",
     date: "February 27, 2026",
     read: "7 min read",
     href: "/men/testosterone/",

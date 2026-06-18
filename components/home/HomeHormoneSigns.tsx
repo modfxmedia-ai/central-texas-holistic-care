@@ -348,7 +348,7 @@ export default function HomeHormoneSigns() {
               className="mt-5 font-heading font-semibold leading-[1.05] text-[#1a3a0a]"
               style={{ fontSize: "clamp(2rem, 4.5vw, 3.25rem)" }}
             >
-              Hormone Imbalance Can Affect Anyone—{" "}
+              Hormone Imbalance Can Affect Anyone{" "}
               <span className="bg-gradient-to-r from-[#2D5016] via-[#6CBE45] to-[#2D5016] bg-clip-text italic text-transparent">
                 At Any Stage of Life.
               </span>
@@ -576,7 +576,7 @@ export default function HomeHormoneSigns() {
                     </p>
                     <p className="mt-1 text-sm leading-relaxed text-[#FAF6EE]/80">
                       A consultation can help pinpoint which hormones are out
-                      of balance — and exactly what to do about it.
+                      of balance, and exactly what to do about it.
                     </p>
                   </div>
                 </div>

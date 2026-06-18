@@ -33,7 +33,7 @@ export default function TestosteronePage() {
   return (
     <PageHero
       title="Testosterone Replacement Therapy"
-      subtitle="Restore the energy, drive, focus, and strength of optimal testosterone — supervised, monitored, and built around your labs."
+      subtitle="Restore the energy, drive, focus, and strength of optimal testosterone, supervised, monitored, and built around your labs."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Men", href: "/men/" },

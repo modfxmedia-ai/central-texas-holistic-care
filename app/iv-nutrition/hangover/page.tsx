@@ -7,7 +7,7 @@ const CANONICAL = `${SITE_URL}/iv-nutrition/hangover/`;
 
 const PAGE_TITLE = "Hangover IV | Fast Recovery in Harker Heights | CTHC";
 const PAGE_DESCRIPTION =
-  "Hangover IV in Harker Heights, TX. Rapid rehydration, B-vitamins, anti-nausea medication, and headache relief — the fastest way to bounce back after a long night or special occasion.";
+  "Hangover IV in Harker Heights, TX. Rapid rehydration, B-vitamins, anti-nausea medication, and headache relief, the fastest way to bounce back after a long night or special occasion.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -33,7 +33,7 @@ export default function HangoverPage() {
   return (
     <PageHero
       title="Hangover"
-      subtitle="Rapid rehydration, B-vitamins, anti-nausea, and headache relief — the fastest, evidence-based way to bounce back."
+      subtitle="Rapid rehydration, B-vitamins, anti-nausea, and headache relief, the fastest, evidence-based way to bounce back."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "IV Nutrition", href: "/iv-nutrition/" },

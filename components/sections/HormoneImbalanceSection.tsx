@@ -39,7 +39,7 @@ export default function HormoneImbalanceSection() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mt-5 text-base text-stone-600 sm:text-lg">
-              Hormonal fluctuations are normal — but when they tip out of balance, the
+              Hormonal fluctuations are normal, but when they tip out of balance, the
               ripple effects touch nearly every part of daily life. If two or more of the
               following sound familiar, it may be time for a deeper look.
             </p>

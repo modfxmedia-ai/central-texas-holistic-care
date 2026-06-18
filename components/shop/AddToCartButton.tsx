@@ -24,7 +24,7 @@ export default function AddToCartButton({ productName, price }: Props) {
       className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#2D5016] px-7 py-4 font-semibold text-white shadow-lg shadow-[#2D5016]/20 transition-all hover:bg-[#1F3A0F] hover:shadow-xl sm:w-auto"
     >
       <ShoppingBag className="size-5 transition-transform group-hover:rotate-[-6deg]" />
-      Add to Cart — {formatPrice(price)}
+      Add to Cart · {formatPrice(price)}
     </motion.button>
   );
 }

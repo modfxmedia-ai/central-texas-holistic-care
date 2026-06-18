@@ -30,14 +30,14 @@ const REVIEWS: Review[] = [
   },
   {
     quote:
-      "Pellet therapy changed my quality of life. Mood, sleep, libido — all back. I only wish I'd found CTHC years ago.",
+      "Pellet therapy changed my quality of life. Mood, sleep, libido, all back. I only wish I'd found CTHC years ago.",
     author: "Linda M.",
     context: "Pellet therapy patient",
     rating: 5,
   },
   {
     quote:
-      "Truly individualized care. They built a plan around my labs, my lifestyle, and my goals — not a one-size-fits-all protocol.",
+      "Truly individualized care. They built a plan around my labs, my lifestyle, and my goals, not a one-size-fits-all protocol.",
     author: "David C.",
     context: "Men's health patient",
     rating: 5,

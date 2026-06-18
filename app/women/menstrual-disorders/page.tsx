@@ -8,7 +8,7 @@ const CANONICAL = `${SITE_URL}/women/menstrual-disorders/`;
 const PAGE_TITLE =
   "Menstrual Disorders | Cycle, PCOS & Endometriosis Care | CTHC";
 const PAGE_DESCRIPTION =
-  "Evaluation and treatment of menstrual disorders in Harker Heights, TX. Heavy bleeding, painful periods, irregular cycles, PCOS, and endometriosis — with root-cause workup, hormone testing, and personalized plans at Central Texas Holistic Care.";
+  "Evaluation and treatment of menstrual disorders in Harker Heights, TX. Heavy bleeding, painful periods, irregular cycles, PCOS, and endometriosis, with root-cause workup, hormone testing, and personalized plans at Central Texas Holistic Care.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,

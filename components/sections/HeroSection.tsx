@@ -345,7 +345,7 @@ function ImagePanel() {
         className="absolute bottom-10 left-10 right-10 max-w-md rounded-2xl border border-white/60 bg-white/75 p-6 shadow-xl backdrop-blur-md"
       >
         <p className="font-heading text-xl leading-snug text-[#1a3a0a]">
-          “Whole-person medicine that meets you where you are — rooted in evidence,
+          “Whole-person medicine that meets you where you are, rooted in evidence,
           guided by experience.”
         </p>
         <p className="mt-3 text-xs uppercase tracking-[0.25em] text-[#5b7d33]">

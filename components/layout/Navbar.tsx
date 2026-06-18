@@ -5,20 +5,18 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   Activity,
   ChevronDown,
-  Clock,
   Droplet,
+  Flame,
   HeartPulse,
   Leaf,
   MapPin,
   Menu,
   Phone,
+  ShieldCheck,
   ShieldPlus,
-  Star,
   Stethoscope,
-  Thermometer,
+  Syringe,
   UserCheck,
-  Users,
-  Wine,
   X,
   type LucideIcon,
 } from "lucide-react";
@@ -32,7 +30,7 @@ const BOOKING_URL =
   "https://www.tebra.com/care/practice/central-texas-holistic-care-163683";
 const PHONE_DISPLAY = "(254) 213-2423";
 const PHONE_TEL = "+12542132423";
-const ADDRESS = "2025 Memory Lane Suite 300, Harker Heights, TX";
+const ADDRESS = "311 E. Stan Schlueter Loop #207, Killeen, TX";
 
 type NavChild = {
   label: string;
@@ -50,31 +48,7 @@ type NavItem = {
 
 const NAV: NavItem[] = [
   { label: "Home", href: "/" },
-  {
-    label: "About Us",
-    href: "/about-us/",
-    hideOverview: true,
-    children: [
-      {
-        label: "Meet the Providers",
-        href: "/about-us/providers/",
-        description: "Get to know our board-certified clinicians.",
-        icon: UserCheck,
-      },
-      {
-        label: "Meet the Team",
-        href: "/about-us/team/",
-        description: "The friendly faces behind your care.",
-        icon: Users,
-      },
-      {
-        label: "Testimonials",
-        href: "/about-us/testimonials/",
-        description: "Real stories from our patients.",
-        icon: Star,
-      },
-    ],
-  },
+  { label: "About Us", href: "/about-us/" },
   {
     label: "Men",
     href: "/men/",
@@ -90,6 +64,30 @@ const NAV: NavItem[] = [
         href: "/men/wellness-exams/",
         description: "Comprehensive preventive screenings.",
         icon: Stethoscope,
+      },
+      {
+        label: "Hormone Therapy",
+        href: "/hormone-therapy/",
+        description: "Bioidentical hormones, pellets & BHRT.",
+        icon: HeartPulse,
+      },
+      {
+        label: "IV Nutrition",
+        href: "/iv-nutrition/",
+        description: "Hydration, recovery & immune infusions.",
+        icon: Droplet,
+      },
+      {
+        label: "Medical Weight Loss",
+        href: "/#services",
+        description: "Peptide-guided, physician-supervised plans.",
+        icon: Flame,
+      },
+      {
+        label: "Acute Care",
+        href: "/#services",
+        description: "Same-week visits for everyday illness.",
+        icon: Syringe,
       },
     ],
   },
@@ -115,48 +113,33 @@ const NAV: NavItem[] = [
         description: "Hormone balance and cycle regulation.",
         icon: ShieldPlus,
       },
-    ],
-  },
-  {
-    label: "IV Nutrition",
-    href: "/iv-nutrition/",
-    children: [
       {
-        label: "Immune Booster",
-        href: "/iv-nutrition/immune-booster/",
-        description: "Vitamin C, zinc, and antioxidants.",
-        icon: ShieldPlus,
-      },
-      {
-        label: "Workout Recovery",
-        href: "/iv-nutrition/workout-recovery/",
-        description: "Amino acids and electrolytes to rebuild.",
+        label: "Hormone Therapy",
+        href: "/hormone-therapy/",
+        description: "Bioidentical hormones, pellets & BHRT.",
         icon: Activity,
       },
       {
-        label: "Myers Cocktail",
-        href: "/iv-nutrition/myers-cocktail/",
-        description: "The classic energy & wellness infusion.",
+        label: "IV Nutrition",
+        href: "/iv-nutrition/",
+        description: "Hydration, recovery & immune infusions.",
         icon: Droplet,
       },
       {
-        label: "Cold & Flu",
-        href: "/iv-nutrition/cold-and-flu/",
-        description: "Fast recovery from viral symptoms.",
-        icon: Thermometer,
+        label: "Medical Weight Loss",
+        href: "/#services",
+        description: "Peptide-guided, physician-supervised plans.",
+        icon: Flame,
       },
       {
-        label: "Hangover",
-        href: "/iv-nutrition/hangover/",
-        description: "Rehydrate, detox, and bounce back.",
-        icon: Wine,
+        label: "Acute Care",
+        href: "/#services",
+        description: "Same-week visits for everyday illness.",
+        icon: Syringe,
       },
     ],
   },
-  { label: "Hormone Therapy", href: "/hormone-therapy/" },
-  { label: "Blog", href: "/blog/" },
   { label: "Payment Plans", href: "/payment-plans/" },
-  { label: "Contact", href: "/contact/" },
 ];
 
 function isActive(pathname: string, href: string): boolean {
@@ -172,7 +155,7 @@ function Logo({ className }: { className?: string }) {
   return (
     <Link
       href="/"
-      aria-label="Central Texas Holistic Care — Home"
+      aria-label="Central Texas Holistic Care, Home"
       className={cn("inline-flex shrink-0 items-center", className)}
     >
       {/* Plain <img> on purpose: bypasses next/image optimization which has
@@ -199,7 +182,7 @@ function Logo({ className }: { className?: string }) {
 function DesktopMenu({ pathname }: { pathname: string }) {
   return (
     <NavigationMenu.Root className="relative hidden xl:block">
-      <NavigationMenu.List className="flex items-center gap-0.5">
+      <NavigationMenu.List className="flex items-center gap-2">
         {NAV.map((item) => {
           const active = isActive(pathname, item.href);
 
@@ -210,7 +193,7 @@ function DesktopMenu({ pathname }: { pathname: string }) {
                   <Link
                     href={item.href}
                     className={cn(
-                      "relative inline-flex items-center whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium tracking-wide transition-colors",
+                      "relative inline-flex items-center whitespace-nowrap rounded-md px-3.5 py-2 text-base font-medium tracking-wide transition-colors",
                       active
                         ? "text-[#1a3a0a]"
                         : "text-stone-700 hover:text-[#1a3a0a]",
@@ -220,7 +203,7 @@ function DesktopMenu({ pathname }: { pathname: string }) {
                     {active && (
                       <motion.span
                         layoutId="nav-underline"
-                        className="absolute inset-x-2.5 -bottom-0.5 h-0.5 origin-left bg-[#1a3a0a]"
+                        className="absolute inset-x-3.5 -bottom-0.5 h-0.5 origin-left bg-[#1a3a0a]"
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
                         transition={{ duration: 0.25, ease: "easeOut" }}
@@ -236,7 +219,7 @@ function DesktopMenu({ pathname }: { pathname: string }) {
             <NavigationMenu.Item key={item.href}>
               <NavigationMenu.Trigger
                 className={cn(
-                  "group inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium tracking-wide transition-colors",
+                  "group inline-flex items-center gap-1 whitespace-nowrap rounded-md px-3.5 py-2 text-base font-medium tracking-wide transition-colors",
                   active
                     ? "text-[#1a3a0a]"
                     : "text-stone-700 hover:text-[#1a3a0a]",
@@ -356,7 +339,7 @@ function MobileDrawer({
               <Link
                 href="/"
                 onClick={onClose}
-                aria-label="Central Texas Holistic Care — Home"
+                aria-label="Central Texas Holistic Care, Home"
                 className="inline-flex shrink-0 items-center"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -528,10 +511,14 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      {/* Top utility bar */}
+      {/* Top utility bar — insurance & financing visibility */}
       <div className="hidden bg-[#1a3a0a] text-[#FAF6EE] lg:block">
         <div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-4 text-xs sm:px-6 lg:px-8">
           <div className="flex items-center gap-6">
+            <span className="inline-flex items-center gap-2 font-medium">
+              <ShieldCheck className="size-3.5 text-[#8BAD5A]" />
+              Accepting most insurance plans
+            </span>
             <a
               href={`tel:${PHONE_TEL}`}
               className="inline-flex items-center gap-2 transition-colors hover:text-[#8BAD5A]"
@@ -539,21 +526,17 @@ export default function Navbar() {
               <Phone className="size-3.5" />
               {PHONE_DISPLAY}
             </a>
-            <span className="inline-flex items-center gap-2 text-[#FAF6EE]/85">
-              <MapPin className="size-3.5 text-[#8BAD5A]" />
-              {ADDRESS}
-            </span>
           </div>
           <div className="flex items-center gap-5 text-[#FAF6EE]/85">
-            <span className="inline-flex items-center gap-2">
-              <Clock className="size-3.5 text-[#8BAD5A]" />
-              Mon–Fri · 8am–5pm
+            <span className="hidden items-center gap-2 xl:inline-flex">
+              <MapPin className="size-3.5 text-[#8BAD5A]" />
+              {ADDRESS}
             </span>
             <Link
               href="/payment-plans/"
               className="inline-flex items-center gap-1.5 rounded-full bg-[#8BAD5A]/15 px-3 py-1 font-medium text-[#FAF6EE] transition-colors hover:bg-[#8BAD5A]/25"
             >
-              0% APR financing via Cherry
+              0% APR financing · Cherry &amp; Denefits
             </Link>
           </div>
         </div>

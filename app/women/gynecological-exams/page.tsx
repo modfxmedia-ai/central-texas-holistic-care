@@ -7,7 +7,7 @@ const CANONICAL = `${SITE_URL}/women/gynecological-exams/`;
 
 const PAGE_TITLE = "Gynecological Exams | Well-Woman Visits | CTHC";
 const PAGE_DESCRIPTION =
-  "Comprehensive well-woman exams in Harker Heights, TX. Pap smears, HPV testing, breast and pelvic exams, contraception counseling, and STI screening — delivered in a calm, respectful clinical setting at Central Texas Holistic Care.";
+  "Comprehensive well-woman exams in Harker Heights, TX. Pap smears, HPV testing, breast and pelvic exams, contraception counseling, and STI screening, delivered in a calm, respectful clinical setting at Central Texas Holistic Care.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -33,7 +33,7 @@ export default function GynecologicalExamsPage() {
   return (
     <PageHero
       title="Gynecological Exams"
-      subtitle="A respectful, unhurried well-woman visit — built around your time, your questions, and your comfort."
+      subtitle="A respectful, unhurried well-woman visit, built around your time, your questions, and your comfort."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Women", href: "/women/" },

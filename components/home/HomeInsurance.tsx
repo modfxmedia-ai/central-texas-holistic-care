@@ -148,7 +148,7 @@ export default function HomeInsurance() {
               <span className="font-semibold text-[#1a3a0a]">
                 {APPROVED.length} major payers
               </span>{" "}
-              — including Medicare, Medicaid, BCBS Texas, Aetna, UHC, Cigna,
+              including Medicare, Medicaid, BCBS Texas, Aetna, UHC, Cigna,
               Humana, and more. Transparent self-pay rates and 0% APR financing
               through Cherry round out the picture.
             </p>
@@ -280,7 +280,7 @@ export default function HomeInsurance() {
                 >
                   <Image
                     src="/images/source/insurance.png"
-                    alt="Accepted insurance carriers — BCBS Texas, Aetna, UnitedHealthcare, Medicare, Cigna and more"
+                    alt="Accepted insurance carriers: BCBS Texas, Aetna, UnitedHealthcare, Medicare, Cigna and more"
                     width={1000}
                     height={700}
                     className="relative z-0 block h-auto w-full"

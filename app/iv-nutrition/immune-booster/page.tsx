@@ -33,7 +33,7 @@ export default function ImmuneBoosterPage() {
   return (
     <PageHero
       title="Immune Booster"
-      subtitle="High-dose vitamin C, zinc, B-complex, and glutathione — built to defend, fortify, and recover."
+      subtitle="High-dose vitamin C, zinc, B-complex, and glutathione, built to defend, fortify, and recover."
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "IV Nutrition", href: "/iv-nutrition/" },

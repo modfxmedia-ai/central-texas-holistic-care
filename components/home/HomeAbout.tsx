@@ -1,12 +1,9 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, Calendar, Leaf } from "lucide-react";
+import { ArrowRight, Leaf } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
-const BOOKING_URL =
-  "https://www.tebra.com/care/practice/central-texas-holistic-care-163683";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -69,8 +66,8 @@ export default function HomeAbout() {
             {/* main image */}
             <div className="absolute inset-0 overflow-hidden rounded-[2.5rem] shadow-2xl shadow-[#1a3a0a]/25 ring-1 ring-white/40">
               <Image
-                src="/images/source/women-holding-hands.webp"
-                alt="Compassionate, individualized care at Central Texas Holistic Care"
+                src="/images/source/the-best-thing-you-can-do-for-your-health.jpeg"
+                alt="A couple practicing mindful movement outdoors, investing in their long-term health with Central Texas Holistic Care"
                 fill
                 sizes="(max-width: 1024px) 100vw, 520px"
                 className="object-cover"
@@ -168,15 +165,6 @@ export default function HomeAbout() {
                 About Us
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-[#1a3a0a]/20 bg-white px-7 py-3.5 text-sm font-semibold text-[#1a3a0a] transition-colors hover:border-[#6CBE45] hover:bg-[#f0f5eb]"
-              >
-                <Calendar className="size-4 text-[#6CBE45]" />
-                Book an Appointment
-              </a>
             </div>
           </motion.div>
         </div>

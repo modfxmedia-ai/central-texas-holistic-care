@@ -54,10 +54,9 @@ export default function ProductCard({ product, index = 0 }: Props) {
               <text
                 textAnchor="middle"
                 dominantBaseline="central"
-                fontFamily="Cormorant Garamond, serif"
-                fontStyle="italic"
-                fontWeight="300"
-                fontSize="22"
+                fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
+                fontWeight="600"
+                fontSize="20"
                 fill="#1a3a0a"
               >
                 {product.name.split(" ").slice(0, 2).join(" ")}
