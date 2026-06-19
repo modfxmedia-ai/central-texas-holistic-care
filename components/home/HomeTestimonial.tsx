@@ -116,7 +116,13 @@ export default function HomeTestimonial() {
       </svg>
 
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-12% 0px" }}
+          transition={{ duration: 0.7, ease: EASE }}
+          className="text-center"
+        >
           <div className="flex items-center justify-center gap-3">
             <span className="block h-[2px] w-10 rounded-full bg-gradient-to-r from-transparent to-[#6CBE45]" />
             <p className="text-xs font-medium uppercase tracking-[0.4em] text-[#8BAD5A]">
@@ -133,9 +139,15 @@ export default function HomeTestimonial() {
               from CTHC Patients.
             </span>
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="relative mt-14">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-12% 0px" }}
+          transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
+          className="relative mt-14"
+        >
           {/* giant decorative quote mark */}
           <motion.div
             aria-hidden
@@ -223,7 +235,7 @@ export default function HomeTestimonial() {
               <ChevronRight className="size-4" />
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

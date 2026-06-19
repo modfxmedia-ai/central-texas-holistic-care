@@ -1,9 +1,10 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, RefreshCw, Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -13,6 +14,13 @@ const fadeUp: Variants = {
 };
 
 export default function HomeHRT() {
+  const [flipped, setFlipped] = useState(false);
+
+  useEffect(() => {
+    const id = setInterval(() => setFlipped((f) => !f), 5000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative w-full overflow-hidden bg-white py-24 sm:py-28 lg:py-32">
       {/* decorative blobs */}
@@ -116,24 +124,85 @@ export default function HomeHRT() {
               className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-[#6CBE45] to-[#8BAD5A]"
               style={{ transformOrigin: "center" }}
             />
-            {/* main image */}
-            <div className="absolute inset-0 overflow-hidden rounded-[2.5rem] shadow-2xl shadow-[#1a3a0a]/25 ring-1 ring-white/40">
-              <Image
-                src="/images/source/hormone-replacement-therapy-hrt.jpg"
-                alt="A woman feeling balanced and energized outdoors after restoring her hormones with HRT at Central Texas Holistic Care"
-                fill
-                sizes="(max-width: 1024px) 100vw, 460px"
-                className="object-cover"
-              />
-              <div
-                aria-hidden
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(45,80,22,0) 55%, rgba(26,58,10,0.45) 100%)",
-                }}
-              />
+            {/* main image — interactive two-image flip */}
+            <div className="absolute inset-0" style={{ perspective: "1600px" }}>
+              <motion.div
+                className="relative size-full"
+                style={{ transformStyle: "preserve-3d" }}
+                animate={{ rotateY: flipped ? 180 : 0 }}
+                transition={{ duration: 0.8, ease: EASE }}
+              >
+                {/* front — HRT photo */}
+                <div
+                  className="absolute inset-0 overflow-hidden rounded-[2.5rem] shadow-2xl shadow-[#1a3a0a]/25 ring-1 ring-white/40"
+                  style={{ backfaceVisibility: "hidden" }}
+                >
+                  <Image
+                    src="/images/source/hormone-replacement-therapy-hrt.jpg"
+                    alt="A woman feeling balanced and energized outdoors after restoring her hormones with HRT at Central Texas Holistic Care"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 460px"
+                    className="object-cover"
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, rgba(45,80,22,0) 55%, rgba(26,58,10,0.45) 100%)",
+                    }}
+                  />
+                </div>
+
+                {/* back — second photo */}
+                <div
+                  className="absolute inset-0 overflow-hidden rounded-[2.5rem] shadow-2xl shadow-[#1a3a0a]/25 ring-1 ring-[#6CBE45]/30"
+                  style={{
+                    backfaceVisibility: "hidden",
+                    transform: "rotateY(180deg)",
+                  }}
+                >
+                  <Image
+                    src="/images/source/portrait-women-wellness.jpg"
+                    alt="A woman enjoying renewed wellness and vitality after hormone therapy at Central Texas Holistic Care"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 460px"
+                    className="object-cover"
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, rgba(45,80,22,0) 50%, rgba(26,58,10,0.55) 100%)",
+                    }}
+                  />
+                </div>
+              </motion.div>
             </div>
+
+            {/* flip toggle button */}
+            <motion.button
+              type="button"
+              onClick={() => setFlipped((f) => !f)}
+              aria-label="Flip image"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: EASE, delay: 0.4 }}
+              className="absolute right-4 top-4 z-20"
+            >
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-[#1a3a0a]/70 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.15em] text-[#FAF6EE] backdrop-blur transition-colors hover:bg-[#1a3a0a]/90">
+                <motion.span
+                  className="inline-flex"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                >
+                  <RefreshCw className="size-3.5 text-[#9DD270]" />
+                </motion.span>
+                Flip
+              </span>
+            </motion.button>
             {/* dashed ring accent */}
             <motion.svg
               aria-hidden

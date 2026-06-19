@@ -23,9 +23,19 @@ export default function HomeInsuranceBand() {
   return (
     <section
       aria-labelledby="insurance-band-heading"
-      className="w-full border-b border-[#1a3a0a]/10 bg-[color:var(--color-cream-soft)] py-16 sm:py-20"
+      className="relative w-full bg-[color:var(--color-soft-green)] py-16 sm:py-20"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* blend into the cream section above */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[color:var(--color-cream-soft)] to-transparent"
+      />
+      {/* blend into the cream section below */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[color:var(--color-cream-soft)] to-transparent"
+      />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -510,8 +510,8 @@ export default function Navbar() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full">
-      {/* Top utility bar — insurance & financing visibility */}
+    <>
+      {/* Top utility bar — insurance & financing visibility (scrolls away) */}
       <div className="hidden bg-[#1a3a0a] text-[#FAF6EE] lg:block">
         <div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-4 text-xs sm:px-6 lg:px-8">
           <div className="flex items-center gap-6">
@@ -542,13 +542,13 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Main bar */}
-      <div
+      {/* Main bar (sticky) */}
+      <header
         className={cn(
-          "w-full border-b transition-all duration-300",
+          "sticky top-0 z-50 w-full border-b transition-all duration-300",
           scrolled
             ? "border-stone-200 bg-white/95 shadow-sm backdrop-blur-md"
-            : "border-transparent bg-[color:var(--color-cream-soft)]/95 backdrop-blur",
+            : "border-[#1a3a0a]/12 bg-[color:var(--color-cream-soft)]/95 backdrop-blur",
         )}
       >
         <div
@@ -589,13 +589,13 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      </div>
+      </header>
 
       <MobileDrawer
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
         pathname={pathname}
       />
-    </header>
+    </>
   );
 }

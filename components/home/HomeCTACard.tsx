@@ -14,10 +14,12 @@ import {
   Leaf,
   MessageCircle,
   Phone,
+  RefreshCw,
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const BOOKING_URL =
   "https://www.tebra.com/care/practice/central-texas-holistic-care-163683";
@@ -35,6 +37,13 @@ const fadeIn: Variants = {
 };
 
 export default function HomeCTACard() {
+  const [flipped, setFlipped] = useState(false);
+
+  useEffect(() => {
+    const id = setInterval(() => setFlipped((f) => !f), 5000);
+    return () => clearInterval(id);
+  }, []);
+
   const btnX = useMotionValue(0);
   const btnY = useMotionValue(0);
   const springX = useSpring(btnX, { stiffness: 250, damping: 18, mass: 0.5 });
@@ -121,32 +130,78 @@ export default function HomeCTACard() {
           <div className="relative grid items-stretch gap-0 lg:grid-cols-[0.85fr_1.15fr]">
             {/* ─── LEFT: Visual column ─── */}
             <div className="relative hidden min-h-[460px] lg:block">
-              {/* Image with overlay */}
-              <div className="absolute inset-0 overflow-hidden rounded-l-[2.5rem]">
-                <Image
-                  src="/images/source/ready-to-feel-your-best-self.jpeg"
-                  alt="A woman with arms outstretched, joyful and ready to feel her best self with care from Central Texas Holistic Care"
-                  fill
-                  sizes="(min-width: 1024px) 480px, 0px"
-                  className="object-cover"
-                />
-                {/* Forest gradient blends image into the right card body */}
-                <div
-                  aria-hidden
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, rgba(15,39,6,0.35) 0%, rgba(26,58,10,0.55) 50%, rgba(26,58,10,0.95) 100%)",
-                  }}
-                />
-                <div
-                  aria-hidden
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, rgba(15,39,6,0) 60%, rgba(15,39,6,0.55) 100%)",
-                  }}
-                />
+              {/* Image with overlay — continuous 3D flip */}
+              <div
+                className="absolute inset-0"
+                style={{ perspective: "1600px" }}
+              >
+                <motion.div
+                  className="relative size-full"
+                  style={{ transformStyle: "preserve-3d" }}
+                  animate={{ rotateY: flipped ? 180 : 0 }}
+                  transition={{ duration: 0.8, ease: EASE }}
+                >
+                  {/* front — photo */}
+                  <div
+                    className="absolute inset-0 overflow-hidden rounded-l-[2.5rem]"
+                    style={{ backfaceVisibility: "hidden" }}
+                  >
+                    <Image
+                      src="/images/source/ready-to-feel-your-best-self.jpeg"
+                      alt="A woman with arms outstretched, joyful and ready to feel her best self with care from Central Texas Holistic Care"
+                      fill
+                      sizes="(min-width: 1024px) 480px, 0px"
+                      className="object-cover"
+                    />
+                    {/* Forest gradient blends image into the right card body */}
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, rgba(15,39,6,0.35) 0%, rgba(26,58,10,0.55) 50%, rgba(26,58,10,0.95) 100%)",
+                      }}
+                    />
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, rgba(15,39,6,0) 60%, rgba(15,39,6,0.55) 100%)",
+                      }}
+                    />
+                  </div>
+
+                  {/* back — quick facts */}
+                  <div
+                    className="absolute inset-0 flex flex-col justify-center overflow-hidden rounded-l-[2.5rem] bg-gradient-to-br from-[#1a3a0a] via-[#2D5016] to-[#0f2706] p-8 text-[#FAF6EE]"
+                    style={{
+                      backfaceVisibility: "hidden",
+                      transform: "rotateY(180deg)",
+                    }}
+                  >
+                    <span className="text-xs font-medium uppercase tracking-[0.4em] text-[#8BAD5A]">
+                      Your care, your way
+                    </span>
+                    <ul className="mt-6 space-y-4">
+                      {[
+                        "Personalized treatment plans",
+                        "Same-week appointments",
+                        "Insurance & 0% APR financing",
+                      ].map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-2.5 text-sm leading-snug text-[#FAF6EE]/90"
+                        >
+                          <span className="mt-0.5 inline-flex size-5 flex-none items-center justify-center rounded-full bg-[#6CBE45]/20 text-[#9DD270]">
+                            <ShieldCheck className="size-3.5" />
+                          </span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
               </div>
 
               {/* "Now Booking" pill */}
@@ -187,6 +242,30 @@ export default function HomeCTACard() {
                   </div>
                 </div>
               </motion.div>
+
+              {/* flip toggle button */}
+              <motion.button
+                type="button"
+                onClick={() => setFlipped((f) => !f)}
+                aria-label="Flip card"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="absolute right-6 top-8 z-20"
+              >
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-[#1a3a0a]/70 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.15em] text-[#FAF6EE] backdrop-blur transition-colors hover:bg-[#1a3a0a]/90">
+                  <motion.span
+                    className="inline-flex"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  >
+                    <RefreshCw className="size-3.5 text-[#9DD270]" />
+                  </motion.span>
+                  Flip
+                </span>
+              </motion.button>
 
               {/* Decorative dashed orbit */}
               <motion.div
