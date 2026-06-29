@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
-import PageHero from "@/components/layout/PageHero";
+import MenPageClient from "./MenPageClient";
 
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/men/`;
 
-const PAGE_TITLE = "Men's Health Services | Central Texas Holistic Care";
+const PAGE_TITLE = "Men – central holistic care";
 const PAGE_DESCRIPTION =
-  "Men's health services at Central Texas Holistic Care in Harker Heights, TX: testosterone replacement therapy, comprehensive wellness exams, peptide therapy, IV nutrition, and preventive care.";
+  "Men's health services at Central Texas Holistic Care: testosterone replacement therapy and annual wellness exams — physician-supervised, root-cause care in Killeen, TX.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -29,15 +30,25 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Men", item: CANONICAL },
+  ],
+};
+
 export default function MenHealthPage() {
   return (
-    <PageHero
-      title="Men's Health"
-      subtitle="Strength, energy, performance, and longevity, supported with evidence-based holistic medicine for every life stage."
-      breadcrumbs={[
-        { label: "Home", href: "/" },
-        { label: "Men", href: "/men/" },
-      ]}
-    />
+    <>
+      <Script
+        id="ld-men-breadcrumb"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <MenPageClient />
+    </>
   );
 }

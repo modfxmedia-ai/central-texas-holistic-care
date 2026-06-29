@@ -8,7 +8,6 @@ import {
   Flower2,
   Home,
   Leaf,
-  ShoppingBag,
   Stethoscope,
   UserRound,
 } from "lucide-react";
@@ -82,12 +81,6 @@ const SERVICE_LINKS: DestinationLink[] = [
     label: "Women's Health",
     description: "Hormone balance, exams & menopause care.",
     icon: Leaf,
-  },
-  {
-    href: "/products/",
-    label: "Shop Supplements",
-    description: "Practitioner-grade products & bundles.",
-    icon: ShoppingBag,
   },
   {
     href: "/about-us/",

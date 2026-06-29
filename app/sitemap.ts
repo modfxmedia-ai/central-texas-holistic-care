@@ -21,27 +21,12 @@ const STATIC_PAGES: ReadonlyArray<{ path: string; lastModified: string }> = [
   { path: "/iv-nutrition/cold-and-flu/", lastModified: "2025-06-16" },
   { path: "/iv-nutrition/hangover/", lastModified: "2026-02-10" },
   { path: "/hormone-therapy/", lastModified: "2025-06-16" },
+  { path: "/stem-cell-thrive/", lastModified: "2026-06-30" },
   { path: "/payment-plans/", lastModified: "2026-06-08" },
-  { path: "/products/", lastModified: "2025-06-24" },
-  { path: "/shop/", lastModified: "2025-06-24" },
+  { path: "/get-financed/", lastModified: "2026-06-30" },
 ];
 
-const PRODUCT_SLUGS: ReadonlyArray<string> = [
-  "bpc-157",
-  "complete-mag",
-  "curcumin-support",
-  "thyroid-support",
-  "methyl-support",
-  "adk",
-  "evexipel-complete",
-  "glutaryl",
-  "koi-cbd",
-  "immune-charge-100-ml",
-  "immune-charger-throat-spray",
-  "sleep-gummies",
-  "dream-tea",
-  "turmeric-latte-mix",
-];
+const PRODUCT_SLUGS: ReadonlyArray<string> = [];
 
 const PRODUCT_LAST_MODIFIED = "2025-06-24";
 

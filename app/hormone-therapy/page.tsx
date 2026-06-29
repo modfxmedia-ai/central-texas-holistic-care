@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
-import PageHero from "@/components/layout/PageHero";
+import HormoneTherapyClient from "@/components/hormone/HormoneTherapyClient";
 
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/hormone-therapy/`;
 
-const PAGE_TITLE =
-  "Hormone Therapy | Bio-Identical HRT in Harker Heights, TX | CTHC";
+const PAGE_TITLE = "Hormone Therapy – central holistic care";
 const PAGE_DESCRIPTION =
-  "Bio-identical hormone replacement therapy (BHRT) at Central Texas Holistic Care in Harker Heights, TX. Testosterone, estrogen, progesterone, and thyroid optimization with pellet, injection, oral, and topical delivery, personalized to your labs.";
+  "Bio-identical hormone replacement therapy (BHRT) at Central Texas Holistic Care in Harker Heights, TX. Testosterone optimization for men, estrogen and progesterone support for women — pellet, injection, oral, and topical delivery personalized to your labs.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -30,15 +30,63 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Hormone Therapy",
+      item: CANONICAL,
+    },
+  ],
+};
+
+const medicalWebPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  name: "Hormone Therapy",
+  url: CANONICAL,
+  description: PAGE_DESCRIPTION,
+  about: {
+    "@type": "MedicalTherapy",
+    name: "Hormone Replacement Therapy",
+    alternateName: ["HRT", "BHRT", "Bioidentical Hormone Replacement Therapy"],
+    relevantSpecialty: {
+      "@type": "MedicalSpecialty",
+      name: "Endocrinology",
+    },
+  },
+  audience: [
+    { "@type": "PeopleAudience", audienceType: "Men" },
+    { "@type": "PeopleAudience", audienceType: "Women" },
+  ],
+  mainContentOfPage: {
+    "@type": "WebPageElement",
+    cssSelector: "main",
+  },
+};
+
 export default function HormoneTherapyPage() {
   return (
-    <PageHero
-      title="Hormone Therapy"
-      subtitle="Bio-identical hormone optimization for men and women, personalized to your labs, your symptoms, and your goals."
-      breadcrumbs={[
-        { label: "Home", href: "/" },
-        { label: "Hormone Therapy", href: "/hormone-therapy/" },
-      ]}
-    />
+    <>
+      <Script
+        id="ld-hrt-breadcrumb"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <Script
+        id="ld-hrt-medicalwebpage"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(medicalWebPageSchema),
+        }}
+      />
+      <HormoneTherapyClient />
+    </>
   );
 }

@@ -10,6 +10,7 @@ import HomeJourney from "@/components/home/HomeJourney";
 import HomeLocation from "@/components/home/HomeLocation";
 import HomeServices from "@/components/home/HomeServices";
 import HomeTestimonial from "@/components/home/HomeTestimonial";
+import HomeVideoShowcase from "@/components/home/HomeVideoShowcase";
 
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const PAGE_TITLE =
@@ -87,8 +88,9 @@ export default function Home() {
       <HomeServices />
       <HomeHRT />
       <HomeJourney />
-      <HomeTestimonial />
+      <HomeVideoShowcase />
       <HomeCTACard />
+      <HomeTestimonial />
       <HomeLocation />
     </>
   );

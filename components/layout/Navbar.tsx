@@ -3,22 +3,14 @@
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  Activity,
+  ArrowRight,
+  CalendarCheck,
   ChevronDown,
-  Droplet,
-  Flame,
-  HeartPulse,
-  Leaf,
   MapPin,
   Menu,
   Phone,
   ShieldCheck,
-  ShieldPlus,
-  Stethoscope,
-  Syringe,
-  UserCheck,
   X,
-  type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -36,7 +28,6 @@ type NavChild = {
   label: string;
   href: string;
   description: string;
-  icon: LucideIcon;
 };
 
 type NavItem = {
@@ -57,37 +48,11 @@ const NAV: NavItem[] = [
         label: "Testosterone Therapy",
         href: "/men/testosterone/",
         description: "Optimize energy, mood, and performance.",
-        icon: Activity,
       },
       {
         label: "Wellness Exams",
         href: "/men/wellness-exams/",
         description: "Comprehensive preventive screenings.",
-        icon: Stethoscope,
-      },
-      {
-        label: "Hormone Therapy",
-        href: "/hormone-therapy/",
-        description: "Bioidentical hormones, pellets & BHRT.",
-        icon: HeartPulse,
-      },
-      {
-        label: "IV Nutrition",
-        href: "/iv-nutrition/",
-        description: "Hydration, recovery & immune infusions.",
-        icon: Droplet,
-      },
-      {
-        label: "Medical Weight Loss",
-        href: "/#services",
-        description: "Peptide-guided, physician-supervised plans.",
-        icon: Flame,
-      },
-      {
-        label: "Acute Care",
-        href: "/#services",
-        description: "Same-week visits for everyday illness.",
-        icon: Syringe,
       },
     ],
   },
@@ -99,46 +64,51 @@ const NAV: NavItem[] = [
         label: "Gynecological Exams",
         href: "/women/gynecological-exams/",
         description: "Routine women's health & screenings.",
-        icon: UserCheck,
       },
       {
         label: "Menopausal Disorders",
         href: "/women/menopausal-disorders/",
         description: "Personalized peri- and post-menopause care.",
-        icon: HeartPulse,
       },
       {
         label: "Menstrual Disorders",
         href: "/women/menstrual-disorders/",
         description: "Hormone balance and cycle regulation.",
-        icon: ShieldPlus,
-      },
-      {
-        label: "Hormone Therapy",
-        href: "/hormone-therapy/",
-        description: "Bioidentical hormones, pellets & BHRT.",
-        icon: Activity,
-      },
-      {
-        label: "IV Nutrition",
-        href: "/iv-nutrition/",
-        description: "Hydration, recovery & immune infusions.",
-        icon: Droplet,
-      },
-      {
-        label: "Medical Weight Loss",
-        href: "/#services",
-        description: "Peptide-guided, physician-supervised plans.",
-        icon: Flame,
-      },
-      {
-        label: "Acute Care",
-        href: "/#services",
-        description: "Same-week visits for everyday illness.",
-        icon: Syringe,
       },
     ],
   },
+  {
+    label: "IV Nutrition",
+    href: "/iv-nutrition/",
+    children: [
+      {
+        label: "Immune Booster",
+        href: "/iv-nutrition/immune-booster/",
+        description: "Strengthen your body's defense.",
+      },
+      {
+        label: "Workout Recovery",
+        href: "/iv-nutrition/workout-recovery/",
+        description: "Recharge, rebuild, refuel.",
+      },
+      {
+        label: "Myer's Cocktail",
+        href: "/iv-nutrition/myers-cocktail/",
+        description: "Energy, immunity & relief in one drip.",
+      },
+      {
+        label: "Cold & Flu",
+        href: "/iv-nutrition/cold-and-flu/",
+        description: "Fight symptoms fast and recover.",
+      },
+      {
+        label: "Hangover",
+        href: "/iv-nutrition/hangover/",
+        description: "Hydrate, detox, bounce back fast.",
+      },
+    ],
+  },
+  { label: "Hormone Therapy", href: "/hormone-therapy/" },
   { label: "Payment Plans", href: "/payment-plans/" },
 ];
 
@@ -169,7 +139,7 @@ function Logo({ className }: { className?: string }) {
         height={447}
         decoding="async"
         fetchPriority="high"
-        className="block h-11 w-auto sm:h-12 lg:h-14"
+        className="block h-9 w-auto sm:h-10 lg:h-11"
       />
     </Link>
   );
@@ -182,7 +152,7 @@ function Logo({ className }: { className?: string }) {
 function DesktopMenu({ pathname }: { pathname: string }) {
   return (
     <NavigationMenu.Root className="relative hidden xl:block">
-      <NavigationMenu.List className="flex items-center gap-2">
+      <NavigationMenu.List className="flex items-center gap-0.5">
         {NAV.map((item) => {
           const active = isActive(pathname, item.href);
 
@@ -193,17 +163,17 @@ function DesktopMenu({ pathname }: { pathname: string }) {
                   <Link
                     href={item.href}
                     className={cn(
-                      "relative inline-flex items-center whitespace-nowrap rounded-md px-3.5 py-2 text-base font-medium tracking-wide transition-colors",
+                      "relative inline-flex items-center whitespace-nowrap rounded-full px-2.5 py-1.5 text-[13.5px] font-medium tracking-wide transition-colors",
                       active
-                        ? "text-[#1a3a0a]"
-                        : "text-stone-700 hover:text-[#1a3a0a]",
+                        ? "bg-[#1a3a0a]/8 text-[#1a3a0a]"
+                        : "text-stone-700 hover:bg-[#1a3a0a]/5 hover:text-[#1a3a0a]",
                     )}
                   >
                     {item.label}
                     {active && (
                       <motion.span
                         layoutId="nav-underline"
-                        className="absolute inset-x-3.5 -bottom-0.5 h-0.5 origin-left bg-[#1a3a0a]"
+                        className="absolute inset-x-3 -bottom-0.5 h-[2px] origin-left rounded-full bg-gradient-to-r from-[#6CBE45] via-[#1a3a0a] to-[#C4A862]"
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
                         transition={{ duration: 0.25, ease: "easeOut" }}
@@ -217,19 +187,41 @@ function DesktopMenu({ pathname }: { pathname: string }) {
 
           return (
             <NavigationMenu.Item key={item.href}>
-              <NavigationMenu.Trigger
-                className={cn(
-                  "group inline-flex items-center gap-1 whitespace-nowrap rounded-md px-3.5 py-2 text-base font-medium tracking-wide transition-colors",
-                  active
-                    ? "text-[#1a3a0a]"
-                    : "text-stone-700 hover:text-[#1a3a0a]",
-                )}
-              >
-                {item.label}
-                <ChevronDown
-                  aria-hidden
-                  className="size-3.5 transition-transform duration-200 group-data-[state=open]:rotate-180"
-                />
+              <NavigationMenu.Trigger asChild>
+                <div
+                  className={cn(
+                    "group relative inline-flex cursor-pointer items-center whitespace-nowrap rounded-full text-[13.5px] font-medium tracking-wide transition-colors",
+                    active
+                      ? "bg-[#1a3a0a]/8 text-[#1a3a0a]"
+                      : "text-stone-700 hover:bg-[#1a3a0a]/5 hover:text-[#1a3a0a]",
+                  )}
+                >
+                  <Link
+                    href={item.href}
+                    onClick={(e) => e.stopPropagation()}
+                    onPointerDown={(e) => e.stopPropagation()}
+                    className="relative inline-flex items-center rounded-l-full py-1.5 pl-2.5 pr-1"
+                  >
+                    {item.label}
+                    {active && (
+                      <motion.span
+                        layoutId="nav-underline"
+                        className="absolute inset-x-2.5 -bottom-0.5 h-[2px] origin-left rounded-full bg-gradient-to-r from-[#6CBE45] via-[#1a3a0a] to-[#C4A862]"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ duration: 0.25, ease: "easeOut" }}
+                      />
+                    )}
+                  </Link>
+                  <span
+                    aria-hidden
+                    className="inline-flex items-center rounded-r-full py-1.5 pl-0.5 pr-2.5"
+                  >
+                    <ChevronDown
+                      className="size-3 transition-transform duration-200 group-data-[state=open]:rotate-180"
+                    />
+                  </span>
+                </div>
               </NavigationMenu.Trigger>
 
               <NavigationMenu.Content asChild>
@@ -238,53 +230,76 @@ function DesktopMenu({ pathname }: { pathname: string }) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute left-0 top-full mt-3 w-[380px] rounded-2xl border border-stone-200/70 bg-white/95 p-3 shadow-xl backdrop-blur-md"
+                  className="absolute left-0 top-full mt-3 w-[420px] overflow-hidden rounded-2xl border border-stone-200/70 bg-white/95 shadow-2xl shadow-[#1a3a0a]/10 backdrop-blur-md"
                 >
-                  <ul className="grid gap-1">
+                  {/* gold accent strip */}
+                  <span
+                    aria-hidden
+                    className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-transparent via-[#C4A862] to-transparent"
+                  />
+                  <ul className="grid gap-0.5 p-3">
                     {!item.hideOverview && (
                       <li>
                         <Link
                           href={item.href}
-                          className="flex items-start gap-3 rounded-xl px-3 py-2.5 hover:bg-[#1a3a0a]/5"
+                          className="group/sub flex items-center justify-between gap-3 rounded-xl px-3.5 py-2.5 transition-colors hover:bg-[color:var(--color-soft-green)]"
                         >
-                          <span className="mt-0.5 inline-flex size-8 items-center justify-center rounded-lg bg-[#1a3a0a]/10 text-[#1a3a0a]">
-                            <Leaf className="size-4" />
-                          </span>
                           <span className="flex-1">
-                            <span className="block text-sm font-semibold text-stone-900">
+                            <span className="block text-[11px] font-semibold uppercase tracking-[0.2em] text-[#8a6f30]">
                               Overview
                             </span>
-                            <span className="block text-xs text-stone-500">
+                            <span className="mt-0.5 block text-sm text-stone-600">
                               All {item.label} services at a glance.
                             </span>
                           </span>
+                          <ArrowRight className="size-4 -translate-x-1 text-[#1a3a0a] opacity-0 transition-all group-hover/sub:translate-x-0 group-hover/sub:opacity-100" />
                         </Link>
                       </li>
                     )}
-                    {item.children.map((child) => {
-                      const Icon = child.icon;
-                      return (
-                        <li key={child.href}>
-                          <Link
-                            href={child.href}
-                            className="flex items-start gap-3 rounded-xl px-3 py-2.5 hover:bg-[#1a3a0a]/5"
-                          >
-                            <span className="mt-0.5 inline-flex size-8 items-center justify-center rounded-lg bg-[#1a3a0a]/10 text-[#1a3a0a]">
-                              <Icon className="size-4" />
+                    {!item.hideOverview && (
+                      <li aria-hidden>
+                        <span className="mx-3 my-1 block h-px bg-stone-200/80" />
+                      </li>
+                    )}
+                    {item.children.map((child) => (
+                      <li key={`${child.label}-${child.href}`}>
+                        <Link
+                          href={child.href}
+                          className="group/sub relative flex items-start gap-3 rounded-xl px-3.5 py-2.5 transition-colors hover:bg-[color:var(--color-soft-green)]"
+                        >
+                          {/* left accent bar on hover */}
+                          <span
+                            aria-hidden
+                            className="absolute left-1 top-1/2 h-6 w-[3px] -translate-y-1/2 rounded-full bg-[#6CBE45] opacity-0 transition-opacity group-hover/sub:opacity-100"
+                          />
+                          <span className="flex-1 pl-2">
+                            <span className="block text-sm font-semibold text-stone-900 transition-colors group-hover/sub:text-[#1a3a0a]">
+                              {child.label}
                             </span>
-                            <span className="flex-1">
-                              <span className="block text-sm font-semibold text-stone-900">
-                                {child.label}
-                              </span>
-                              <span className="block text-xs text-stone-500">
-                                {child.description}
-                              </span>
+                            <span className="mt-0.5 block text-xs text-stone-500">
+                              {child.description}
                             </span>
-                          </Link>
-                        </li>
-                      );
-                    })}
+                          </span>
+                          <ArrowRight className="mt-1 size-3.5 -translate-x-1 text-[#1a3a0a] opacity-0 transition-all group-hover/sub:translate-x-0 group-hover/sub:opacity-100" />
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
+                  {/* footer CTA */}
+                  <div className="flex items-center justify-between gap-3 border-t border-stone-200/70 bg-[color:var(--color-cream-soft)] px-4 py-3">
+                    <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-stone-500">
+                      Most insurance accepted
+                    </span>
+                    <a
+                      href={BOOKING_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-[#1a3a0a] px-3 py-1.5 text-[11px] font-semibold text-white shadow-sm transition-colors hover:bg-[#2D5016]"
+                    >
+                      Book now
+                      <ArrowRight className="size-3" />
+                    </a>
+                  </div>
                 </motion.div>
               </NavigationMenu.Content>
             </NavigationMenu.Item>
@@ -431,7 +446,7 @@ function MobileDrawer({
                               </li>
                             )}
                             {item.children.map((child) => (
-                              <li key={child.href}>
+                              <li key={`${child.label}-${child.href}`}>
                                 <Link
                                   href={child.href}
                                   onClick={onClose}
@@ -512,31 +527,33 @@ export default function Navbar() {
   return (
     <>
       {/* Top utility bar — insurance & financing visibility (scrolls away) */}
-      <div className="hidden bg-[#1a3a0a] text-[#FAF6EE] lg:block">
+      <div className="hidden bg-gradient-to-r from-[#0f2706] via-[#1a3a0a] to-[#0f2706] text-[#FAF6EE] lg:block">
         <div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-4 text-xs sm:px-6 lg:px-8">
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-5">
             <span className="inline-flex items-center gap-2 font-medium">
-              <ShieldCheck className="size-3.5 text-[#8BAD5A]" />
+              <ShieldCheck className="size-3.5 text-[#C4A862]" />
               Accepting most insurance plans
             </span>
+            <span aria-hidden className="h-3 w-px bg-[#C4A862]/30" />
             <a
               href={`tel:${PHONE_TEL}`}
-              className="inline-flex items-center gap-2 transition-colors hover:text-[#8BAD5A]"
+              className="inline-flex items-center gap-2 transition-colors hover:text-[#C4A862]"
             >
-              <Phone className="size-3.5" />
+              <Phone className="size-3.5 text-[#C4A862]" />
               {PHONE_DISPLAY}
             </a>
           </div>
           <div className="flex items-center gap-5 text-[#FAF6EE]/85">
             <span className="hidden items-center gap-2 xl:inline-flex">
-              <MapPin className="size-3.5 text-[#8BAD5A]" />
+              <MapPin className="size-3.5 text-[#C4A862]" />
               {ADDRESS}
             </span>
             <Link
               href="/payment-plans/"
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#8BAD5A]/15 px-3 py-1 font-medium text-[#FAF6EE] transition-colors hover:bg-[#8BAD5A]/25"
+              className="inline-flex items-center gap-1.5 rounded-full border border-[#C4A862]/40 bg-[#C4A862]/15 px-3 py-1 font-semibold text-[#FAF6EE] transition-colors hover:border-[#C4A862] hover:bg-[#C4A862]/25"
             >
               0% APR financing · Cherry &amp; Denefits
+              <ArrowRight className="size-3 text-[#C4A862]" />
             </Link>
           </div>
         </div>
@@ -547,21 +564,37 @@ export default function Navbar() {
         className={cn(
           "sticky top-0 z-50 w-full border-b transition-all duration-300",
           scrolled
-            ? "border-stone-200 bg-white/95 shadow-sm backdrop-blur-md"
+            ? "border-stone-200 bg-white/95 shadow-md shadow-[#1a3a0a]/5 backdrop-blur-md"
             : "border-[#1a3a0a]/12 bg-[color:var(--color-cream-soft)]/95 backdrop-blur",
         )}
       >
+        {/* gold hairline accent on rest state */}
+        {!scrolled && (
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#C4A862]/40 to-transparent"
+          />
+        )}
         <div
           className={cn(
-            "mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 transition-all duration-300 sm:px-6 lg:gap-6 lg:px-8",
-            scrolled ? "h-16 lg:h-[68px]" : "h-18 lg:h-20",
+            "mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-3 px-4 transition-all duration-300 sm:px-6 lg:gap-5 lg:px-8 xl:grid-cols-[auto_1fr_auto]",
+            scrolled ? "h-14 lg:h-[60px]" : "h-16 lg:h-[68px]",
           )}
         >
           <Logo />
 
-          <DesktopMenu pathname={pathname} />
+          <div className="flex items-center justify-center">
+            <DesktopMenu pathname={pathname} />
+          </div>
 
-          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <div className="flex shrink-0 items-center justify-end gap-1.5 sm:gap-2">
+            <a
+              href={`tel:${PHONE_TEL}`}
+              className="hidden items-center gap-1.5 whitespace-nowrap rounded-full border border-[#1a3a0a]/15 bg-white/70 px-3 py-1.5 text-[13px] font-semibold text-[#1a3a0a] backdrop-blur transition-colors hover:border-[#6CBE45] hover:bg-[#f0f5eb] xl:inline-flex"
+            >
+              <Phone className="size-3.5 text-[#6CBE45]" />
+              {PHONE_DISPLAY}
+            </a>
             <motion.a
               href={BOOKING_URL}
               target="_blank"
@@ -569,9 +602,16 @@ export default function Navbar() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 320, damping: 22 }}
-              className="hidden whitespace-nowrap items-center gap-2 rounded-full bg-[#1a3a0a] px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-[#1a3a0a]/20 transition-colors hover:bg-[#2D5016] sm:inline-flex"
+              className="group relative hidden whitespace-nowrap items-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-br from-[#2D5016] via-[#1a3a0a] to-[#0f2706] px-4 py-2 text-[13px] font-semibold text-white shadow-lg shadow-[#1a3a0a]/30 ring-1 ring-[#C4A862]/30 transition-all hover:shadow-xl hover:shadow-[#1a3a0a]/40 sm:inline-flex"
             >
-              Book An Appointment
+              {/* subtle gold sheen */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-y-0 -left-10 w-10 -skew-x-12 bg-gradient-to-r from-transparent via-[#C4A862]/30 to-transparent transition-transform duration-700 group-hover:translate-x-[260%]"
+              />
+              <CalendarCheck className="size-3.5 text-[#C4A862]" />
+              Book Appointment
+              <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
             </motion.a>
 
             <button

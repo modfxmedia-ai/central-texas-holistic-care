@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import PageHero from "@/components/layout/PageHero";
+import CherryWidget from "@/components/payment-plans/CherryWidget";
 
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/payment-plans/`;
@@ -32,13 +33,16 @@ export const metadata: Metadata = {
 
 export default function PaymentPlansPage() {
   return (
-    <PageHero
-      title="Payment Plans"
-      subtitle="Treat now, pay over time, with true 0% APR options, no hard credit checks, and approvals up to $50,000 through Cherry."
-      breadcrumbs={[
-        { label: "Home", href: "/" },
-        { label: "Payment Plans", href: "/payment-plans/" },
-      ]}
-    />
+    <>
+      <PageHero
+        title="Payment Plans"
+        subtitle="Treat now, pay over time, with true 0% APR options, no hard credit checks, and approvals up to $50,000 through Cherry."
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Payment Plans", href: "/payment-plans/" },
+        ]}
+      />
+      <CherryWidget />
+    </>
   );
 }

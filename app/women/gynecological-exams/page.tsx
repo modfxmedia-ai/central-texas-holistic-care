@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
-import PageHero from "@/components/layout/PageHero";
+import WomenSubpageClient from "@/components/women/WomenSubpageClient";
 
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/women/gynecological-exams/`;
 
-const PAGE_TITLE = "Gynecological Exams | Well-Woman Visits | CTHC";
+const PAGE_TITLE = "Gynecological Exams – central holistic care";
 const PAGE_DESCRIPTION =
-  "Comprehensive well-woman exams in Harker Heights, TX. Pap smears, HPV testing, breast and pelvic exams, contraception counseling, and STI screening, delivered in a calm, respectful clinical setting at Central Texas Holistic Care.";
+  "Compassionate, thorough gynecological care at Central Texas Holistic Care — routine exams, cervical cancer screening, STI testing, and hormone evaluation for every stage of life.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -29,16 +30,181 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Women",
+      item: `${SITE_URL}/women/`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Gynecological Exams",
+      item: CANONICAL,
+    },
+  ],
+};
+
+const medicalProcedureSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalProcedure",
+  name: "Gynecological Exam",
+  alternateName: "Women's Annual Gynecological Exam",
+  url: CANONICAL,
+  description:
+    "A routine gynecological exam to monitor reproductive health and screen for cervical cancer, STIs, and hormonal imbalances.",
+  procedureType: "https://schema.org/DiagnosticProcedure",
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Central Texas Holistic Care",
+    url: SITE_URL,
+  },
+};
+
 export default function GynecologicalExamsPage() {
   return (
-    <PageHero
-      title="Gynecological Exams"
-      subtitle="A respectful, unhurried well-woman visit, built around your time, your questions, and your comfort."
-      breadcrumbs={[
-        { label: "Home", href: "/" },
-        { label: "Women", href: "/women/" },
-        { label: "Gynecological Exams", href: "/women/gynecological-exams/" },
-      ]}
-    />
+    <>
+      <Script
+        id="ld-gyne-breadcrumb"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <Script
+        id="ld-gyne-procedure"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(medicalProcedureSchema),
+        }}
+      />
+      <WomenSubpageClient
+        h1="Gynecological Exams"
+        breadcrumbLabel="Gynecological Exams"
+        eyebrow="Gynecological Exams"
+        heroSubtitle="Routine, compassionate gynecological care to monitor reproductive health and catch concerns early."
+        h2="Comprehensive Gynecological Exams for Women's Health"
+        h2Accent="for Women's Health"
+        body="A routine gynecological exam is essential for monitoring reproductive health and detecting early signs of disease. During your visit, our providers perform a thorough breast and pelvic examination to ensure everything is functioning as it should."
+        closingNote="At Central Texas Holistic Care, we provide compassionate, discreet, and expert care tailored to every stage of a woman's life."
+        iconKey="stethoscope"
+        trust={[
+          { iconKey: "shieldCheck", label: "Physician-led" },
+          { iconKey: "heartPulse", label: "Compassionate care" },
+          { iconKey: "sparkles", label: "Every life stage" },
+        ]}
+        highlights={[
+          "Routine screening",
+          "Early detection",
+          "Compassionate care",
+        ]}
+        image={{
+          src: `${SITE_URL}/wp-content/uploads/2025/06/Women-gyne-scaled.webp`,
+          alt: "Women-gyne",
+        }}
+        checklists={[
+          {
+            eyebrow: "What's Included",
+            title: "What's Included in a Gynecological Exam",
+            titleAccent: "Gynecological Exam",
+            items: [
+              {
+                label: "Breast exam",
+                detail:
+                  "To check for lumps, abnormalities, or signs of breast cancer.",
+                iconKey: "heartPulse",
+              },
+              {
+                label: "Pelvic exam",
+                detail:
+                  "A physical evaluation of the vagina, cervix, uterus, fallopian tubes, and ovaries.",
+                iconKey: "stethoscope",
+              },
+            ],
+          },
+          {
+            eyebrow: "Early Detection",
+            title: "These Exams Help Identify Conditions Such As",
+            titleAccent: "Conditions Such As",
+            items: [
+              {
+                label: "Breast abnormalities or changes",
+                iconKey: "activity",
+              },
+              {
+                label: "Pelvic Inflammatory Disease (PID)",
+                iconKey: "microscope",
+              },
+              {
+                label: "Infections or reproductive health concerns",
+                iconKey: "shieldCheck",
+              },
+            ],
+          },
+        ]}
+        whyPillars={[
+          {
+            iconKey: "shieldCheck",
+            title: "Physician-led",
+            body: "Every exam is performed and reviewed by our clinicians — thorough, attentive, and never rushed.",
+          },
+          {
+            iconKey: "heartPulse",
+            title: "Compassionate & discreet",
+            body: "A calm, private setting and unhurried conversation so you feel heard and respected.",
+          },
+          {
+            iconKey: "sparkles",
+            title: "Whole-woman care",
+            body: "We connect your gynecological health to hormones, lifestyle, and overall wellness — not just the visit in front of us.",
+          },
+        ]}
+        faqs={[
+          {
+            q: "How often should I have a gynecological exam?",
+            a: "For most adult women, a yearly visit is recommended. We'll tailor cadence to your age, history, and any current concerns.",
+          },
+          {
+            q: "What happens during the visit?",
+            a: "After a focused conversation about your symptoms and history, your provider performs a breast and pelvic exam, then orders any indicated screenings or labs.",
+          },
+          {
+            q: "Do I need a Pap smear?",
+            a: "Pap and HPV screening cadence depends on your age and prior results. Your provider will recommend the right schedule based on current guidelines and your history.",
+          },
+          {
+            q: "How should I prepare?",
+            a: "Bring a list of current medications, prior results if you have them, and a note of any symptoms or questions. Try to avoid scheduling on your period when possible.",
+          },
+        ]}
+        related={[
+          {
+            title: "Menopausal Disorders",
+            href: "/women/menopausal-disorders/",
+            blurb: "Comprehensive menopausal assessment and personalized care.",
+            iconKey: "sun",
+          },
+          {
+            title: "Menstrual Disorders",
+            href: "/women/menstrual-disorders/",
+            blurb: "Root-cause evaluation for irregular, painful, or heavy cycles.",
+            iconKey: "droplets",
+          },
+          {
+            title: "Hormone Therapy",
+            href: "/hormone-therapy/",
+            blurb: "Bioidentical hormones, pellets & BHRT tailored to your labs.",
+            iconKey: "activity",
+          },
+        ]}
+        ctaHeading={{ lead: "Care that listens —", accent: "and looks ahead." }}
+        ctaSubline="Book your gynecological exam and walk out with a clear, personalized plan."
+      />
+    </>
   );
 }

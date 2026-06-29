@@ -18,43 +18,43 @@ const SERVICES: Service[] = [
     image: "/images/source/iv-infusion-therapy.jpg",
     title: "IV Infusion Therapy",
     blurb:
-      "Delivering essential nutrients directly into the bloodstream for rapid absorption and enhanced wellness.",
+      "Physician-supervised infusions delivering vitamins, minerals, and amino acids directly to your bloodstream for full absorption.",
     href: "/iv-nutrition/",
   },
   {
-    image: "/images/source/medical-weight-loss-peptides.jpg",
-    title: "Medical Weight Loss & Peptides",
+    image: "/images/source/hormone-replacement-therapy-hrt.jpg",
+    title: "Hormone Therapy",
     blurb:
-      "Physician-guided weight management programs, including peptide therapy for improved metabolism and fat loss.",
-    href: "/men/",
-  },
-  {
-    image: "/images/source/hormone-pelleting.jpg",
-    title: "Hormone Pelleting",
-    blurb:
-      "Long-lasting, bioidentical hormone delivery through pellet insertion, ideal for steady, consistent hormone support.",
+      "Bioidentical hormone replacement and pellet therapy tailored to your labs — restore energy, mood, sleep, and libido.",
     href: "/hormone-therapy/",
   },
   {
-    image: "/images/source/acute-care-services.jpg",
-    title: "Acute Care Services",
-    blurb:
-      "Immediate medical care for sudden illnesses, infections, or injuries, when you need it most.",
-    href: "/about-us/",
-  },
-  {
     image: "/images/source/mens-health-optimization.jpeg",
-    title: "Men’s Health Optimization",
+    title: "Testosterone Therapy",
     blurb:
-      "Specialized care addressing low testosterone, fatigue, performance issues, and overall vitality in men.",
+      "Lab-guided TRT for men — reclaim strength, focus, drive, and recovery with a protocol built around your biology.",
     href: "/men/testosterone/",
   },
   {
-    image: "/images/source/chronic-care-management.png",
-    title: "Chronic Care Management",
+    image: "/images/source/hero-wellness-portrait.jpg",
+    title: "Wellness Exams",
     blurb:
-      "Ongoing support and treatment plans for managing long-term health conditions with a holistic approach.",
-    href: "/about-us/",
+      "Comprehensive preventive screenings, biomarker labs, and longevity-focused checkups for men at every stage of life.",
+    href: "/men/wellness-exams/",
+  },
+  {
+    image: "/images/source/portrait-women-wellness.jpg",
+    title: "Gynecological Exams",
+    blurb:
+      "Routine women's health visits, screenings, and reproductive care delivered in a calm, judgment-free environment.",
+    href: "/women/gynecological-exams/",
+  },
+  {
+    image: "/images/source/couple-hormone-imbalance.webp",
+    title: "Menopausal Care",
+    blurb:
+      "Personalized peri- and post-menopause support — manage hot flashes, sleep, mood, and bone health with proven therapies.",
+    href: "/women/menopausal-disorders/",
   },
 ];
 
@@ -107,23 +107,49 @@ export default function HomeServices() {
   return (
     <section
       id="services"
-      className="relative w-full overflow-hidden bg-[color:var(--color-cream-soft)] py-24 sm:py-28 lg:py-32"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[color:var(--color-cream-soft)] via-[color:var(--color-cream-dark)] to-[color:var(--color-cream-soft)] py-24 sm:py-28 lg:py-32"
     >
-      {/* decorative blobs */}
+      {/* Soft seams */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-32 top-32 size-[420px] rounded-full blur-3xl"
+        className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[color:var(--color-soft-green)]/60 to-transparent"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/70 to-transparent"
+      />
+      {/* Editorial dot grid */}
+      <svg
+        aria-hidden
+        className="pointer-events-none absolute inset-0 size-full opacity-[0.22]"
+      >
+        <defs>
+          <pattern
+            id="services-dots"
+            width="24"
+            height="24"
+            patternUnits="userSpaceOnUse"
+          >
+            <circle cx="2" cy="2" r="1" fill="#8a6f30" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#services-dots)" />
+      </svg>
+      {/* Warm gold + forest accents */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-32 top-24 size-[460px] rounded-full blur-3xl"
         style={{
           background:
-            "radial-gradient(closest-side, rgba(108,190,69,0.18), transparent 70%)",
+            "radial-gradient(closest-side, rgba(196,168,98,0.30), transparent 70%)",
         }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-32 bottom-32 size-[380px] rounded-full blur-3xl"
+        className="pointer-events-none absolute -left-32 bottom-24 size-[420px] rounded-full blur-3xl"
         style={{
           background:
-            "radial-gradient(closest-side, rgba(45,80,22,0.15), transparent 70%)",
+            "radial-gradient(closest-side, rgba(45,80,22,0.18), transparent 70%)",
         }}
       />
 

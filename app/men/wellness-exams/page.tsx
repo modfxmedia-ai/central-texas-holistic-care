@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
-import PageHero from "@/components/layout/PageHero";
+import WellnessExamsPageClient from "./WellnessExamsPageClient";
 
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/men/wellness-exams/`;
 
-const PAGE_TITLE = "Men's Wellness Exams | Annual Preventive Care | CTHC";
+const PAGE_TITLE = "Wellness Exams – central holistic care";
 const PAGE_DESCRIPTION =
-  "Comprehensive men's wellness exams in Harker Heights, TX. Annual preventive physicals, advanced lab panels, cardiac and cancer screening, and personalized prevention plans at Central Texas Holistic Care.";
+  "Annual Wellness Exams for men at Central Texas Holistic Care — preventive screenings, recommended vaccinations, and early detection to protect your long-term health.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -29,16 +30,58 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function MenWellnessExamsPage() {
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Men", item: `${SITE_URL}/men/` },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Wellness Exams",
+      item: CANONICAL,
+    },
+  ],
+};
+
+const medicalProcedureSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalProcedure",
+  name: "Annual Wellness Exam",
+  alternateName: "Men's Annual Wellness Exam",
+  url: CANONICAL,
+  description:
+    "A thorough annual wellness exam designed to monitor overall health, detect early signs of disease, and support informed decisions about long-term well-being. Includes preventive screening for heart disease, diabetes, colon cancer, prostate cancer, and low testosterone, plus recommended adult vaccinations.",
+  procedureType: "https://schema.org/DiagnosticProcedure",
+  bodyLocation: "Whole body",
+  preparation:
+    "Bring a list of current medications and prior lab results if available.",
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Central Texas Holistic Care",
+    url: SITE_URL,
+  },
+};
+
+export default function WellnessExamsPage() {
   return (
-    <PageHero
-      title="Men's Wellness Exams"
-      subtitle="A complete annual look at heart, metabolic, hormonal, and cancer-risk markers, built around modern preventive medicine."
-      breadcrumbs={[
-        { label: "Home", href: "/" },
-        { label: "Men", href: "/men/" },
-        { label: "Wellness Exams", href: "/men/wellness-exams/" },
-      ]}
-    />
+    <>
+      <Script
+        id="ld-wellness-breadcrumb"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <Script
+        id="ld-wellness-procedure"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(medicalProcedureSchema),
+        }}
+      />
+      <WellnessExamsPageClient />
+    </>
   );
 }

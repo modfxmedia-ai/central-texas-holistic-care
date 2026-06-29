@@ -1,10 +1,21 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, Check, Leaf, RefreshCw } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  CalendarClock,
+  Check,
+  CreditCard,
+  Leaf,
+  RefreshCw,
+  ShieldCheck,
+  Sparkles,
+  Stethoscope,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -15,14 +26,66 @@ const fadeUp: Variants = {
 
 export default function HomeAbout() {
   const [flipped, setFlipped] = useState(false);
+  const pausedRef = useRef(false);
 
   useEffect(() => {
-    const id = setInterval(() => setFlipped((f) => !f), 5000);
+    const id = setInterval(() => {
+      if (!pausedRef.current) setFlipped((f) => !f);
+    }, 4500);
     return () => clearInterval(id);
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden bg-[color:var(--color-cream-soft)] py-24 sm:py-28 lg:py-32">
+    <section className="relative w-full overflow-hidden bg-white py-24 sm:py-28 lg:py-32">
+      {/* Soft seams so the white blends with cream/sage neighbors */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[color:var(--color-cream-soft)] to-transparent"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[color:var(--color-soft-green)]/55 to-transparent"
+      />
+      {/* Blueprint vertical-line pattern */}
+      <svg
+        aria-hidden
+        className="pointer-events-none absolute inset-0 size-full opacity-[0.12]"
+      >
+        <defs>
+          <pattern
+            id="about-lines"
+            width="56"
+            height="56"
+            patternUnits="userSpaceOnUse"
+          >
+            <path
+              d="M 0 0 L 0 56"
+              fill="none"
+              stroke="#2D5016"
+              strokeWidth="0.7"
+            />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#about-lines)" />
+      </svg>
+      {/* Sage radial glow (left) */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-32 top-20 size-[480px] rounded-full blur-3xl"
+        style={{
+          background:
+            "radial-gradient(closest-side, rgba(108,190,69,0.18), transparent 70%)",
+        }}
+      />
+      {/* Gold radial glow (right) */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-32 bottom-10 size-[420px] rounded-full blur-3xl"
+        style={{
+          background:
+            "radial-gradient(closest-side, rgba(196,168,98,0.18), transparent 70%)",
+        }}
+      />
       {/* decorative dot grid */}
       <svg
         aria-hidden
@@ -111,6 +174,22 @@ export default function HomeAbout() {
                 </li>
               ))}
             </ul>
+
+            {/* Trust strip */}
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-stone-200/80 pt-6">
+              <div className="flex items-center gap-2">
+                <span className="flex size-7 items-center justify-center rounded-full bg-[#6CBE45]/15 ring-1 ring-[#6CBE45]/25">
+                  <Leaf className="size-3.5 text-[#2D5016]" />
+                </span>
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1a3a0a]">
+                  Physician-led · Killeen, TX
+                </span>
+              </div>
+              <span aria-hidden className="hidden h-4 w-px bg-stone-200 sm:block" />
+              <span className="text-xs text-stone-500">
+                Trusted by <span className="font-semibold text-[#1a3a0a]">1,200+</span> patients across Central Texas
+              </span>
+            </div>
           </motion.div>
 
           {/* ─── Image composition ─── */}
@@ -119,6 +198,18 @@ export default function HomeAbout() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-12% 0px" }}
             transition={{ duration: 0.9, ease: EASE }}
+            onHoverStart={() => {
+              pausedRef.current = true;
+            }}
+            onHoverEnd={() => {
+              pausedRef.current = false;
+            }}
+            onFocus={() => {
+              pausedRef.current = true;
+            }}
+            onBlur={() => {
+              pausedRef.current = false;
+            }}
             className="relative mx-auto aspect-[4/5] w-full max-w-[520px]"
           >
             {/* tilted forest background card */}
@@ -172,32 +263,159 @@ export default function HomeAbout() {
 
                 {/* back — data */}
                 <div
-                  className="absolute inset-0 flex flex-col justify-center overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#1a3a0a] via-[#2D5016] to-[#0f2706] p-8 text-[#FAF6EE] shadow-2xl shadow-[#1a3a0a]/25 ring-1 ring-[#6CBE45]/30 sm:p-10"
+                  className="absolute inset-0 flex flex-col overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#1a3a0a] via-[#2D5016] to-[#0f2706] p-7 text-[#FAF6EE] shadow-2xl shadow-[#1a3a0a]/25 ring-1 ring-[#6CBE45]/30 sm:p-9"
                   style={{
                     backfaceVisibility: "hidden",
                     transform: "rotateY(180deg)",
                   }}
                 >
-                  <span className="text-xs font-medium uppercase tracking-[0.4em] text-[#8BAD5A]">
-                    By the numbers
-                  </span>
-                  <div className="mt-6 space-y-6">
+                  {/* subtle pattern overlay */}
+                  <svg
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 size-full opacity-[0.12]"
+                  >
+                    <defs>
+                      <pattern
+                        id="about-back-grid"
+                        width="36"
+                        height="36"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <path
+                          d="M36 0 L0 0 0 36"
+                          fill="none"
+                          stroke="#C4A862"
+                          strokeWidth="0.5"
+                        />
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#about-back-grid)" />
+                  </svg>
+                  {/* gold corner ticks */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute left-4 top-4 size-3 border-l border-t border-[#C4A862]/55"
+                  />
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute right-4 bottom-4 size-3 border-b border-r border-[#C4A862]/55"
+                  />
+
+                  {/* eyebrow row */}
+                  <div className="relative flex items-center justify-between">
+                    <span className="text-[11px] font-medium uppercase tracking-[0.32em] text-[#9DD270]">
+                      By the numbers
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-[#C4A862]/40 bg-[#0f2706]/70 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#C4A862] backdrop-blur">
+                      <Award className="size-3" />
+                      Est. 2019
+                    </span>
+                  </div>
+
+                  {/* Stats — compact 3-row */}
+                  <div className="relative mt-5 space-y-3.5">
                     {[
-                      { value: "15+", label: "Conditions treated with personalized plans" },
-                      { value: "1,200+", label: "Patients supported across Central Texas" },
-                      { value: "100%", label: "Bioidentical, root-cause focused care" },
+                      {
+                        value: "15+",
+                        label: "Conditions treated with personalized plans",
+                      },
+                      {
+                        value: "1,200+",
+                        label: "Patients supported across Central Texas",
+                      },
+                      {
+                        value: "100%",
+                        label: "Bioidentical, root-cause focused care",
+                      },
                     ].map(({ value, label }) => (
-                      <div key={label}>
-                        <div className="font-heading text-4xl font-semibold leading-none sm:text-5xl">
+                      <div
+                        key={label}
+                        className="flex items-baseline gap-4 border-b border-[#FAF6EE]/10 pb-3 last:border-b-0 last:pb-0"
+                      >
+                        <div className="font-heading text-3xl font-semibold leading-none sm:text-[2.25rem]">
                           <span className="bg-gradient-to-r from-[#FAF6EE] to-[#6CBE45] bg-clip-text text-transparent">
                             {value}
                           </span>
                         </div>
-                        <div className="mt-2 text-sm text-[#FAF6EE]/80">
+                        <div className="text-[12.5px] leading-snug text-[#FAF6EE]/80">
                           {label}
                         </div>
                       </div>
                     ))}
+                  </div>
+
+                  {/* Specialties */}
+                  <div className="relative mt-5">
+                    <span className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.28em] text-[#C4A862]">
+                      <Stethoscope className="size-3.5" />
+                      Focus areas
+                    </span>
+                    <ul className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5">
+                      {[
+                        "BHRT & pellets",
+                        "IV nutrition",
+                        "Peptide therapy",
+                        "Regenerative care",
+                        "Weight optimization",
+                        "Preventive labs",
+                      ].map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-center gap-1.5 text-[12px] text-[#FAF6EE]/85"
+                        >
+                          <Check className="size-3 flex-none text-[#9DD270]" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Pull-quote block */}
+                  <div className="relative mt-5 overflow-hidden rounded-2xl border border-[#C4A862]/25 bg-[#0f2706]/40 p-4 backdrop-blur-sm">
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-[#C4A862] via-[#9DD270] to-[#C4A862]"
+                    />
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute -left-1 -top-2 font-heading text-[44px] leading-none text-[#C4A862]/30"
+                    >
+                      &ldquo;
+                    </span>
+                    <p className="relative pl-3 font-heading text-[13.5px] italic leading-snug text-[#FAF6EE]/90">
+                      Every plan starts with your labs, your story, and a real
+                      conversation &mdash; not a prescription pad.
+                    </p>
+                    <p className="relative mt-2 pl-3 text-[10px] font-medium uppercase tracking-[0.22em] text-[#9DD270]">
+                      &mdash; Our care philosophy
+                    </p>
+                  </div>
+
+                  {/* Trust chip row */}
+                  <ul className="relative mt-4 flex flex-wrap items-center gap-1.5">
+                    {[
+                      { icon: ShieldCheck, label: "Insurance accepted" },
+                      { icon: CreditCard, label: "0% APR financing" },
+                      { icon: CalendarClock, label: "Same-week visits" },
+                    ].map(({ icon: Icon, label }) => (
+                      <li
+                        key={label}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-[#FAF6EE]/15 bg-[#FAF6EE]/[0.06] px-2.5 py-1 text-[10.5px] font-medium text-[#FAF6EE]/85 backdrop-blur"
+                      >
+                        <Icon className="size-3 text-[#9DD270]" />
+                        {label}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Signature line */}
+                  <div className="relative mt-auto pt-4">
+                    <div className="flex items-center gap-2 border-t border-[#FAF6EE]/15 pt-3">
+                      <Sparkles className="size-3.5 flex-none text-[#C4A862]" />
+                      <span className="text-[11px] leading-snug text-[#FAF6EE]/75">
+                        Physician-led &middot; Functional &amp; holistic medicine &middot; Killeen, TX
+                      </span>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -225,29 +443,6 @@ export default function HomeAbout() {
                 Flip
               </span>
             </motion.button>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20, scale: 0.9 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-12% 0px" }}
-              transition={{ duration: 0.8, ease: EASE, delay: 0.3 }}
-              className="absolute -bottom-6 -left-4 z-10 sm:-bottom-8 sm:-left-6"
-            >
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="w-52 rounded-2xl border border-white/15 bg-gradient-to-br from-[#1a3a0a] to-[#0f2706] p-5 text-[#FAF6EE] shadow-2xl shadow-[#1a3a0a]/30 ring-1 ring-[#6CBE45]/25"
-              >
-                <div className="font-heading text-4xl font-semibold leading-none">
-                  <span className="bg-gradient-to-r from-[#FAF6EE] to-[#6CBE45] bg-clip-text text-transparent">
-                    15+
-                  </span>
-                </div>
-                <div className="mt-2 text-[11px] uppercase tracking-[0.18em] text-[#FAF6EE]/80">
-                  Conditions treated with personalized plans
-                </div>
-              </motion.div>
-            </motion.div>
 
             {/* dashed ring accent */}
             <motion.svg

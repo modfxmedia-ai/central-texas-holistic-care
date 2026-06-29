@@ -9,7 +9,6 @@ import {
   Home,
   Leaf,
   Map as MapIcon,
-  Package,
   Phone,
   Sparkles,
   Stethoscope,
@@ -183,19 +182,6 @@ const GROUPS: SiteGroup[] = [
         label: "Hangover Relief",
         href: "/iv-nutrition/hangover/",
         description: "Rehydration and bounce-back support.",
-      },
-    ],
-  },
-  {
-    title: "Shop & Products",
-    icon: Package,
-    accent: "#5DA8C4",
-    description: "Practitioner-grade supplements curated by our team.",
-    links: [
-      {
-        label: "All Products",
-        href: "/products/",
-        description: "Browse our full supplement catalog.",
       },
     ],
   },

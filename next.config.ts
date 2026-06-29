@@ -15,21 +15,11 @@ const nextConfig: NextConfig = {
       },
     ],
     formats: ["image/avif", "image/webp"],
+    qualities: [60, 75, 90, 95],
   },
 
   async redirects() {
-    return [
-      {
-        source: "/shop",
-        destination: "/products/",
-        permanent: true,
-      },
-      {
-        source: "/shop/:path*",
-        destination: "/products/",
-        permanent: true,
-      },
-    ];
+    return [];
   },
 
   async headers() {

@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
-import PageHero from "@/components/layout/PageHero";
+import WomenPageClient from "./WomenPageClient";
 
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/women/`;
 
-const PAGE_TITLE = "Women's Health Services | Central Texas Holistic Care";
+const PAGE_TITLE = "Women – central holistic care";
 const PAGE_DESCRIPTION =
-  "Women's health services at Central Texas Holistic Care in Harker Heights, TX: gynecological exams, menopause care, menstrual disorders, bio-identical hormone therapy, and personalized preventive medicine.";
+  "Women's health services at Central Texas Holistic Care — comprehensive gynecological exams, menopausal care, and menstrual disorder treatment tailored to every life stage.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -29,15 +30,25 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Women", item: CANONICAL },
+  ],
+};
+
 export default function WomenHealthPage() {
   return (
-    <PageHero
-      title="Women's Health"
-      subtitle="Personalized care for every stage of life: from cycle health to menopause, hormones to heart health."
-      breadcrumbs={[
-        { label: "Home", href: "/" },
-        { label: "Women", href: "/women/" },
-      ]}
-    />
+    <>
+      <Script
+        id="ld-women-breadcrumb"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <WomenPageClient />
+    </>
   );
 }

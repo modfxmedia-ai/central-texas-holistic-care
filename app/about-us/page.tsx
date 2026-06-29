@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
-import PageHero from "@/components/layout/PageHero";
+import AboutUsPageClient from "./AboutUsPageClient";
 
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/about-us/`;
 
-const PAGE_TITLE = "About Us | Central Texas Holistic Care | Harker Heights, TX";
+const PAGE_TITLE = "About Us – central holistic care";
 const PAGE_DESCRIPTION =
-  "About Central Texas Holistic Care in Harker Heights, TX: our mission, our integrative medicine team, and the values that shape every patient visit. Bio-identical hormones, IV nutrition, and preventive care under one roof.";
+  "Meet the providers behind Central Texas Holistic Care. Over 20 years of combined experience in regenerative, restorative, and preventive medicine — bio-identical hormones, nutrition, and integrative care in Killeen, TX.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -29,15 +30,80 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  name: "Central Texas Holistic Care",
+  alternateName: "CTHC",
+  url: SITE_URL,
+  telephone: "254-213-2423",
+  email: "info@centraltexasholisticcarepllc.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "311 E. Stan Schlueter Loop #207",
+    addressLocality: "Killeen",
+    addressRegion: "TX",
+    postalCode: "76542",
+    addressCountry: "US",
+  },
+  medicalSpecialty: [
+    "Hormone Therapy",
+    "Regenerative Medicine",
+    "Preventive Medicine",
+    "Functional Medicine",
+    "Integrative Medicine",
+  ],
+  employee: [
+    {
+      "@type": "Person",
+      name: "Dr. Bimisa Augustin",
+      honorificSuffix: "DNP, FNP-C, PMHNP-BC",
+      jobTitle:
+        "Doctor of Nursing Practice | Family & Psychiatric Nurse Practitioner",
+      image: `${SITE_URL}/images/providers/dr-bimisa-augustin.jpg`,
+      affiliation: { "@type": "MedicalOrganization", name: "Central Texas Holistic Care" },
+      alumniOf: [
+        { "@type": "CollegeOrUniversity", name: "University of Mary Hardin-Baylor" },
+        { "@type": "CollegeOrUniversity", name: "Maryville University" },
+        { "@type": "CollegeOrUniversity", name: "The University of Alabama" },
+      ],
+    },
+    {
+      "@type": "Person",
+      name: "Dr. Larissa Garth",
+      honorificSuffix: "DMSC, MPH, MPAS, PA-C",
+      jobTitle: "Doctor of Medical Science | Certified Physician Assistant",
+      image: `${SITE_URL}/images/providers/dr-larissa-garth.jpg`,
+      affiliation: { "@type": "MedicalOrganization", name: "Central Texas Holistic Care" },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "About", item: CANONICAL },
+  ],
+};
+
 export default function AboutUsPage() {
   return (
-    <PageHero
-      title="About Central Texas Holistic Care"
-      subtitle="Modern integrative medicine in Harker Heights, built around the time, attention, and root-cause thinking that real healthcare requires."
-      breadcrumbs={[
-        { label: "Home", href: "/" },
-        { label: "About Us", href: "/about-us/" },
-      ]}
-    />
+    <>
+      <Script
+        id="ld-about-org"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <Script
+        id="ld-about-breadcrumb"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <AboutUsPageClient />
+    </>
   );
 }
