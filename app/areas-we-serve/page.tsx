@@ -13,7 +13,9 @@ import {
 import { Reveal } from "@/components/motion/Reveal";
 import {
   getLiveCities,
+  getLiveCityServiceTreatmentTriples,
   getLiveServices,
+  getTreatmentsForService,
   type City,
   type Service,
 } from "@/lib/locations";
@@ -69,7 +71,9 @@ const itemListSchema = (cities: City[], services: Service[]) => ({
 export default function AreasWeServePage() {
   const cities = getLiveCities();
   const services = getLiveServices();
+  const triples = getLiveCityServiceTreatmentTriples();
   const totalPages = cities.length * services.length;
+  const totalProtocolPages = triples.length;
 
   const flatPages = cities
     .flatMap((city) =>
@@ -97,7 +101,12 @@ export default function AreasWeServePage() {
         }}
       />
 
-      <AreasHero cities={cities} services={services} totalPages={totalPages} />
+      <AreasHero
+        cities={cities}
+        services={services}
+        totalPages={totalPages}
+        totalProtocolPages={totalProtocolPages}
+      />
 
       {/* ──────────────── Cities ──────────────── */}
       <section className="bg-[var(--color-cream)] py-20 sm:py-24">
@@ -417,10 +426,12 @@ function AreasHero({
   cities,
   services,
   totalPages,
+  totalProtocolPages,
 }: {
   cities: City[];
   services: Service[];
   totalPages: number;
+  totalProtocolPages: number;
 }) {
   return (
     <section
@@ -493,10 +504,11 @@ function AreasHero({
           root-cause wellness medicine.
         </p>
 
-        <dl className="mt-8 grid max-w-2xl grid-cols-3 gap-3 rounded-2xl border border-[var(--color-accent)]/25 bg-[#0b1d04]/45 p-4 backdrop-blur">
+        <dl className="mt-8 grid max-w-2xl grid-cols-4 gap-3 rounded-2xl border border-[var(--color-accent)]/25 bg-[#0b1d04]/45 p-4 backdrop-blur">
           <Stat label="Cities served" value={String(cities.length)} />
           <Stat label="Services" value={String(services.length)} />
-          <Stat label="Local pages" value={String(totalPages)} />
+          <Stat label="City pages" value={String(totalPages)} />
+          <Stat label="Protocol pages" value={String(totalProtocolPages)} />
         </dl>
       </div>
     </section>

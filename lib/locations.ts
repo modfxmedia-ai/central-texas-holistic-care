@@ -221,7 +221,7 @@ export const CITIES: ReadonlyArray<City> = [
       "Heritage Park",
     ],
     surroundingCitySlugs: ["harker-heights", "killeen", "temple", "salado"],
-    live: false,
+    live: true,
   },
   {
     slug: "temple",
@@ -252,7 +252,510 @@ export const CITIES: ReadonlyArray<City> = [
       "Lions Park",
     ],
     surroundingCitySlugs: ["belton", "salado", "harker-heights", "killeen"],
-    live: false,
+    live: true,
+  },
+
+  /* ───────────────── Expanded Central Texas catchment ───────────────── */
+
+  {
+    slug: "nolanville",
+    name: "Nolanville",
+    possessive: "Nolanville's",
+    county: "Bell",
+    state: "Texas",
+    zipCodes: ["76559"],
+    lat: 31.0813,
+    lng: -97.6022,
+    population: 6035,
+    driveTimeMin: 12,
+    primaryRoute: "US-190 East",
+    character: "suburban-professional",
+    shortDescription:
+      "A fast-growing bedroom community between Killeen and Belton along US-190, popular with young families and military households who want a quieter street with quick access to the post.",
+    industries: ["Fort Cavazos military families", "commuters to Killeen and Temple", "Nolanville ISD families", "local small businesses"],
+    landmarks: ["Monarch Park", "the Nolanville City Hall", "10th Street and Old Hwy 190", "Nolanville Veterans Memorial"],
+    surroundingCitySlugs: ["harker-heights", "belton", "killeen"],
+    live: true,
+  },
+  {
+    slug: "salado",
+    name: "Salado",
+    possessive: "Salado's",
+    county: "Bell",
+    state: "Texas",
+    zipCodes: ["76571"],
+    lat: 30.9477,
+    lng: -97.5392,
+    population: 2378,
+    driveTimeMin: 30,
+    primaryRoute: "I-35 South via I-14",
+    character: "historic-village",
+    shortDescription:
+      "A historic Chisholm Trail village along Salado Creek with art galleries, the Stagecoach Inn, and weekend visitors from Austin and Waco, a community drawn to slower-paced, personalized care.",
+    industries: ["hospitality and tourism along Main Street", "artists and gallery owners", "retirees and second-home owners", "Salado ISD families"],
+    landmarks: ["the Stagecoach Inn", "Salado Creek", "Pace Park", "Salado Sculpture Garden", "Mill Creek Country Club"],
+    surroundingCitySlugs: ["belton", "temple", "harker-heights"],
+    live: true,
+  },
+  {
+    slug: "holland",
+    name: "Holland",
+    possessive: "Holland's",
+    county: "Bell",
+    state: "Texas",
+    zipCodes: ["76534"],
+    lat: 30.8782,
+    lng: -97.4011,
+    population: 1158,
+    driveTimeMin: 40,
+    primaryRoute: "FM 1123 to I-14 / US-190 West",
+    character: "rural",
+    shortDescription:
+      "A small east-Bell County farming community south of Temple, with families that drive to Killeen for specialty care and prefer providers who remember them by name.",
+    industries: ["farming and ranching", "Holland ISD educators", "Temple-area commuters"],
+    landmarks: ["the Holland Historic Square", "Holland City Park", "Holland ISD"],
+    surroundingCitySlugs: ["temple", "belton", "rogers"],
+    live: true,
+  },
+  {
+    slug: "rogers",
+    name: "Rogers",
+    possessive: "Rogers'",
+    county: "Bell",
+    state: "Texas",
+    zipCodes: ["76569"],
+    lat: 30.9319,
+    lng: -97.2278,
+    population: 1217,
+    driveTimeMin: 45,
+    primaryRoute: "FM 437 to FM 1123 to I-14 West",
+    character: "rural",
+    shortDescription:
+      "A close-knit east-Bell County farming town near the Milam County line, where patients value continuity, plain-spoken care, and providers who explain the why behind every lab.",
+    industries: ["row-crop and cattle agriculture", "Rogers ISD educators", "small business and service trades"],
+    landmarks: ["Rogers City Park", "the Rogers Historic Downtown", "Rogers ISD"],
+    surroundingCitySlugs: ["temple", "holland", "bartlett"],
+    live: true,
+  },
+  {
+    slug: "little-river-academy",
+    name: "Little River-Academy",
+    possessive: "Little River-Academy's",
+    county: "Bell",
+    state: "Texas",
+    zipCodes: ["76554"],
+    lat: 30.9876,
+    lng: -97.3603,
+    population: 2113,
+    driveTimeMin: 22,
+    primaryRoute: "FM 95 to I-14 / US-190",
+    character: "rural",
+    shortDescription:
+      "A growing community along the Little River south of Belton, with Academy ISD families, small-business owners, and a steady mix of retirees and young households.",
+    industries: ["Academy ISD educators and staff", "Belton and Temple commuters", "small business and trades", "farming"],
+    landmarks: ["Academy ISD campus", "the Little River bridges on FM 95", "Heritage Hall"],
+    surroundingCitySlugs: ["belton", "temple", "holland"],
+    live: true,
+  },
+  {
+    slug: "troy",
+    name: "Troy",
+    possessive: "Troy's",
+    county: "Bell",
+    state: "Texas",
+    zipCodes: ["76579"],
+    lat: 31.1965,
+    lng: -97.2989,
+    population: 2491,
+    driveTimeMin: 40,
+    primaryRoute: "I-35 South to I-14 West",
+    character: "rural",
+    shortDescription:
+      "A growing I-35 commuter town north of Temple, with Troy ISD families and a steady flow of new residents priced out of larger Bell County cities.",
+    industries: ["Troy ISD educators", "Temple and Waco commuters", "logistics and trucking along I-35"],
+    landmarks: ["Troy High School", "Troy City Park", "the I-35 service corridor"],
+    surroundingCitySlugs: ["temple", "belton"],
+    live: true,
+  },
+  {
+    slug: "morgans-point-resort",
+    name: "Morgan's Point Resort",
+    possessive: "Morgan's Point Resort's",
+    county: "Bell",
+    state: "Texas",
+    zipCodes: ["76513"],
+    lat: 31.1486,
+    lng: -97.4314,
+    population: 4742,
+    driveTimeMin: 25,
+    primaryRoute: "FM 2305 to I-14 / US-190",
+    character: "suburban-professional",
+    shortDescription:
+      "A lakefront community on Lake Belton's southern shore, popular with retirees, anglers, and active families who want a wellness clinic that supports an outdoor lifestyle.",
+    industries: ["retirees and lakefront homeowners", "Belton and Temple commuters", "marine and recreation businesses"],
+    landmarks: ["Lake Belton", "Morgan's Point Golf Course", "Yankee Cove Marina"],
+    surroundingCitySlugs: ["belton", "temple", "harker-heights"],
+    live: true,
+  },
+  {
+    slug: "lampasas",
+    name: "Lampasas",
+    possessive: "Lampasas'",
+    county: "Lampasas",
+    state: "Texas",
+    zipCodes: ["76550"],
+    lat: 31.0635,
+    lng: -98.1817,
+    population: 7969,
+    driveTimeMin: 40,
+    primaryRoute: "US-190 West",
+    character: "historic-village",
+    shortDescription:
+      "The Lampasas County seat along the Lampasas River, anchored by a historic courthouse square, a strong veteran community, and families who prefer integrative care over big-system clinics.",
+    industries: ["Lampasas County government and legal professionals", "Lampasas ISD educators", "veteran retirees", "ranching and agribusiness"],
+    landmarks: ["the Lampasas County Courthouse square", "Hancock Springs Park", "Hanna Springs", "Campbell Park"],
+    surroundingCitySlugs: ["kempner", "copperas-cove", "killeen"],
+    live: true,
+  },
+  {
+    slug: "kempner",
+    name: "Kempner",
+    possessive: "Kempner's",
+    county: "Lampasas",
+    state: "Texas",
+    zipCodes: ["76539"],
+    lat: 31.0904,
+    lng: -97.9939,
+    population: 1366,
+    driveTimeMin: 25,
+    primaryRoute: "US-190 West",
+    character: "rural",
+    shortDescription:
+      "A small US-190 community west of Copperas Cove with a heavy mix of active-duty Fort Cavazos families, retirees, and small ranchers who want care close to home.",
+    industries: ["Fort Cavazos military families", "ranching and agriculture", "Lampasas County commuters"],
+    landmarks: ["Kempner City Hall", "the US-190 corridor", "Lampasas River crossings"],
+    surroundingCitySlugs: ["copperas-cove", "lampasas", "killeen"],
+    live: true,
+  },
+  {
+    slug: "gatesville",
+    name: "Gatesville",
+    possessive: "Gatesville's",
+    county: "Coryell",
+    state: "Texas",
+    zipCodes: ["76528"],
+    lat: 31.4351,
+    lng: -97.7475,
+    population: 13266,
+    driveTimeMin: 40,
+    primaryRoute: "US-84 to TX-36 South",
+    character: "historic-village",
+    shortDescription:
+      "The Coryell County seat with a historic courthouse square, a strong farming and ranching base, and a large state-employee population who travel to Killeen for specialty wellness care.",
+    industries: ["Coryell County government", "Texas Department of Criminal Justice staff", "ranching and agribusiness", "Gatesville ISD"],
+    landmarks: ["the Coryell County Courthouse square", "Faunt Le Roy Park", "Gatesville City Park", "the historic Spur 54 corridor"],
+    surroundingCitySlugs: ["copperas-cove", "killeen"],
+    live: true,
+  },
+  {
+    slug: "evant",
+    name: "Evant",
+    possessive: "Evant's",
+    county: "Coryell",
+    state: "Texas",
+    zipCodes: ["76525"],
+    lat: 31.4823,
+    lng: -98.1467,
+    population: 432,
+    driveTimeMin: 60,
+    primaryRoute: "US-281 / US-84 East",
+    character: "rural",
+    shortDescription:
+      "A small Hill Country town on the Coryell-Hamilton county line along US-281, with ranching families and retirees who appreciate a clinic that takes the time to listen.",
+    industries: ["ranching and agriculture", "Evant ISD educators", "retirees"],
+    landmarks: ["Evant City Park", "the US-281 / US-84 junction", "Evant ISD campus"],
+    surroundingCitySlugs: ["lampasas", "gatesville", "copperas-cove"],
+    live: true,
+  },
+  {
+    slug: "lometa",
+    name: "Lometa",
+    possessive: "Lometa's",
+    county: "Lampasas",
+    state: "Texas",
+    zipCodes: ["76853"],
+    lat: 31.2138,
+    lng: -98.3933,
+    population: 829,
+    driveTimeMin: 55,
+    primaryRoute: "US-190 West",
+    character: "rural",
+    shortDescription:
+      "A quiet ranching community west of Lampasas along US-190, with multi-generational Texas families who want straightforward, lab-driven care without the noise of a big-city clinic.",
+    industries: ["cattle ranching", "Lometa ISD", "small businesses along US-190"],
+    landmarks: ["Lometa City Park", "the Colorado River bridges", "the historic Lometa rail line"],
+    surroundingCitySlugs: ["lampasas", "kempner"],
+    live: true,
+  },
+  {
+    slug: "burnet",
+    name: "Burnet",
+    possessive: "Burnet's",
+    county: "Burnet",
+    state: "Texas",
+    zipCodes: ["78611"],
+    lat: 30.7585,
+    lng: -98.2284,
+    population: 6627,
+    driveTimeMin: 70,
+    primaryRoute: "US-281 South via US-183",
+    character: "historic-village",
+    shortDescription:
+      "The Hill Country gateway and Burnet County seat, with bluebonnet tourism, a steady stream of retirees, and active families who want a wellness clinic that fits a longer drive.",
+    industries: ["Hill Country tourism and hospitality", "Burnet ISD", "retirees and Lake Buchanan homeowners", "small business"],
+    landmarks: ["the Burnet County Courthouse square", "Inks Lake State Park", "Longhorn Cavern", "Hamilton Creek Park"],
+    surroundingCitySlugs: ["lampasas", "marble-falls"],
+    live: true,
+  },
+  {
+    slug: "marble-falls",
+    name: "Marble Falls",
+    possessive: "Marble Falls'",
+    county: "Burnet",
+    state: "Texas",
+    zipCodes: ["78654"],
+    lat: 30.5783,
+    lng: -98.2728,
+    population: 7233,
+    driveTimeMin: 80,
+    primaryRoute: "US-281 South",
+    character: "historic-village",
+    shortDescription:
+      "A Highland Lakes destination on the Colorado River with a strong retiree and second-home population, art galleries, and patients who travel to Killeen for integrative wellness care.",
+    industries: ["Highland Lakes tourism", "retirees and lakefront homeowners", "Marble Falls ISD", "small business and trades"],
+    landmarks: ["Lake Marble Falls", "the historic Granite Mountain quarry", "Lakeside Park", "Sweet Berry Farm"],
+    surroundingCitySlugs: ["burnet", "lampasas"],
+    live: true,
+  },
+  {
+    slug: "florence",
+    name: "Florence",
+    possessive: "Florence's",
+    county: "Williamson",
+    state: "Texas",
+    zipCodes: ["76527"],
+    lat: 30.8421,
+    lng: -97.7916,
+    population: 1422,
+    driveTimeMin: 35,
+    primaryRoute: "FM 195 to TX-195 North",
+    character: "rural",
+    shortDescription:
+      "A small Williamson County farming town northwest of Georgetown, with families looking north toward Killeen for specialty hormone, IV, and longevity care.",
+    industries: ["ranching and agriculture", "Florence ISD educators", "Georgetown and Liberty Hill commuters"],
+    landmarks: ["the Florence Old Bank Building", "Florence City Park", "FM 195 / FM 970 junction"],
+    surroundingCitySlugs: ["liberty-hill", "killeen", "salado"],
+    live: true,
+  },
+  {
+    slug: "liberty-hill",
+    name: "Liberty Hill",
+    possessive: "Liberty Hill's",
+    county: "Williamson",
+    state: "Texas",
+    zipCodes: ["78642"],
+    lat: 30.6635,
+    lng: -97.9225,
+    population: 6707,
+    driveTimeMin: 55,
+    primaryRoute: "TX-29 East to TX-195 North",
+    character: "suburban-professional",
+    shortDescription:
+      "A fast-growing master-planned community in northwest Williamson County, with dual-income families, athletes, and professionals who want personalized care outside the Austin metro grind.",
+    industries: ["Austin metro tech and professional services", "Liberty Hill ISD", "small business and trades", "youth-sports families"],
+    landmarks: ["Liberty Hill Public Library", "the Lions Foundation Park", "TX-29 / Ronald Reagan Blvd"],
+    surroundingCitySlugs: ["leander", "georgetown", "florence"],
+    live: true,
+  },
+  {
+    slug: "georgetown",
+    name: "Georgetown",
+    possessive: "Georgetown's",
+    county: "Williamson",
+    state: "Texas",
+    zipCodes: ["78626", "78628", "78633"],
+    lat: 30.6332,
+    lng: -97.6779,
+    population: 86507,
+    driveTimeMin: 55,
+    primaryRoute: "I-35 South",
+    character: "suburban-professional",
+    shortDescription:
+      "Anchored by Southwestern University and Sun City, with one of the fastest-growing populations in Texas and a community that values integrative, lab-driven preventive care.",
+    industries: ["Southwestern University faculty and staff", "Sun City Texas retirees", "Williamson County government", "Austin metro tech professionals"],
+    landmarks: ["the historic Williamson County Courthouse square", "San Gabriel Park", "Southwestern University", "Sun City Texas", "Blue Hole Park"],
+    surroundingCitySlugs: ["round-rock", "liberty-hill", "salado"],
+    live: true,
+  },
+  {
+    slug: "round-rock",
+    name: "Round Rock",
+    possessive: "Round Rock's",
+    county: "Williamson",
+    state: "Texas",
+    zipCodes: ["78664", "78665", "78681"],
+    lat: 30.5083,
+    lng: -97.6789,
+    population: 133372,
+    driveTimeMin: 70,
+    primaryRoute: "I-35 South",
+    character: "suburban-professional",
+    shortDescription:
+      "A major Austin-metro suburb anchored by Dell, Texas State Round Rock, and a Baylor Scott & White campus, with a busy professional base that travels for specialty wellness clinics.",
+    industries: ["Dell and tech professionals", "Baylor Scott & White Round Rock clinicians", "Round Rock ISD families", "small business"],
+    landmarks: ["Old Settlers Park", "the Dell Diamond", "Round Rock Premium Outlets", "the historic Round Rock"],
+    surroundingCitySlugs: ["georgetown", "cedar-park", "leander"],
+    live: true,
+  },
+  {
+    slug: "leander",
+    name: "Leander",
+    possessive: "Leander's",
+    county: "Williamson",
+    state: "Texas",
+    zipCodes: ["78641", "78645"],
+    lat: 30.5788,
+    lng: -97.853,
+    population: 75332,
+    driveTimeMin: 65,
+    primaryRoute: "TX-183A / US-183 North",
+    character: "suburban-professional",
+    shortDescription:
+      "One of the fastest-growing cities in the U.S., with Leander ISD families, Austin metro tech commuters, and a CapMetro rail connection that brings people in from across the region.",
+    industries: ["Austin metro tech professionals", "Leander ISD educators and families", "construction and trades", "youth-sports families"],
+    landmarks: ["Devine Lake Park", "the CapMetro Leander Station", "Crystal Falls", "Northline downtown district"],
+    surroundingCitySlugs: ["cedar-park", "liberty-hill", "round-rock"],
+    live: true,
+  },
+  {
+    slug: "cedar-park",
+    name: "Cedar Park",
+    possessive: "Cedar Park's",
+    county: "Williamson",
+    state: "Texas",
+    zipCodes: ["78613"],
+    lat: 30.5052,
+    lng: -97.8203,
+    population: 77595,
+    driveTimeMin: 70,
+    primaryRoute: "US-183 North",
+    character: "suburban-professional",
+    shortDescription:
+      "A polished Austin-metro suburb anchored by HEB Center and Baylor Scott & White Lakeway, with active families, athletes, and professionals who prioritize longevity-focused medicine.",
+    industries: ["Austin metro tech and professional services", "healthcare professionals", "Leander ISD families", "youth-sports families"],
+    landmarks: ["HEB Center at Cedar Park", "Brushy Creek Lake Park", "Lakeline Mall", "Bell Boulevard corridor"],
+    surroundingCitySlugs: ["leander", "round-rock"],
+    live: true,
+  },
+  {
+    slug: "taylor",
+    name: "Taylor",
+    possessive: "Taylor's",
+    county: "Williamson",
+    state: "Texas",
+    zipCodes: ["76574"],
+    lat: 30.5708,
+    lng: -97.4092,
+    population: 16267,
+    driveTimeMin: 70,
+    primaryRoute: "TX-95 to I-35 to I-14",
+    character: "historic-village",
+    shortDescription:
+      "A historic Williamson County rail town now home to the Samsung Taylor semiconductor campus, with longtime Texas families and a wave of new tech professionals reshaping the community.",
+    industries: ["Samsung Taylor semiconductor employees", "Williamson County government", "Taylor ISD", "agribusiness and rail logistics"],
+    landmarks: ["the Samsung Taylor campus", "Murphy Park", "the historic downtown rail district", "Heritage Square"],
+    surroundingCitySlugs: ["round-rock", "georgetown"],
+    live: true,
+  },
+  {
+    slug: "waco",
+    name: "Waco",
+    possessive: "Waco's",
+    county: "McLennan",
+    state: "Texas",
+    zipCodes: ["76701", "76704", "76706", "76707", "76708", "76710", "76711", "76712"],
+    lat: 31.5493,
+    lng: -97.1467,
+    population: 138486,
+    driveTimeMin: 65,
+    primaryRoute: "I-35 North",
+    character: "medical-hub",
+    shortDescription:
+      "A regional anchor anchored by Baylor University, Magnolia, and three major hospital systems, with patients who already understand integrative wellness and travel south for specialty hormone and IV care.",
+    industries: ["Baylor University faculty and staff", "Magnolia and Silos-area small business", "Ascension Providence and Baylor Scott & White clinicians", "manufacturing and logistics"],
+    landmarks: ["Magnolia Market at the Silos", "Baylor University", "Cameron Park", "the Waco Suspension Bridge"],
+    surroundingCitySlugs: ["hewitt", "woodway", "temple"],
+    live: true,
+  },
+  {
+    slug: "hewitt",
+    name: "Hewitt",
+    possessive: "Hewitt's",
+    county: "McLennan",
+    state: "Texas",
+    zipCodes: ["76643"],
+    lat: 31.4587,
+    lng: -97.1958,
+    population: 16711,
+    driveTimeMin: 55,
+    primaryRoute: "I-35 South",
+    character: "suburban-professional",
+    shortDescription:
+      "A growing Waco-area suburb along I-35 with Midway ISD families, dual-income professionals, and a community oriented around preventive, longevity-focused medicine.",
+    industries: ["Waco-area commuters", "Midway ISD educators and families", "healthcare professionals", "small business"],
+    landmarks: ["Warren Park", "Hewitt Park", "the I-35 / Sun Valley corridor"],
+    surroundingCitySlugs: ["woodway", "waco", "lorena"],
+    live: true,
+  },
+  {
+    slug: "woodway",
+    name: "Woodway",
+    possessive: "Woodway's",
+    county: "McLennan",
+    state: "Texas",
+    zipCodes: ["76712"],
+    lat: 31.4998,
+    lng: -97.2275,
+    population: 9536,
+    driveTimeMin: 60,
+    primaryRoute: "TX-6 East to I-35 South",
+    character: "suburban-professional",
+    shortDescription:
+      "A leafy west-Waco professional suburb with strong household incomes, Midway ISD families, and a community known for preventive care and longevity planning.",
+    industries: ["Waco professional services", "Midway ISD families", "physicians and healthcare leadership", "retirees"],
+    landmarks: ["Carleen Bright Arboretum", "Woodway Park", "Midway High School", "Lake Air Drive corridor"],
+    surroundingCitySlugs: ["hewitt", "waco"],
+    live: true,
+  },
+  {
+    slug: "lorena",
+    name: "Lorena",
+    possessive: "Lorena's",
+    county: "McLennan",
+    state: "Texas",
+    zipCodes: ["76655"],
+    lat: 31.3899,
+    lng: -97.215,
+    population: 1733,
+    driveTimeMin: 50,
+    primaryRoute: "I-35 South",
+    character: "rural",
+    shortDescription:
+      "A small I-35 community south of Waco with Lorena ISD families, agriculture roots, and a steady mix of new residents drawn by the schools and the quieter pace.",
+    industries: ["Lorena ISD educators and families", "Waco and Temple commuters", "agriculture", "logistics along I-35"],
+    landmarks: ["Lorena City Park", "Lorena ISD campus", "the I-35 / FM 2837 junction"],
+    surroundingCitySlugs: ["hewitt", "waco", "temple"],
+    live: true,
   },
 ] as const;
 
@@ -551,7 +1054,71 @@ export const SERVICES: ReadonlyArray<Service> = [
     ],
     schemaType: "PreventiveProcedure",
     schemaSpecialty: "PrimaryCare",
-    live: false,
+    live: true,
+  },
+
+  {
+    slug: "peptide-therapy",
+    name: "Peptide Therapy",
+    shortName: "peptide therapy",
+    hubHref: "/hormone-therapy/",
+    primaryKeyword: "peptide therapy",
+    secondaryKeywords: [
+      "GLP-1 peptide therapy",
+      "growth hormone peptides",
+      "BPC-157",
+      "thymosin alpha-1",
+      "longevity peptides",
+      "metabolic peptides",
+    ],
+    shortDescription:
+      "Physician-prescribed peptide protocols for metabolic health, recovery, immune support, and longevity, with labs, dosing oversight, and follow-up cadence built in.",
+    longDescription:
+      "Our peptide therapy program uses carefully selected, evidence-backed peptides to support metabolic health, tissue repair, immune resilience, and healthy aging. Every protocol is prescribed and monitored by a clinician after a labs-first consult, no kiosks, no DIY dosing, and no peptides outside of indicated use. We pair peptides with hormone, IV, and lifestyle protocols when it makes sense so the whole picture moves in the right direction.",
+    benefits: [
+      "Metabolic support and healthier body composition with GLP-1 protocols",
+      "Faster recovery from training, surgery, and soft-tissue injury",
+      "Improved sleep quality and recovery markers",
+      "Immune resilience during high-stress or travel-heavy periods",
+      "Targeted longevity support paired with hormone and IV protocols",
+      "Clinician oversight, dosing, monitoring, and de-prescribing on schedule",
+    ],
+    addresses: [
+      "stalled weight loss despite training and nutrition effort",
+      "slow recovery from training, surgery, or soft-tissue injury",
+      "chronic low-grade inflammation and recovery debt",
+      "immune dysregulation during high-stress or travel-heavy periods",
+      "longevity and healthy-aging goals alongside hormone optimization",
+    ],
+    process: [
+      { title: "Lab-first intake", body: "We start with metabolic, hormone, and inflammatory labs so peptide selection is grounded in your biology." },
+      { title: "Clinician-led prescribing", body: "Your provider selects the right peptide (or stack), the right route, and the right dosing window, and explains the trade-offs." },
+      { title: "Supervised protocol", body: "You receive your protocol with clear self-administration instructions and a follow-up schedule." },
+      { title: "Re-check and adjust", body: "We re-test labs at the right interval and adjust, continue, or step down based on findings, not feelings." },
+    ],
+    baseFaqs: [
+      {
+        q: "Which peptides do you prescribe?",
+        a: "We prescribe evidence-backed peptides indicated for the goal you bring in, GLP-1 family peptides for metabolic health, BPC-157 and TB-500 for recovery support, thymosin alpha-1 for immune support, and select longevity peptides where appropriate. Every prescription follows current FDA guidance.",
+      },
+      {
+        q: "Is peptide therapy safe?",
+        a: "Under physician supervision with the right labs and the right candidate, peptide therapy has a strong safety profile. We screen carefully and re-check labs on a defined cadence.",
+      },
+      {
+        q: "How long does a peptide cycle last?",
+        a: "Most protocols run in defined cycles, typically 6-16 weeks, with planned breaks or step-downs. We do not write open-ended prescriptions.",
+      },
+    ],
+    localFaqs: [
+      (city) => ({
+        q: `Can I get peptide therapy near ${city.name}?`,
+        a: `Yes, our Killeen clinic is about ${city.driveTimeMin} minutes from ${city.name} via ${city.primaryRoute}. Most ${city.name} patients schedule labs and the consult back-to-back so they only make the trip once.`,
+      }),
+    ],
+    schemaType: "MedicalTherapy",
+    schemaSpecialty: "Endocrinology",
+    live: true,
   },
 ] as const;
 
@@ -605,4 +1172,689 @@ export function getNearbyCities(city: City, count = 3): City[] {
     if (!ordered.find((o) => o.slug === c.slug)) ordered.push(c);
   }
   return ordered.slice(0, count);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Treatments                                 */
+/* -------------------------------------------------------------------------- */
+
+export type Treatment = {
+  slug: string;
+  /** Service this treatment belongs to. */
+  serviceSlug: string;
+  name: string;
+  /** Short SEO/meta phrasing for this specific protocol. */
+  primaryKeyword: string;
+  secondaryKeywords: string[];
+  /** 1-sentence summary used in tiles and meta. */
+  shortDescription: string;
+  /** 2-3 sentence narrative used in the page intro. */
+  longDescription: string;
+  /** What this protocol typically helps with. */
+  indicatedFor: string[];
+  /** Concrete benefits patients can expect. */
+  benefits: string[];
+  /** How this protocol is delivered (route, frequency, monitoring). */
+  protocol: string;
+  /** 3-4 treatment-specific FAQs (city-agnostic). */
+  faqs: { q: string; a: string }[];
+  live: boolean;
+};
+
+export const TREATMENTS: ReadonlyArray<Treatment> = [
+  /* ──────────────────── Hormone Therapy ──────────────────── */
+  {
+    slug: "bhrt-pellets",
+    serviceSlug: "hormone-therapy",
+    name: "BHRT Pellet Therapy",
+    primaryKeyword: "bioidentical hormone pellet therapy",
+    secondaryKeywords: ["BHRT pellets", "hormone pellets", "testosterone pellets", "estradiol pellets"],
+    shortDescription:
+      "Low-maintenance bioidentical hormone pellets that release a steady physiologic dose for 3 to 5 months.",
+    longDescription:
+      "Pellet therapy places a small bioidentical hormone implant just under the skin during a quick in-office procedure. The pellet then releases testosterone or estradiol at a steady, physiologic rate for 3 to 5 months, no daily dosing, no peaks and troughs, and no missed-dose effects. It is one of the most consistent ways to keep levels in the right range, and it is especially popular with patients who travel often or prefer to set-and-forget their protocol.",
+    indicatedFor: [
+      "men with diagnosed Low T who want a low-maintenance protocol",
+      "perimenopausal and menopausal women",
+      "patients who have not tolerated injections or topicals",
+      "patients with adherence challenges or heavy travel schedules",
+    ],
+    benefits: [
+      "Steady physiologic dosing for 3 to 5 months per insertion",
+      "No daily creams, gels, or self-injections",
+      "Strong real-world adherence and outcomes",
+      "Convenient cadence, 2 to 4 visits per year",
+    ],
+    protocol:
+      "Lab-first consult, in-office pellet insertion (10 to 15 minutes), re-check labs at 4 to 6 weeks, then a re-insertion every 3 to 5 months based on labs and symptoms.",
+    faqs: [
+      { q: "Does the pellet insertion hurt?", a: "We numb the area first, so most patients feel pressure but minimal pain. The procedure takes about 10 to 15 minutes." },
+      { q: "How long do pellets last?", a: "Most patients re-dose every 3 to 5 months. Women typically need them less often than men." },
+      { q: "Can the dose be adjusted?", a: "Yes. We adjust pellet count and strength at each insertion based on labs and how you feel between cycles." },
+    ],
+    live: true,
+  },
+  {
+    slug: "bhrt-injections",
+    serviceSlug: "hormone-therapy",
+    name: "BHRT Injections",
+    primaryKeyword: "bioidentical hormone injections",
+    secondaryKeywords: ["testosterone cypionate injection", "estradiol injection", "weekly hormone injections", "injectable BHRT"],
+    shortDescription:
+      "Highly adjustable injectable BHRT with weekly or twice-weekly dosing and tight lab control.",
+    longDescription:
+      "Injectable bioidentical hormone therapy delivers testosterone cypionate or estradiol on a precise weekly or twice-weekly cadence. Injections give us the tightest control over peaks, troughs, and total weekly dose, which is why they are the preferred route for patients who want labs dialed in to a target range. Most patients self-inject at home after a brief in-clinic teach.",
+    indicatedFor: [
+      "patients who want tight, lab-targeted control",
+      "athletes and high-performers who track recovery markers",
+      "patients with absorption issues on topicals",
+      "patients who need rapid dose adjustments",
+    ],
+    benefits: [
+      "Most adjustable route, easy to fine-tune the weekly dose",
+      "Steady levels with twice-weekly dosing",
+      "Lower cost per month than many alternatives",
+      "Strong fit for athletes and high-performance goals",
+    ],
+    protocol:
+      "Lab-first consult, an in-clinic injection teach, weekly or twice-weekly self-injection at home, with labs re-checked at 6 to 8 weeks and every 4 to 6 months thereafter.",
+    faqs: [
+      { q: "Will I be able to inject myself?", a: "Almost everyone we teach is comfortable self-injecting within one or two sessions. We are available by message if you have questions." },
+      { q: "Weekly or twice-weekly, which is better?", a: "Twice-weekly dosing yields steadier levels and fewer mood or energy swings for most patients, and is our default." },
+      { q: "How fast do injections work?", a: "Most patients feel a difference in energy, mood, and sleep within 2 to 4 weeks. Body composition follows over 2 to 3 months." },
+    ],
+    live: true,
+  },
+  {
+    slug: "perimenopause-care",
+    serviceSlug: "hormone-therapy",
+    name: "Perimenopause Hormone Care",
+    primaryKeyword: "perimenopause hormone treatment",
+    secondaryKeywords: ["perimenopause hormones", "irregular cycles treatment", "perimenopausal mood support", "low progesterone treatment"],
+    shortDescription:
+      "Targeted hormone support for the 5 to 10 year window before menopause, when cycles, mood, sleep, and energy first start to drift.",
+    longDescription:
+      "Perimenopause is the long runway before menopause when estrogen and progesterone start fluctuating in ways that disrupt sleep, mood, cycles, and body composition. Our perimenopause protocol starts with comprehensive labs across the cycle, then layers in targeted progesterone, estrogen, or thyroid support based on the actual pattern, not a one-size script.",
+    indicatedFor: [
+      "irregular or shortening cycles in your late 30s or 40s",
+      "new sleep disruption, early-morning wake-ups",
+      "mood swings, anxiety, or low motivation",
+      "weight redistribution to the midsection",
+      "low libido and intimacy changes",
+    ],
+    benefits: [
+      "Targeted relief from sleep, mood, and cycle symptoms",
+      "A plan grounded in your actual labs, not your age",
+      "Coordination with thyroid and adrenal markers",
+      "A long-term plan that flexes into menopause when the time comes",
+    ],
+    protocol:
+      "Cycle-aware lab panel, clinician consult, targeted hormone (often progesterone first), and re-check at 8 to 12 weeks with dose adjustment.",
+    faqs: [
+      { q: "Am I too young for hormone therapy?", a: "If your labs and symptoms point to perimenopause, hormone support is appropriate. We see patients in their late 30s through 50s." },
+      { q: "Do I have to do estrogen?", a: "No. Many perimenopausal patients do well on progesterone alone, especially in the early years." },
+      { q: "Will this affect my fertility?", a: "Targeted hormone support in perimenopause does not act as contraception. We discuss your fertility plans and adjust accordingly." },
+    ],
+    live: true,
+  },
+  {
+    slug: "menopause-care",
+    serviceSlug: "hormone-therapy",
+    name: "Menopause Hormone Replacement",
+    primaryKeyword: "menopause hormone replacement",
+    secondaryKeywords: ["menopausal HRT", "post-menopause hormones", "hot flash treatment", "estradiol replacement", "vaginal estrogen"],
+    shortDescription:
+      "Full bioidentical hormone replacement for menopausal and post-menopausal women, restoring sleep, mood, libido, bone health, and quality of life.",
+    longDescription:
+      "Menopause is not something to white-knuckle through. Bioidentical hormone replacement, estradiol, progesterone, and selectively testosterone, restores hormone levels into a healthy range that protects bone density, cardiovascular health, and quality of life. Every plan starts with a full lab panel and a real conversation about your history, risk factors, and goals.",
+    indicatedFor: [
+      "hot flashes, night sweats, and disrupted sleep",
+      "menopausal mood changes and brain fog",
+      "low libido and vaginal dryness",
+      "bone density and long-term cardiovascular concerns",
+      "weight gain and body composition shifts",
+    ],
+    benefits: [
+      "Significant reduction in hot flashes and night sweats",
+      "Restored sleep, mood, and cognitive sharpness",
+      "Better libido, intimacy, and vaginal comfort",
+      "Bone density and cardiovascular benefits when started in the right window",
+    ],
+    protocol:
+      "Comprehensive lab panel including hormones, lipids, metabolic and bone markers, clinician consult, BHRT prescription (oral, topical, pellet, or injectable), re-check at 8 to 12 weeks, then on a 6-month cadence.",
+    faqs: [
+      { q: "Is menopausal HRT safe?", a: "When prescribed and monitored properly, modern bioidentical HRT has a favorable risk profile, especially when started within 10 years of menopause." },
+      { q: "Do I need testosterone too?", a: "Many menopausal women benefit from a low dose of testosterone for libido, mood, and lean mass. We decide together based on labs and goals." },
+      { q: "How long can I stay on HRT?", a: "Most patients stay on a maintenance dose long-term, with regular labs and risk-factor re-assessment. There is no arbitrary cut-off." },
+    ],
+    live: true,
+  },
+
+  /* ──────────────────── IV Nutrition ──────────────────── */
+  {
+    slug: "myers-cocktail",
+    serviceSlug: "iv-nutrition",
+    name: "Myers' Cocktail IV",
+    primaryKeyword: "Myers cocktail IV",
+    secondaryKeywords: ["Myers cocktail infusion", "B-complex IV", "magnesium IV", "wellness IV drip"],
+    shortDescription:
+      "The original wellness IV, B-complex, vitamin C, magnesium, and calcium, for a full-body reset in about 45 minutes.",
+    longDescription:
+      "The Myers' Cocktail is the original wellness IV, a balanced infusion of B-complex vitamins, vitamin C, magnesium, and calcium that delivers a full-body reset in about 45 minutes. It is our most-requested drip and a great place to start if you have never tried IV therapy.",
+    indicatedFor: [
+      "general wellness and energy support",
+      "post-illness recovery",
+      "stress-heavy weeks and travel",
+      "first-time IV patients",
+    ],
+    benefits: [
+      "Restored hydration in 45 minutes",
+      "Higher energy and mental clarity within hours",
+      "Better sleep that night for most patients",
+      "A clean, low-risk introduction to IV therapy",
+    ],
+    protocol:
+      "Brief intake, IV placement, 30 to 45 minute supervised infusion, recommended cadence is monthly for wellness or weekly during high-demand windows.",
+    faqs: [
+      { q: "What is in a Myers Cocktail?", a: "B-complex, vitamin C, magnesium, and calcium in a balanced saline base." },
+      { q: "How often can I get one?", a: "Monthly is the typical wellness cadence. Weekly is fine during acute recovery or high-stress windows." },
+      { q: "Will I feel a difference right away?", a: "Most patients feel more hydrated and clear-headed within an hour and notice better energy and sleep the same day." },
+    ],
+    live: true,
+  },
+  {
+    slug: "immune-booster",
+    serviceSlug: "iv-nutrition",
+    name: "Immune Booster IV",
+    primaryKeyword: "immune booster IV",
+    secondaryKeywords: ["high-dose vitamin C IV", "zinc IV", "immune support drip", "flu season IV"],
+    shortDescription:
+      "High-dose vitamin C, zinc, and glutathione for immune support before travel, during flu season, or when you feel something coming on.",
+    longDescription:
+      "Our Immune Booster IV pairs high-dose vitamin C with zinc, B-complex, and a glutathione push for an immune-focused infusion you can use proactively before travel and flu season, or reactively when you start to feel a virus brewing. It is one of our most-booked drips during the late-fall and winter months.",
+    indicatedFor: [
+      "early cold and flu symptoms",
+      "pre-travel and post-travel support",
+      "high-exposure professions (healthcare, education, military)",
+      "stretches of poor sleep and high stress",
+    ],
+    benefits: [
+      "Targeted antioxidant and immune support",
+      "Glutathione push for cellular detox",
+      "Most patients feel symptom relief within 24 to 48 hours",
+      "Safe to repeat weekly during high-exposure windows",
+    ],
+    protocol:
+      "Brief intake, IV placement, 45 to 60 minute infusion with glutathione push at the end. Repeat weekly during acute exposure windows.",
+    faqs: [
+      { q: "Will an Immune Booster IV cure my cold?", a: "It does not replace antiviral medication, but most patients feel symptom severity and duration drop noticeably." },
+      { q: "Can I get this if I'm already sick?", a: "Yes. We screen briefly before starting and avoid certain add-ons if you are febrile or acutely ill." },
+      { q: "How is this different from a Myers Cocktail?", a: "The Immune Booster uses higher-dose vitamin C, adds zinc, and includes a glutathione push at the end." },
+    ],
+    live: true,
+  },
+  {
+    slug: "athletic-recovery",
+    serviceSlug: "iv-nutrition",
+    name: "Athletic Recovery IV",
+    primaryKeyword: "athletic recovery IV",
+    secondaryKeywords: ["workout recovery IV", "amino acid IV", "hydration IV", "post-training IV"],
+    shortDescription:
+      "Amino acids, electrolytes, B-complex, and magnesium for faster recovery between training blocks, races, and competitions.",
+    longDescription:
+      "Our Athletic Recovery IV is built for the patient who trains hard, an endurance athlete between race blocks, a lifter chasing a meet, a CrossFitter on a heavy cycle, or a military operator preparing for selection. We blend amino acids, electrolytes, B-complex, and magnesium to restore what training depletes and accelerate the recovery curve.",
+    indicatedFor: [
+      "endurance and strength athletes between training blocks",
+      "race-week and competition-week recovery",
+      "delayed-onset muscle soreness (DOMS) you cannot shake",
+      "military and tactical athletes in heavy training cycles",
+    ],
+    benefits: [
+      "Faster recovery between training sessions",
+      "Reduced DOMS and improved next-day training quality",
+      "Restored electrolyte balance after heavy sweat loss",
+      "Improved sleep and parasympathetic recovery markers",
+    ],
+    protocol:
+      "Brief intake including training context, IV placement, 45 to 60 minute infusion. Recommended cadence: weekly during heavy training blocks, monthly as a maintenance.",
+    faqs: [
+      { q: "Should I get this before or after training?", a: "After training is the default. Before-training drips are an option for race or competition prep." },
+      { q: "Does this help with cramping?", a: "Yes. The electrolyte and magnesium content addresses the most common causes of training cramps." },
+      { q: "Can I get this if I am on TRT?", a: "Absolutely. Many of our TRT patients add an Athletic Recovery IV during heavy training cycles." },
+    ],
+    live: true,
+  },
+  {
+    slug: "hangover-relief",
+    serviceSlug: "iv-nutrition",
+    name: "Hangover Relief IV",
+    primaryKeyword: "hangover IV",
+    secondaryKeywords: ["hangover relief drip", "rehydration IV", "morning-after IV", "anti-nausea IV"],
+    shortDescription:
+      "Aggressive rehydration plus anti-nausea and B-complex support to bounce back from a rough night faster than you would on your own.",
+    longDescription:
+      "Our Hangover Relief IV combines aggressive saline rehydration, B-complex for energy and brain fog, and approved anti-nausea support so you can recover in 45 minutes instead of the rest of the day. It is built for the morning after a wedding, conference, or work event, when you simply do not have the day to lose.",
+    indicatedFor: [
+      "dehydration and nausea after a heavy night",
+      "morning-after recovery before a busy work day",
+      "wedding and event hangovers",
+      "travel recovery combined with mild dehydration",
+    ],
+    benefits: [
+      "Aggressive rehydration in 45 minutes",
+      "Anti-nausea support so you can keep food and water down",
+      "B-complex for energy and reduced brain fog",
+      "Most patients feel functional within the same hour",
+    ],
+    protocol:
+      "Brief intake including last meal, fluids, and meds, IV placement, 30 to 45 minute infusion with anti-nausea added if clinically appropriate.",
+    faqs: [
+      { q: "How fast will I feel better?", a: "Most patients feel functional by the time the infusion ends. Full energy and clarity follow over the next 2 to 4 hours." },
+      { q: "Can I drive after?", a: "Most patients drive themselves home. If you are still feeling effects of the prior night, arrange a ride." },
+      { q: "Is this safe if I just want to recover?", a: "Yes. We screen briefly and confirm you are clinically appropriate before starting any drip." },
+    ],
+    live: true,
+  },
+
+  /* ──────────────────── Testosterone Therapy ──────────────────── */
+  {
+    slug: "trt-injections",
+    serviceSlug: "testosterone-therapy",
+    name: "TRT Injections",
+    primaryKeyword: "testosterone injections",
+    secondaryKeywords: ["testosterone cypionate", "weekly TRT injections", "self-injection TRT", "intramuscular testosterone"],
+    shortDescription:
+      "The most adjustable form of TRT, weekly or twice-weekly testosterone cypionate injections with tight lab control.",
+    longDescription:
+      "TRT injections give us the most precise control over your testosterone levels, with a weekly or twice-weekly self-injection schedule that keeps levels stable and adjustable. Most men we treat self-inject at home after a brief in-clinic teach. It is the most cost-effective long-term route and the easiest to fine-tune as goals evolve.",
+    indicatedFor: [
+      "men with diagnosed Low T who want tight control",
+      "athletes and high-performers tracking recovery and labs",
+      "men who want the most cost-effective TRT route",
+      "men who have not responded to topicals or gels",
+    ],
+    benefits: [
+      "Most adjustable route, easy weekly fine-tuning",
+      "Steady levels with twice-weekly dosing",
+      "Lowest monthly cost of the TRT options",
+      "Strong fit for athletes and high-performance goals",
+    ],
+    protocol:
+      "Lab-first consult (total T, free T, estradiol, SHBG, PSA, CBC, metabolic panel), in-clinic injection teach, weekly or twice-weekly self-injection at home, labs at 6 to 8 weeks then every 4 to 6 months.",
+    faqs: [
+      { q: "Will I be able to inject myself?", a: "Almost every patient is comfortable self-injecting within one or two sessions. We are message-available for questions in between visits." },
+      { q: "Weekly or twice-weekly?", a: "Twice-weekly dosing yields steadier levels for most patients and is our default." },
+      { q: "Do you ever add ancillaries like anastrozole or HCG?", a: "When labs and goals call for it. We do not prescribe ancillaries by default." },
+    ],
+    live: true,
+  },
+  {
+    slug: "trt-pellets",
+    serviceSlug: "testosterone-therapy",
+    name: "TRT Pellet Therapy",
+    primaryKeyword: "testosterone pellet therapy",
+    secondaryKeywords: ["TRT pellets", "testosterone pellet implant", "pellet TRT"],
+    shortDescription:
+      "Low-maintenance testosterone pellets that release a steady physiologic dose for 4 to 6 months.",
+    longDescription:
+      "Testosterone pellets are placed under the skin during a quick in-office procedure and release a steady physiologic dose for 4 to 6 months. They are popular with men who travel often, dislike self-injections, or want the most set-and-forget TRT option available.",
+    indicatedFor: [
+      "men who travel heavily and want a set-and-forget protocol",
+      "men with adherence challenges on weekly injections",
+      "men who have not tolerated topicals",
+      "men who want fewer monthly tasks",
+    ],
+    benefits: [
+      "Steady levels for 4 to 6 months per insertion",
+      "No daily creams or weekly self-injections",
+      "Strong real-world adherence",
+      "Visit count of 2 to 3 per year",
+    ],
+    protocol:
+      "Lab-first consult, in-office pellet insertion (10 to 15 minutes), re-check labs at 4 to 6 weeks, re-insertion every 4 to 6 months based on labs and symptoms.",
+    faqs: [
+      { q: "Does the pellet insertion hurt?", a: "We numb the area, so most patients feel pressure but minimal pain. The procedure runs 10 to 15 minutes." },
+      { q: "Can I switch from injections to pellets later?", a: "Yes. We move many patients between routes as life and preferences change." },
+      { q: "How often will I need labs?", a: "Initial labs at 4 to 6 weeks after the first pellet, then at each re-insertion." },
+    ],
+    live: true,
+  },
+  {
+    slug: "trt-cream",
+    serviceSlug: "testosterone-therapy",
+    name: "Testosterone Cream",
+    primaryKeyword: "testosterone cream",
+    secondaryKeywords: ["topical testosterone", "testosterone gel", "compounded testosterone cream"],
+    shortDescription:
+      "Compounded topical testosterone for men who prefer a needle-free, daily delivery method.",
+    longDescription:
+      "Compounded testosterone cream is a topical option for men who want a needle-free protocol and are willing to commit to daily application. It works well for many men, with the trade-off that absorption varies more than injections and pellets, so lab follow-up is important.",
+    indicatedFor: [
+      "men who want a needle-free protocol",
+      "men starting TRT and wanting a gentler introduction",
+      "men whose labs absorb topicals well",
+    ],
+    benefits: [
+      "No needles, no in-office procedures",
+      "Easy to adjust dose day-to-day",
+      "Good fit for men just starting TRT",
+    ],
+    protocol:
+      "Lab-first consult, prescription for compounded testosterone cream, daily application, labs at 6 to 8 weeks to confirm absorption and dose.",
+    faqs: [
+      { q: "How long until cream works?", a: "Most men notice changes in 2 to 6 weeks. Absorption varies, so the 6 to 8 week lab check matters." },
+      { q: "Can the cream transfer to a partner?", a: "Yes, if applied carelessly. We teach application sites and timing to minimize transfer risk." },
+      { q: "Is cream as effective as injections?", a: "For absorbers, yes. For non-absorbers, labs will tell us, and we move you to injections or pellets." },
+    ],
+    live: true,
+  },
+  {
+    slug: "low-t-evaluation",
+    serviceSlug: "testosterone-therapy",
+    name: "Low T Evaluation",
+    primaryKeyword: "low testosterone evaluation",
+    secondaryKeywords: ["Low T workup", "low testosterone lab panel", "TRT consult", "men's hormone consult"],
+    shortDescription:
+      "A comprehensive Low T workup before any prescription, full hormone panel, symptom history, and an honest yes-or-no on whether TRT is right for you.",
+    longDescription:
+      "Not every man with low energy needs TRT, and not every man with normal-looking labs is in the clear. Our Low T evaluation is a comprehensive workup including total and free testosterone, estradiol, SHBG, PSA, CBC, lipid and metabolic panels, plus a real symptom and history conversation. The outcome is a clear yes-or-no on TRT candidacy, along with any lifestyle, sleep, or thyroid factors you should address either way.",
+    indicatedFor: [
+      "men 30+ with fatigue, low libido, or stalled progress",
+      "men whose primary care said labs were fine but symptoms persist",
+      "men considering TRT and wanting an unbiased workup",
+      "men evaluating fertility planning alongside TRT",
+    ],
+    benefits: [
+      "Comprehensive hormone, metabolic, and cardiovascular labs",
+      "A 45 to 60 minute clinician consult, not a sales pitch",
+      "A clear written plan whether or not TRT is right for you",
+      "Coordination with sleep, thyroid, and lifestyle drivers",
+    ],
+    protocol:
+      "Pre-visit lab order, 45 to 60 minute consult with your provider to review findings and decide next steps. No TRT prescription before evaluation.",
+    faqs: [
+      { q: "Will you prescribe TRT at the first visit?", a: "Only if the labs and symptoms clearly support it. Otherwise we address the actual drivers first." },
+      { q: "What if my labs are normal?", a: "We explain what normal means at your age, identify other factors (sleep, thyroid, stress, body composition), and build a plan from there." },
+      { q: "Do you offer fertility-preserving alternatives?", a: "Yes, for men who want hormone optimization without suppressing fertility, we discuss alternatives during the consult." },
+    ],
+    live: true,
+  },
+
+  /* ──────────────────── Wellness Exams ──────────────────── */
+  {
+    slug: "mens-annual-physical",
+    serviceSlug: "wellness-exams",
+    name: "Men's Annual Physical",
+    primaryKeyword: "mens annual physical exam",
+    secondaryKeywords: ["mens preventive physical", "annual mens wellness exam", "mens health checkup"],
+    shortDescription:
+      "A comprehensive annual physical built for men, with hormone, metabolic, and cardiovascular labs that go past the basic insurance panel.",
+    longDescription:
+      "Our men's annual physical goes beyond the basic check-the-box panel. We screen total and free testosterone, estradiol, lipid panel, fasting glucose and A1C, PSA when age-appropriate, and other markers that flag early-stage risk you can still reverse. The exam includes a full physical, a labs review, and a written plan you actually take home.",
+    indicatedFor: [
+      "men 30+ scheduling an annual preventive visit",
+      "men whose previous physicals felt rushed",
+      "men with family history of heart disease, diabetes, or cancer",
+      "men starting a fitness or performance program who want a baseline",
+    ],
+    benefits: [
+      "Hormone, metabolic, and cardiovascular markers in one panel",
+      "Unhurried consult, head-to-toe physical, written plan",
+      "Age-appropriate cancer screening guidance",
+      "Direct provider follow-up for off-visit questions",
+    ],
+    protocol:
+      "Pre-visit lab draw, 45 to 60 minute physical and consult, written prevention plan, next-year visit scheduled on the way out.",
+    faqs: [
+      { q: "Is this different from a sick visit?", a: "Yes. This is preventive care focused on labs, screening, and longevity planning." },
+      { q: "Will my insurance cover this?", a: "Many panels are covered. We confirm coverage in advance and explain any out-of-pocket items before the visit." },
+    ],
+    live: true,
+  },
+  {
+    slug: "womens-annual-physical",
+    serviceSlug: "wellness-exams",
+    name: "Women's Annual Physical",
+    primaryKeyword: "womens annual physical exam",
+    secondaryKeywords: ["womens preventive physical", "annual womens wellness exam", "womens health checkup"],
+    shortDescription:
+      "A comprehensive annual physical for women with hormone, metabolic, thyroid, and cardiovascular labs that go past the standard insurance panel.",
+    longDescription:
+      "Our women's annual physical includes a full thyroid panel, cycle-aware hormone labs, lipid and metabolic markers, and age-appropriate cancer screening guidance. The exam is built for women who want a real partner in long-term prevention, not a 15-minute rush.",
+    indicatedFor: [
+      "women in their 20s, 30s, 40s, and beyond",
+      "women navigating cycle, mood, or weight changes",
+      "women planning pregnancy or postpartum recovery",
+      "women with thyroid, autoimmune, or family-history concerns",
+    ],
+    benefits: [
+      "Cycle-aware hormone panel, thyroid markers included",
+      "Unhurried 45 to 60 minute consult",
+      "Coordinated cancer screening and gynecologic care",
+      "Written long-term prevention plan",
+    ],
+    protocol:
+      "Pre-visit lab draw timed to your cycle when relevant, 45 to 60 minute physical and consult, written plan.",
+    faqs: [
+      { q: "Do I still need my OB-GYN?", a: "Yes, for in-depth gynecologic care. Our exam coordinates with, not replaces, gynecologic care." },
+      { q: "Should I schedule around my cycle?", a: "For cycle-aware hormone labs, yes. We schedule the lab draw on the right cycle day." },
+    ],
+    live: true,
+  },
+  {
+    slug: "executive-physical",
+    serviceSlug: "wellness-exams",
+    name: "Executive Physical",
+    primaryKeyword: "executive physical exam",
+    secondaryKeywords: ["executive health physical", "longevity physical", "comprehensive health assessment"],
+    shortDescription:
+      "An expanded annual physical for executives and high-performers, with deeper labs, cardiovascular imaging coordination, and a longevity-focused written plan.",
+    longDescription:
+      "The Executive Physical is our deepest single-visit assessment, expanded hormone, metabolic, inflammatory, and cardiovascular markers, coordination of imaging (CIMT, calcium score, DEXA) when clinically appropriate, and a longevity-focused written plan that translates the data into next 12-month action.",
+    indicatedFor: [
+      "executives, founders, and high-performance professionals",
+      "patients optimizing for the next 10 to 20 years of healthspan",
+      "patients with family history of cardiac or metabolic disease",
+      "patients who want a single-day comprehensive workup",
+    ],
+    benefits: [
+      "Expanded labs (inflammation, advanced lipids, hormones, metabolic)",
+      "Imaging coordination (CIMT, calcium score, DEXA when indicated)",
+      "Longevity-focused written plan with 12-month milestones",
+      "Direct clinician access throughout the year",
+    ],
+    protocol:
+      "Pre-visit lab and imaging coordination, 90 to 120 minute physical and consult, written longevity plan, scheduled mid-year check-in.",
+    faqs: [
+      { q: "Is this the same as a concierge service?", a: "It is a single-visit comprehensive assessment, not a year-round concierge retainer." },
+      { q: "Do I need imaging?", a: "Not always. We recommend imaging based on age, family history, and lab patterns." },
+    ],
+    live: true,
+  },
+  {
+    slug: "sports-physical",
+    serviceSlug: "wellness-exams",
+    name: "Sports & DOT Physical",
+    primaryKeyword: "sports physical exam",
+    secondaryKeywords: ["DOT physical", "athlete physical", "youth sports physical", "pre-participation physical"],
+    shortDescription:
+      "Fast, thorough sports and DOT physicals for athletes, students, and commercial drivers, often same-week.",
+    longDescription:
+      "We offer pre-participation sports physicals for youth and high school athletes, DOT physicals for commercial drivers, and a more comprehensive athlete physical for adult competitive and tactical athletes. Visits are fast, thorough, and often available same-week.",
+    indicatedFor: [
+      "youth and high school athletes",
+      "adult competitive and tactical athletes",
+      "commercial drivers needing a current DOT card",
+      "patients needing return-to-play clearance",
+    ],
+    benefits: [
+      "Often same-week availability",
+      "DOT-certified clinician on staff",
+      "Athlete-aware musculoskeletal exam",
+      "Clear pass / refer outcomes",
+    ],
+    protocol:
+      "Brief intake, focused physical, paperwork completed in-clinic. DOT physicals follow current FMCSA requirements.",
+    faqs: [
+      { q: "Do you do same-week sports physicals?", a: "Most weeks, yes. Call to confirm the next available slot." },
+      { q: "What do I bring for a DOT physical?", a: "Your current medical card if you have one, any current medications, and glasses if you wear them." },
+    ],
+    live: true,
+  },
+
+  /* ──────────────────── Peptide Therapy ──────────────────── */
+  {
+    slug: "glp1-metabolic",
+    serviceSlug: "peptide-therapy",
+    name: "GLP-1 Metabolic Peptides",
+    primaryKeyword: "GLP-1 peptide therapy",
+    secondaryKeywords: ["semaglutide", "tirzepatide", "GLP-1 weight loss", "metabolic peptide therapy"],
+    shortDescription:
+      "Physician-supervised GLP-1 peptide protocols for metabolic health, body composition, and sustainable weight loss.",
+    longDescription:
+      "Our GLP-1 program uses physician-supervised semaglutide or tirzepatide alongside labs, body-composition tracking, and nutrition coaching so you get the metabolic benefits without the rebound. We are not a write-a-script-and-wave-goodbye clinic; we plan the on-ramp, the maintenance dose, and the eventual taper or maintenance phase.",
+    indicatedFor: [
+      "patients with a BMI of 27+ and metabolic risk factors",
+      "patients whose weight loss has stalled despite real effort",
+      "patients with insulin resistance or pre-diabetes",
+      "patients pairing GLP-1 with hormone or strength programs",
+    ],
+    benefits: [
+      "Meaningful weight loss with appetite normalization",
+      "Improved insulin sensitivity and metabolic markers",
+      "A planned taper or maintenance, no open-ended dosing",
+      "Coordination with strength training to preserve lean mass",
+    ],
+    protocol:
+      "Lab-first consult including metabolic and thyroid panels, GLP-1 prescription with weekly self-injection, monthly check-ins for the first 12 weeks, then quarterly with labs.",
+    faqs: [
+      { q: "Will I gain the weight back when I stop?", a: "Not if we plan the taper and pair it with strength training and nutrition habits. We are deliberate about the maintenance phase." },
+      { q: "Will I lose muscle?", a: "Without effort, yes, you will lose lean mass. We pair every GLP-1 protocol with a protein and strength plan to protect muscle." },
+      { q: "How much will I lose?", a: "Most patients lose 12 to 18 percent of body weight over 12 to 18 months on a well-managed protocol." },
+    ],
+    live: true,
+  },
+  {
+    slug: "bpc-157-recovery",
+    serviceSlug: "peptide-therapy",
+    name: "BPC-157 Recovery Peptides",
+    primaryKeyword: "BPC-157 peptide therapy",
+    secondaryKeywords: ["BPC-157", "TB-500", "recovery peptides", "tissue repair peptide"],
+    shortDescription:
+      "Recovery-focused peptide protocols (BPC-157, TB-500) for soft-tissue repair, training recovery, and post-surgical healing.",
+    longDescription:
+      "BPC-157 and TB-500 are recovery-focused peptides used to support soft-tissue healing, training recovery, and post-surgical tissue repair. Protocols are clinician-prescribed, time-limited, and paired with rehab and training context so the peptide is a tool, not a shortcut.",
+    indicatedFor: [
+      "athletes recovering from soft-tissue injuries",
+      "patients in post-surgical rehab",
+      "tactical athletes between heavy training cycles",
+      "patients with chronic recovery debt",
+    ],
+    benefits: [
+      "Faster soft-tissue and joint recovery",
+      "Reduced training-related inflammation",
+      "Pairs well with physical therapy and rehab",
+      "Time-limited cycles, no open-ended use",
+    ],
+    protocol:
+      "Clinician consult, prescription with self-administration teach, cycle length defined up front (typically 4 to 8 weeks), and a written taper or off-cycle plan.",
+    faqs: [
+      { q: "How fast does BPC-157 work?", a: "Many patients notice recovery benefits within 1 to 3 weeks. Tissue repair continues over the full cycle." },
+      { q: "Is BPC-157 FDA-approved?", a: "BPC-157 is prescribed within current FDA guidance and through licensed compounding pharmacies. We discuss current regulatory status during the consult." },
+    ],
+    live: true,
+  },
+  {
+    slug: "thymosin-immune",
+    serviceSlug: "peptide-therapy",
+    name: "Thymosin Alpha-1 Immune Peptides",
+    primaryKeyword: "thymosin alpha-1 peptide therapy",
+    secondaryKeywords: ["thymosin alpha-1", "immune peptide therapy", "immune support peptide"],
+    shortDescription:
+      "Thymosin alpha-1 peptide protocols for immune resilience during high-stress, high-exposure, or post-illness windows.",
+    longDescription:
+      "Thymosin alpha-1 is an immune-modulating peptide used to support immune resilience during high-stress periods, post-illness recovery, and certain chronic infection contexts. We prescribe defined cycles with labs before and after so we can see what is actually changing.",
+    indicatedFor: [
+      "patients in post-viral recovery",
+      "patients with recurrent infections or chronic immune dysregulation",
+      "high-exposure professionals during peak seasons",
+      "patients with stress-driven immune debt",
+    ],
+    benefits: [
+      "Targeted immune support",
+      "Pairs with IV therapy and lifestyle protocols",
+      "Defined cycle, not open-ended",
+      "Labs before and after to measure response",
+    ],
+    protocol:
+      "Lab-first consult including immune and inflammatory markers, prescription with self-administration teach, typical cycle of 6 to 12 weeks, post-cycle labs.",
+    faqs: [
+      { q: "Will I feel this peptide working?", a: "Some patients feel improvements in energy and resilience. Most of the benefit is measured in labs, not subjective feel." },
+      { q: "Is this safe long-term?", a: "Our default is defined cycles, not open-ended use. We re-evaluate at the end of each cycle." },
+    ],
+    live: true,
+  },
+  {
+    slug: "longevity-peptides",
+    serviceSlug: "peptide-therapy",
+    name: "Longevity Peptide Protocols",
+    primaryKeyword: "longevity peptide therapy",
+    secondaryKeywords: ["anti-aging peptides", "longevity peptide protocol", "epitalon", "GHK-Cu"],
+    shortDescription:
+      "Curated longevity peptide protocols layered onto hormone, IV, and lifestyle programs for patients optimizing healthspan.",
+    longDescription:
+      "Our longevity peptide protocols are reserved for patients already optimizing the basics, sleep, training, hormones, and metabolic markers, and looking for the next layer. We curate specific peptides to specific goals (sleep architecture, mitochondrial markers, skin and tissue quality) and pair them with regular labs so we are measuring, not guessing.",
+    indicatedFor: [
+      "patients already on hormone and metabolic optimization",
+      "patients targeting healthspan markers (mitochondrial, inflammatory, recovery)",
+      "patients pairing peptides with strength and longevity training",
+    ],
+    benefits: [
+      "Targeted layer on top of foundational optimization",
+      "Lab-driven selection, not catalog browsing",
+      "Defined cycles with planned breaks",
+      "Coordinated with hormone, IV, and lifestyle protocols",
+    ],
+    protocol:
+      "Foundational labs confirmed in range, longevity-specific markers added, consult to select peptide(s), defined cycle with mid-cycle and post-cycle labs.",
+    faqs: [
+      { q: "Where do longevity peptides fit relative to hormones?", a: "Hormones first. Once hormone, sleep, and metabolic basics are in range, longevity peptides are a sensible next layer." },
+      { q: "Will I be on these forever?", a: "No. Each cycle has a defined end. We re-evaluate every cycle." },
+    ],
+    live: true,
+  },
+] as const;
+
+export function getLiveTreatments(): Treatment[] {
+  return TREATMENTS.filter((t) => t.live);
+}
+
+export function getTreatment(slug: string): Treatment | undefined {
+  return TREATMENTS.find((t) => t.slug === slug);
+}
+
+export function getTreatmentsForService(serviceSlug: string): Treatment[] {
+  return getLiveTreatments().filter((t) => t.serviceSlug === serviceSlug);
+}
+
+/**
+ * Returns every live (city, service, treatment) triple. Used for
+ * generateStaticParams in the [treatment] route and for the sitemap.
+ */
+export function getLiveCityServiceTreatmentTriples(): {
+  city: City;
+  service: Service;
+  treatment: Treatment;
+}[] {
+  const out: { city: City; service: Service; treatment: Treatment }[] = [];
+  const liveCities = getLiveCities();
+  const liveServices = getLiveServices();
+  for (const city of liveCities) {
+    for (const service of liveServices) {
+      for (const treatment of getTreatmentsForService(service.slug)) {
+        out.push({ city, service, treatment });
+      }
+    }
+  }
+  return out;
 }

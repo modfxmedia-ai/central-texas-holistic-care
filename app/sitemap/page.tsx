@@ -63,29 +63,6 @@ type SiteGroup = {
 };
 
 const GROUPS: SiteGroup[] = (() => {
-  const cities = getLiveCities();
-  const services = getLiveServices();
-
-  const areasLinks: SiteLink[] = [
-    {
-      label: "Areas We Serve Overview",
-      href: "/areas-we-serve/",
-      description: "All cities and services we cover in Central Texas.",
-    },
-    ...cities.flatMap((city) => [
-      {
-        label: `${city.name} Hub`,
-        href: `/areas-we-serve/${city.slug}/`,
-        description: `${city.county} County. ~${city.driveTimeMin} min from clinic.`,
-      },
-      ...services.map((service) => ({
-        label: `${service.name} in ${city.name}`,
-        href: `/areas-we-serve/${city.slug}/${service.slug}/`,
-        description: `${service.name} for ${city.name} residents.`,
-      })),
-    ]),
-  ];
-
   return [
   {
     title: "Main",
@@ -213,13 +190,6 @@ const GROUPS: SiteGroup[] = (() => {
     ],
   },
   {
-    title: "Areas We Serve",
-    icon: MapPin,
-    accent: "#8BAD5A",
-    description: "Local pages for every city and service we cover.",
-    links: areasLinks,
-  },
-  {
     title: "Resources & Policies",
     icon: FileText,
     accent: "#1a3a0a",
@@ -262,7 +232,11 @@ const QUICK_ACTIONS: { label: string; href: string; icon: LucideIcon; external?:
 /* -------------------------------------------------------------------------- */
 
 export default function SitemapPage() {
-  const totalLinks = GROUPS.reduce((acc, g) => acc + g.links.length, 0);
+  const cities = getLiveCities();
+  const services = getLiveServices();
+  const areasPageCount = 1 + cities.length + cities.length * services.length;
+  const totalLinks =
+    GROUPS.reduce((acc, g) => acc + g.links.length, 0) + areasPageCount;
 
   return (
     <main className="relative w-full bg-[color:var(--color-cream-soft)]">
@@ -338,7 +312,7 @@ export default function SitemapPage() {
             <div className="text-center">
               <dt className="font-heading text-2xl font-semibold text-[#1a3a0a] sm:text-3xl">
                 <span className="bg-gradient-to-br from-[#2D5016] to-[#6CBE45] bg-clip-text text-transparent">
-                  {GROUPS.length}
+                  {GROUPS.length + 1}
                 </span>
               </dt>
               <dd className="mt-1 text-[10px] font-medium uppercase tracking-[0.18em] text-stone-600">
@@ -472,6 +446,9 @@ export default function SitemapPage() {
         </div>
       </section>
 
+      {/* ─── Areas We Serve (dedicated) ─── */}
+      <AreasWeServeSection cities={cities} services={services} />
+
       {/* ─── Bottom CTA ─── */}
       <section className="relative w-full pb-24 sm:pb-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -529,5 +506,131 @@ export default function SitemapPage() {
         </div>
       </section>
     </main>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*                          Areas We Serve (dedicated)                         */
+/* -------------------------------------------------------------------------- */
+
+type CityLike = ReturnType<typeof getLiveCities>[number];
+type ServiceLike = ReturnType<typeof getLiveServices>[number];
+
+function AreasWeServeSection({
+  cities,
+  services,
+}: {
+  cities: CityLike[];
+  services: ServiceLike[];
+}) {
+  const totalPages = 1 + cities.length + cities.length * services.length;
+
+  return (
+    <section
+      aria-labelledby="areas-we-serve-heading"
+      className="relative border-y border-[#1a3a0a]/10 bg-white py-20 sm:py-24"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#6CBE45]/40 to-transparent"
+      />
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Section header */}
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#1a3a0a]/15 bg-[#f0f5eb] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#2D5016]">
+              <MapPin className="size-3" />
+              Local pages
+            </div>
+            <h2
+              id="areas-we-serve-heading"
+              className="mt-4 font-heading font-semibold leading-[1.1] text-[#1a3a0a]"
+              style={{ fontSize: "clamp(1.75rem, 3.2vw, 2.5rem)" }}
+            >
+              Areas We Serve
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-stone-600 sm:text-base">
+              We publish a dedicated page for every service in every city we
+              cover across Central Texas. Pick a community to see what we offer
+              there, or jump to the full overview.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              href="/areas-we-serve/"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#2D5016] px-4 py-2 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-[#1a3a0a]"
+            >
+              <Compass className="size-3.5" />
+              All areas overview
+            </Link>
+            <div className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-3 py-1.5 text-[11px] font-medium text-stone-600">
+              <span className="inline-flex size-1.5 rounded-full bg-[#6CBE45]" />
+              {cities.length} cities &middot; {services.length} services &middot;{" "}
+              {totalPages} pages
+            </div>
+          </div>
+        </div>
+
+        {/* City grid */}
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {cities.map((city) => (
+            <li key={city.slug}>
+              <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white transition-all hover:-translate-y-0.5 hover:border-[#6CBE45]/50 hover:shadow-xl hover:shadow-[#2D5016]/5">
+                {/* gold corner tick */}
+                <span
+                  aria-hidden
+                  className="absolute right-4 top-4 h-2 w-2 border-r-[1.5px] border-t-[1.5px] border-[#C4A862] opacity-60 transition-opacity group-hover:opacity-100"
+                />
+
+                {/* City header */}
+                <Link
+                  href={`/areas-we-serve/${city.slug}/`}
+                  className="block border-b border-stone-100 bg-gradient-to-br from-[#f7faf3] to-white px-5 pb-4 pt-5"
+                >
+                  <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#2D5016]">
+                    <MapPin className="size-3" />
+                    {city.county} County
+                  </div>
+                  <h3 className="mt-1.5 font-heading text-lg font-semibold leading-tight text-[#1a3a0a] transition-colors group-hover:text-[#2D5016]">
+                    {city.name}
+                  </h3>
+                  <p className="mt-1 text-[11px] text-stone-500">
+                    ~{city.driveTimeMin} min from clinic
+                  </p>
+                </Link>
+
+                {/* Service links */}
+                <ul className="flex-1 space-y-0.5 px-3 py-3">
+                  {services.map((service) => (
+                    <li key={service.slug}>
+                      <Link
+                        href={`/areas-we-serve/${city.slug}/${service.slug}/`}
+                        className="group/svc flex items-center gap-2 rounded-lg px-2 py-1.5 transition-colors hover:bg-[#f0f5eb]"
+                      >
+                        <ArrowRight
+                          aria-hidden
+                          className="size-3 shrink-0 text-stone-300 transition-all group-hover/svc:translate-x-0.5 group-hover/svc:text-[#2D5016]"
+                        />
+                        <span className="truncate text-xs text-stone-700 transition-colors group-hover/svc:text-[#1a3a0a]">
+                          {service.name}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </li>
+          ))}
+        </ul>
+
+        {/* Footer note */}
+        <p className="mt-8 text-center text-xs text-stone-500">
+          Every protocol within each service has its own page too. Open a city
+          and pick a service to see the full list.
+        </p>
+      </div>
+    </section>
   );
 }

@@ -19,6 +19,7 @@ import {
   getLiveServices,
   getNearbyCities,
   getService,
+  getTreatmentsForService,
   type City,
   type Service,
 } from "@/lib/locations";
@@ -93,6 +94,7 @@ export default async function CityServicePage({
   const copy = composeCityServiceCopy(city, service);
   const nearby = getNearbyCities(city, 4);
   const otherServices = getLiveServices().filter((s) => s.slug !== service.slug);
+  const treatments = getTreatmentsForService(service.slug);
   const canonical = `${SITE_URL}/areas-we-serve/${city.slug}/${service.slug}/`;
 
   /* ----------------------------- JSON-LD ---------------------------------- */
@@ -339,6 +341,57 @@ export default async function CityServicePage({
           </Reveal>
         </div>
       </section>
+
+      {/* Specific treatments */}
+      {treatments.length > 0 && (
+        <section className="bg-[var(--color-cream)] py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <Reveal>
+              <p className="font-serif text-sm uppercase tracking-[0.18em] text-[var(--color-accent)]">
+                Specific protocols
+              </p>
+              <h2 className="mt-3 font-heading text-2xl font-light text-[var(--color-forest)] sm:text-3xl">
+                {service.name} protocols available to {city.name} patients
+              </h2>
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-[var(--color-text-muted,#6B6B6B)] sm:text-lg">
+                {service.name} is not one product, it is a set of protocols. Below are
+                the specific routes we use, each with its own page describing how it
+                works, who it fits, and what to expect.
+              </p>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {treatments.map((t) => (
+                  <li key={t.slug}>
+                    <Link
+                      href={`/areas-we-serve/${city.slug}/${service.slug}/${t.slug}/`}
+                      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--color-border,rgba(45,80,22,0.12))] bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-[var(--color-accent)] hover:shadow-md"
+                    >
+                      <span
+                        aria-hidden
+                        className="absolute right-4 top-4 h-2 w-2 border-r-[1.5px] border-t-[1.5px] border-[var(--color-accent)] opacity-50 transition-opacity group-hover:opacity-100"
+                      />
+                      <span className="inline-flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--color-accent)]">
+                        {service.name}
+                      </span>
+                      <h3 className="mt-2 font-heading text-base font-light leading-snug text-[var(--color-forest)] sm:text-lg">
+                        {t.name} in {city.name}
+                      </h3>
+                      <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-[var(--color-text-muted,#6B6B6B)]">
+                        {t.shortDescription}
+                      </p>
+                      <span className="mt-auto inline-flex items-center gap-1 pt-4 text-xs font-medium text-[var(--color-forest)] transition-colors group-hover:text-[var(--color-accent)]">
+                        Read the protocol
+                        <ChevronRight aria-hidden className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       {/* FAQs */}
       <section className="bg-[var(--color-cream)] py-20">

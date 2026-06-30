@@ -1,6 +1,10 @@
 import type { MetadataRoute } from "next";
 
-import { getLiveCities, getLiveCityServicePairs } from "@/lib/locations";
+import {
+  getLiveCities,
+  getLiveCityServicePairs,
+  getLiveCityServiceTreatmentTriples,
+} from "@/lib/locations";
 
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 
@@ -62,11 +66,18 @@ export function generateSitemap(): MetadataRoute.Sitemap {
     }),
   );
 
+  const cityServiceTreatmentEntries: SitemapEntry[] =
+    getLiveCityServiceTreatmentTriples().map(({ city, service, treatment }) => ({
+      url: `${SITE_URL}/areas-we-serve/${city.slug}/${service.slug}/${treatment.slug}/`,
+      lastModified: new Date(PROGRAMMATIC_LAST_MODIFIED),
+    }));
+
   return [
     ...staticEntries,
     ...productEntries,
     ...cityHubEntries,
     ...cityServiceEntries,
+    ...cityServiceTreatmentEntries,
   ];
 }
 
