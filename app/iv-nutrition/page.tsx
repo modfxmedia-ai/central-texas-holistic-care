@@ -6,7 +6,7 @@ import IVNutritionPageClient from "./IVNutritionPageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/iv-nutrition/`;
 
-const PAGE_TITLE = "IV Nutrition – central holistic care";
+const PAGE_TITLE = "IV Nutrition | central holistic care";
 const PAGE_DESCRIPTION =
   "Physician-supervised IV nutrition therapy at Central Texas Holistic Care. Immune Booster, Workout Recovery, Myer's Cocktail, Cold & Flu, and Hangover IV infusions in Harker Heights, TX.";
 

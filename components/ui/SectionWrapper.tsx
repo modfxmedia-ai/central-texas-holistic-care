@@ -13,7 +13,7 @@ export interface SectionWrapperProps {
   as?: "section" | "div" | "article" | "aside";
   /** Override the container variants (default: staggerContainer). */
   variants?: Variants;
-  /** Disable scroll triggering — animate immediately. */
+  /** Disable scroll triggering, animate immediately. */
   immediate?: boolean;
   /** Optional id for anchor navigation. */
   id?: string;

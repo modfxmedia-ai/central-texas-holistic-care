@@ -6,9 +6,9 @@ import WomenSubpageClient from "@/components/women/WomenSubpageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/women/gynecological-exams/`;
 
-const PAGE_TITLE = "Gynecological Exams – central holistic care";
+const PAGE_TITLE = "Gynecological Exams | central holistic care";
 const PAGE_DESCRIPTION =
-  "Compassionate, thorough gynecological care at Central Texas Holistic Care — routine exams, cervical cancer screening, STI testing, and hormone evaluation for every stage of life.";
+  "Compassionate, thorough gynecological care at Central Texas Holistic Care, routine exams, cervical cancer screening, STI testing, and hormone evaluation for every stage of life.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -151,7 +151,7 @@ export default function GynecologicalExamsPage() {
           {
             iconKey: "shieldCheck",
             title: "Physician-led",
-            body: "Every exam is performed and reviewed by our clinicians — thorough, attentive, and never rushed.",
+            body: "Every exam is performed and reviewed by our clinicians, thorough, attentive, and never rushed.",
           },
           {
             iconKey: "heartPulse",
@@ -161,7 +161,7 @@ export default function GynecologicalExamsPage() {
           {
             iconKey: "sparkles",
             title: "Whole-woman care",
-            body: "We connect your gynecological health to hormones, lifestyle, and overall wellness — not just the visit in front of us.",
+            body: "We connect your gynecological health to hormones, lifestyle, and overall wellness, not just the visit in front of us.",
           },
         ]}
         faqs={[
@@ -202,7 +202,7 @@ export default function GynecologicalExamsPage() {
             iconKey: "activity",
           },
         ]}
-        ctaHeading={{ lead: "Care that listens —", accent: "and looks ahead." }}
+        ctaHeading={{ lead: "Care that listens , ", accent: "and looks ahead." }}
         ctaSubline="Book your gynecological exam and walk out with a clear, personalized plan."
       />
     </>

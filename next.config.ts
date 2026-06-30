@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
   async headers() {
     // The Next.js dev/build pipeline warns against overriding Cache-Control
     // on `/_next/static/*` (it already sets `immutable` correctly). Production
-    // edge caching at the CDN (Vercel) layer is the right place for those —
+    // edge caching at the CDN (Vercel) layer is the right place for those , 
     // see vercel.json. Here we keep only baseline security headers.
     return [
       {

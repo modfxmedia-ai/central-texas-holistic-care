@@ -9,12 +9,15 @@ import {
   Home,
   Leaf,
   Map as MapIcon,
+  MapPin,
   Phone,
   Sparkles,
   Stethoscope,
   Users,
   type LucideIcon,
 } from "lucide-react";
+
+import { getLiveCities, getLiveServices } from "@/lib/locations";
 
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/sitemap/`;
@@ -59,7 +62,31 @@ type SiteGroup = {
   links: SiteLink[];
 };
 
-const GROUPS: SiteGroup[] = [
+const GROUPS: SiteGroup[] = (() => {
+  const cities = getLiveCities();
+  const services = getLiveServices();
+
+  const areasLinks: SiteLink[] = [
+    {
+      label: "Areas We Serve Overview",
+      href: "/areas-we-serve/",
+      description: "All cities and services we cover in Central Texas.",
+    },
+    ...cities.flatMap((city) => [
+      {
+        label: `${city.name} Hub`,
+        href: `/areas-we-serve/${city.slug}/`,
+        description: `${city.county} County. ~${city.driveTimeMin} min from clinic.`,
+      },
+      ...services.map((service) => ({
+        label: `${service.name} in ${city.name}`,
+        href: `/areas-we-serve/${city.slug}/${service.slug}/`,
+        description: `${service.name} for ${city.name} residents.`,
+      })),
+    ]),
+  ];
+
+  return [
   {
     title: "Main",
     icon: Home,
@@ -186,11 +213,33 @@ const GROUPS: SiteGroup[] = [
     ],
   },
   {
+    title: "Areas We Serve",
+    icon: MapPin,
+    accent: "#8BAD5A",
+    description: "Local pages for every city and service we cover.",
+    links: areasLinks,
+  },
+  {
     title: "Resources & Policies",
     icon: FileText,
     accent: "#1a3a0a",
     description: "Legal, accessibility, and reference information.",
     links: [
+      {
+        label: "Privacy Policy",
+        href: "/privacy-policy/",
+        description: "How we handle your personal and health information.",
+      },
+      {
+        label: "Terms of Service",
+        href: "/terms-of-service/",
+        description: "Terms that govern your use of this site.",
+      },
+      {
+        label: "Accessibility",
+        href: "/accessibility/",
+        description: "Our commitment to WCAG 2.1 AA accessibility.",
+      },
       {
         label: "Sitemap",
         href: "/sitemap/",
@@ -199,6 +248,7 @@ const GROUPS: SiteGroup[] = [
     ],
   },
 ];
+})();
 
 const QUICK_ACTIONS: { label: string; href: string; icon: LucideIcon; external?: boolean }[] = [
   { label: "Book An Appointment", href: BOOKING_URL, icon: Calendar, external: true },

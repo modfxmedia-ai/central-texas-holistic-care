@@ -33,7 +33,7 @@ export const fadeInRight: Variants = {
   },
 };
 
-/** Stagger child animations — pair with any of the directional fades. */
+/** Stagger child animations, pair with any of the directional fades. */
 export const staggerContainer: Variants = {
   hidden: {},
   visible: {

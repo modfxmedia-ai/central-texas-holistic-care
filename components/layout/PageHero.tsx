@@ -61,7 +61,7 @@ export default function PageHero({
       className="relative isolate w-full overflow-hidden"
       style={{ height: 360 }}
     >
-      {/* Schema.org BreadcrumbList JSON-LD — App Router style (Script via next/head
+      {/* Schema.org BreadcrumbList JSON-LD, App Router style (Script via next/head
           is for the Pages Router; this script tag is SSR'd into the HTML). */}
       <script
         type="application/ld+json"

@@ -18,7 +18,7 @@ export default function NewsletterForm() {
       return;
     }
     setState("loading");
-    // No backend wired yet — simulate a delivery so the UI feels real.
+    // No backend wired yet, simulate a delivery so the UI feels real.
     await new Promise((r) => setTimeout(r, 900));
     setState("success");
     setEmail("");

@@ -208,7 +208,7 @@ function HeroSection() {
           className="mx-auto mt-6 max-w-2xl text-[15px] leading-relaxed text-stone-200 sm:text-base"
         >
           Preventive care that&apos;s thorough, personal, and built to keep you
-          ahead of disease — not chasing it.
+          ahead of disease, not chasing it.
         </motion.p>
 
         <motion.div

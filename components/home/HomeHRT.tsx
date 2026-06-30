@@ -124,7 +124,7 @@ export default function HomeHRT() {
               className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-[#6CBE45] to-[#8BAD5A]"
               style={{ transformOrigin: "center" }}
             />
-            {/* main image — interactive two-image flip */}
+            {/* main image, interactive two-image flip */}
             <div className="absolute inset-0" style={{ perspective: "1600px" }}>
               <motion.div
                 className="relative size-full"
@@ -132,7 +132,7 @@ export default function HomeHRT() {
                 animate={{ rotateY: flipped ? 180 : 0 }}
                 transition={{ duration: 0.8, ease: EASE }}
               >
-                {/* front — HRT photo */}
+                {/* front, HRT photo */}
                 <div
                   className="absolute inset-0 overflow-hidden rounded-[2.5rem] shadow-2xl shadow-[#1a3a0a]/25 ring-1 ring-white/40"
                   style={{ backfaceVisibility: "hidden" }}
@@ -154,7 +154,7 @@ export default function HomeHRT() {
                   />
                 </div>
 
-                {/* back — second photo */}
+                {/* back, second photo */}
                 <div
                   className="absolute inset-0 overflow-hidden rounded-[2.5rem] shadow-2xl shadow-[#1a3a0a]/25 ring-1 ring-[#6CBE45]/30"
                   style={{

@@ -6,9 +6,9 @@ import HormoneTherapyClient from "@/components/hormone/HormoneTherapyClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/hormone-therapy/`;
 
-const PAGE_TITLE = "Hormone Therapy – central holistic care";
+const PAGE_TITLE = "Hormone Therapy | central holistic care";
 const PAGE_DESCRIPTION =
-  "Bio-identical hormone replacement therapy (BHRT) at Central Texas Holistic Care in Harker Heights, TX. Testosterone optimization for men, estrogen and progesterone support for women — pellet, injection, oral, and topical delivery personalized to your labs.";
+  "Bio-identical hormone replacement therapy (BHRT) at Central Texas Holistic Care in Harker Heights, TX. Testosterone optimization for men, estrogen and progesterone support for women, pellet, injection, oral, and topical delivery personalized to your labs.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,

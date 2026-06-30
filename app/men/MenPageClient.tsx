@@ -68,7 +68,7 @@ const SERVICES: readonly Service[] = [
   {
     eyebrow: "Annual Wellness Exams",
     title: "Annual Wellness Exams: Your First Line of Defense",
-    body: "Preventive care starts with a thorough annual wellness exam. These check-ups are designed to monitor your overall health, detect potential issues early, and keep your vaccinations up to date—ensuring you stay ahead of illness and disease.",
+    body: "Preventive care starts with a thorough annual wellness exam. These check-ups are designed to monitor your overall health, detect potential issues early, and keep your vaccinations up to date, ensuring you stay ahead of illness and disease.",
     href: "/men/wellness-exams/",
     image: {
       src: `${WP_BASE}/Annual-Wellness-Exams-Your-First-Line-of-Defense-healthcare-workers-having-meeting-hospital-conference-1024x576.webp`,
@@ -229,7 +229,7 @@ function HeroSection() {
           variants={fadeUp}
           className="mx-auto mt-6 max-w-2xl text-[15px] leading-relaxed text-stone-200 sm:text-base"
         >
-          Strength, energy, performance, and longevity — supported with
+          Strength, energy, performance, and longevity, supported with
           evidence-based, physician-led care designed around your labs and your
           life.
         </motion.p>

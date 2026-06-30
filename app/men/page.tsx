@@ -6,9 +6,9 @@ import MenPageClient from "./MenPageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/men/`;
 
-const PAGE_TITLE = "Men – central holistic care";
+const PAGE_TITLE = "Men | central holistic care";
 const PAGE_DESCRIPTION =
-  "Men's health services at Central Texas Holistic Care: testosterone replacement therapy and annual wellness exams — physician-supervised, root-cause care in Killeen, TX.";
+  "Men's health services at Central Texas Holistic Care: testosterone replacement therapy and annual wellness exams, physician-supervised, root-cause care in Killeen, TX.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,

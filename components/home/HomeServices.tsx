@@ -25,14 +25,14 @@ const SERVICES: Service[] = [
     image: "/images/source/hormone-replacement-therapy-hrt.jpg",
     title: "Hormone Therapy",
     blurb:
-      "Bioidentical hormone replacement and pellet therapy tailored to your labs — restore energy, mood, sleep, and libido.",
+      "Bioidentical hormone replacement and pellet therapy tailored to your labs, restore energy, mood, sleep, and libido.",
     href: "/hormone-therapy/",
   },
   {
     image: "/images/source/mens-health-optimization.jpeg",
     title: "Testosterone Therapy",
     blurb:
-      "Lab-guided TRT for men — reclaim strength, focus, drive, and recovery with a protocol built around your biology.",
+      "Lab-guided TRT for men, reclaim strength, focus, drive, and recovery with a protocol built around your biology.",
     href: "/men/testosterone/",
   },
   {
@@ -53,7 +53,7 @@ const SERVICES: Service[] = [
     image: "/images/source/couple-hormone-imbalance.webp",
     title: "Menopausal Care",
     blurb:
-      "Personalized peri- and post-menopause support — manage hot flashes, sleep, mood, and bone health with proven therapies.",
+      "Personalized peri- and post-menopause support, manage hot flashes, sleep, mood, and bone health with proven therapies.",
     href: "/women/menopausal-disorders/",
   },
 ];

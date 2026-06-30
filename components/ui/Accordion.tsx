@@ -15,7 +15,7 @@ export interface AccordionItem {
 
 export interface AccordionProps {
   items: AccordionItem[];
-  /** "single" (default) or "multiple" — matches Radix semantics. */
+  /** "single" (default) or "multiple", matches Radix semantics. */
   type?: "single" | "multiple";
   /** Optional default-open value(s). */
   defaultValue?: string | string[];

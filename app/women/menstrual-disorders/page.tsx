@@ -6,9 +6,9 @@ import WomenSubpageClient from "@/components/women/WomenSubpageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/women/menstrual-disorders/`;
 
-const PAGE_TITLE = "Menstrual Disorders – central holistic care";
+const PAGE_TITLE = "Menstrual Disorders | central holistic care";
 const PAGE_DESCRIPTION =
-  "Thorough, individualized care for irregular, painful, or heavy periods at Central Texas Holistic Care — diagnosing and treating menstrual disorders and hormonal imbalances.";
+  "Thorough, individualized care for irregular, painful, or heavy periods at Central Texas Holistic Care, diagnosing and treating menstrual disorders and hormonal imbalances.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -168,18 +168,18 @@ export default function MenstrualDisordersPage() {
           {
             iconKey: "beaker",
             title: "Lab-guided treatment",
-            body: "Hormone panels, thyroid, and metabolic markers inform every recommendation — not guesswork.",
+            body: "Hormone panels, thyroid, and metabolic markers inform every recommendation, not guesswork.",
           },
           {
             iconKey: "heartPulse",
             title: "Individualized care",
-            body: "Plans are built for your cycle, your goals, and your life stage — and adjusted as you heal.",
+            body: "Plans are built for your cycle, your goals, and your life stage, and adjusted as you heal.",
           },
         ]}
         faqs={[
           {
             q: "What counts as a 'normal' cycle?",
-            a: "Cycles generally range from 21–35 days with 2–7 days of bleeding. Heavy flow, severe pain, or significant variation month-to-month are worth evaluating.",
+            a: "Cycles generally range from 21-35 days with 2-7 days of bleeding. Heavy flow, severe pain, or significant variation month-to-month are worth evaluating.",
           },
           {
             q: "What's the difference between PMS and PMDD?",
@@ -191,7 +191,7 @@ export default function MenstrualDisordersPage() {
           },
           {
             q: "What treatment options do you offer?",
-            a: "Plans may include lifestyle and nutrition support, targeted supplementation, hormonal balancing, and medication when appropriate — chosen with you, not for you.",
+            a: "Plans may include lifestyle and nutrition support, targeted supplementation, hormonal balancing, and medication when appropriate, chosen with you, not for you.",
           },
         ]}
         related={[

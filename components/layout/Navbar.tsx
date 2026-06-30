@@ -526,7 +526,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top utility bar — insurance & financing visibility (scrolls away) */}
+      {/* Top utility bar, insurance & financing visibility (scrolls away) */}
       <div className="hidden bg-gradient-to-r from-[#0f2706] via-[#1a3a0a] to-[#0f2706] text-[#FAF6EE] lg:block">
         <div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-4 text-xs sm:px-6 lg:px-8">
           <div className="flex items-center gap-5">

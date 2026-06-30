@@ -228,7 +228,7 @@ export default function HomeAbout() {
               className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-[#6CBE45] to-[#8BAD5A]"
               style={{ transformOrigin: "center" }}
             />
-            {/* main image — continuous 3D flip */}
+            {/* main image, continuous 3D flip */}
             <div
               className="absolute inset-0"
               style={{ perspective: "1600px" }}
@@ -239,7 +239,7 @@ export default function HomeAbout() {
                 animate={{ rotateY: flipped ? 180 : 0 }}
                 transition={{ duration: 0.8, ease: EASE }}
               >
-                {/* front — photo */}
+                {/* front, photo */}
                 <div
                   className="absolute inset-0 overflow-hidden rounded-[2.5rem] shadow-2xl shadow-[#1a3a0a]/25 ring-1 ring-white/40"
                   style={{ backfaceVisibility: "hidden" }}
@@ -261,7 +261,7 @@ export default function HomeAbout() {
                   />
                 </div>
 
-                {/* back — data */}
+                {/* back, data */}
                 <div
                   className="absolute inset-0 flex flex-col overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#1a3a0a] via-[#2D5016] to-[#0f2706] p-7 text-[#FAF6EE] shadow-2xl shadow-[#1a3a0a]/25 ring-1 ring-[#6CBE45]/30 sm:p-9"
                   style={{
@@ -312,7 +312,7 @@ export default function HomeAbout() {
                     </span>
                   </div>
 
-                  {/* Stats — compact 3-row */}
+                  {/* Stats, compact 3-row */}
                   <div className="relative mt-5 space-y-3.5">
                     {[
                       {
@@ -384,10 +384,10 @@ export default function HomeAbout() {
                     </span>
                     <p className="relative pl-3 font-heading text-[13.5px] italic leading-snug text-[#FAF6EE]/90">
                       Every plan starts with your labs, your story, and a real
-                      conversation &mdash; not a prescription pad.
+                      conversation, not a prescription pad.
                     </p>
                     <p className="relative mt-2 pl-3 text-[10px] font-medium uppercase tracking-[0.22em] text-[#9DD270]">
-                      &mdash; Our care philosophy
+                     , Our care philosophy
                     </p>
                   </div>
 

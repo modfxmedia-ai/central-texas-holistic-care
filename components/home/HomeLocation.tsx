@@ -66,7 +66,7 @@ export default function HomeLocation() {
       />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        {/* Header — compact, left aligned with action */}
+        {/* Header, compact, left aligned with action */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -107,7 +107,7 @@ export default function HomeLocation() {
           </a>
         </motion.div>
 
-        {/* Card — compact split: map on left, info on right */}
+        {/* Card, compact split: map on left, info on right */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -116,7 +116,7 @@ export default function HomeLocation() {
           className="overflow-hidden rounded-3xl border border-[#1a3a0a]/12 bg-white shadow-[0_20px_50px_-25px_rgba(15,39,6,0.3)]"
         >
           <div className="grid lg:grid-cols-5">
-            {/* MAP — 3/5 */}
+            {/* MAP, 3/5 */}
             <div className="relative lg:col-span-3">
               <div className="relative h-[260px] w-full sm:h-[300px] lg:h-full lg:min-h-[340px]">
                 <iframe
@@ -128,7 +128,7 @@ export default function HomeLocation() {
                   style={{ border: 0 }}
                   allowFullScreen
                 />
-                {/* Live pill — top-left */}
+                {/* Live pill, top-left */}
                 <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-[#0f2706]/90 px-3 py-1.5 backdrop-blur">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#9DD270] opacity-75" />
@@ -141,7 +141,7 @@ export default function HomeLocation() {
               </div>
             </div>
 
-            {/* INFO — 2/5 */}
+            {/* INFO, 2/5 */}
             <div className="relative bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#2D5016] p-6 text-white sm:p-7 lg:col-span-2">
               <div
                 aria-hidden="true"

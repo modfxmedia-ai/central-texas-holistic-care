@@ -137,7 +137,7 @@ export default function HeroSection() {
       className="relative isolate flex min-h-[100svh] w-full overflow-hidden"
       style={{ backgroundColor: FOREST }}
     >
-      {/* LEFT — forest green text panel */}
+      {/* LEFT, forest green text panel */}
       <div
         className="relative flex w-full flex-col justify-center px-6 py-24 sm:px-10 lg:w-1/2 lg:px-16 xl:px-24"
         style={{
@@ -242,7 +242,7 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* RIGHT — cream image panel */}
+      {/* RIGHT, cream image panel */}
       <div
         className="relative hidden overflow-hidden lg:block lg:w-1/2"
         style={{ backgroundColor: CREAM }}

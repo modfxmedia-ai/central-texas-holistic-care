@@ -180,7 +180,7 @@ function HeroSection() {
           className="mx-auto mt-6 max-w-2xl text-[15px] leading-relaxed text-stone-200 sm:text-base"
         >
           Restore vitality, confidence, and overall wellness with
-          physician-supervised TRT — tailored to your labs, your symptoms, and
+          physician-supervised TRT, tailored to your labs, your symptoms, and
           your life.
         </motion.p>
 
@@ -348,7 +348,7 @@ function OverviewSection() {
               </span>
               <p className="text-[14.5px] leading-relaxed text-stone-700">
                 At <strong className="text-[#0f2706]">Central Texas Holistic Care</strong>,
-                we tailor testosterone therapy to your specific needs — helping
+                we tailor testosterone therapy to your specific needs, helping
                 you restore vitality, confidence, and overall wellness.
               </p>
             </div>
@@ -444,7 +444,7 @@ function SymptomsSection() {
             className="mt-4 text-[15px] leading-relaxed text-stone-700"
           >
             If two or more of these sound familiar, it&apos;s worth a
-            conversation — and a simple lab panel.
+            conversation, and a simple lab panel.
           </motion.p>
         </motion.div>
 
@@ -492,7 +492,7 @@ function WhyCTHCSection() {
     {
       icon: ShieldCheck,
       title: "Physician-supervised",
-      body: "Every TRT plan is reviewed and adjusted by our clinicians — never one-size-fits-all.",
+      body: "Every TRT plan is reviewed and adjusted by our clinicians, never one-size-fits-all.",
     },
     {
       icon: Activity,
@@ -502,7 +502,7 @@ function WhyCTHCSection() {
     {
       icon: HeartPulse,
       title: "Whole-person care",
-      body: "Energy, mood, libido, sleep, body composition — all monitored together, not in silos.",
+      body: "Energy, mood, libido, sleep, body composition, all monitored together, not in silos.",
     },
   ];
 

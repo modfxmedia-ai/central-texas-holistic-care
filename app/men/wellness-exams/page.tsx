@@ -6,9 +6,9 @@ import WellnessExamsPageClient from "./WellnessExamsPageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/men/wellness-exams/`;
 
-const PAGE_TITLE = "Wellness Exams – central holistic care";
+const PAGE_TITLE = "Wellness Exams | central holistic care";
 const PAGE_DESCRIPTION =
-  "Annual Wellness Exams for men at Central Texas Holistic Care — preventive screenings, recommended vaccinations, and early detection to protect your long-term health.";
+  "Annual Wellness Exams for men at Central Texas Holistic Care, preventive screenings, recommended vaccinations, and early detection to protect your long-term health.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,

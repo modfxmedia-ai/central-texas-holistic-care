@@ -6,9 +6,9 @@ import WomenPageClient from "./WomenPageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/women/`;
 
-const PAGE_TITLE = "Women – central holistic care";
+const PAGE_TITLE = "Women | central holistic care";
 const PAGE_DESCRIPTION =
-  "Women's health services at Central Texas Holistic Care — comprehensive gynecological exams, menopausal care, and menstrual disorder treatment tailored to every life stage.";
+  "Women's health services at Central Texas Holistic Care, comprehensive gynecological exams, menopausal care, and menstrual disorder treatment tailored to every life stage.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,

@@ -246,7 +246,7 @@ function HeroSection() {
           variants={fadeUp}
           className="mx-auto mt-6 max-w-2xl text-[15px] leading-relaxed text-stone-200 sm:text-base"
         >
-          Personalized care for every stage — cycle health, gynecological
+          Personalized care for every stage, cycle health, gynecological
           screening, and confident navigation through menopause and beyond.
         </motion.p>
 

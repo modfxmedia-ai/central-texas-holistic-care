@@ -6,7 +6,7 @@ import IVSubpageClient from "@/components/iv/IVSubpageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/iv-nutrition/cold-and-flu/`;
 
-const PAGE_TITLE = "Cold And Flu – central holistic care";
+const PAGE_TITLE = "Cold And Flu | central holistic care";
 const PAGE_DESCRIPTION =
   "Cold & Flu IV Therapy in Harker Heights, TX. Rapid rehydration, high-dose vitamin C, zinc, glutathione, and anti-inflammatory relief to shorten viral illness and get you back on your feet.";
 
@@ -79,12 +79,12 @@ export default function ColdAndFluPage() {
         h1="Cold & Flu"
         breadcrumbLabel="Cold & Flu"
         eyebrow="Cold & Flu IV"
-        heroSubtitle="Rapid rehydration, high-dose vitamin C, zinc, and symptom relief — designed to shorten viral illness and get you back on your feet."
+        heroSubtitle="Rapid rehydration, high-dose vitamin C, zinc, and symptom relief, designed to shorten viral illness and get you back on your feet."
         tagline="Fight Off Symptoms Fast. Rehydrate. Recover."
         h2="Cold & Flu IV Therapy"
         h2Accent="IV Therapy"
         body="Don't let cold or flu symptoms slow you down. Our Cold & Flu IV Therapy delivers targeted nutrients and hydration directly into your bloodstream to help you recover faster, reduce symptoms, and strengthen your immune system when you need it most."
-        closingNote="Perfect for those battling seasonal flu, common cold, or viral fatigue — this IV therapy gives your body the immediate support it needs to heal faster and feel better."
+        closingNote="Perfect for those battling seasonal flu, common cold, or viral fatigue, this IV therapy gives your body the immediate support it needs to heal faster and feel better."
         iconKey="snowflake"
         trust={[
           { iconKey: "shieldCheck", label: "Physician-supervised" },
@@ -176,7 +176,7 @@ export default function ColdAndFluPage() {
         faqs={[
           {
             q: "When should I get the Cold & Flu IV?",
-            a: "At the first sign of symptoms — sore throat, fatigue, congestion, or fever. The sooner you treat, the shorter the illness usually runs.",
+            a: "At the first sign of symptoms, sore throat, fatigue, congestion, or fever. The sooner you treat, the shorter the illness usually runs.",
           },
           {
             q: "Will it stop the cold or flu completely?",
@@ -184,7 +184,7 @@ export default function ColdAndFluPage() {
           },
           {
             q: "Is it safe if I'm already on cold medication?",
-            a: "Yes for most patients — your provider will review what you're taking before adding any meds to the drip.",
+            a: "Yes for most patients, your provider will review what you're taking before adding any meds to the drip.",
           },
           {
             q: "How long until I feel relief?",
@@ -195,7 +195,7 @@ export default function ColdAndFluPage() {
           {
             title: "Immune Booster",
             href: "/iv-nutrition/immune-booster/",
-            blurb: "Build defense before illness strikes — common pre-travel pick.",
+            blurb: "Build defense before illness strikes, common pre-travel pick.",
             iconKey: "shieldCheck",
           },
           {

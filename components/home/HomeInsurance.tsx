@@ -78,7 +78,7 @@ export default function HomeInsurance() {
             </span>
           </div>
 
-          {/* The actual scrolling marquee — overflow-hidden lives here, not the wrapper */}
+          {/* The actual scrolling marquee, overflow-hidden lives here, not the wrapper */}
           <div className="relative overflow-hidden rounded-2xl border border-[#1a3a0a]/12 bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0f2706] py-4 shadow-lg shadow-[#1a3a0a]/15">
             {/* edge fade masks */}
             <div
@@ -311,7 +311,7 @@ export default function HomeInsurance() {
                   />
                 </motion.div>
 
-                {/* Floating carrier mini-pills — hug the image edges */}
+                {/* Floating carrier mini-pills, hug the image edges */}
                 {[
                   {
                     label: "BCBS Texas",
@@ -365,7 +365,7 @@ export default function HomeInsurance() {
                   </motion.span>
                 ))}
 
-                {/* Verified badge — anchored to image, top-right */}
+                {/* Verified badge, anchored to image, top-right */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.6 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -409,7 +409,7 @@ export default function HomeInsurance() {
                   </motion.span>
                 </motion.div>
 
-                {/* Coverage meter — anchored to image, bottom-left */}
+                {/* Coverage meter, anchored to image, bottom-left */}
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -463,7 +463,7 @@ export default function HomeInsurance() {
                   </div>
                 </motion.div>
 
-                {/* Tiny shield accent — replaces stray sparkles */}
+                {/* Tiny shield accent, replaces stray sparkles */}
                 <motion.span
                   aria-hidden
                   className="pointer-events-none absolute right-[6%] bottom-[6%] z-20 flex size-7 items-center justify-center rounded-full bg-[#1a3a0a] ring-2 ring-white shadow-md"

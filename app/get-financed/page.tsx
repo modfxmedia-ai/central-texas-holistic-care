@@ -27,7 +27,7 @@ const DENEFITS_PREAPPROVAL =
 const PAGE_TITLE =
   "Get Financed | 0% APR No Credit Check Plans via Denefits | CTHC";
 const PAGE_DESCRIPTION =
-  "Pay over time for your wellness, hormone, weight-loss, and TRT programs at Central Texas Holistic Care. No credit checks, instant approval, and flexible 3–24 month plans through Denefits.";
+  "Pay over time for your wellness, hormone, weight-loss, and TRT programs at Central Texas Holistic Care. No credit checks, instant approval, and flexible 3-24 month plans through Denefits.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -144,7 +144,7 @@ const PROGRAMS: readonly Program[] = [
     price: "$549",
     audience: "women",
     features: [
-      "Full hormone balancing — Estrogen, Progesterone, and Testosterone",
+      "Full hormone balancing, Estrogen, Progesterone, and Testosterone",
       "Metabolic support with low dose GLP or berberine",
       "B12 shots included",
       "Lab tracking",
@@ -164,9 +164,9 @@ const PROGRAMS: readonly Program[] = [
     audience: "women",
     highlight: true,
     features: [
-      "Complete hormone optimization — Estrogen, Progesterone, and Testosterone",
+      "Complete hormone optimization, Estrogen, Progesterone, and Testosterone",
       "DHEA and thyroid support",
-      "Peptide therapy if clinically indicated — Sermorelin, Ipamorelin, Tesamorelin",
+      "Peptide therapy if clinically indicated, Sermorelin, Ipamorelin, Tesamorelin",
       "Metabolic support with low dose GLP or berberine",
       "B12 shots included",
       "Provider follow-ups",
@@ -185,7 +185,7 @@ const PROGRAMS: readonly Program[] = [
     price: "$300",
     audience: "men",
     features: [
-      "Testosterone therapy — injection or topical",
+      "Testosterone therapy, injection or topical",
       "Lab monitoring included",
       "Estrogen management with Anastrozole, if needed",
       "DHEA support if clinically indicated",
@@ -206,8 +206,8 @@ const PROGRAMS: readonly Program[] = [
     audience: "men",
     highlight: true,
     features: [
-      "Advanced testosterone optimization — injection or topical",
-      "Peptide therapy — Sermorelin, Ipamorelin, Tesamorelin",
+      "Advanced testosterone optimization, injection or topical",
+      "Peptide therapy, Sermorelin, Ipamorelin, Tesamorelin",
       "NAD+, MOTS-c, adrenal, and DHEA support",
       "Provider follow-ups",
       "Welcome gift bag included",
@@ -267,7 +267,7 @@ const financingSchema = {
   name: "Denefits Financing for Central Texas Holistic Care",
   url: CANONICAL,
   description:
-    "Pay-over-time financing for wellness, hormone, weight-loss, and TRT programs at Central Texas Holistic Care. No credit checks, instant approval, flexible 3–24 month plans.",
+    "Pay-over-time financing for wellness, hormone, weight-loss, and TRT programs at Central Texas Holistic Care. No credit checks, instant approval, flexible 3-24 month plans.",
   provider: {
     "@type": "Organization",
     name: "Denefits",
@@ -388,7 +388,7 @@ function HeroSection() {
 
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-stone-200 sm:text-lg">
           Are you interested in affordable monthly payments? Choose a plan that
-          fits your budget — <span className="font-semibold text-white">no hard credit checks</span> and{" "}
+          fits your budget, <span className="font-semibold text-white">no hard credit checks</span> and{" "}
           <span className="font-semibold text-white">0% APR options</span>, with
           instant approval through Denefits.
         </p>
@@ -572,7 +572,7 @@ function ProgramsSection() {
             </span>
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-stone-600 sm:text-base">
-            Each program is billed at the same monthly rate — only the length of
+            Each program is billed at the same monthly rate, only the length of
             the term changes. Tap any month chip to start your application with
             Denefits.
           </p>

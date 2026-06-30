@@ -161,7 +161,7 @@ function HeroSection() {
           className="mt-6 font-heading font-semibold leading-[1.05] text-white"
           style={{ fontSize: "clamp(2.25rem, 5.2vw, 4rem)" }}
         >
-          Heal where it starts —{" "}
+          Heal where it starts , {" "}
           <span className="relative inline-block">
             <span className="bg-gradient-to-r from-[#9DD270] via-[#C4A862] to-[#9DD270] bg-clip-text italic text-transparent">
               at the cellular level.
@@ -175,7 +175,7 @@ function HeroSection() {
 
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-stone-200 sm:text-lg">
           Physician-supervised regenerative therapy paired with the{" "}
-          <span className="font-semibold text-white">Thrive protocol</span> — a
+          <span className="font-semibold text-white">Thrive protocol</span>, a
           root-cause approach that supports joint, tissue, and whole-body
           recovery. Non-surgical, lab-guided, and built around your story.
         </p>
@@ -217,7 +217,7 @@ const TRUST_FEATURES = [
   {
     icon: Stethoscope,
     title: "Physician-led",
-    body: "Every regenerative plan is designed and supervised by our medical team — not a kiosk or franchise.",
+    body: "Every regenerative plan is designed and supervised by our medical team, not a kiosk or franchise.",
   },
   {
     icon: Microscope,
@@ -286,7 +286,7 @@ function WhatItIsSection() {
     {
       icon: Syringe,
       title: "Precision injections",
-      body: "Ultrasound- or landmark-guided delivery to joints, tendons, scalp, or specific tissues — not a one-size-fits-all infusion.",
+      body: "Ultrasound- or landmark-guided delivery to joints, tendons, scalp, or specific tissues, not a one-size-fits-all infusion.",
     },
     {
       icon: Recycle,
@@ -331,7 +331,7 @@ function WhatItIsSection() {
             <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] border border-[#C4A862]/30 shadow-[0_40px_100px_-40px_rgba(15,39,6,0.45)]">
               <Image
                 src="/images/stem-cell/regenerative-medicine.webp"
-                alt="Regenerative medicine — cellular healing visualization"
+                alt="Regenerative medicine, cellular healing visualization"
                 fill
                 sizes="(min-width: 1024px) 28rem, (min-width: 640px) 60vw, 90vw"
                 className="object-cover"
@@ -356,7 +356,7 @@ function WhatItIsSection() {
                   Whole-person
                 </div>
                 <p className="mt-2 text-sm leading-snug">
-                  Your labs, your imaging, your story — orchestrated into a
+                  Your labs, your imaging, your story, orchestrated into a
                   single regenerative plan.
                 </p>
               </div>
@@ -376,12 +376,12 @@ function WhatItIsSection() {
               style={{ fontSize: "clamp(1.85rem, 3.4vw, 2.5rem)" }}
             >
               Regenerative care that works{" "}
-              <span className="italic text-[#8a6f30]">with</span> your body —
+              <span className="italic text-[#8a6f30]">with</span> your body , 
               not around it.
             </h2>
             <p className="mt-5 text-[15px] leading-relaxed text-stone-700">
               Stem cell and exosome therapy use the same signalling pathways
-              your body already relies on to heal — concentrated and delivered
+              your body already relies on to heal, concentrated and delivered
               where you need them. Combined with the{" "}
               <span className="font-semibold text-[#1a3a0a]">
                 Thrive protocol
@@ -423,7 +423,7 @@ const THRIVE_STEPS = [
     n: "01",
     icon: ClipboardList,
     title: "Discovery consult",
-    body: "We sit down to map your goals, history, and what you've already tried — no rushed intake forms.",
+    body: "We sit down to map your goals, history, and what you've already tried, no rushed intake forms.",
   },
   {
     n: "02",
@@ -435,7 +435,7 @@ const THRIVE_STEPS = [
     n: "03",
     icon: Syringe,
     title: "Regenerative treatment",
-    body: "Mesenchymal stem cell or exosome delivery to the precise site — joint, tendon, scalp, or systemic.",
+    body: "Mesenchymal stem cell or exosome delivery to the precise site, joint, tendon, scalp, or systemic.",
   },
   {
     n: "04",
@@ -458,7 +458,7 @@ function ThriveProtocolSection() {
             className="mt-5 font-heading font-semibold leading-[1.1] text-[#0f2706]"
             style={{ fontSize: "clamp(1.85rem, 3.4vw, 2.5rem)" }}
           >
-            A clear, four-step path —{" "}
+            A clear, four-step path , {" "}
             <span className="italic text-[#8a6f30]">designed around you.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-stone-600">
@@ -617,7 +617,7 @@ const WHY = [
   {
     icon: Stethoscope,
     title: "Physician-supervised, every visit",
-    body: "Your treatment is designed, performed, and followed up by our medical team — not delegated to a tech.",
+    body: "Your treatment is designed, performed, and followed up by our medical team, not delegated to a tech.",
   },
   {
     icon: Microscope,
@@ -627,12 +627,12 @@ const WHY = [
   {
     icon: Leaf,
     title: "Root-cause, holistic lens",
-    body: "Hormones, inflammation, sleep, and lifestyle are all considered — because recovery depends on the whole picture.",
+    body: "Hormones, inflammation, sleep, and lifestyle are all considered, because recovery depends on the whole picture.",
   },
   {
     icon: ShieldCheck,
     title: "Honest expectations",
-    body: "You'll hear a realistic timeline and outcome window up front — and we'll tell you if you're not a candidate.",
+    body: "You'll hear a realistic timeline and outcome window up front, and we'll tell you if you're not a candidate.",
   },
 ] as const;
 
@@ -723,13 +723,13 @@ const FAQ_ITEMS: AccordionItem[] = [
     value: "what-is",
     title: "What exactly is stem cell therapy?",
     content:
-      "Regenerative therapy uses mesenchymal stem cells, growth factors, and exosomes — naturally occurring signalling agents — to support your body's own repair pathways. It is non-surgical and delivered by precise injection.",
+      "Regenerative therapy uses mesenchymal stem cells, growth factors, and exosomes, naturally occurring signalling agents, to support your body's own repair pathways. It is non-surgical and delivered by precise injection.",
   },
   {
     value: "how-long",
     title: "How long until I notice a difference?",
     content:
-      "Most patients begin to feel changes within 4–8 weeks, with continued improvement over 3–6 months as tissue remodels. Results depend on the condition, severity, and how well the Thrive protocol is followed.",
+      "Most patients begin to feel changes within 4-8 weeks, with continued improvement over 3-6 months as tissue remodels. Results depend on the condition, severity, and how well the Thrive protocol is followed.",
   },
   {
     value: "candidate",
@@ -741,19 +741,19 @@ const FAQ_ITEMS: AccordionItem[] = [
     value: "downtime",
     title: "Is there downtime?",
     content:
-      "Most patients return to normal activity within 24–48 hours. We provide a clear recovery script with activity, supplement, and follow-up guidance.",
+      "Most patients return to normal activity within 24-48 hours. We provide a clear recovery script with activity, supplement, and follow-up guidance.",
   },
   {
     value: "thrive",
     title: "What is the Thrive protocol?",
     content:
-      "Thrive is our root-cause framework that pairs the regenerative treatment with hormone, nutrient, peptide, and lifestyle optimization — so the result actually lasts.",
+      "Thrive is our root-cause framework that pairs the regenerative treatment with hormone, nutrient, peptide, and lifestyle optimization, so the result actually lasts.",
   },
   {
     value: "cost",
-    title: "How much does it cost — and is financing available?",
+    title: "How much does it cost, and is financing available?",
     content:
-      "Plans are quoted after your discovery consult since the protocol is personalized. We offer 0% APR financing through Cherry and Denefits — most patients are approved within 60 seconds with no hard credit check.",
+      "Plans are quoted after your discovery consult since the protocol is personalized. We offer 0% APR financing through Cherry and Denefits, most patients are approved within 60 seconds with no hard credit check.",
   },
 ];
 

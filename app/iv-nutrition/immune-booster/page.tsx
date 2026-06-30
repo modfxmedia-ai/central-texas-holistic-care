@@ -6,7 +6,7 @@ import IVSubpageClient from "@/components/iv/IVSubpageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/iv-nutrition/immune-booster/`;
 
-const PAGE_TITLE = "Immune Booster – central holistic care";
+const PAGE_TITLE = "Immune Booster | central holistic care";
 const PAGE_DESCRIPTION =
   "Immune Booster IV Therapy in Harker Heights, TX. A targeted blend of IV fluids, B-complex, B12, vitamin C, glutathione, and zinc to strengthen your body's defense before travel, during flu season, or at the first sign of illness.";
 
@@ -79,11 +79,11 @@ export default function ImmuneBoosterPage() {
         h1="Immune Booster"
         breadcrumbLabel="Immune Booster"
         eyebrow="Immune Booster IV"
-        heroSubtitle="A targeted blend of fluids, vitamins, antioxidants, and minerals — built to defend, fortify, and recover."
+        heroSubtitle="A targeted blend of fluids, vitamins, antioxidants, and minerals, built to defend, fortify, and recover."
         h2="Immune Booster IV Therapy: Strengthen Your Body's Defense"
         h2Accent="Strengthen Your Body's Defense"
-        body="Give your immune system the powerful support it needs with our Immune Booster IV Therapy — a targeted blend of vitamins, antioxidants, and hydration designed to help your body fight off illness, recover faster, and feel revitalized."
-        closingNote="Ideal during flu season, before travel, or whenever your immune system needs a lift — our IV therapy helps you stay protected, energized, and well."
+        body="Give your immune system the powerful support it needs with our Immune Booster IV Therapy, a targeted blend of vitamins, antioxidants, and hydration designed to help your body fight off illness, recover faster, and feel revitalized."
+        closingNote="Ideal during flu season, before travel, or whenever your immune system needs a lift, our IV therapy helps you stay protected, energized, and well."
         iconKey="shieldCheck"
         trust={[
           { iconKey: "shieldCheck", label: "Physician-supervised" },
@@ -146,7 +146,7 @@ export default function ImmuneBoosterPage() {
             {
               iconKey: "shieldCheck",
               title: "Stronger immune defense",
-              body: "Antioxidants and zinc help your immune cells do their job — faster.",
+              body: "Antioxidants and zinc help your immune cells do their job, faster.",
             },
             {
               iconKey: "zap",
@@ -163,7 +163,7 @@ export default function ImmuneBoosterPage() {
         faqs={[
           {
             q: "How long does the Immune Booster drip take?",
-            a: "Most infusions take 30–45 minutes from IV start to finish, including a brief intake and IV placement.",
+            a: "Most infusions take 30-45 minutes from IV start to finish, including a brief intake and IV placement.",
           },
           {
             q: "When should I get this drip?",
@@ -171,11 +171,11 @@ export default function ImmuneBoosterPage() {
           },
           {
             q: "Is it safe to do regularly?",
-            a: "Yes. Many patients schedule the Immune Booster monthly or seasonally — your provider will recommend cadence based on your goals.",
+            a: "Yes. Many patients schedule the Immune Booster monthly or seasonally, your provider will recommend cadence based on your goals.",
           },
           {
             q: "Will I feel different right away?",
-            a: "Most patients notice improved hydration, energy, and mental clarity within hours; immune-defense effects build over the following 24–72 hours.",
+            a: "Most patients notice improved hydration, energy, and mental clarity within hours; immune-defense effects build over the following 24-72 hours.",
           },
         ]}
         related={[

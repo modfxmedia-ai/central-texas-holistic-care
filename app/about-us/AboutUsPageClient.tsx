@@ -155,7 +155,7 @@ function HeroSection() {
           className="mx-auto mt-7 max-w-3xl text-[15px] leading-relaxed text-stone-200 sm:text-base"
         >
           At our practice, we specialize in regenerative, restorative, and
-          preventive care—focusing on natural bioidentical hormone replacement,
+          preventive care, focusing on natural bioidentical hormone replacement,
           nutritional support, regenerative therapies, and evidence-based
           allopathic treatments to help restore vitality and quality of life.
         </motion.p>
@@ -167,7 +167,7 @@ function HeroSection() {
           With over 20 years of combined medical experience, our team has
           proudly served the Central Texas community, offering individualized
           care for hormonal imbalances, preventive health, and chronic
-          conditions—blending functional medicine with optimal results with a
+          conditions, blending functional medicine with optimal results with a
           natural and preventive philosophy.
         </motion.p>
 
@@ -269,7 +269,7 @@ function StatsStrip() {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                            Provider — Bimisa                                */
+/*                            Provider, Bimisa                                */
 /* -------------------------------------------------------------------------- */
 
 function ProviderBimisa() {
@@ -403,10 +403,10 @@ function ProviderBimisa() {
               </div>
               <ul className="mt-3 grid gap-2 sm:grid-cols-2">
                 {[
-                  "BSN — University of Mary Hardin-Baylor",
-                  "MSN — Maryville University (Family Nurse Practitioner)",
-                  "DNP — The University of Alabama",
-                  "Postgraduate — Psychiatric Mental Health Nurse Practitioner",
+                  "BSN, University of Mary Hardin-Baylor",
+                  "MSN, Maryville University (Family Nurse Practitioner)",
+                  "DNP, The University of Alabama",
+                  "Postgraduate, Psychiatric Mental Health Nurse Practitioner",
                 ].map((line) => (
                   <li
                     key={line}
@@ -439,11 +439,11 @@ function ProviderBimisa() {
               />
               <Quote className="size-5 text-[#C4A862]" aria-hidden />
               <blockquote className="mt-2 font-heading text-base italic leading-snug text-[#0f2706] sm:text-lg">
-                &ldquo;I pride myself on seeing my clients thrive—not just
+                &ldquo;I pride myself on seeing my clients thrive, not just
                 survive.&rdquo;
               </blockquote>
               <figcaption className="mt-2 text-[12px] font-medium uppercase tracking-[0.2em] text-[#8a6f30]">
-                — Dr. Bimisa Augustin
+               , Dr. Bimisa Augustin
               </figcaption>
             </motion.figure>
 
@@ -467,7 +467,7 @@ function ProviderBimisa() {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                            Provider — Larissa                               */
+/*                            Provider, Larissa                               */
 /* -------------------------------------------------------------------------- */
 
 function ProviderLarissa() {

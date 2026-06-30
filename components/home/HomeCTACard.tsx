@@ -130,7 +130,7 @@ export default function HomeCTACard() {
           <div className="relative grid items-stretch gap-0 lg:grid-cols-[0.85fr_1.15fr]">
             {/* ─── LEFT: Visual column ─── */}
             <div className="relative hidden min-h-[460px] lg:block">
-              {/* Image with overlay — continuous 3D flip */}
+              {/* Image with overlay, continuous 3D flip */}
               <div
                 className="absolute inset-0"
                 style={{ perspective: "1600px" }}
@@ -141,7 +141,7 @@ export default function HomeCTACard() {
                   animate={{ rotateY: flipped ? 180 : 0 }}
                   transition={{ duration: 0.8, ease: EASE }}
                 >
-                  {/* front — photo */}
+                  {/* front, photo */}
                   <div
                     className="absolute inset-0 overflow-hidden rounded-l-[2.5rem]"
                     style={{ backfaceVisibility: "hidden" }}
@@ -172,7 +172,7 @@ export default function HomeCTACard() {
                     />
                   </div>
 
-                  {/* back — quick facts */}
+                  {/* back, quick facts */}
                   <div
                     className="absolute inset-0 flex flex-col justify-center overflow-hidden rounded-l-[2.5rem] bg-gradient-to-br from-[#1a3a0a] via-[#2D5016] to-[#0f2706] p-8 text-[#FAF6EE]"
                     style={{

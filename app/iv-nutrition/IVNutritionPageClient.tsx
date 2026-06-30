@@ -55,7 +55,7 @@ const SERVICES: readonly DripService[] = [
     number: "01",
     title: "Immune Booster",
     h2: "Immune Booster IV Therapy: Strengthen Your Body's Defense",
-    body: "Give your immune system the powerful support it needs with our Immune Booster IV Therapy — a targeted blend of vitamins, antioxidants, and hydration designed to help your body fight off illness, recover faster, and feel revitalized.",
+    body: "Give your immune system the powerful support it needs with our Immune Booster IV Therapy, a targeted blend of vitamins, antioxidants, and hydration designed to help your body fight off illness, recover faster, and feel revitalized.",
     href: "/iv-nutrition/immune-booster/",
     image: {
       src: `${WP_BASE}/Immune-Booster-IV-Therapy-Strengthen-Your-Bodys-Defense-pexels-jonathanborba-3076513-scaled.webp`,
@@ -69,7 +69,7 @@ const SERVICES: readonly DripService[] = [
     title: "Workout Recovery",
     h2: "Workout Recovery IV Therapy",
     tagline: "Recharge. Rebuild. Refuel.",
-    body: "Push past your limits and bounce back with strength using our Workout Recovery IV Therapy — a scientifically formulated blend of fluids, vitamins, and amino acids designed to accelerate muscle repair, reduce inflammation, and restore peak energy post-exercise.",
+    body: "Push past your limits and bounce back with strength using our Workout Recovery IV Therapy, a scientifically formulated blend of fluids, vitamins, and amino acids designed to accelerate muscle repair, reduce inflammation, and restore peak energy post-exercise.",
     href: "/iv-nutrition/workout-recovery/",
     image: {
       src: `${WP_BASE}/Workout-Recovery-IV-Therapy-pexels-annushka-ahuja-7991959-scaled.webp`,
@@ -111,7 +111,7 @@ const SERVICES: readonly DripService[] = [
     title: "Hangover",
     h2: "Hangover IV Therapy",
     tagline: "Hydrate. Detox. Bounce Back Fast.",
-    body: "Don't let a night of fun turn into a day of regret. Our Hangover IV Therapy is designed to rapidly rehydrate, flush out toxins, relieve nausea, and restore energy — so you can get back on your feet faster and feel like yourself again.",
+    body: "Don't let a night of fun turn into a day of regret. Our Hangover IV Therapy is designed to rapidly rehydrate, flush out toxins, relieve nausea, and restore energy, so you can get back on your feet faster and feel like yourself again.",
     href: "/iv-nutrition/hangover/",
     image: {
       src: `${WP_BASE}/Hangover-pexels-polina-tankilevitch-8213169-scaled.webp`,
@@ -253,7 +253,7 @@ function HeroSection() {
           className="mx-auto mt-6 max-w-2xl text-[15px] leading-relaxed text-stone-200 sm:text-base"
         >
           Physician-supervised IV infusions for immunity, recovery, energy,
-          and resilience — delivered in a calm, private setting in Harker
+          and resilience, delivered in a calm, private setting in Harker
           Heights.
         </motion.p>
 
@@ -342,7 +342,7 @@ function IntroSection() {
             className="mx-auto mt-5 max-w-2xl text-[15px] leading-relaxed text-stone-700"
           >
             Each drip is a specific formulation of fluids, vitamins, minerals,
-            and amino acids — chosen for a clear outcome. Browse the menu
+            and amino acids, chosen for a clear outcome. Browse the menu
             below and pick the one that fits the moment.
           </motion.p>
         </motion.div>

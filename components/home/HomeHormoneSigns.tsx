@@ -275,7 +275,7 @@ export default function HomeHormoneSigns() {
                 className="absolute inset-[14%] rounded-full bg-gradient-to-br from-[#6CBE45]/30 via-[#9DD270]/20 to-[#8BAD5A]/30 blur-md"
               />
 
-              {/* Main image — circular crop */}
+              {/* Main image, circular crop */}
               <div className="absolute inset-[16%] overflow-hidden rounded-full shadow-2xl shadow-[#1a3a0a]/30 ring-4 ring-white/80">
                 <Image
                   src="/images/source/couple-hormone-imbalance.webp"

@@ -6,9 +6,9 @@ import AboutUsPageClient from "./AboutUsPageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/about-us/`;
 
-const PAGE_TITLE = "About Us – central holistic care";
+const PAGE_TITLE = "About Us | central holistic care";
 const PAGE_DESCRIPTION =
-  "Meet the providers behind Central Texas Holistic Care. Over 20 years of combined experience in regenerative, restorative, and preventive medicine — bio-identical hormones, nutrition, and integrative care in Killeen, TX.";
+  "Meet the providers behind Central Texas Holistic Care. Over 20 years of combined experience in regenerative, restorative, and preventive medicine, bio-identical hormones, nutrition, and integrative care in Killeen, TX.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,

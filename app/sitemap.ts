@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+import { getLiveCities, getLiveCityServicePairs } from "@/lib/locations";
+
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 
 type SitemapEntry = MetadataRoute.Sitemap[number];
@@ -24,11 +26,18 @@ const STATIC_PAGES: ReadonlyArray<{ path: string; lastModified: string }> = [
   { path: "/stem-cell-thrive/", lastModified: "2026-06-30" },
   { path: "/payment-plans/", lastModified: "2026-06-08" },
   { path: "/get-financed/", lastModified: "2026-06-30" },
+  { path: "/areas-we-serve/", lastModified: "2026-06-30" },
+  { path: "/privacy-policy/", lastModified: "2026-06-30" },
+  { path: "/terms-of-service/", lastModified: "2026-06-30" },
+  { path: "/accessibility/", lastModified: "2026-06-30" },
+  { path: "/sitemap/", lastModified: "2026-06-30" },
 ];
 
 const PRODUCT_SLUGS: ReadonlyArray<string> = [];
 
 const PRODUCT_LAST_MODIFIED = "2025-06-24";
+
+const PROGRAMMATIC_LAST_MODIFIED = "2026-06-30";
 
 export function generateSitemap(): MetadataRoute.Sitemap {
   const staticEntries: SitemapEntry[] = STATIC_PAGES.map(({ path, lastModified }) => ({
@@ -41,7 +50,24 @@ export function generateSitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(PRODUCT_LAST_MODIFIED),
   }));
 
-  return [...staticEntries, ...productEntries];
+  const cityHubEntries: SitemapEntry[] = getLiveCities().map((city) => ({
+    url: `${SITE_URL}/areas-we-serve/${city.slug}/`,
+    lastModified: new Date(PROGRAMMATIC_LAST_MODIFIED),
+  }));
+
+  const cityServiceEntries: SitemapEntry[] = getLiveCityServicePairs().map(
+    ({ city, service }) => ({
+      url: `${SITE_URL}/areas-we-serve/${city.slug}/${service.slug}/`,
+      lastModified: new Date(PROGRAMMATIC_LAST_MODIFIED),
+    }),
+  );
+
+  return [
+    ...staticEntries,
+    ...productEntries,
+    ...cityHubEntries,
+    ...cityServiceEntries,
+  ];
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {

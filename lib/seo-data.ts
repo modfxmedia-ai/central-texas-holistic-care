@@ -43,7 +43,7 @@ export interface SeoPageData {
 
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 
-/** Primary header / footer navigation — identical across every page. */
+/** Primary header / footer navigation, identical across every page. */
 const PRIMARY_NAV: SeoPageData["navLinks"] = [
   { label: "Home", href: `${SITE_URL}/` },
   { label: "About Us", href: `${SITE_URL}/about-us/` },

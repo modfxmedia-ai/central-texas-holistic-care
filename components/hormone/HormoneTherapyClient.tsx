@@ -80,7 +80,7 @@ const PILLARS = [
   {
     icon: Stethoscope,
     title: "Physician-supervised",
-    body: "Every plan is overseen by a clinician — never algorithmic, never one-size-fits-all.",
+    body: "Every plan is overseen by a clinician, never algorithmic, never one-size-fits-all.",
   },
   {
     icon: Atom,
@@ -97,11 +97,11 @@ const PILLARS = [
 const FAQS = [
   {
     q: "Who is hormone replacement therapy (HRT) right for?",
-    a: "HRT is for men and women whose symptoms and lab work point to a hormonal imbalance — low testosterone in men, or estrogen/progesterone shifts in women during perimenopause and menopause. We confirm with bloodwork before starting any plan.",
+    a: "HRT is for men and women whose symptoms and lab work point to a hormonal imbalance, low testosterone in men, or estrogen/progesterone shifts in women during perimenopause and menopause. We confirm with bloodwork before starting any plan.",
   },
   {
     q: "How long until I feel a difference?",
-    a: "Most patients notice changes in energy, sleep, and mood within 2–4 weeks. Libido, body composition, and recovery typically respond over 8–12 weeks as levels stabilize.",
+    a: "Most patients notice changes in energy, sleep, and mood within 2-4 weeks. Libido, body composition, and recovery typically respond over 8-12 weeks as levels stabilize.",
   },
   {
     q: "Will I be on hormones forever?",
@@ -109,7 +109,7 @@ const FAQS = [
   },
   {
     q: "What delivery methods do you offer?",
-    a: "We tailor the route to your goals — pellets, injections, topical creams, or oral, depending on lab targets, lifestyle, and preference. Insurance coverage varies by therapy.",
+    a: "We tailor the route to your goals, pellets, injections, topical creams, or oral, depending on lab targets, lifestyle, and preference. Insurance coverage varies by therapy.",
   },
 ];
 
@@ -248,7 +248,7 @@ function HeroSection() {
               className="mt-6 max-w-xl text-base leading-relaxed text-[#FAF6EE]/85 sm:text-lg"
             >
               Personalized, lab-guided hormone optimization for men and
-              women — restoring energy, mood, sleep, libido, and the way you
+              women, restoring energy, mood, sleep, libido, and the way you
               feel in your own body.
             </motion.p>
 
@@ -373,7 +373,7 @@ function IntroSection() {
           variants={fadeUp}
           className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-stone-600 sm:text-lg"
         >
-          Men and women experience hormonal change differently — but the
+          Men and women experience hormonal change differently, but the
           result is the same: energy fades, sleep slips, and your body stops
           feeling like yours. We build a plan around your labs, your
           symptoms, and your goals.
@@ -484,7 +484,7 @@ function MenSection() {
               variants={fadeUp}
               className="mt-5 text-base leading-relaxed text-stone-700 sm:text-[17px]"
             >
-              Aging doesn&apos;t just affect women — men also experience
+              Aging doesn&apos;t just affect women, men also experience
               significant hormonal changes, especially a decline in
               testosterone levels. This natural drop can lead to a wide range
               of symptoms affecting daily life.
@@ -604,7 +604,7 @@ function WomenSection() {
               variants={fadeUp}
               className="mt-5 text-base leading-relaxed text-stone-700 sm:text-[17px]"
             >
-              Hormonal shifts are a natural part of a woman&apos;s life —
+              Hormonal shifts are a natural part of a woman&apos;s life , 
               from puberty to pregnancy, perimenopause, and menopause.
               However, persistent hormone imbalances are not something you
               simply have to live with. While it&apos;s common to dismiss
@@ -649,7 +649,7 @@ function WomenSection() {
               <p className="text-sm italic leading-relaxed text-stone-700 sm:text-[15px]">
                 With personalized hormone replacement therapy (HRT), we can
                 help restore hormonal harmony and support your body through
-                each life stage — enhancing energy, clarity, and confidence.
+                each life stage, enhancing energy, clarity, and confidence.
               </p>
             </motion.div>
 
@@ -898,7 +898,7 @@ function FinalCTA() {
           variants={fadeUp}
           className="mt-5 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl"
         >
-          Feel like yourself again —{" "}
+          Feel like yourself again , {" "}
           <span className="bg-gradient-to-br from-[#C4A862] via-[#d6bd7c] to-[#9DD270] bg-clip-text italic text-transparent">
             on every level.
           </span>

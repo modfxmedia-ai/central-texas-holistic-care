@@ -10,7 +10,7 @@ import Link from "next/link";
 import FooterColumns from "./FooterColumns";
 import NewsletterForm from "./NewsletterForm";
 
-// Brand icons were removed from lucide-react v1.x — define inline SVG fallbacks
+// Brand icons were removed from lucide-react v1.x, define inline SVG fallbacks
 // that match the LucideIcon contract so they slot into the SOCIALS map cleanly.
 type IconProps = React.SVGProps<SVGSVGElement>;
 
@@ -60,15 +60,14 @@ const QUICK_LINKS = [
   { label: "IV Nutrition", href: "/iv-nutrition/" },
   { label: "Hormone Therapy", href: "/hormone-therapy/" },
   { label: "Stem Cell / Thrive", href: "/stem-cell-thrive/" },
+  { label: "Areas We Serve", href: "/areas-we-serve/" },
   { label: "Payment Plans", href: "/payment-plans/" },
   { label: "Book Appointment", href: BOOKING_URL, external: true },
 ];
 
 const SERVICES = [
   { label: "IV Infusion Therapy", href: "/iv-nutrition/" },
-  { label: "Medical Weight Loss & Peptides", href: "/men/" },
   { label: "Hormone Pelleting", href: "/hormone-therapy/" },
-  { label: "Acute Care Services", href: "/about-us/" },
   { label: "Men's Health Optimization", href: "/men/testosterone/" },
   { label: "Chronic Care Management", href: "/about-us/" },
 ];
@@ -232,7 +231,7 @@ export default function Footer() {
       {/* Columns */}
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <FooterColumns>
-          {/* Column 1 — Brand */}
+          {/* Column 1, Brand */}
           <div>
             <Link
               href="/"
@@ -271,7 +270,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 2 — Quick Links */}
+          {/* Column 2, Quick Links */}
           <nav aria-label="Footer quick links">
             <ColumnHeading>Quick Links</ColumnHeading>
             <ul className="mt-5 space-y-2.5">
@@ -285,7 +284,7 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Column 3 — Services */}
+          {/* Column 3, Services */}
           <nav aria-label="Footer services">
             <ColumnHeading>Services</ColumnHeading>
             <ul className="mt-5 space-y-2.5">
@@ -297,7 +296,7 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Column 4 — Contact */}
+          {/* Column 4, Contact */}
           <div>
             <ColumnHeading>Contact</ColumnHeading>
             <ul className="mt-5 space-y-4 text-sm">

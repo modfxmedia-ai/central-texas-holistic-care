@@ -9,7 +9,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 const POSTER_SRC = "/images/hero/doctor-1.png";
 const POSTER_ALT =
-  "Inside Central Texas Holistic Care — physician-led personalized consultation";
+  "Inside Central Texas Holistic Care, physician-led personalized consultation";
 // Swap the line below with the final clinic film when it's ready.
 const VIDEO_SRC = "/videos/hero-loop.mp4";
 
@@ -46,7 +46,7 @@ export default function HomeVideoShowcase() {
     if (!v) return;
     if (v.paused) {
       v.play().catch(() => {
-        /* autoplay/decoding errors silently ignored — placeholder remains */
+        /* autoplay/decoding errors silently ignored, placeholder remains */
       });
       setIsPlaying(true);
       setHasStarted(true);
@@ -260,7 +260,7 @@ export default function HomeVideoShowcase() {
                 A look inside · Killeen, TX
               </p>
               <p className="mt-2 max-w-md font-heading text-xl font-semibold leading-tight text-white sm:text-2xl">
-                Personalized, root-cause medicine — start to finish.
+                Personalized, root-cause medicine, start to finish.
               </p>
             </div>
 

@@ -6,7 +6,7 @@ import IVSubpageClient from "@/components/iv/IVSubpageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/iv-nutrition/myers-cocktail/`;
 
-const PAGE_TITLE = "Myer's Cocktail – central holistic care";
+const PAGE_TITLE = "Myer's Cocktail | central holistic care";
 const PAGE_DESCRIPTION =
   "Myer's Cocktail IV Therapy in Harker Heights, TX. The time-tested wellness infusion of fluids, B-complex, B12, vitamin C, and magnesium for energy, immunity, and full-body relief.";
 
@@ -79,7 +79,7 @@ export default function MyersCocktailPage() {
         h1="Myer's Cocktail"
         breadcrumbLabel="Myer's Cocktail"
         eyebrow="Myer's Cocktail IV"
-        heroSubtitle="The time-tested wellness infusion of fluids, vitamins, and magnesium — for energy, immunity, and full-body relief."
+        heroSubtitle="The time-tested wellness infusion of fluids, vitamins, and magnesium, for energy, immunity, and full-body relief."
         tagline="The Ultimate Wellness Infusion for Energy, Immunity & Relief"
         h2="Myer's Cocktail IV Therapy"
         h2Accent="IV Therapy"
@@ -167,11 +167,11 @@ export default function MyersCocktailPage() {
         faqs={[
           {
             q: "What is a Myer's Cocktail?",
-            a: "It's the classic, time-tested IV nutrient formula originally developed by Dr. John Myers — a balanced mix of B-vitamins, vitamin C, and magnesium designed for energy, immunity, and symptom relief.",
+            a: "It's the classic, time-tested IV nutrient formula originally developed by Dr. John Myers, a balanced mix of B-vitamins, vitamin C, and magnesium designed for energy, immunity, and symptom relief.",
           },
           {
             q: "Who is it best for?",
-            a: "Anyone seeking a whole-body reset — common picks include people dealing with fatigue, migraines, chronic stress, allergies, or frequent illness.",
+            a: "Anyone seeking a whole-body reset, common picks include people dealing with fatigue, migraines, chronic stress, allergies, or frequent illness.",
           },
           {
             q: "How often can I get it?",

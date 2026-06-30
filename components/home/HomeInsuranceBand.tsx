@@ -31,7 +31,7 @@ const CARRIERS = [
 const HIGHLIGHTS = [
   "Medicare, Medicaid & most commercial plans",
   "0% APR financing via Cherry & Denefits",
-  "Transparent pricing — no surprise bills",
+  "Transparent pricing, no surprise bills",
 ];
 
 const fadeUp: Variants = {

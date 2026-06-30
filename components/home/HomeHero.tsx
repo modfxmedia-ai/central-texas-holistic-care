@@ -270,7 +270,7 @@ export default function HomeHero() {
           >
             Combining root-cause functional medicine with physician-led
             hormone therapy and IV nutrition to help your body perform the way
-            it was designed to — through advanced testing, personalized
+            it was designed to, through advanced testing, personalized
             protocols, and most insurance accepted with 0% APR financing.
           </motion.p>
 

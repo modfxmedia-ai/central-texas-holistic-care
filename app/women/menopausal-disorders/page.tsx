@@ -6,9 +6,9 @@ import WomenSubpageClient from "@/components/women/WomenSubpageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/women/menopausal-disorders/`;
 
-const PAGE_TITLE = "Menopausal Disorders – central holistic care";
+const PAGE_TITLE = "Menopausal Disorders | central holistic care";
 const PAGE_DESCRIPTION =
-  "Comprehensive menopausal assessments at Central Texas Holistic Care — guidance, symptom relief, and personalized plans to navigate menopause with confidence and comfort.";
+  "Comprehensive menopausal assessments at Central Texas Holistic Care, guidance, symptom relief, and personalized plans to navigate menopause with confidence and comfort.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -90,7 +90,7 @@ export default function MenopausalDisordersPage() {
         h2Accent="Assessment & Care"
         body="Menopause is a natural transition, but it can bring disruptive physical and emotional symptoms. At Central Texas Holistic Care, we offer comprehensive menopausal assessments to help you navigate this stage with confidence and comfort."
         extraParagraphs={[
-          "Common symptoms we evaluate include hot flashes, night sweats, mood swings, weight changes, fatigue, and low libido. Based on your results, we create a personalized treatment plan — often involving bioidentical hormone therapy or natural alternatives — to restore balance and improve quality of life.",
+          "Common symptoms we evaluate include hot flashes, night sweats, mood swings, weight changes, fatigue, and low libido. Based on your results, we create a personalized treatment plan, often involving bioidentical hormone therapy or natural alternatives, to restore balance and improve quality of life.",
         ]}
         iconKey="sun"
         trust={[
@@ -141,17 +141,17 @@ export default function MenopausalDisordersPage() {
           {
             iconKey: "beaker",
             title: "Hormone-guided care",
-            body: "We dose to your labs and your symptoms — and re-test to confirm you're feeling better, not just looking better on paper.",
+            body: "We dose to your labs and your symptoms, and re-test to confirm you're feeling better, not just looking better on paper.",
           },
           {
             iconKey: "leaf",
             title: "BHRT & natural options",
-            body: "Bioidentical hormone therapy or non-hormonal alternatives — we map the plan to your goals and your medical history.",
+            body: "Bioidentical hormone therapy or non-hormonal alternatives, we map the plan to your goals and your medical history.",
           },
           {
             iconKey: "heartPulse",
             title: "Whole-person plan",
-            body: "Sleep, mood, body composition, bone and heart health — all tracked alongside your hormones, not in silos.",
+            body: "Sleep, mood, body composition, bone and heart health, all tracked alongside your hormones, not in silos.",
           },
         ]}
         faqs={[
@@ -165,7 +165,7 @@ export default function MenopausalDisordersPage() {
           },
           {
             q: "What lab work is typically done?",
-            a: "We commonly evaluate estrogen, progesterone, testosterone, FSH, LH, thyroid panel, and key metabolic markers — adjusted to your individual concerns.",
+            a: "We commonly evaluate estrogen, progesterone, testosterone, FSH, LH, thyroid panel, and key metabolic markers, adjusted to your individual concerns.",
           },
           {
             q: "Are there non-hormonal options?",

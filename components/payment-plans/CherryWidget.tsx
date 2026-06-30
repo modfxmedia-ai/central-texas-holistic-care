@@ -57,7 +57,7 @@ const STEPS = [
   {
     icon: CreditCard,
     title: "Pay over time",
-    body: "Pick a plan length that fits your budget — choose a 0% APR option when eligible.",
+    body: "Pick a plan length that fits your budget, choose a 0% APR option when eligible.",
   },
 ];
 
@@ -148,7 +148,7 @@ export default function CherryWidget() {
               className="mt-3 text-base text-stone-600 sm:text-lg"
             >
               Apply in 60 seconds, get care now, and pay on a schedule that fits
-              your life — no hard credit pull, no hidden fees.
+              your life, no hard credit pull, no hidden fees.
             </motion.p>
           </motion.div>
 
@@ -213,7 +213,7 @@ export default function CherryWidget() {
                 See what a $1,000 plan could look like.
               </h2>
               <p className="mt-3 text-base text-stone-600 sm:text-lg">
-                Personalized terms appear in seconds — these examples are
+                Personalized terms appear in seconds, these examples are
                 illustrative only. APR depends on credit and other factors.
               </p>
               <ul className="mt-6 space-y-2.5 text-sm text-stone-700">
@@ -389,7 +389,7 @@ export default function CherryWidget() {
             transition={{ duration: 0.6, ease: EASE, delay: 0.08 }}
             className="mx-auto mt-4 max-w-2xl text-base text-white/75 sm:text-lg"
           >
-            See your personalized Cherry options in 60 seconds — or call us and
+            See your personalized Cherry options in 60 seconds, or call us and
             we'll walk you through it.
           </motion.p>
           <motion.div

@@ -6,7 +6,7 @@ import IVSubpageClient from "@/components/iv/IVSubpageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/iv-nutrition/workout-recovery/`;
 
-const PAGE_TITLE = "Workout Recovery – central holistic care";
+const PAGE_TITLE = "Workout Recovery | central holistic care";
 const PAGE_DESCRIPTION =
   "Workout Recovery IV Therapy in Harker Heights, TX. Fluids, B-complex, B12, vitamin C, glutathione, zinc, taurine, and high-dose magnesium to accelerate muscle repair, reduce inflammation, and restore peak energy post-exercise.";
 
@@ -79,11 +79,11 @@ export default function WorkoutRecoveryPage() {
         h1="Workout Recovery"
         breadcrumbLabel="Workout Recovery"
         eyebrow="Workout Recovery IV"
-        heroSubtitle="Refuel, rebuild, and bounce back — fluids, amino acids, and electrolytes delivered when your muscles can actually use them."
+        heroSubtitle="Refuel, rebuild, and bounce back, fluids, amino acids, and electrolytes delivered when your muscles can actually use them."
         tagline="Recharge. Rebuild. Refuel."
         h2="Workout Recovery IV Therapy"
         h2Accent="IV Therapy"
-        body="Push past your limits and bounce back with strength using our Workout Recovery IV Therapy — a scientifically formulated blend of fluids, vitamins, and amino acids designed to accelerate muscle repair, reduce inflammation, and restore peak energy post-exercise."
+        body="Push past your limits and bounce back with strength using our Workout Recovery IV Therapy, a scientifically formulated blend of fluids, vitamins, and amino acids designed to accelerate muscle repair, reduce inflammation, and restore peak energy post-exercise."
         closingNote="Whether you're a competitive athlete or a weekend warrior, this IV therapy is your go-to recovery solution to train harder and recover smarter."
         iconKey="dumbbell"
         trust={[
@@ -184,11 +184,11 @@ export default function WorkoutRecoveryPage() {
           },
           {
             q: "Will it help with cramps and muscle soreness?",
-            a: "Yes — the high-dose magnesium and taurine are specifically chosen to ease cramping and post-exercise muscle soreness.",
+            a: "Yes, the high-dose magnesium and taurine are specifically chosen to ease cramping and post-exercise muscle soreness.",
           },
           {
             q: "How is this different from sports drinks?",
-            a: "IV delivery bypasses the gut, meaning 100% absorption of electrolytes, amino acids, and B-vitamins — at clinically meaningful doses.",
+            a: "IV delivery bypasses the gut, meaning 100% absorption of electrolytes, amino acids, and B-vitamins, at clinically meaningful doses.",
           },
           {
             q: "Can I get this regularly during training blocks?",
@@ -219,7 +219,7 @@ export default function WorkoutRecoveryPage() {
           lead: "Train hard.",
           accent: "Recover faster.",
         }}
-        ctaSubline="Book the Workout Recovery drip and get back to peak — sooner."
+        ctaSubline="Book the Workout Recovery drip and get back to peak, sooner."
       />
     </>
   );

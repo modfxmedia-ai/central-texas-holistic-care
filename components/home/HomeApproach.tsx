@@ -199,13 +199,65 @@ export default function HomeApproach() {
             />
 
             <div className="relative h-full overflow-hidden rounded-[28px] border border-[#C4A862]/30 bg-gradient-to-br from-[#1a3a0a]/40 via-[#0b1d04]/20 to-[#0b1d04]/40 shadow-2xl shadow-black/40 ring-1 ring-white/5">
-              <div className="relative aspect-[4/5] w-full lg:aspect-auto lg:h-full lg:min-h-[560px]">
+              {/* Decorative botanical motif in the empty bands (behind image) */}
+              <svg
+                aria-hidden
+                viewBox="0 0 400 500"
+                preserveAspectRatio="xMidYMid slice"
+                className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.18]"
+              >
+                <defs>
+                  <pattern
+                    id="approach-img-leaf"
+                    x="0"
+                    y="0"
+                    width="120"
+                    height="120"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <path
+                      d="M22 60c0-22 18-40 40-40 17 0 31 11 36 26-18 5-35 18-38 37-17-5-38-14-38-23z"
+                      stroke="#C4A862"
+                      strokeWidth="0.9"
+                      fill="none"
+                    />
+                    <path
+                      d="M30 60c8-7 22-15 35-17"
+                      stroke="#C4A862"
+                      strokeWidth="0.7"
+                      strokeLinecap="round"
+                      fill="none"
+                    />
+                  </pattern>
+                </defs>
+                <rect width="400" height="500" fill="url(#approach-img-leaf)" />
+              </svg>
+
+              {/* Soft accent glows behind empty bands */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -left-10 -top-10 size-48 rounded-full blur-3xl"
+                style={{
+                  background:
+                    "radial-gradient(closest-side, rgba(108,190,69,0.22), transparent 70%)",
+                }}
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-10 -bottom-10 size-48 rounded-full blur-3xl"
+                style={{
+                  background:
+                    "radial-gradient(closest-side, rgba(196,168,98,0.22), transparent 72%)",
+                }}
+              />
+
+              <div className="relative aspect-[4/5] w-full">
                 <Image
                   src="/images/doctor-3.png"
                   alt="Provider at Central Texas Holistic Care delivering personalized, whole-person care"
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
-                  className="object-cover object-center"
+                  className="object-contain object-center"
                 />
 
                 {/* warm vignette */}
@@ -215,13 +267,46 @@ export default function HomeApproach() {
                 />
               </div>
 
-              {/* floating top badge */}
+              {/* floating top-left badge */}
               <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-[#C4A862]/40 bg-[#0b1d04]/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#C4A862] backdrop-blur">
                 <Stethoscope className="size-3.5" />
                 Physician-supervised
               </div>
 
-              {/* floating bottom badge */}
+              {/* floating top-right badge (balances the top-left pill) */}
+              <div className="absolute right-5 top-5 hidden items-center gap-2 rounded-full border border-[#C4A862]/40 bg-[#0b1d04]/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#C4A862] backdrop-blur sm:inline-flex">
+                <Sparkles className="size-3.5" />
+                Central Texas
+              </div>
+
+              {/* Mid-band stat strip (sits just above the floating bottom card) */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-12% 0px" }}
+                transition={{ duration: 0.6, ease: EASE, delay: 0.18 }}
+                className="absolute inset-x-5 bottom-[5.75rem] grid grid-cols-3 gap-2 rounded-2xl border border-[#C4A862]/25 bg-[#0b1d04]/55 px-3 py-2.5 backdrop-blur sm:bottom-24 sm:gap-3 sm:px-4 sm:py-3"
+              >
+                {[
+                  { label: "Lab-guided" },
+                  { label: "Root-cause" },
+                  { label: "Personalized" },
+                ].map((s, i) => (
+                  <div
+                    key={s.label}
+                    className={`flex flex-col items-center text-center ${
+                      i !== 2 ? "border-r border-[#C4A862]/20" : ""
+                    }`}
+                  >
+                    <span className="size-1.5 rounded-full bg-[#C4A862]" />
+                    <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#C4A862] sm:text-[11px]">
+                      {s.label}
+                    </span>
+                  </div>
+                ))}
+              </motion.div>
+
+              {/* floating bottom card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

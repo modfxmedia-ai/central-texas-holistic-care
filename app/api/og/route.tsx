@@ -17,9 +17,9 @@ const DEFAULT_SUBTITLE = "Holistic & Preventive Medicine · Harker Heights, TX";
 /**
  * Dynamic Open Graph image route.
  *
- *   /api/og                                — brand default card
- *   /api/og?title=Hormone%20Therapy        — page-specific title
- *   /api/og?title=...&subtitle=...&tag=... — full customization
+ *   /api/og                               , brand default card
+ *   /api/og?title=Hormone%20Therapy       , page-specific title
+ *   /api/og?title=...&subtitle=...&tag=..., full customization
  */
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
@@ -69,7 +69,7 @@ export async function GET(request: NextRequest) {
           }}
         />
 
-        {/* header row — brand + tag pill */}
+        {/* header row, brand + tag pill */}
         <div
           style={{
             display: "flex",

@@ -6,9 +6,9 @@ import TestosteronePageClient from "./TestosteronePageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/men/testosterone/`;
 
-const PAGE_TITLE = "Testosterone – central holistic care";
+const PAGE_TITLE = "Testosterone | central holistic care";
 const PAGE_DESCRIPTION =
-  "Testosterone Therapy at Central Texas Holistic Care — restore vitality, confidence, and overall wellness with physician-supervised TRT tailored to your labs.";
+  "Testosterone Therapy at Central Texas Holistic Care, restore vitality, confidence, and overall wellness with physician-supervised TRT tailored to your labs.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,

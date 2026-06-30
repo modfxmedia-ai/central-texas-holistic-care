@@ -5,6 +5,8 @@
   --color-primary: #2d5016;          /* deep holistic green */
   --color-primary-dark: #1a3a0a;
   --color-primary-light: #8BAD5A;
+  --color-forest: #2d5016;            /* alias of --color-primary, used widely */
+  --color-forest-dark: #1a3a0a;
   --color-accent: #C4A862;            /* warm gold accent */
   --color-sage: #8a9a5b;
   --color-cream: #FAF6EE;             /* warm cream */
@@ -25,6 +27,8 @@
   --color-primary: var(--color-primary);
   --color-primary-dark: var(--color-primary-dark);
   --color-primary-light: var(--color-primary-light);
+  --color-forest: var(--color-forest);
+  --color-forest-dark: var(--color-forest-dark);
   --color-accent: var(--color-accent);
   --color-sage: var(--color-sage);
   --color-cream: var(--color-cream);
@@ -65,7 +69,7 @@ h6,
 }
 
 /* ─────────────────────────────────────────────────────────────
-   Custom keyframes — exposed as Tailwind utilities via @theme
+   Custom keyframes, exposed as Tailwind utilities via @theme
    ───────────────────────────────────────────────────────────── */
 
 @keyframes shimmer {

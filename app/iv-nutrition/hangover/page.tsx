@@ -6,9 +6,9 @@ import IVSubpageClient from "@/components/iv/IVSubpageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/iv-nutrition/hangover/`;
 
-const PAGE_TITLE = "Hangover – central holistic care";
+const PAGE_TITLE = "Hangover | central holistic care";
 const PAGE_DESCRIPTION =
-  "Hangover IV Therapy in Harker Heights, TX. Rapid rehydration, B-vitamins, glutathione, anti-nausea, and pain relief medication — the fastest way to bounce back after a long night.";
+  "Hangover IV Therapy in Harker Heights, TX. Rapid rehydration, B-vitamins, glutathione, anti-nausea, and pain relief medication, the fastest way to bounce back after a long night.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -79,11 +79,11 @@ export default function HangoverPage() {
         h1="Hangover"
         breadcrumbLabel="Hangover"
         eyebrow="Hangover IV"
-        heroSubtitle="Rapid rehydration, B-vitamins, anti-nausea, and headache relief — the fastest way to bounce back."
+        heroSubtitle="Rapid rehydration, B-vitamins, anti-nausea, and headache relief, the fastest way to bounce back."
         tagline="Hydrate. Detox. Bounce Back Fast."
         h2="Hangover IV Therapy"
         h2Accent="IV Therapy"
-        body="Don't let a night of fun turn into a day of regret. Our Hangover IV Therapy is designed to rapidly rehydrate, flush out toxins, relieve nausea, and restore energy — so you can get back on your feet faster and feel like yourself again."
+        body="Don't let a night of fun turn into a day of regret. Our Hangover IV Therapy is designed to rapidly rehydrate, flush out toxins, relieve nausea, and restore energy, so you can get back on your feet faster and feel like yourself again."
         closingNote="Whether you're recovering from a night out or prepping for a busy day ahead, this drip will have you feeling recharged, refreshed, and fully functional in no time."
         iconKey="sunrise"
         trust={[
@@ -160,7 +160,7 @@ export default function HangoverPage() {
         faqs={[
           {
             q: "How quickly will I feel better?",
-            a: "Most patients feel meaningful relief within 30–60 minutes of starting the drip — especially from hydration, nausea, and headache.",
+            a: "Most patients feel meaningful relief within 30-60 minutes of starting the drip, especially from hydration, nausea, and headache.",
           },
           {
             q: "How long does the appointment take?",
@@ -168,7 +168,7 @@ export default function HangoverPage() {
           },
           {
             q: "Is it safe?",
-            a: "Yes — every drip is physician-supervised. We screen briefly before starting and adjust medications based on what you can safely receive.",
+            a: "Yes, every drip is physician-supervised. We screen briefly before starting and adjust medications based on what you can safely receive.",
           },
           {
             q: "Can I get this before a big event instead of after?",
