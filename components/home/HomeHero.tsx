@@ -40,14 +40,7 @@ type Slide = {
 };
 
 const SLIDES: Slide[] = [
-  {
-    src: "/images/hero/doctor-1.png",
-    alt: "Physician-led personalized consultation at Central Texas Holistic Care",
-    position: "center 30%",
-    caption: "Physician-led care",
-    eyebrow: "Now featuring",
-  },
-  {
+{
     src: "/images/hero/doctor-2.png",
     alt: "Board-certified clinician reviewing a patient wellness plan",
     position: "center 28%",
