@@ -41,7 +41,6 @@ const BOOKING_URL =
 const WP =
   "https://centraltexasholisticcarepllc.com/wp-content/uploads/2025/06";
 
-const HERO_IMAGE = `${WP}/Hormone-Therapy-main-pexels-shvets-production-7176319-scaled.webp`;
 const MEN_IMAGE = `${WP}/Hormone-Treatments-for-Men-pexels-tima-miroshnichenko-5452290-scaled.webp`;
 const WOMEN_IMAGE = `${WP}/Hormone-Treatments-for-Women-pexels-thirdman-7659552-scaled.webp`;
 
@@ -119,7 +118,24 @@ const FAQS = [
 
 function HeroSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#0b1d04] via-[#1a3a0a] to-[#0f2706] text-[#FAF6EE]">
+    <section className="relative isolate overflow-hidden bg-[#0b1d04] text-[#FAF6EE]">
+      <Image
+        src="/images/hormone.jpeg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="absolute inset-0 -z-20 object-cover"
+        aria-hidden
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-[#0f2706]/55"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0f2706]/80 via-[#0f2706]/20 to-[#0f2706]/40"
+      />
       {/* gold grid */}
       <svg
         aria-hidden
@@ -209,7 +225,7 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: EASE }}
           aria-label="Breadcrumb"
-          className="mb-8 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-[#C4A862]"
+          className="mb-8 flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-[#C4A862]"
         >
           <Link href="/" className="hover:text-[#FAF6EE]">
             Home
@@ -218,12 +234,11 @@ function HeroSection() {
           <span className="text-[#FAF6EE]/80">Hormone Therapy</span>
         </motion.nav>
 
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr]">
+        <div className="mx-auto max-w-3xl text-center">
           <motion.div
             variants={stagger}
             initial="hidden"
             animate="show"
-            className="max-w-2xl"
           >
             <motion.span
               variants={fadeUp}
@@ -245,7 +260,7 @@ function HeroSection() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-6 max-w-xl text-base leading-relaxed text-[#FAF6EE]/85 sm:text-lg"
+              className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#FAF6EE]/85 sm:text-lg"
             >
               Personalized, lab-guided hormone optimization for men and
               women, restoring energy, mood, sleep, libido, and the way you
@@ -254,7 +269,7 @@ function HeroSection() {
 
             <motion.div
               variants={fadeUp}
-              className="mt-8 flex flex-wrap items-center gap-3"
+              className="mt-8 flex flex-wrap items-center justify-center gap-3"
             >
               <a
                 href={BOOKING_URL}
@@ -277,7 +292,7 @@ function HeroSection() {
 
             <motion.ul
               variants={fadeUp}
-              className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs font-medium text-[#FAF6EE]/70"
+              className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-medium text-[#FAF6EE]/70"
             >
               <li className="inline-flex items-center gap-1.5">
                 <ShieldCheck className="size-3.5 text-[#C4A862]" />
@@ -292,48 +307,6 @@ function HeroSection() {
                 Lab-guided dosing
               </li>
             </motion.ul>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: 16 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: EASE, delay: 0.15 }}
-            className="relative"
-          >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-[#C4A862]/30 shadow-2xl shadow-black/40 sm:aspect-[5/6]">
-              <Image
-                src={HERO_IMAGE}
-                alt="Hormone therapy consultation"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0b1d04]/60 via-transparent to-transparent" />
-              {/* gold corner ticks */}
-              <span
-                aria-hidden
-                className="pointer-events-none absolute left-4 top-4 h-6 w-6 border-l border-t border-[#C4A862]"
-              />
-              <span
-                aria-hidden
-                className="pointer-events-none absolute bottom-4 right-4 h-6 w-6 border-b border-r border-[#C4A862]"
-              />
-              {/* floating badge */}
-              <div className="absolute bottom-5 left-5 right-5 flex items-center gap-3 rounded-2xl border border-[#C4A862]/30 bg-[#0b1d04]/85 px-4 py-3 backdrop-blur">
-                <span className="grid size-9 place-items-center rounded-full bg-[#C4A862]/20 text-[#C4A862]">
-                  <Stethoscope className="size-4" />
-                </span>
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#C4A862]">
-                    Tailored Plans
-                  </p>
-                  <p className="text-sm text-[#FAF6EE]/90">
-                    For men & women, every life stage
-                  </p>
-                </div>
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>

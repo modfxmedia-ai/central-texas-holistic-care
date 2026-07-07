@@ -61,26 +61,26 @@ type HeroSlide = {
 const HERO_SLIDES: HeroSlide[] = [
   {
     image: "/images/hero/doctor-1.png",
-    eyebrow: "Physician-Led Care",
-    title: "The Best Thing You Can Do to Your Health.",
+    eyebrow: "Men's Health & Testosterone",
+    title: "Reclaim Energy, Strength, and Drive.",
     description:
-      "Regenerative, restorative, and preventative medicine focused on hormonal and metabolic balance in Killeen, Texas.",
-    ctaLabel: "About Us",
-    ctaHref: "/about-us/",
+      "Physician-supervised testosterone optimization, wellness exams, and lab-guided protocols built for men in Central Texas.",
+    ctaLabel: "Explore Men's Health",
+    ctaHref: "/men/",
   },
   {
     image: "/images/hero/iv-therapy.png",
     eyebrow: "IV Nutrition Therapy",
     title: "Nutrients Delivered, Right Where You Need Them.",
     description:
-      "Boost energy, immunity, and recovery with physician-supervised IV infusions of vitamins, minerals, and amino acids.",
-    ctaLabel: "Explore IV Menu",
+      "Myers' Cocktail, immune boosters, hangover recovery, and workout recovery drips supervised by our physicians.",
+    ctaLabel: "See IV Menu",
     ctaHref: "/iv-nutrition/",
   },
   {
     image: "/images/hero/testosterone.png",
     eyebrow: "Hormone Replacement Therapy",
-    title: "Restore Energy, Mood, and Vitality.",
+    title: "Restore Balance With Bioidentical HRT.",
     description:
       "Bioidentical hormone replacement and pellet therapy tailored to your labs, for men and women.",
     ctaLabel: "Learn About HRT",
@@ -88,12 +88,12 @@ const HERO_SLIDES: HeroSlide[] = [
   },
   {
     image: "/images/hero/couple.png",
-    eyebrow: "Whole-Family Wellness",
-    title: "A Practice That Grows With You.",
+    eyebrow: "Women's Health & Menopause",
+    title: "Care Designed Around Every Life Stage.",
     description:
-      "Personalized plans across every stage of life, built around your labs, your history, and your goals.",
-    ctaLabel: "Book a Consultation",
-    ctaHref: BOOKING_URL,
+      "Gynecological exams, menstrual and menopausal support, and hormone care built around your labs and history.",
+    ctaLabel: "Explore Women's Health",
+    ctaHref: "/women/",
   },
 ];
 

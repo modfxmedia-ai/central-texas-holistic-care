@@ -43,6 +43,7 @@ export default function ContactPage() {
       <PageHero
         title="Contact Us"
         subtitle="Have a question or ready to start? Send us a message and our care team will get back to you shortly."
+        backgroundImage="/images/clinic-banner.png"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Contact", href: "/contact/" },

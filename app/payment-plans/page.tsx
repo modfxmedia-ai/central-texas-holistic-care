@@ -37,6 +37,7 @@ export default function PaymentPlansPage() {
       <PageHero
         title="Payment Plans"
         subtitle="Treat now, pay over time, with true 0% APR options, no hard credit checks, and approvals up to $50,000 through Cherry."
+        backgroundImage="/images/source/insurance.png"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Payment Plans", href: "/payment-plans/" },

@@ -139,7 +139,24 @@ export default function IVNutritionPageClient() {
 
 function HeroSection() {
   return (
-    <section className="relative isolate w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-14 sm:py-20 lg:py-28">
+    <section className="relative isolate w-full overflow-hidden bg-[#0b1d04] py-14 sm:py-20 lg:py-28">
+      <Image
+        src="/images/source/iv-infusion-therapy.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="absolute inset-0 -z-20 object-cover"
+        aria-hidden
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-[#0f2706]/55"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0f2706]/80 via-[#0f2706]/20 to-[#0f2706]/40"
+      />
       <svg
         aria-hidden
         className="pointer-events-none absolute inset-0 size-full opacity-[0.10]"

@@ -76,21 +76,25 @@ export default function PageHero({
         style={{ y: bgY }}
         className="absolute inset-0 -z-10"
       >
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(135deg, #1a3a0a 0%, #2D5016 65%, #244010 100%)",
-          }}
-        />
-
-        {backgroundImage && (
+        {backgroundImage ? (
+          <>
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url("${backgroundImage}")`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
+            <div className="absolute inset-0 bg-[#0f2706]/55" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0f2706]/80 via-[#0f2706]/20 to-[#0f2706]/40" />
+          </>
+        ) : (
           <div
-            className="absolute inset-0 opacity-30 mix-blend-overlay"
+            className="absolute inset-0"
             style={{
-              backgroundImage: `url("${backgroundImage}")`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
+              background:
+                "linear-gradient(135deg, #1a3a0a 0%, #2D5016 65%, #244010 100%)",
             }}
           />
         )}
