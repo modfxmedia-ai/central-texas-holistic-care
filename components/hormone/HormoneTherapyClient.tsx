@@ -347,7 +347,7 @@ function HeroSection() {
 
 function IntroSection() {
   return (
-    <section className="relative bg-white py-20 sm:py-24">
+    <section className="relative bg-white py-12 sm:py-20">
       <motion.div
         variants={stagger}
         initial="hidden"
@@ -391,7 +391,7 @@ function MenSection() {
   return (
     <section
       id="men"
-      className="relative isolate overflow-hidden bg-[color:var(--color-cream-soft,#faf6ec)] py-24 sm:py-28"
+      className="relative isolate overflow-hidden bg-[color:var(--color-cream-soft,#faf6ec)] py-14 sm:py-20"
     >
       {/* gold dot pattern */}
       <svg
@@ -555,7 +555,7 @@ function WomenSection() {
   return (
     <section
       id="women"
-      className="relative isolate overflow-hidden bg-white py-24 sm:py-28"
+      className="relative isolate overflow-hidden bg-white py-14 sm:py-20"
     >
       {/* sage glow */}
       <div
@@ -710,7 +710,7 @@ function WomenSection() {
 
 function ApproachSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-b from-[color:var(--color-cream-soft,#faf6ec)] to-white py-24 sm:py-28">
+    <section className="relative isolate overflow-hidden bg-gradient-to-b from-[color:var(--color-cream-soft,#faf6ec)] to-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={stagger}
@@ -779,7 +779,7 @@ function ApproachSection() {
 
 function FAQSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-[color:var(--color-cream-soft,#faf6ec)] py-24 sm:py-28">
+    <section className="relative isolate overflow-hidden bg-[color:var(--color-cream-soft,#faf6ec)] py-14 sm:py-20">
       <svg
         aria-hidden
         className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.06]"

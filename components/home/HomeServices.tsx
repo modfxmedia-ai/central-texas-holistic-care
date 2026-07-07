@@ -107,7 +107,7 @@ export default function HomeServices() {
   return (
     <section
       id="services"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[color:var(--color-cream-soft)] via-[color:var(--color-cream-dark)] to-[color:var(--color-cream-soft)] py-24 sm:py-28 lg:py-32"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[color:var(--color-cream-soft)] via-[color:var(--color-cream-dark)] to-[color:var(--color-cream-soft)] py-14 sm:py-20 lg:py-28"
     >
       {/* Soft seams */}
       <div

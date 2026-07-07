@@ -311,7 +311,7 @@ export default function GetFinancedPage() {
 
 function HeroSection() {
   return (
-    <section className="relative isolate w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-24 sm:py-28 lg:py-32">
+    <section className="relative isolate w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-14 sm:py-20 lg:py-28">
       {/* botanical leaf grid */}
       <svg
         aria-hidden
@@ -518,7 +518,7 @@ function FeatureTrio() {
 
 function ProgramsSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[color:var(--color-cream-soft)] via-[color:var(--color-cream-dark)] to-[color:var(--color-cream-soft)] py-20 sm:py-24 lg:py-28">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[color:var(--color-cream-soft)] via-[color:var(--color-cream-dark)] to-[color:var(--color-cream-soft)] py-12 sm:py-20 lg:py-28">
       {/* gold dot grid */}
       <svg
         aria-hidden
@@ -681,7 +681,7 @@ function ProgramCard({ program }: { program: Program }) {
 
 function WhyDenefitsSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-white py-20 sm:py-24">
+    <section className="relative w-full overflow-hidden bg-white py-12 sm:py-20">
       {/* faint sage glow */}
       <div
         aria-hidden
@@ -831,7 +831,7 @@ function WhyDenefitsSection() {
 
 function FinalCTASection() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-20 sm:py-24">
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-12 sm:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute -left-32 top-0 size-[420px] rounded-full blur-3xl"

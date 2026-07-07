@@ -112,7 +112,7 @@ export default function CherryWidget() {
       </section>
 
       {/* ───────────────────────────── How Cherry works ──────────────────────── */}
-      <section className="relative w-full overflow-hidden bg-[color:var(--color-cream-soft)] py-20 sm:py-24 lg:py-28">
+      <section className="relative w-full overflow-hidden bg-[color:var(--color-cream-soft)] py-12 sm:py-20 lg:py-28">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-[0.5]"
@@ -195,7 +195,7 @@ export default function CherryWidget() {
       </section>
 
       {/* ───────────────────────────── Example payment card ──────────────────── */}
-      <section className="relative w-full overflow-hidden bg-white py-20 sm:py-24 lg:py-28">
+      <section className="relative w-full overflow-hidden bg-white py-12 sm:py-20 lg:py-28">
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -313,7 +313,7 @@ export default function CherryWidget() {
       </section>
 
       {/* ───────────────────────────── FAQ ───────────────────────────────────── */}
-      <section className="relative w-full overflow-hidden bg-[color:var(--color-cream-soft)] py-20 sm:py-24 lg:py-28">
+      <section className="relative w-full overflow-hidden bg-[color:var(--color-cream-soft)] py-12 sm:py-20 lg:py-28">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-[0.5]"

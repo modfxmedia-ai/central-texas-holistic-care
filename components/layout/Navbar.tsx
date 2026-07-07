@@ -375,9 +375,10 @@ function MobileDrawer({
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3, ease: "easeOut" }}
-            className="fixed inset-y-0 right-0 z-50 flex w-[min(380px,92vw)] flex-col overflow-y-auto bg-white shadow-2xl xl:hidden"
+            className="fixed inset-y-0 right-0 z-50 flex w-[min(360px,94vw)] flex-col overflow-y-auto rounded-l-3xl bg-white shadow-2xl xl:hidden"
           >
-            <div className="flex items-center justify-between border-b border-stone-200 px-5 py-4">
+            {/* Header */}
+            <div className="sticky top-0 z-10 flex items-center justify-between border-b border-stone-100 bg-white/95 px-5 py-3 backdrop-blur">
               <Link
                 href="/"
                 onClick={onClose}
@@ -398,14 +399,40 @@ function MobileDrawer({
                 type="button"
                 aria-label="Close menu"
                 onClick={onClose}
-                className="rounded-full p-2 text-stone-700 hover:bg-stone-100"
+                className="inline-flex size-10 items-center justify-center rounded-full border border-stone-200 text-stone-700 transition-colors hover:border-[#6CBE45] hover:bg-[#f0f5eb] hover:text-[#1a3a0a]"
               >
                 <X className="size-5" />
               </button>
             </div>
 
+            {/* Quick actions */}
+            <div className="grid grid-cols-2 gap-2 px-4 pt-4">
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={onClose}
+                className="group inline-flex items-center justify-center gap-1.5 rounded-full bg-gradient-to-br from-[#2D5016] via-[#1a3a0a] to-[#0f2706] px-4 py-2.5 text-[13px] font-semibold text-white shadow-md shadow-[#1a3a0a]/25 ring-1 ring-[#C4A862]/30"
+              >
+                <CalendarCheck className="size-3.5 text-[#C4A862]" />
+                Book Now
+              </a>
+              <a
+                href={`tel:${PHONE_TEL}`}
+                onClick={onClose}
+                aria-label={`Call ${PHONE_DISPLAY}`}
+                className="inline-flex items-center justify-center gap-1.5 rounded-full border border-[#1a3a0a]/15 bg-white px-4 py-2.5 text-[13px] font-semibold text-[#1a3a0a]"
+              >
+                <Phone className="size-3.5 text-[#6CBE45]" />
+                Call Us
+              </a>
+            </div>
+
             <nav className="flex-1 px-3 py-4">
-              <ul className="flex flex-col gap-1">
+              <p className="mb-2 px-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">
+                Menu
+              </p>
+              <ul className="flex flex-col gap-0.5">
                 {NAV.map((item) => {
                   const active = isActive(pathname, item.href);
                   const isExpanded = expanded === item.href;
@@ -417,13 +444,14 @@ function MobileDrawer({
                           href={item.href}
                           onClick={onClose}
                           className={cn(
-                            "block rounded-lg px-3 py-2.5 text-base font-medium",
+                            "flex items-center justify-between rounded-xl px-3 py-3 text-[15px] font-medium transition-colors",
                             active
-                              ? "bg-[#1a3a0a]/10 text-[#1a3a0a]"
-                              : "text-stone-800 hover:bg-stone-100",
+                              ? "bg-[#f0f5eb] text-[#1a3a0a]"
+                              : "text-stone-800 hover:bg-stone-50",
                           )}
                         >
                           {item.label}
+                          <ArrowRight className="size-4 text-stone-300" />
                         </Link>
                       </li>
                     );
@@ -438,17 +466,17 @@ function MobileDrawer({
                         }
                         aria-expanded={isExpanded}
                         className={cn(
-                          "flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-base font-medium",
+                          "flex w-full items-center justify-between rounded-xl px-3 py-3 text-[15px] font-medium transition-colors",
                           active
-                            ? "bg-[#1a3a0a]/10 text-[#1a3a0a]"
-                            : "text-stone-800 hover:bg-stone-100",
+                            ? "bg-[#f0f5eb] text-[#1a3a0a]"
+                            : "text-stone-800 hover:bg-stone-50",
                         )}
                       >
                         {item.label}
                         <ChevronDown
                           className={cn(
-                            "size-4 transition-transform",
-                            isExpanded && "rotate-180",
+                            "size-4 text-stone-500 transition-transform",
+                            isExpanded && "rotate-180 text-[#1a3a0a]",
                           )}
                         />
                       </button>
@@ -461,27 +489,12 @@ function MobileDrawer({
                             transition={{ duration: 0.2 }}
                             className="overflow-hidden pl-3"
                           >
-                            <li>
-                              <a
-                                href={BOOKING_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={onClose}
-                                className="mt-1 flex items-center justify-between gap-2 rounded-md bg-gradient-to-br from-[#2D5016] via-[#1a3a0a] to-[#0f2706] px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-[#C4A862]/30"
-                              >
-                                <span className="inline-flex items-center gap-2">
-                                  <CalendarCheck className="size-3.5 text-[#C4A862]" />
-                                  Book Appointment
-                                </span>
-                                <ArrowRight className="size-3.5 text-[#C4A862]" />
-                              </a>
-                            </li>
                             {!item.hideOverview && (
                               <li>
                                 <Link
                                   href={item.href}
                                   onClick={onClose}
-                                  className="block rounded-md px-3 py-2 text-sm text-stone-600 hover:bg-stone-100"
+                                  className="block rounded-lg px-3 py-2 text-[13.5px] text-stone-600 hover:bg-stone-50"
                                 >
                                   Overview
                                 </Link>
@@ -493,10 +506,10 @@ function MobileDrawer({
                                   href={child.href}
                                   onClick={onClose}
                                   className={cn(
-                                    "block rounded-md px-3 py-2 text-sm",
+                                    "block rounded-lg px-3 py-2 text-[13.5px] transition-colors",
                                     pathname === child.href
-                                      ? "text-[#1a3a0a]"
-                                      : "text-stone-600 hover:bg-stone-100",
+                                      ? "font-semibold text-[#1a3a0a]"
+                                      : "text-stone-600 hover:bg-stone-50",
                                   )}
                                 >
                                   {child.label}
@@ -511,26 +524,21 @@ function MobileDrawer({
                 })}
               </ul>
 
-              <div className="mt-6 space-y-3 rounded-xl border border-stone-200 bg-[color:var(--color-cream-soft)] p-4">
-                <a
-                  href={`tel:${PHONE_TEL}`}
-                  className="flex items-center gap-3 text-sm font-semibold text-[#1a3a0a]"
-                >
-                  <Phone className="size-4" />
-                  {PHONE_DISPLAY}
-                </a>
-                <div className="flex items-start gap-3 text-xs text-stone-600">
-                  <MapPin className="mt-0.5 size-4 text-[#8BAD5A]" />
+              <div className="mt-6 rounded-2xl border border-stone-200 bg-[color:var(--color-cream-soft)] p-4">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#8a6f30]">
+                  Visit Us
+                </p>
+                <div className="mt-2 flex items-start gap-2 text-[12.5px] leading-snug text-stone-600">
+                  <MapPin className="mt-0.5 size-4 flex-none text-[#8BAD5A]" />
                   {ADDRESS}
                 </div>
+                <div className="mt-3 h-px bg-stone-200" />
                 <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={onClose}
-                  className="flex w-full items-center justify-center rounded-full bg-[#1a3a0a] px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#2D5016]"
+                  href={`tel:${PHONE_TEL}`}
+                  className="mt-3 flex items-center gap-2 text-sm font-semibold text-[#1a3a0a]"
                 >
-                  Book An Appointment
+                  <Phone className="size-4 text-[#6CBE45]" />
+                  {PHONE_DISPLAY}
                 </a>
               </div>
             </nav>
@@ -619,8 +627,8 @@ export default function Navbar() {
         )}
         <div
           className={cn(
-            "mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-3 px-4 transition-all duration-300 sm:px-6 lg:gap-5 lg:px-8 xl:grid-cols-[auto_1fr_auto]",
-            scrolled ? "h-14 lg:h-[60px]" : "h-16 lg:h-[68px]",
+            "mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-2 px-3 transition-all duration-300 sm:gap-3 sm:px-6 lg:gap-5 lg:px-8 xl:grid-cols-[auto_1fr_auto]",
+            scrolled ? "h-[52px] lg:h-[60px]" : "h-14 lg:h-[68px]",
           )}
         >
           <Logo />
@@ -630,32 +638,36 @@ export default function Navbar() {
           </div>
 
           <div className="flex shrink-0 items-center justify-end gap-1.5 sm:gap-2">
+            {/* Phone: icon-only on tablet, hidden on very small mobile */}
             <a
               href={`tel:${PHONE_TEL}`}
               aria-label={`Call ${PHONE_DISPLAY}`}
               title={PHONE_DISPLAY}
-              className="hidden size-10 items-center justify-center rounded-full border border-[#1a3a0a]/15 bg-white/70 text-[#1a3a0a] backdrop-blur transition-colors hover:border-[#6CBE45] hover:bg-[#f0f5eb] xl:inline-flex"
+              className="hidden size-10 items-center justify-center rounded-full border border-[#1a3a0a]/15 bg-white/70 text-[#1a3a0a] backdrop-blur transition-colors hover:border-[#6CBE45] hover:bg-[#f0f5eb] sm:inline-flex"
             >
               <Phone className="size-4 text-[#6CBE45]" />
               <span className="sr-only">{PHONE_DISPLAY}</span>
             </a>
+
+            {/* Book Appointment: full label on sm+, icon-only pill on mobile */}
             <motion.a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Book an appointment"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 320, damping: 22 }}
-              className="group relative hidden whitespace-nowrap items-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-br from-[#2D5016] via-[#1a3a0a] to-[#0f2706] px-4 py-2 text-[13px] font-semibold text-white shadow-lg shadow-[#1a3a0a]/30 ring-1 ring-[#C4A862]/30 transition-all hover:shadow-xl hover:shadow-[#1a3a0a]/40 sm:inline-flex"
+              className="group relative inline-flex items-center gap-1.5 overflow-hidden whitespace-nowrap rounded-full bg-gradient-to-br from-[#2D5016] via-[#1a3a0a] to-[#0f2706] text-white shadow-lg shadow-[#1a3a0a]/30 ring-1 ring-[#C4A862]/30 transition-all hover:shadow-xl hover:shadow-[#1a3a0a]/40 sm:px-4 sm:py-2 sm:text-[13px] sm:font-semibold size-10 justify-center sm:size-auto"
             >
               {/* subtle gold sheen */}
               <span
                 aria-hidden
-                className="pointer-events-none absolute inset-y-0 -left-10 w-10 -skew-x-12 bg-gradient-to-r from-transparent via-[#C4A862]/30 to-transparent transition-transform duration-700 group-hover:translate-x-[260%]"
+                className="pointer-events-none absolute inset-y-0 -left-10 hidden w-10 -skew-x-12 bg-gradient-to-r from-transparent via-[#C4A862]/30 to-transparent transition-transform duration-700 group-hover:translate-x-[260%] sm:block"
               />
-              <CalendarCheck className="size-3.5 text-[#C4A862]" />
-              Book Appointment
-              <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+              <CalendarCheck className="size-4 text-[#C4A862] sm:size-3.5" />
+              <span className="hidden sm:inline">Book Appointment</span>
+              <ArrowRight className="hidden size-3.5 transition-transform group-hover:translate-x-0.5 sm:inline" />
             </motion.a>
 
             <button
@@ -663,12 +675,12 @@ export default function Navbar() {
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((v) => !v)}
-              className="inline-flex size-11 items-center justify-center rounded-full text-[#1a3a0a] hover:bg-[#1a3a0a]/10 xl:hidden"
+              className="inline-flex size-10 items-center justify-center rounded-full border border-[#1a3a0a]/15 bg-white/70 text-[#1a3a0a] backdrop-blur transition-colors hover:border-[#6CBE45] hover:bg-[#f0f5eb] xl:hidden"
             >
               {mobileOpen ? (
-                <X className="size-6" />
+                <X className="size-5" />
               ) : (
-                <Menu className="size-6" />
+                <Menu className="size-5" />
               )}
             </button>
           </div>

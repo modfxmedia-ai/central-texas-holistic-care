@@ -423,7 +423,7 @@ const WELCOME_BULLETS = [
 
 function WelcomeSection() {
   return (
-    <section className="relative w-full bg-white py-20 sm:py-28">
+    <section className="relative w-full bg-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
           {/* Image column */}
@@ -568,7 +568,7 @@ const PROVIDERS: Provider[] = [
 
 function ProvidersSection() {
   return (
-    <section className="relative w-full bg-white py-20 sm:py-28">
+    <section className="relative w-full bg-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
@@ -717,7 +717,7 @@ const SERVICES: Service[] = [
 
 function ServicesGrid() {
   return (
-    <section className="relative w-full bg-[color:var(--color-cream-soft)] py-20 sm:py-28">
+    <section className="relative w-full bg-[color:var(--color-cream-soft)] py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
@@ -815,7 +815,7 @@ const PILLARS: Pillar[] = [
 
 function PillarsSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-white py-20 sm:py-28">
+    <section className="relative w-full overflow-hidden bg-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
@@ -1004,7 +1004,7 @@ const JOURNEY_STEPS = [
 
 function JourneySection() {
   return (
-    <section className="relative w-full bg-[color:var(--color-cream-soft)] py-20 sm:py-28">
+    <section className="relative w-full bg-[color:var(--color-cream-soft)] py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
@@ -1099,7 +1099,7 @@ function TestimonialsSection() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-white py-20 sm:py-28"
+      className="relative w-full overflow-hidden bg-white py-14 sm:py-20"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -1247,7 +1247,7 @@ const BLOG_POSTS: BlogPost[] = [
 
 function BlogSection() {
   return (
-    <section className="relative w-full bg-[color:var(--color-cream-soft)] py-20 sm:py-28">
+    <section className="relative w-full bg-[color:var(--color-cream-soft)] py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div className="max-w-2xl">
@@ -1414,7 +1414,7 @@ const HOURS = [
 
 function LocationSection() {
   return (
-    <section className="relative w-full bg-white py-20 sm:py-24">
+    <section className="relative w-full bg-white py-12 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-14">
           <div>

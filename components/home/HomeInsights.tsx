@@ -62,7 +62,7 @@ const container: Variants = {
 
 export default function HomeInsights() {
   return (
-    <section className="relative w-full overflow-hidden bg-white py-24 sm:py-28 lg:py-32">
+    <section className="relative w-full overflow-hidden bg-white py-14 sm:py-20 lg:py-28">
       {/* decorative blob */}
       <div
         aria-hidden

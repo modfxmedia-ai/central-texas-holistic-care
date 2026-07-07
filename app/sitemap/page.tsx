@@ -352,7 +352,7 @@ export default function SitemapPage() {
       </section>
 
       {/* ─── Sitemap groups ─── */}
-      <section className="relative py-20 sm:py-24 lg:py-28">
+      <section className="relative py-12 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {GROUPS.map((group) => (
@@ -528,7 +528,7 @@ function AreasWeServeSection({
   return (
     <section
       aria-labelledby="areas-we-serve-heading"
-      className="relative border-y border-[#1a3a0a]/10 bg-white py-20 sm:py-24"
+      className="relative border-y border-[#1a3a0a]/10 bg-white py-12 sm:py-20"
     >
       <div
         aria-hidden

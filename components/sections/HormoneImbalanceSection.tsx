@@ -20,7 +20,7 @@ const SIGNS = [
 
 export default function HormoneImbalanceSection() {
   return (
-    <section className="relative w-full bg-[color:var(--color-cream-soft)] py-24 sm:py-28 lg:py-32">
+    <section className="relative w-full bg-[color:var(--color-cream-soft)] py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>

@@ -10,7 +10,7 @@ const BOOKING_URL =
 
 export default function CTABanner() {
   return (
-    <section className="relative w-full overflow-hidden bg-[color:var(--color-background)] py-20 sm:py-24">
+    <section className="relative w-full overflow-hidden bg-[color:var(--color-background)] py-12 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div

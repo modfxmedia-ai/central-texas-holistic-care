@@ -111,7 +111,7 @@ export default function StemCellsPage() {
 
 function HeroSection() {
   return (
-    <section className="relative isolate w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-24 sm:py-28 lg:py-32">
+    <section className="relative isolate w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-14 sm:py-20 lg:py-28">
       {/* Botanical grid backdrop */}
       <svg
         aria-hidden
@@ -326,7 +326,7 @@ function WhatItIsSection() {
   ] as const;
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#faf6ec] via-[#f5efd9] to-[#ece4d0] py-20 sm:py-24">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#faf6ec] via-[#f5efd9] to-[#ece4d0] py-12 sm:py-20">
       <svg
         aria-hidden
         className="pointer-events-none absolute inset-0 size-full opacity-[0.15]"
@@ -475,7 +475,7 @@ const THERAPY_TYPES = [
 
 function TherapyTypesSection() {
   return (
-    <section className="relative w-full bg-white py-20 sm:py-24">
+    <section className="relative w-full bg-white py-12 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
@@ -642,7 +642,7 @@ const STEPS = [
 
 function ProcessSection() {
   return (
-    <section className="relative w-full bg-[color:var(--color-cream-soft)] py-20 sm:py-24">
+    <section className="relative w-full bg-[color:var(--color-cream-soft)] py-12 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">

@@ -184,7 +184,7 @@ export default async function CityServicePage({
       <ServiceCityHero city={city} service={service} h1={copy.h1} />
 
       {/* Overview / intro */}
-      <section className="bg-[var(--color-cream)] py-20 sm:py-24">
+      <section className="bg-[var(--color-cream)] py-12 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:items-start">

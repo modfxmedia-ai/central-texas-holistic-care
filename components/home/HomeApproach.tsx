@@ -54,7 +54,7 @@ const container: Variants = {
 
 export default function HomeApproach() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-24 sm:py-28 lg:py-32">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-14 sm:py-20 lg:py-28">
       {/* Seams that bridge white (above) and cream (below) */}
       <div
         aria-hidden

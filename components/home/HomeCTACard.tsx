@@ -59,7 +59,7 @@ export default function HomeCTACard() {
   };
 
   return (
-    <section className="relative w-full bg-[color:var(--color-cream-soft)] py-24 sm:py-28 lg:py-32">
+    <section className="relative w-full bg-[color:var(--color-cream-soft)] py-14 sm:py-20 lg:py-28">
       {/* Decorative top divider */}
       <div
         aria-hidden

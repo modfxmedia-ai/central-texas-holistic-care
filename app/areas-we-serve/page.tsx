@@ -109,7 +109,7 @@ export default function AreasWeServePage() {
       />
 
       {/* ──────────────── Cities ──────────────── */}
-      <section className="bg-[var(--color-cream)] py-20 sm:py-24">
+      <section className="bg-[var(--color-cream)] py-12 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
@@ -154,7 +154,7 @@ export default function AreasWeServePage() {
       </section>
 
       {/* ──────────────── Service × City directory ──────────────── */}
-      <section className="relative overflow-hidden bg-white py-20 sm:py-24">
+      <section className="relative overflow-hidden bg-white py-12 sm:py-20">
         <svg
           aria-hidden
           viewBox="0 0 1200 800"

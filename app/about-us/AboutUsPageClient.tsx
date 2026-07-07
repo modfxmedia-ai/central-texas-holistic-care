@@ -57,7 +57,7 @@ export default function AboutUsPageClient() {
 
 function HeroSection() {
   return (
-    <section className="relative isolate w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-24 sm:py-28 lg:py-32">
+    <section className="relative isolate w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-14 sm:py-20 lg:py-28">
       <svg
         aria-hidden
         className="pointer-events-none absolute inset-0 size-full opacity-[0.10]"
@@ -276,7 +276,7 @@ function ProviderBimisa() {
   return (
     <section
       id="dr-bimisa"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#faf6ec] via-[#f5efd9] to-[#ece4d0] py-20 sm:py-24 lg:py-28"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#faf6ec] via-[#f5efd9] to-[#ece4d0] py-12 sm:py-20 lg:py-28"
     >
       <svg
         aria-hidden
@@ -474,7 +474,7 @@ function ProviderLarissa() {
   return (
     <section
       id="dr-larissa"
-      className="relative w-full overflow-hidden bg-white py-20 sm:py-24 lg:py-28"
+      className="relative w-full overflow-hidden bg-white py-12 sm:py-20 lg:py-28"
     >
       {/* sage glow */}
       <div
@@ -664,7 +664,7 @@ function ProviderLarissa() {
 
 function FinalCTA() {
   return (
-    <section className="relative isolate w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-20 sm:py-24">
+    <section className="relative isolate w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-12 sm:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute -left-40 bottom-0 size-[520px] rounded-full blur-3xl"

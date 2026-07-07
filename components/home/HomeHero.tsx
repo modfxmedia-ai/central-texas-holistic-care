@@ -232,13 +232,13 @@ export default function HomeHero() {
       </p>
 
       {/* ─── Foreground grid: copy + showcase card ─── */}
-      <div className="relative mx-auto grid min-h-[100svh] w-full max-w-7xl items-center gap-12 px-4 py-28 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-14 lg:px-8 lg:py-32">
+      <div className="relative mx-auto grid min-h-[100svh] w-full max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.05fr_1fr] lg:gap-14 lg:px-8 lg:py-32">
         {/* ─── Copy column ─── */}
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="flex max-w-2xl flex-col items-start"
+          className="mx-auto flex max-w-2xl flex-col items-center text-center lg:mx-0 lg:items-start lg:text-left"
         >
           <motion.div variants={fadeUp}>
             <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md">
@@ -274,7 +274,10 @@ export default function HomeHero() {
             protocols, and most insurance accepted with 0% APR financing.
           </motion.p>
 
-          <motion.ul variants={fadeUp} className="mt-7 flex flex-wrap gap-2">
+          <motion.ul
+            variants={fadeUp}
+            className="mt-7 flex flex-wrap justify-center gap-2 lg:justify-start"
+          >
             {SERVICE_TAGS.map((tag) => (
               <li key={tag.href}>
                 <Link
@@ -290,7 +293,7 @@ export default function HomeHero() {
 
           <motion.div
             variants={fadeUp}
-            className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center"
+            className="mt-9 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center sm:justify-center lg:justify-start"
           >
             <a
               href={BOOKING_URL}
@@ -321,7 +324,7 @@ export default function HomeHero() {
 
           <motion.div
             variants={fadeUp}
-            className="mt-7 flex items-center gap-3"
+            className="mt-7 flex flex-col items-center gap-2 sm:flex-row sm:gap-3"
           >
             <div className="flex items-center gap-0.5">
               {Array.from({ length: 5 }).map((_, i) => (

@@ -139,7 +139,7 @@ export default function HeroSection() {
     >
       {/* LEFT, forest green text panel */}
       <div
-        className="relative flex w-full flex-col justify-center px-6 py-24 sm:px-10 lg:w-1/2 lg:px-16 xl:px-24"
+        className="relative flex w-full flex-col justify-center px-5 py-14 sm:px-10 sm:py-20 lg:w-1/2 lg:px-16 lg:py-24 xl:px-24"
         style={{
           background: `linear-gradient(135deg, ${FOREST_DARK} 0%, ${FOREST} 65%, #234d10 100%)`,
         }}

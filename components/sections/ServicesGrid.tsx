@@ -70,7 +70,7 @@ export default function ServicesGrid() {
   return (
     <section
       id="services"
-      className="relative w-full overflow-hidden bg-[color:var(--color-background)] py-24 sm:py-28 lg:py-32"
+      className="relative w-full overflow-hidden bg-[color:var(--color-background)] py-14 sm:py-20 lg:py-28"
     >
       <div
         aria-hidden

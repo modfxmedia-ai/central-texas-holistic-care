@@ -42,7 +42,7 @@ export default function FaqAccordion({
   className,
 }: FaqAccordionProps) {
   return (
-    <section className={className ?? "relative w-full bg-[color:var(--color-cream-soft)] py-24 sm:py-28 lg:py-32"}>
+    <section className={className ?? "relative w-full bg-[color:var(--color-cream-soft)] py-14 sm:py-20 lg:py-28"}>
       {emitJsonLd && (
         <script
           type="application/ld+json"

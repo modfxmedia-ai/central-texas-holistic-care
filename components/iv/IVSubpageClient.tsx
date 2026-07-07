@@ -183,7 +183,7 @@ function HeroSection({
   trust,
 }: IVSubpageProps) {
   return (
-    <section className="relative isolate w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-24 sm:py-28 lg:py-32">
+    <section className="relative isolate w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-14 sm:py-20 lg:py-28">
       <svg
         aria-hidden
         className="pointer-events-none absolute inset-0 size-full opacity-[0.10]"
@@ -372,7 +372,7 @@ function OverviewSection({
       : [h2, ""];
 
   return (
-    <section className="relative w-full overflow-hidden bg-white py-20 sm:py-24">
+    <section className="relative w-full overflow-hidden bg-white py-12 sm:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute -left-32 top-10 size-[420px] rounded-full blur-3xl"
@@ -561,7 +561,7 @@ function IngredientsSection({
       : [fullTitle, ""];
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#faf6ec] via-[#F0EBE0] to-[#ece4d0] py-20 sm:py-24">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#faf6ec] via-[#F0EBE0] to-[#ece4d0] py-12 sm:py-20">
       <svg
         aria-hidden
         className="pointer-events-none absolute inset-0 size-full opacity-[0.12]"
@@ -688,7 +688,7 @@ function BenefitsSection({
       : [fullTitle, ""];
 
   return (
-    <section className="relative w-full overflow-hidden bg-white py-20 sm:py-24">
+    <section className="relative w-full overflow-hidden bg-white py-12 sm:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute -right-32 top-10 size-[420px] rounded-full blur-3xl"
@@ -776,7 +776,7 @@ function BenefitsSection({
 
 function FAQSection({ faqs, h1 }: { faqs: readonly IVFAQ[]; h1: string }) {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#ece4d0] via-[#F0EBE0] to-[#faf6ec] py-20 sm:py-24">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#ece4d0] via-[#F0EBE0] to-[#faf6ec] py-12 sm:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#C4A862]/40 to-transparent"
@@ -835,7 +835,7 @@ function FAQSection({ faqs, h1 }: { faqs: readonly IVFAQ[]; h1: string }) {
 
 function RelatedSection({ related }: { related: readonly IVRelated[] }) {
   return (
-    <section className="relative w-full overflow-hidden bg-white py-20 sm:py-24">
+    <section className="relative w-full overflow-hidden bg-white py-12 sm:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute -left-32 bottom-10 size-[420px] rounded-full blur-3xl"
@@ -919,7 +919,7 @@ function RelatedSection({ related }: { related: readonly IVRelated[] }) {
 
 function FinalCTA({ ctaHeading, ctaSubline }: IVSubpageProps) {
   return (
-    <section className="relative isolate w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-20 sm:py-24">
+    <section className="relative isolate w-full overflow-hidden bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] py-12 sm:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute -left-40 bottom-0 size-[520px] rounded-full blur-3xl"

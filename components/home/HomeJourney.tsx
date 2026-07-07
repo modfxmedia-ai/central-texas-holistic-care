@@ -74,7 +74,7 @@ export default function HomeJourney() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-[color:var(--color-cream-soft)] py-24 sm:py-28 lg:py-32"
+      className="relative w-full overflow-hidden bg-[color:var(--color-cream-soft)] py-14 sm:py-20 lg:py-28"
     >
       {/* aurora glows */}
       <div

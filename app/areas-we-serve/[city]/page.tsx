@@ -136,7 +136,7 @@ export default async function CityHubPage({
       <CityHubHero city={city} />
 
       {/* Overview */}
-      <section className="bg-[var(--color-cream)] py-20 sm:py-24">
+      <section className="bg-[var(--color-cream)] py-12 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-start">
@@ -192,7 +192,7 @@ export default async function CityHubPage({
       </section>
 
       {/* Services grid */}
-      <section className="bg-white py-20 sm:py-24">
+      <section className="bg-white py-12 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">

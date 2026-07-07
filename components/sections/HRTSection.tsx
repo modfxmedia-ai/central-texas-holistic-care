@@ -26,7 +26,7 @@ const BENEFITS = [
 
 export default function HRTSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-[color:var(--color-background)] py-24 sm:py-28 lg:py-32">
+    <section className="relative w-full overflow-hidden bg-[color:var(--color-background)] py-14 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
           <div>
