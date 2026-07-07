@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, CalendarCheck, Phone, X } from "lucide-react";
+import { ArrowRight, CalendarCheck, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const BOOKING_URL =
@@ -9,17 +9,17 @@ const BOOKING_URL =
 const PHONE_DISPLAY = "(254) 213-2423";
 const PHONE_TEL = "+12542132423";
 const SHOW_AFTER_PX = 600;
-const DISMISS_KEY = "cthc-book-banner-dismissed";
 
 export default function BottomBookNowBanner() {
   const [visible, setVisible] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (sessionStorage.getItem(DISMISS_KEY) === "1") {
-      setDismissed(true);
-      return;
+    // Clear any previous session-dismiss flag so the banner is always shown.
+    try {
+      sessionStorage.removeItem("cthc-book-banner-dismissed");
+    } catch {
+      /* ignore storage errors */
     }
     const onScroll = () => {
       setVisible(window.scrollY > SHOW_AFTER_PX);
@@ -28,15 +28,6 @@ export default function BottomBookNowBanner() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const dismiss = () => {
-    setDismissed(true);
-    if (typeof window !== "undefined") {
-      sessionStorage.setItem(DISMISS_KEY, "1");
-    }
-  };
-
-  if (dismissed) return null;
 
   return (
     <AnimatePresence>
@@ -52,7 +43,7 @@ export default function BottomBookNowBanner() {
           <div
             role="region"
             aria-label="Book an appointment"
-            className="pointer-events-auto relative flex w-full max-w-3xl items-center gap-3 overflow-hidden rounded-full border border-[#C4A862]/40 bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] px-3 py-2.5 pr-11 shadow-2xl shadow-[#0f2706]/40 backdrop-blur sm:gap-4 sm:px-5 sm:py-3"
+            className="pointer-events-auto relative flex w-full max-w-3xl items-center gap-3 overflow-hidden rounded-full border border-[#C4A862]/40 bg-gradient-to-br from-[#0f2706] via-[#1a3a0a] to-[#0b1d04] px-3 py-2.5 shadow-2xl shadow-[#0f2706]/40 backdrop-blur sm:gap-4 sm:px-5 sm:py-3"
           >
             {/* subtle gold sheen */}
             <span
@@ -89,19 +80,10 @@ export default function BottomBookNowBanner() {
                 className="group inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-br from-[#C4A862] via-[#8a6f30] to-[#5d4a1f] px-4 py-2 text-[13px] font-semibold text-white shadow-lg shadow-black/25 ring-1 ring-[#C4A862]/40 transition hover:-translate-y-0.5 sm:px-5"
               >
                 <CalendarCheck className="size-3.5" />
-                Book Now
+                Book Appointment
                 <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
               </a>
             </div>
-
-            <button
-              type="button"
-              onClick={dismiss}
-              aria-label="Dismiss booking banner"
-              className="absolute right-2 top-1/2 inline-flex size-7 -translate-y-1/2 items-center justify-center rounded-full text-white/60 transition-colors hover:bg-white/10 hover:text-white"
-            >
-              <X className="size-3.5" />
-            </button>
           </div>
         </motion.div>
       )}
