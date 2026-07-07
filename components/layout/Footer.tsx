@@ -59,9 +59,10 @@ const QUICK_LINKS = [
   { label: "Women's Health", href: "/women/" },
   { label: "IV Nutrition", href: "/iv-nutrition/" },
   { label: "Hormone Therapy", href: "/hormone-therapy/" },
-  { label: "Stem Cell / Thrive", href: "/stem-cell-thrive/" },
+  { label: "Stem Cell Therapy", href: "/stem-cells/" },
   { label: "Areas We Serve", href: "/areas-we-serve/" },
   { label: "Payment Plans", href: "/payment-plans/" },
+  { label: "Contact", href: "/contact/" },
   { label: "Book Appointment", href: BOOKING_URL, external: true },
 ];
 

@@ -19,7 +19,18 @@ const nextConfig: NextConfig = {
   },
 
   async redirects() {
-    return [];
+    return [
+      {
+        source: "/stem-cell-thrive",
+        destination: "/stem-cells/",
+        permanent: true,
+      },
+      {
+        source: "/stem-cell-thrive/",
+        destination: "/stem-cells/",
+        permanent: true,
+      },
+    ];
   },
 
   async headers() {

@@ -39,7 +39,17 @@ type NavItem = {
 
 const NAV: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about-us/" },
+  {
+    label: "About Us",
+    href: "/about-us/",
+    children: [
+      {
+        label: "Contact Us",
+        href: "/contact/",
+        description: "Get in touch with our care team.",
+      },
+    ],
+  },
   {
     label: "Men",
     href: "/men/",
@@ -109,6 +119,7 @@ const NAV: NavItem[] = [
     ],
   },
   { label: "Hormone Therapy", href: "/hormone-therapy/" },
+  { label: "Stem Cells", href: "/stem-cells/" },
   { label: "Payment Plans", href: "/payment-plans/" },
 ];
 
@@ -139,7 +150,7 @@ function Logo({ className }: { className?: string }) {
         height={447}
         decoding="async"
         fetchPriority="high"
-        className="block h-9 w-auto sm:h-10 lg:h-11"
+        className="block h-10 w-auto sm:h-11 lg:h-12"
       />
     </Link>
   );
@@ -590,10 +601,12 @@ export default function Navbar() {
           <div className="flex shrink-0 items-center justify-end gap-1.5 sm:gap-2">
             <a
               href={`tel:${PHONE_TEL}`}
-              className="hidden items-center gap-1.5 whitespace-nowrap rounded-full border border-[#1a3a0a]/15 bg-white/70 px-3 py-1.5 text-[13px] font-semibold text-[#1a3a0a] backdrop-blur transition-colors hover:border-[#6CBE45] hover:bg-[#f0f5eb] xl:inline-flex"
+              aria-label={`Call ${PHONE_DISPLAY}`}
+              title={PHONE_DISPLAY}
+              className="hidden size-10 items-center justify-center rounded-full border border-[#1a3a0a]/15 bg-white/70 text-[#1a3a0a] backdrop-blur transition-colors hover:border-[#6CBE45] hover:bg-[#f0f5eb] xl:inline-flex"
             >
-              <Phone className="size-3.5 text-[#6CBE45]" />
-              {PHONE_DISPLAY}
+              <Phone className="size-4 text-[#6CBE45]" />
+              <span className="sr-only">{PHONE_DISPLAY}</span>
             </a>
             <motion.a
               href={BOOKING_URL}
