@@ -72,7 +72,7 @@ const SERVICES: readonly DripService[] = [
     body: "Push past your limits and bounce back with strength using our Workout Recovery IV Therapy, a scientifically formulated blend of fluids, vitamins, and amino acids designed to accelerate muscle repair, reduce inflammation, and restore peak energy post-exercise.",
     href: "/iv-nutrition/workout-recovery/",
     image: {
-      src: `${WP_BASE}/Workout-Recovery-IV-Therapy-pexels-annushka-ahuja-7991959-scaled.webp`,
+      src: "/images/iv/workout-recovery.webp",
       alt: "Workout Recovery IV Therapy",
     },
     icon: Dumbbell,
@@ -86,7 +86,7 @@ const SERVICES: readonly DripService[] = [
     body: "The Myer's Cocktail is a time-tested IV therapy blend designed to deliver immediate full-body hydration, increase energy, and alleviate chronic symptoms. Whether you're battling stress, fatigue, migraines, or immune challenges, this powerful infusion helps you feel recharged and restored from the inside out.",
     href: "/iv-nutrition/myers-cocktail/",
     image: {
-      src: `${WP_BASE}/Myers-Cocktail-IV-Therapy-pexels-cottonbro-4101143-scaled.webp`,
+      src: "/images/iv/myers-cocktail-iv.webp",
       alt: "Myer's Cocktail IV Therapy",
     },
     icon: Sparkles,
@@ -114,7 +114,7 @@ const SERVICES: readonly DripService[] = [
     body: "Don't let a night of fun turn into a day of regret. Our Hangover IV Therapy is designed to rapidly rehydrate, flush out toxins, relieve nausea, and restore energy, so you can get back on your feet faster and feel like yourself again.",
     href: "/iv-nutrition/hangover/",
     image: {
-      src: `${WP_BASE}/Hangover-pexels-polina-tankilevitch-8213169-scaled.webp`,
+      src: "/images/iv/hangover-iv-therapy.webp",
       alt: "Hangover IV Therapy",
     },
     icon: Sunrise,

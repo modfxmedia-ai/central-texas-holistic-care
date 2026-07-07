@@ -93,7 +93,7 @@ export default function MyersCocktailPage() {
         ]}
         highlights={["Magnesium + B-complex", "Energy & clarity", "Whole-body reset"]}
         image={{
-          src: `${SITE_URL}/wp-content/uploads/2025/06/Myers-Cocktail-IV-Therapy-pexels-cottonbro-4101143-scaled.webp`,
+          src: "/images/iv/myers-cocktail-iv.webp",
           alt: "Myer's Cocktail IV Therapy",
         }}
         ingredients={{

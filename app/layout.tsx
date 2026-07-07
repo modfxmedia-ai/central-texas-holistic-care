@@ -4,6 +4,7 @@ import Script from "next/script";
 
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
+import BottomBookNowBanner from "@/components/layout/BottomBookNowBanner";
 import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 
 import "./globals.css";
@@ -112,6 +113,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <BottomBookNowBanner />
       </body>
     </html>
   );

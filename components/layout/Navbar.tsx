@@ -38,7 +38,23 @@ type NavItem = {
 };
 
 const NAV: NavItem[] = [
-  { label: "Home", href: "/" },
+  {
+    label: "Home",
+    href: "/",
+    children: [
+      {
+        label: "Home 1",
+        href: "/",
+        description: "Our main homepage.",
+      },
+      {
+        label: "Home 2",
+        href: "/home-2/",
+        description: "Alternate homepage design.",
+      },
+    ],
+    hideOverview: true,
+  },
   {
     label: "About Us",
     href: "/about-us/",
@@ -249,6 +265,33 @@ function DesktopMenu({ pathname }: { pathname: string }) {
                     className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-transparent via-[#C4A862] to-transparent"
                   />
                   <ul className="grid gap-0.5 p-3">
+                    {/* Prominent Book Appointment CTA in every dropdown */}
+                    <li>
+                      <a
+                        href={BOOKING_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/sub relative flex items-center justify-between gap-3 rounded-xl bg-gradient-to-br from-[#2D5016] via-[#1a3a0a] to-[#0f2706] px-3.5 py-2.5 text-white shadow-md shadow-[#1a3a0a]/20 ring-1 ring-[#C4A862]/30 transition hover:shadow-lg"
+                      >
+                        <span className="flex flex-1 items-center gap-2.5">
+                          <span className="inline-flex size-8 items-center justify-center rounded-lg bg-[#C4A862]/20 text-[#C4A862]">
+                            <CalendarCheck className="size-4" />
+                          </span>
+                          <span>
+                            <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-[#C4A862]">
+                              Book Appointment
+                            </span>
+                            <span className="mt-0.5 block text-xs text-white/80">
+                              Same-week availability
+                            </span>
+                          </span>
+                        </span>
+                        <ArrowRight className="size-4 text-[#C4A862] transition-transform group-hover/sub:translate-x-0.5" />
+                      </a>
+                    </li>
+                    <li aria-hidden>
+                      <span className="mx-3 my-1 block h-px bg-stone-200/80" />
+                    </li>
                     {!item.hideOverview && (
                       <li>
                         <Link
@@ -445,6 +488,21 @@ function MobileDrawer({
                             transition={{ duration: 0.2 }}
                             className="overflow-hidden pl-3"
                           >
+                            <li>
+                              <a
+                                href={BOOKING_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={onClose}
+                                className="mt-1 flex items-center justify-between gap-2 rounded-md bg-gradient-to-br from-[#2D5016] via-[#1a3a0a] to-[#0f2706] px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-[#C4A862]/30"
+                              >
+                                <span className="inline-flex items-center gap-2">
+                                  <CalendarCheck className="size-3.5 text-[#C4A862]" />
+                                  Book Appointment
+                                </span>
+                                <ArrowRight className="size-3.5 text-[#C4A862]" />
+                              </a>
+                            </li>
                             {!item.hideOverview && (
                               <li>
                                 <Link

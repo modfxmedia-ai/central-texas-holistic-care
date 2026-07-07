@@ -97,7 +97,7 @@ export default function HangoverPage() {
           "Bounce-back fast",
         ]}
         image={{
-          src: `${SITE_URL}/wp-content/uploads/2025/06/Hangover-pexels-polina-tankilevitch-8213169-scaled.webp`,
+          src: "/images/iv/hangover-iv-therapy.webp",
           alt: "Hangover IV Therapy",
         }}
         benefits={{

@@ -8,6 +8,7 @@ import HomeHero from "@/components/home/HomeHero";
 import HomeInsuranceBand from "@/components/home/HomeInsuranceBand";
 import HomeJourney from "@/components/home/HomeJourney";
 import HomeLocation from "@/components/home/HomeLocation";
+import HomeProviders from "@/components/home/HomeProviders";
 import HomeServices from "@/components/home/HomeServices";
 import HomeTestimonial from "@/components/home/HomeTestimonial";
 import HomeVideoShowcase from "@/components/home/HomeVideoShowcase";
@@ -86,6 +87,7 @@ export default function Home() {
       <HomeAbout />
       <HomeApproach />
       <HomeServices />
+      <HomeProviders />
       <HomeHRT />
       <HomeJourney />
       <HomeVideoShowcase />

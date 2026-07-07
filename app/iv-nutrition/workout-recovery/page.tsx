@@ -97,7 +97,7 @@ export default function WorkoutRecoveryPage() {
           "Post-training",
         ]}
         image={{
-          src: `${SITE_URL}/wp-content/uploads/2025/06/Workout-Recovery-IV-Therapy-pexels-annushka-ahuja-7991959-scaled.webp`,
+          src: "/images/iv/workout-recovery.webp",
           alt: "Workout Recovery IV Therapy",
         }}
         ingredients={{
