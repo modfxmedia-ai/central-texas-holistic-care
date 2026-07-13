@@ -111,7 +111,11 @@ export default function RootLayout({
         />
         <ScrollProgressBar />
         <Navbar />
-        <main className="flex-1 pb-24 sm:pb-20">{children}</main>
+        <main className="flex-1">{children}</main>
+        <div
+          aria-hidden
+          className="h-px w-full bg-gradient-to-r from-transparent via-[#C4A862]/40 to-transparent"
+        />
         <Footer />
         <BottomBookNowBanner />
       </body>
