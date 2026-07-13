@@ -24,8 +24,6 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 const PHONE_DISPLAY = "(254) 213-2423";
 const PHONE_TEL = "+12542132423";
-const WP_BASE =
-  "https://centraltexasholisticcarepllc.com/wp-content/uploads/2025/06";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -55,8 +53,8 @@ const SERVICES: readonly Service[] = [
     body: "Low testosterone levels can significantly impact your physical health, emotional well-being, and quality of life. Testosterone Replacement Therapy (TRT) is a safe and effective solution for men experiencing symptoms of hormonal decline.",
     href: "/men/testosterone/",
     image: {
-      src: `${WP_BASE}/men-1-doctor-taking-care-afro-american-child-scaled.webp`,
-      alt: "men-1-doctor-taking-care-afro-american-child",
+      src: "/images/services/testosterone-therapy.webp",
+      alt: "Testosterone therapy for men at Central Texas Holistic Care",
     },
     icon: TrendingUp,
     highlights: [
@@ -71,8 +69,8 @@ const SERVICES: readonly Service[] = [
     body: "Preventive care starts with a thorough annual wellness exam. These check-ups are designed to monitor your overall health, detect potential issues early, and keep your vaccinations up to date, ensuring you stay ahead of illness and disease.",
     href: "/men/wellness-exams/",
     image: {
-      src: `${WP_BASE}/Annual-Wellness-Exams-Your-First-Line-of-Defense-healthcare-workers-having-meeting-hospital-conference-1024x576.webp`,
-      alt: "Annual-Wellness-Exams-Your-First-Line-of-Defense-healthcare-workers-having-meeting-hospital-conference",
+      src: "/images/services/annual-wellness-exams.webp",
+      alt: "Annual wellness exams for men at Central Texas Holistic Care",
     },
     icon: Microscope,
     highlights: [

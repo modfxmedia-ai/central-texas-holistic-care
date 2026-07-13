@@ -22,35 +22,35 @@ const SERVICES: Service[] = [
     href: "/iv-nutrition/",
   },
   {
-    image: "/images/source/hormone-replacement-therapy-hrt.jpg",
+    image: "/images/services/hormone-treatments-for-men.jpg",
     title: "Hormone Therapy",
     blurb:
       "Bioidentical hormone replacement and pellet therapy tailored to your labs, restore energy, mood, sleep, and libido.",
     href: "/hormone-therapy/",
   },
   {
-    image: "/images/source/mens-health-optimization.jpeg",
+    image: "/images/services/testosterone-therapy.webp",
     title: "Testosterone Therapy",
     blurb:
       "Lab-guided TRT for men, reclaim strength, focus, drive, and recovery with a protocol built around your biology.",
     href: "/men/testosterone/",
   },
   {
-    image: "/images/source/hero-wellness-portrait.jpg",
+    image: "/images/services/annual-wellness-exams.webp",
     title: "Wellness Exams",
     blurb:
       "Comprehensive preventive screenings, biomarker labs, and longevity-focused checkups for men at every stage of life.",
     href: "/men/wellness-exams/",
   },
   {
-    image: "/images/source/portrait-women-wellness.jpg",
+    image: "/images/services/comprehensive-gynecological-exams-for-womens-health.png",
     title: "Gynecological Exams",
     blurb:
       "Routine women's health visits, screenings, and reproductive care delivered in a calm, judgment-free environment.",
     href: "/women/gynecological-exams/",
   },
   {
-    image: "/images/source/couple-hormone-imbalance.webp",
+    image: "/images/services/menopausal-disorder.jpg",
     title: "Menopausal Care",
     blurb:
       "Personalized peri- and post-menopause support, manage hot flashes, sleep, mood, and bone health with proven therapies.",

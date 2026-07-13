@@ -28,9 +28,8 @@ const PHONE_DISPLAY = "(254) 213-2423";
 const PHONE_TEL = "+12542132423";
 const BOOKING_URL =
   "https://www.tebra.com/care/practice/central-texas-holistic-care-163683";
-const IMAGE_URL =
-  "https://centraltexasholisticcarepllc.com/wp-content/uploads/2025/06/men-1-doctor-taking-care-afro-american-child-scaled.webp";
-const IMAGE_ALT = "men-1-doctor-taking-care-afro-american-child";
+const IMAGE_URL = "/images/services/testosterone-therapy.webp";
+const IMAGE_ALT = "Testosterone therapy for men at Central Texas Holistic Care";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },

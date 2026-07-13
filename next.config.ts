@@ -30,6 +30,16 @@ const nextConfig: NextConfig = {
         destination: "/stem-cells/",
         permanent: true,
       },
+      {
+        source: "/get-financed",
+        destination: "/payment-plans/",
+        permanent: true,
+      },
+      {
+        source: "/get-financed/",
+        destination: "/payment-plans/",
+        permanent: true,
+      },
     ];
   },
 

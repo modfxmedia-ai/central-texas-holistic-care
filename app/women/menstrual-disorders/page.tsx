@@ -105,8 +105,8 @@ export default function MenstrualDisordersPage() {
           "Individualized care",
         ]}
         image={{
-          src: `${SITE_URL}/wp-content/uploads/2025/06/Women-Menopausal-disorders-1-1024x681.webp`,
-          alt: "Menstrual Disorder",
+          src: "/images/services/menstrual-disorder.jpg",
+          alt: "Menstrual disorder care at Central Texas Holistic Care",
         }}
         checklists={[
           {

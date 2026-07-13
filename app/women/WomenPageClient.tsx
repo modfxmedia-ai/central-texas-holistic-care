@@ -26,8 +26,6 @@ const PHONE_DISPLAY = "(254) 213-2423";
 const PHONE_TEL = "+12542132423";
 const BOOKING_URL =
   "https://www.tebra.com/care/practice/central-texas-holistic-care-163683";
-const WP_BASE =
-  "https://centraltexasholisticcarepllc.com/wp-content/uploads/2025/06";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -56,8 +54,8 @@ const SERVICES: readonly Service[] = [
     body: "A routine gynecological exam is essential for monitoring reproductive health and detecting early signs of conditions like cervical cancer, STIs, and hormonal imbalances.",
     href: "/women/gynecological-exams/",
     image: {
-      src: `${WP_BASE}/Women-gyne-scaled.webp`,
-      alt: "Women-gyne",
+      src: "/images/services/comprehensive-gynecological-exams-for-womens-health.png",
+      alt: "Comprehensive gynecological exams for women's health",
     },
     icon: Stethoscope,
     highlights: [
@@ -72,8 +70,8 @@ const SERVICES: readonly Service[] = [
     body: "Menopause is a natural transition, but it can bring disruptive physical and emotional symptoms. At Central Texas Holistic Care, we offer comprehensive menopausal assessments to help you navigate this stage with confidence and comfort.",
     href: "/women/menopausal-disorders/",
     image: {
-      src: `${WP_BASE}/Women-Menopausal-disorders-scaled.webp`,
-      alt: "Women Menopausal disorders",
+      src: "/images/services/menopausal-disorder.jpg",
+      alt: "Menopausal disorder care at Central Texas Holistic Care",
     },
     icon: Sun,
     highlights: [
@@ -88,8 +86,8 @@ const SERVICES: readonly Service[] = [
     body: "Irregular, painful, or heavy periods can be signs of underlying menstrual disorders or hormonal imbalances. At Central Texas Holistic Care, we take a thorough, individualized approach to diagnosing and treating menstrual disorders.",
     href: "/women/menstrual-disorders/",
     image: {
-      src: `${WP_BASE}/Women-Menopausal-disorders-1-1024x681.webp`,
-      alt: "Menstrual Disorder",
+      src: "/images/services/menstrual-disorder.jpg",
+      alt: "Menstrual disorder care at Central Texas Holistic Care",
     },
     icon: Droplets,
     highlights: [

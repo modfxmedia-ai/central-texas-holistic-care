@@ -100,8 +100,8 @@ export default function MenopausalDisordersPage() {
         ]}
         highlights={["Full assessment", "Symptom relief", "Personalized plan"]}
         image={{
-          src: `${SITE_URL}/wp-content/uploads/2025/06/Women-Menopausal-disorders-scaled.webp`,
-          alt: "Women Menopausal disorders",
+          src: "/images/services/menopausal-disorder.jpg",
+          alt: "Menopausal disorder care at Central Texas Holistic Care",
         }}
         checklists={[
           {

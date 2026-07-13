@@ -83,7 +83,7 @@ const GROUPS: SiteGroup[] = (() => {
       {
         label: "Payment Plans",
         href: "/payment-plans/",
-        description: "0% APR financing through Cherry.",
+        description: "Flexible financing through Cherry and Denefits.",
       },
     ],
   },

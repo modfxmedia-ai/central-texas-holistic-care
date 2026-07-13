@@ -5,11 +5,9 @@ import {
   ArrowRight,
   ArrowUpRight,
   CalendarCheck,
-  CheckCircle2,
   ChevronLeft,
   ChevronRight,
   Clock,
-  CreditCard,
   Droplet,
   HeartPulse,
   Leaf,
@@ -24,6 +22,8 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+
+import HomeInsuranceMarquee from "@/components/home/HomeInsuranceMarquee";
 
 /* -------------------------------------------------------------------------- */
 /*                                Site data                                   */
@@ -240,126 +240,6 @@ function HeroSlider() {
               <ChevronRight className="size-5" />
             </button>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* -------------------------------------------------------------------------- */
-/*                             Insurance section                              */
-/* -------------------------------------------------------------------------- */
-
-const CARRIERS = [
-  "Medicare",
-  "Medicaid",
-  "BCBS Texas",
-  "Aetna",
-  "UnitedHealthcare",
-  "Cigna",
-  "Humana",
-  "Superior Health Plan",
-  "Molina",
-  "Amerigroup",
-  "Multiplan",
-  "Tricare West",
-  "Aetna Better Health TX",
-];
-
-const INSURANCE_HIGHLIGHTS = [
-  "Medicare, Medicaid & most commercial plans",
-  "0% APR financing via Cherry & Denefits",
-  "Transparent pricing, no surprise bills",
-];
-
-function InsuranceSection() {
-  return (
-    <section
-      aria-labelledby="home2-insurance-heading"
-      className="relative w-full overflow-hidden bg-white py-16 sm:py-20"
-    >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#C4A862]/50 to-transparent"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#C4A862]/35 to-transparent"
-      />
-
-      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-15% 0px" }}
-          transition={{ duration: 0.7, ease: EASE }}
-          className="mx-auto max-w-2xl text-center"
-        >
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#C4A862]/40 bg-[color:var(--color-cream-soft)] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#1a3a0a]">
-            <ShieldCheck className="size-3.5 text-[#6CBE45]" />
-            Insurance &amp; Financing
-          </span>
-          <h2
-            id="home2-insurance-heading"
-            className="mt-5 font-heading font-semibold leading-[1.1] tracking-tight text-[#1a3a0a]"
-            style={{ fontSize: "clamp(1.75rem, 3.4vw, 2.5rem)" }}
-          >
-            In-network with{" "}
-            <span className="italic text-[#8a6f30]">most major</span> insurers.
-          </h2>
-          <p className="mt-4 text-sm leading-relaxed text-stone-600 sm:text-base">
-            We accept Medicare, Medicaid, and most commercial plans. Prefer to
-            pay over time? Choose 0% APR financing through{" "}
-            <span className="font-semibold text-[#1a3a0a]">Cherry</span> and{" "}
-            <span className="font-semibold text-[#1a3a0a]">Denefits</span>.
-          </p>
-        </motion.div>
-
-        <motion.ul
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-10% 0px" }}
-          transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
-          className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-2"
-        >
-          {CARRIERS.map((name) => (
-            <li
-              key={name}
-              className="rounded-full border border-stone-200 bg-[color:var(--color-cream-soft)] px-3.5 py-1.5 text-[13px] font-medium text-[#2D5016] shadow-sm transition-colors hover:border-[#6CBE45]/60 hover:text-[#1a3a0a]"
-            >
-              {name}
-            </li>
-          ))}
-        </motion.ul>
-
-        <ul className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-x-6 gap-y-2">
-          {INSURANCE_HIGHLIGHTS.map((h) => (
-            <li
-              key={h}
-              className="inline-flex items-center gap-2 text-[13px] text-[#2D5016]"
-            >
-              <CheckCircle2 className="size-3.5 flex-none text-[#6CBE45]" />
-              <span>{h}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Link
-            href="/payment-plans/"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#1a3a0a] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#1a3a0a]/20 transition hover:bg-[#0f2706]"
-          >
-            <CreditCard className="size-4 text-[#C4A862]" />
-            See Payment Plans
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-          <a
-            href={`tel:${PHONE_TEL}`}
-            className="inline-flex items-center gap-2 rounded-full border border-[#1a3a0a]/20 bg-white px-6 py-3 text-sm font-semibold text-[#1a3a0a] hover:border-[#6CBE45] hover:bg-[#f0f5eb]"
-          >
-            <Phone className="size-4 text-[#6CBE45]" />
-            Verify coverage · {PHONE_DISPLAY}
-          </a>
         </div>
       </div>
     </section>
@@ -679,35 +559,35 @@ const SERVICES: Service[] = [
     href: "/iv-nutrition/",
   },
   {
-    image: "/images/source/hormone-replacement-therapy-hrt.jpg",
+    image: "/images/services/hormone-treatments-for-men.jpg",
     title: "Hormone Therapy",
     blurb:
       "Bioidentical hormone replacement and pellet therapy tailored to your labs.",
     href: "/hormone-therapy/",
   },
   {
-    image: "/images/source/mens-health-optimization.jpeg",
+    image: "/images/services/testosterone-therapy.webp",
     title: "Testosterone Therapy",
     blurb:
       "Lab-guided TRT for men, reclaim strength, focus, drive, and recovery.",
     href: "/men/testosterone/",
   },
   {
-    image: "/images/source/hero-wellness-portrait.jpg",
+    image: "/images/services/annual-wellness-exams.webp",
     title: "Wellness Exams",
     blurb:
       "Comprehensive preventive screenings, biomarker labs, and longevity-focused checkups.",
     href: "/men/wellness-exams/",
   },
   {
-    image: "/images/source/portrait-women-wellness.jpg",
+    image: "/images/services/comprehensive-gynecological-exams-for-womens-health.png",
     title: "Gynecological Exams",
     blurb:
       "Routine women's health visits, screenings, and reproductive care in a calm environment.",
     href: "/women/gynecological-exams/",
   },
   {
-    image: "/images/source/couple-hormone-imbalance.webp",
+    image: "/images/services/menopausal-disorder.jpg",
     title: "Menopausal Care",
     blurb:
       "Peri- and post-menopause support, manage hot flashes, sleep, mood, and bone health.",
@@ -1531,7 +1411,7 @@ export default function Home2Client() {
   return (
     <>
       <HeroSlider />
-      <InsuranceSection />
+      <HomeInsuranceMarquee />
       <AnnouncementMarquee />
       <WelcomeSection />
       <ServicesGrid />

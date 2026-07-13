@@ -5,7 +5,7 @@ import HomeApproach from "@/components/home/HomeApproach";
 import HomeCTACard from "@/components/home/HomeCTACard";
 import HomeHRT from "@/components/home/HomeHRT";
 import HomeHero from "@/components/home/HomeHero";
-import HomeInsuranceBand from "@/components/home/HomeInsuranceBand";
+import HomeInsuranceMarquee from "@/components/home/HomeInsuranceMarquee";
 import HomeJourney from "@/components/home/HomeJourney";
 import HomeLocation from "@/components/home/HomeLocation";
 import HomeProviders from "@/components/home/HomeProviders";
@@ -83,7 +83,7 @@ export default function Home() {
       />
 
       <HomeHero />
-      <HomeInsuranceBand />
+      <HomeInsuranceMarquee />
       <HomeAbout />
       <HomeApproach />
       <HomeServices />

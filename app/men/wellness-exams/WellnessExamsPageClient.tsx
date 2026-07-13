@@ -30,10 +30,9 @@ const PHONE_DISPLAY = "(254) 213-2423";
 const PHONE_TEL = "+12542132423";
 const BOOKING_URL =
   "https://www.tebra.com/care/practice/central-texas-holistic-care-163683";
-const IMAGE_URL =
-  "https://centraltexasholisticcarepllc.com/wp-content/uploads/2025/06/Annual-Wellness-Exams-Your-First-Line-of-Defense-healthcare-workers-having-meeting-hospital-conference-1024x576.webp";
+const IMAGE_URL = "/images/services/annual-wellness-exams.webp";
 const IMAGE_ALT =
-  "Annual-Wellness-Exams-Your-First-Line-of-Defense-healthcare-workers-having-meeting-hospital-conference";
+  "Annual wellness exams for men at Central Texas Holistic Care";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
