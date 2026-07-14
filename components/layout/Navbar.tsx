@@ -60,6 +60,11 @@ const NAV: NavItem[] = [
     href: "/about-us/",
     children: [
       {
+        label: "Blog",
+        href: "/blog/",
+        description: "Insights from our clinicians.",
+      },
+      {
         label: "Contact Us",
         href: "/contact/",
         description: "Get in touch with our care team.",

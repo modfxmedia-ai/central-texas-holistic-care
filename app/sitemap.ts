@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+import { BLOG_POSTS } from "@/lib/blog-data";
 import {
   getLiveCities,
   getLiveCityServicePairs,
@@ -32,6 +33,7 @@ const STATIC_PAGES: ReadonlyArray<{ path: string; lastModified: string }> = [
   { path: "/payment-plans/", lastModified: "2026-07-13" },
   { path: "/contact/", lastModified: "2026-07-07" },
   { path: "/areas-we-serve/", lastModified: "2026-06-30" },
+  { path: "/blog/", lastModified: "2026-07-14" },
   { path: "/privacy-policy/", lastModified: "2026-06-30" },
   { path: "/terms-of-service/", lastModified: "2026-06-30" },
   { path: "/accessibility/", lastModified: "2026-06-30" },
@@ -73,12 +75,18 @@ export function generateSitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(PROGRAMMATIC_LAST_MODIFIED),
     }));
 
+  const blogEntries: SitemapEntry[] = BLOG_POSTS.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}/`,
+    lastModified: new Date(post.updatedAt ?? post.publishedAt),
+  }));
+
   return [
     ...staticEntries,
     ...productEntries,
     ...cityHubEntries,
     ...cityServiceEntries,
     ...cityServiceTreatmentEntries,
+    ...blogEntries,
   ];
 }
 

@@ -684,12 +684,12 @@ const PILLARS: Pillar[] = [
   {
     icon: Droplet,
     title: "IV Hydration Therapy",
-    body: "Boost your energy, immunity, and wellness with IV Hydration Therapy — a nutrient-rich infusion of vitamins, minerals, and fluids delivered straight into your bloodstream for fast absorption.",
+    body: "Boost your energy, immunity, and wellness with IV Hydration Therapy, a nutrient-rich infusion of vitamins, minerals, and fluids delivered straight into your bloodstream for fast absorption.",
   },
   {
     icon: ShieldCheck,
     title: "Comprehensive Wellness Exams",
-    body: "Regular wellness exams are key to preventive healthcare — assessing your overall health and keeping you current on vaccinations and screenings tailored to your age, lifestyle, and goals.",
+    body: "Regular wellness exams are key to preventive healthcare, assessing your overall health and keeping you current on vaccinations and screenings tailored to your age, lifestyle, and goals.",
   },
 ];
 
@@ -1146,7 +1146,7 @@ function BlogSection() {
             </h2>
             <p className="mt-3 text-base leading-relaxed text-stone-600">
               Straightforward guides on hormones, IV nutrition, and preventive
-              medicine — written by our providers for real patients.
+              medicine, written by our providers for real patients.
             </p>
           </div>
           <Link

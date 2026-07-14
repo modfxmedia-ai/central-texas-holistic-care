@@ -55,6 +55,7 @@ const BOOKING_URL =
 const QUICK_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us/" },
+  { label: "Blog", href: "/blog/" },
   { label: "Men's Health", href: "/men/" },
   { label: "Women's Health", href: "/women/" },
   { label: "IV Nutrition", href: "/iv-nutrition/" },
