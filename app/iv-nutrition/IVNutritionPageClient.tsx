@@ -86,7 +86,7 @@ const SERVICES: readonly DripService[] = [
     body: "The Myer's Cocktail is a time-tested IV therapy blend designed to deliver immediate full-body hydration, increase energy, and alleviate chronic symptoms. Whether you're battling stress, fatigue, migraines, or immune challenges, this powerful infusion helps you feel recharged and restored from the inside out.",
     href: "/iv-nutrition/myers-cocktail/",
     image: {
-      src: "/images/services/myers-cocktail-iv-therapy.jpg",
+      src: "/images/services/myers-cocktail-iv-therapy-v2.jpg",
       alt: "Myer's Cocktail IV therapy at Central Texas Holistic Care",
     },
     icon: Sparkles,
