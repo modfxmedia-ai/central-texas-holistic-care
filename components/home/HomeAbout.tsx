@@ -396,7 +396,7 @@ export default function HomeAbout() {
                     {[
                       { icon: ShieldCheck, label: "Insurance accepted" },
                       { icon: CreditCard, label: "0% APR financing" },
-                      { icon: CalendarClock, label: "Same-week visits" },
+                      { icon: CalendarClock, label: "Same-day visits" },
                     ].map(({ icon: Icon, label }) => (
                       <li
                         key={label}

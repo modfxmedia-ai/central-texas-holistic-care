@@ -186,7 +186,7 @@ export default function HomeCTACard() {
                     <ul className="mt-6 space-y-4">
                       {[
                         "Personalized treatment plans",
-                        "Same-week appointments",
+                        "Same-day appointments",
                         "Insurance & 0% APR financing",
                       ].map((item) => (
                         <li

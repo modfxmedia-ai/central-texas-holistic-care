@@ -43,7 +43,7 @@ const SERVICES: Service[] = [
     href: "/men/wellness-exams/",
   },
   {
-    image: "/images/services/comprehensive-gynecological-exams-for-womens-health.png",
+    image: "/images/services/comprehensive-gynecological-exams-for-womens-health-v3.jpg",
     title: "Gynecological Exams",
     blurb:
       "Routine women's health visits, screenings, and reproductive care delivered in a calm, judgment-free environment.",

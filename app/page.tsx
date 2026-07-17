@@ -1,17 +1,6 @@
 import type { Metadata } from "next";
 
-import HomeAbout from "@/components/home/HomeAbout";
-import HomeApproach from "@/components/home/HomeApproach";
-import HomeCTACard from "@/components/home/HomeCTACard";
-import HomeHRT from "@/components/home/HomeHRT";
-import HomeHero from "@/components/home/HomeHero";
-import HomeInsuranceMarquee from "@/components/home/HomeInsuranceMarquee";
-import HomeJourney from "@/components/home/HomeJourney";
-import HomeLocation from "@/components/home/HomeLocation";
-import HomeProviders from "@/components/home/HomeProviders";
-import HomeServices from "@/components/home/HomeServices";
-import HomeTestimonial from "@/components/home/HomeTestimonial";
-import HomeVideoShowcase from "@/components/home/HomeVideoShowcase";
+import Home2Client from "@/components/home2/Home2Client";
 
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const PAGE_TITLE =
@@ -81,19 +70,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
-
-      <HomeHero />
-      <HomeInsuranceMarquee />
-      <HomeAbout />
-      <HomeApproach />
-      <HomeServices />
-      <HomeProviders />
-      <HomeHRT />
-      <HomeJourney />
-      <HomeVideoShowcase />
-      <HomeCTACard />
-      <HomeTestimonial />
-      <HomeLocation />
+      <Home2Client />
     </>
   );
 }

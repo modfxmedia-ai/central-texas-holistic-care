@@ -54,7 +54,7 @@ const SERVICES: readonly Service[] = [
     body: "A routine gynecological exam is essential for monitoring reproductive health and detecting early signs of conditions like cervical cancer, STIs, and hormonal imbalances.",
     href: "/women/gynecological-exams/",
     image: {
-      src: "/images/services/comprehensive-gynecological-exams-for-womens-health.png",
+      src: "/images/services/comprehensive-gynecological-exams-for-womens-health-v3.jpg",
       alt: "Comprehensive gynecological exams for women's health",
     },
     icon: Stethoscope,
@@ -126,7 +126,7 @@ const MORE_SERVICES: readonly MoreService[] = [
   },
   {
     title: "Acute Care",
-    description: "Same-week visits for everyday illness.",
+    description: "Same-day visits for everyday illness.",
     href: "/#services",
     icon: HeartPulse,
   },
@@ -293,7 +293,7 @@ function HeroSection() {
           {[
             { icon: ShieldCheck, label: "Physician-led" },
             { icon: Flower2, label: "Whole-woman care" },
-            { icon: Sparkles, label: "Same-week visits" },
+            { icon: Sparkles, label: "Same-day visits" },
           ].map(({ icon: Icon, label }) => (
             <li key={label} className="inline-flex items-center gap-1.5">
               <Icon className="size-3.5 text-[#9DD270]" />

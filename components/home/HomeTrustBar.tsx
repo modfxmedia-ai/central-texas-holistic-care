@@ -37,7 +37,7 @@ const PILLS: Pill[] = [
   },
   {
     icon: "/images/source/icon2.png",
-    label: "Same-Week Visits",
+    label: "Same-Day Visits",
     sub: "Acute &amp; new-patient",
   },
 ];

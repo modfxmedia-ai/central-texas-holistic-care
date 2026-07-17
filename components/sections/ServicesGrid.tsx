@@ -46,7 +46,7 @@ const SERVICES: Service[] = [
   {
     title: "Acute Care Services",
     description:
-      "Same-week acute visits for everyday concerns: colds, injuries, infections, and more.",
+      "Same-day acute visits for everyday concerns: colds, injuries, infections, and more.",
     href: "/about-us/",
     icon: Stethoscope,
   },

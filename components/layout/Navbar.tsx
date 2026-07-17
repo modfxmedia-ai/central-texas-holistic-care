@@ -1,7 +1,7 @@
 "use client";
 
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
   CalendarCheck,
@@ -35,25 +35,13 @@ type NavItem = {
   href: string;
   children?: NavChild[];
   hideOverview?: boolean;
+  pulse?: boolean;
 };
 
 const NAV: NavItem[] = [
   {
     label: "Home",
     href: "/",
-    children: [
-      {
-        label: "Home 1",
-        href: "/",
-        description: "Our main homepage.",
-      },
-      {
-        label: "Home 2",
-        href: "/home-2/",
-        description: "Alternate homepage design.",
-      },
-    ],
-    hideOverview: true,
   },
   {
     label: "About Us",
@@ -140,9 +128,32 @@ const NAV: NavItem[] = [
     ],
   },
   { label: "Hormone Therapy", href: "/hormone-therapy/" },
-  { label: "Stem Cells", href: "/stem-cells/" },
+  { label: "Stem Cells", href: "/stem-cells/", pulse: true },
   { label: "Payment Plans", href: "/payment-plans/" },
 ];
+
+/* -------------------------------------------------------------------------- */
+/*                          Attention-grabbing label                           */
+/* -------------------------------------------------------------------------- */
+
+function PulseLabel({ children }: { children: React.ReactNode }) {
+  const reduced = useReducedMotion();
+  if (reduced) {
+    return (
+      <span className="font-semibold text-[#6CBE45]">{children}</span>
+    );
+  }
+  return (
+    <motion.span
+      className="inline-block font-semibold text-[#6CBE45]"
+      style={{ transformOrigin: "center" }}
+      animate={{ opacity: [1, 0.55, 1], scale: [1, 1.06, 1] }}
+      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+    >
+      {children}
+    </motion.span>
+  );
+}
 
 function isActive(pathname: string, href: string): boolean {
   if (href === "/") return pathname === "/";
@@ -201,7 +212,11 @@ function DesktopMenu({ pathname }: { pathname: string }) {
                         : "text-stone-700 hover:bg-[#1a3a0a]/5 hover:text-[#1a3a0a]",
                     )}
                   >
-                    {item.label}
+                    {item.pulse ? (
+                      <PulseLabel>{item.label}</PulseLabel>
+                    ) : (
+                      item.label
+                    )}
                     {active && (
                       <motion.span
                         layoutId="nav-underline"
@@ -455,7 +470,11 @@ function MobileDrawer({
                               : "text-stone-800 hover:bg-stone-50",
                           )}
                         >
-                          {item.label}
+                          {item.pulse ? (
+                            <PulseLabel>{item.label}</PulseLabel>
+                          ) : (
+                            item.label
+                          )}
                           <ArrowRight className="size-4 text-stone-300" />
                         </Link>
                       </li>

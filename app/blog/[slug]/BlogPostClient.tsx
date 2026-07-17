@@ -683,7 +683,7 @@ export default function BlogPostClient({
                   Ready to talk to a provider?
                 </h4>
                 <p className="mt-2 text-[13px] leading-relaxed text-white/80">
-                  Same-week appointments. Most insurance accepted. Financing
+                  Same-day appointments. Most insurance accepted. Financing
                   available.
                 </p>
                 <a

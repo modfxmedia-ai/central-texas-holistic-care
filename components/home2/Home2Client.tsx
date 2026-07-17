@@ -255,7 +255,7 @@ function AnnouncementMarquee() {
     "Physician-led · Killeen, TX",
     "Most insurance accepted",
     "0% APR financing · Cherry & Denefits",
-    "Same-week appointments",
+    "Same-day appointments",
     "Trusted by 1,200+ patients",
   ];
   const doubled = [...items, ...items];
@@ -580,7 +580,7 @@ const SERVICES: Service[] = [
     href: "/men/wellness-exams/",
   },
   {
-    image: "/images/services/comprehensive-gynecological-exams-for-womens-health.png",
+    image: "/images/services/comprehensive-gynecological-exams-for-womens-health-v3.jpg",
     title: "Gynecological Exams",
     blurb:
       "Routine women's health visits, screenings, and reproductive care in a calm environment.",
@@ -1412,10 +1412,10 @@ export default function Home2Client() {
     <>
       <HeroSlider />
       <HomeInsuranceMarquee />
-      <AnnouncementMarquee />
       <WelcomeSection />
       <ServicesGrid />
       <ProvidersSection />
+      <AnnouncementMarquee />
       <PillarsSection />
       <HRTFeatureSection />
       <JourneySection />

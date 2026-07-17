@@ -149,7 +149,7 @@ function composeDrivingDirections(city: City): string {
 /* -------------------------------------------------------------------------- */
 
 function composeClosingCta(city: City, service: Service): string {
-  return `If you are ready to see what ${service.shortName} could look like for you, we would love to meet. Patients from ${city.name} can usually be seen within the same week, often sooner. Book a consultation online or call us, we will take it from there.`;
+  return `If you are ready to see what ${service.shortName} could look like for you, we would love to meet. Patients from ${city.name} can usually be seen the same day, often sooner. Book a consultation online or call us, we will take it from there.`;
 }
 
 /* -------------------------------------------------------------------------- */

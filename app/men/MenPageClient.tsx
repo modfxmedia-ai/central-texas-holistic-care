@@ -109,7 +109,7 @@ const MORE_SERVICES: readonly MoreService[] = [
   },
   {
     title: "Acute Care",
-    description: "Same-week visits for everyday illness.",
+    description: "Same-day visits for everyday illness.",
     href: "/#services",
     icon: Zap,
   },
@@ -277,7 +277,7 @@ function HeroSection() {
           {[
             { icon: ShieldCheck, label: "Physician-led" },
             { icon: HeartPulse, label: "Root-cause care" },
-            { icon: Sparkles, label: "Same-week visits" },
+            { icon: Sparkles, label: "Same-day visits" },
           ].map(({ icon: Icon, label }) => (
             <li key={label} className="inline-flex items-center gap-1.5">
               <Icon className="size-3.5 text-[#9DD270]" />

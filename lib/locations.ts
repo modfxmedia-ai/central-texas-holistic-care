@@ -1678,9 +1678,9 @@ export const TREATMENTS: ReadonlyArray<Treatment> = [
     primaryKeyword: "sports physical exam",
     secondaryKeywords: ["DOT physical", "athlete physical", "youth sports physical", "pre-participation physical"],
     shortDescription:
-      "Fast, thorough sports and DOT physicals for athletes, students, and commercial drivers, often same-week.",
+      "Fast, thorough sports and DOT physicals for athletes, students, and commercial drivers, often same-day.",
     longDescription:
-      "We offer pre-participation sports physicals for youth and high school athletes, DOT physicals for commercial drivers, and a more comprehensive athlete physical for adult competitive and tactical athletes. Visits are fast, thorough, and often available same-week.",
+      "We offer pre-participation sports physicals for youth and high school athletes, DOT physicals for commercial drivers, and a more comprehensive athlete physical for adult competitive and tactical athletes. Visits are fast, thorough, and often available same-day.",
     indicatedFor: [
       "youth and high school athletes",
       "adult competitive and tactical athletes",
@@ -1688,7 +1688,7 @@ export const TREATMENTS: ReadonlyArray<Treatment> = [
       "patients needing return-to-play clearance",
     ],
     benefits: [
-      "Often same-week availability",
+      "Often same-day availability",
       "DOT-certified clinician on staff",
       "Athlete-aware musculoskeletal exam",
       "Clear pass / refer outcomes",
@@ -1696,7 +1696,7 @@ export const TREATMENTS: ReadonlyArray<Treatment> = [
     protocol:
       "Brief intake, focused physical, paperwork completed in-clinic. DOT physicals follow current FMCSA requirements.",
     faqs: [
-      { q: "Do you do same-week sports physicals?", a: "Most weeks, yes. Call to confirm the next available slot." },
+      { q: "Do you do same-day sports physicals?", a: "Most days, yes. Call to confirm the next available slot." },
       { q: "What do I bring for a DOT physical?", a: "Your current medical card if you have one, any current medications, and glasses if you wear them." },
     ],
     live: true,

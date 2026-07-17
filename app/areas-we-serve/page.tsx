@@ -319,7 +319,7 @@ export default function AreasWeServePage() {
               <span className="italic text-[var(--color-accent)]">seen</span>?
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-base text-white/80 sm:text-lg">
-              Same-week consultations are typically available. Book online or give us a
+              Same-day consultations are typically available. Book online or give us a
               call to confirm your service and we will take it from there.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">

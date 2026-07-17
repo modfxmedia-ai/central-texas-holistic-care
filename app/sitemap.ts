@@ -12,8 +12,7 @@ const SITE_URL = "https://centraltexasholisticcarepllc.com";
 type SitemapEntry = MetadataRoute.Sitemap[number];
 
 const STATIC_PAGES: ReadonlyArray<{ path: string; lastModified: string }> = [
-  { path: "/", lastModified: "2025-07-04" },
-  { path: "/home-2/", lastModified: "2026-07-07" },
+  { path: "/", lastModified: "2026-07-17" },
   { path: "/about-us/", lastModified: "2025-06-16" },
   { path: "/men/", lastModified: "2025-06-16" },
   { path: "/men/testosterone/", lastModified: "2025-06-16" },
