@@ -84,7 +84,7 @@ const HERO_SLIDES: HeroSlide[] = [
     title: "Nutrients Delivered, Right Where You Need Them.",
     description:
       "Myers' Cocktail, immune boosters, hangover recovery, and workout recovery drips supervised by our physicians.",
-    ctaLabel: "See IV Menu",
+    ctaLabel: "Explore IV Menu",
     ctaHref: "/iv-nutrition/",
   },
   {
