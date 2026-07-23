@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 
+import BookingPopupProvider from "@/components/booking/BookingPopupProvider";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import BottomBookNowBanner from "@/components/layout/BottomBookNowBanner";
@@ -110,14 +111,16 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <ScrollProgressBar />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <div
-          aria-hidden
-          className="h-px w-full bg-gradient-to-r from-transparent via-[#C4A862]/40 to-transparent"
-        />
-        <Footer />
-        <BottomBookNowBanner />
+        <BookingPopupProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <div
+            aria-hidden
+            className="h-px w-full bg-gradient-to-r from-transparent via-[#C4A862]/40 to-transparent"
+          />
+          <Footer />
+          <BottomBookNowBanner />
+        </BookingPopupProvider>
       </body>
     </html>
   );

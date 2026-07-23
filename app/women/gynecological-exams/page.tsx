@@ -104,9 +104,10 @@ export default function GynecologicalExamsPage() {
           "Compassionate care",
         ]}
         image={{
-          src: "/images/services/comprehensive-gynecological-exams-for-womens-health-v3.jpg",
+          src: "/images/services/gyne-overview.png",
           alt: "Comprehensive gynecological exams for women's health",
         }}
+        heroBackground="/images/services/gyne-hero-banner.png"
         checklists={[
           {
             eyebrow: "What's Included",

@@ -117,6 +117,8 @@ export type WomenSubpageProps = {
   highlights: readonly string[];
   /** Overview image */
   image: { src: string; alt: string };
+  /** Optional standalone background image for the hero banner. Falls back to `image.src` when omitted. */
+  heroBackground?: string;
   /** Optional checklist sections rendered on parchment */
   checklists?: readonly WomenChecklist[];
   /** Optional "Why CTHC" trust pillars (3 recommended) */
@@ -164,11 +166,12 @@ function HeroSection({
   heroSubtitle,
   trust,
   image,
+  heroBackground,
 }: WomenSubpageProps) {
   return (
     <section className="relative isolate w-full overflow-hidden bg-[#0b1d04] py-14 sm:py-20 lg:py-28">
       <Image
-        src={image.src}
+        src={heroBackground ?? image.src}
         alt=""
         fill
         priority

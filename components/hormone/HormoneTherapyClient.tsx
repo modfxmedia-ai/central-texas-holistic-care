@@ -41,7 +41,7 @@ const BOOKING_URL =
 const WP =
   "https://centraltexasholisticcarepllc.com/wp-content/uploads/2025/06";
 
-const MEN_IMAGE = "/images/services/hormone-treatments-for-men.jpg";
+const MEN_IMAGE = "/images/services/hormone-treatments-for-men-v2.png";
 const WOMEN_IMAGE = `${WP}/Hormone-Treatments-for-Women-pexels-thirdman-7659552-scaled.webp`;
 
 const fadeUp: Variants = {

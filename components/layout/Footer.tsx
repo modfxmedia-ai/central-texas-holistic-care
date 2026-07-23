@@ -8,7 +8,6 @@ import {
 import Link from "next/link";
 
 import FooterColumns from "./FooterColumns";
-import NewsletterForm from "./NewsletterForm";
 
 // Brand icons were removed from lucide-react v1.x, define inline SVG fallbacks
 // that match the LucideIcon contract so they slot into the SOCIALS map cleanly.
@@ -214,21 +213,6 @@ export default function Footer() {
       />
 
       <Watermark />
-
-      {/* Newsletter strip */}
-      <div className="relative border-b border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-10 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-          <div>
-            <h2 className="font-heading text-2xl text-white sm:text-3xl">
-              Stay Informed About Your Health
-            </h2>
-            <p className="mt-1 text-sm text-white/60">
-              Monthly wellness tips, hormone insights, and clinic updates. No spam.
-            </p>
-          </div>
-          <NewsletterForm />
-        </div>
-      </div>
 
       {/* Columns */}
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

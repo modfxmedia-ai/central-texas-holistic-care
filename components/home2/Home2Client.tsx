@@ -24,6 +24,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import HomeInsuranceMarquee from "@/components/home/HomeInsuranceMarquee";
+import { useBookingPopup } from "@/components/booking/BookingPopupProvider";
 
 /* -------------------------------------------------------------------------- */
 /*                                Site data                                   */
@@ -61,6 +62,15 @@ type HeroSlide = {
 const HERO_SLIDES: HeroSlide[] = [
   {
     image: "/images/hero/doctor-1.png",
+    eyebrow: "Since 2024",
+    title: "Helping You Feel Your Best at Every Stage of Life.",
+    description:
+      "Comprehensive healthcare for men and women featuring hormone therapy, IV nutrition, wellness exams, stem cell therapy, weight management, and personalized treatment plans, all under one roof in Central Texas.",
+    ctaLabel: "Discover Our Care",
+    ctaHref: "/about-us/",
+  },
+  {
+    image: "/images/hero/mens-hormone-treatment.png",
     eyebrow: "Men's Health & Testosterone",
     title: "Reclaim Energy, Strength, and Drive.",
     description:
@@ -103,6 +113,7 @@ function HeroSlider() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const total = HERO_SLIDES.length;
+  const { openBookingPopup } = useBookingPopup();
 
   const next = useCallback(() => setIndex((i) => (i + 1) % total), [total]);
   const prev = useCallback(
@@ -192,13 +203,14 @@ function HeroSlider() {
                   {HERO_SLIDES[index].ctaLabel}
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                 </Link>
-                <a
-                  href={`tel:${PHONE_TEL}`}
+                <button
+                  type="button"
+                  onClick={() => openBookingPopup(BOOKING_URL)}
                   className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur transition-colors hover:border-[#C4A862]/70 hover:bg-white/10"
                 >
-                  <Phone className="size-4 text-[#C4A862]" />
-                  Call {PHONE_DISPLAY}
-                </a>
+                  <CalendarCheck className="size-4 text-[#C4A862]" />
+                  Book Now
+                </button>
               </div>
             </motion.div>
           </AnimatePresence>

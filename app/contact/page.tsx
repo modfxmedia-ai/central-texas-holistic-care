@@ -43,7 +43,7 @@ export default function ContactPage() {
       <PageHero
         title="Contact Us"
         subtitle="Have a question or ready to start? Send us a message and our care team will get back to you shortly."
-        backgroundImage="/images/clinic-banner.png"
+        backgroundImage="/images/blog-page-banner-img.jpeg"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Contact", href: "/contact/" },
@@ -125,8 +125,8 @@ export default function ContactPage() {
                   <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-500">
                     Hours
                   </p>
-                  <p className="mt-0.5 text-sm text-stone-700">Mon – Fri · 8:00 am – 5:00 pm</p>
-                  <p className="text-sm text-stone-700">Sat – Sun · Closed</p>
+                  <p className="mt-0.5 text-sm text-stone-700">Mon - Fri · 8:00 am - 5:00 pm</p>
+                  <p className="text-sm text-stone-700">Sat - Sun · Closed</p>
                 </div>
               </li>
             </ul>
