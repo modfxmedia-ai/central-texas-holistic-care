@@ -37,7 +37,6 @@ const organizationSchema = {
   alternateName: "CTHC",
   url: SITE_URL,
   telephone: "254-213-2423",
-  email: "info@centraltexasholisticcarepllc.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "311 E. Stan Schlueter Loop #207",

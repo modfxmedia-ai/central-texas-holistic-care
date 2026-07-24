@@ -85,7 +85,7 @@ export const seoData = {
       "At Central Texas Holistic Care, we identify and address the root causes of hormonal imbalances through personalized treatment plans that restore your body's natural balance.",
       "Live Your Best Life",
       "Address: 311 E. Stan Schlueter Loop #207, Killeen, TX 76542",
-      "Contact: 254 213 2423 · info@centraltexasholisticcarepllc.com",
+      "Contact: 254 213 2423",
       "Pay over time: No hard credit checks • 0% APR options (powered by Cherry).",
     ].join("\n\n"),
     navLinks: PRIMARY_NAV,

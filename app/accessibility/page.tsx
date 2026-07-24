@@ -126,14 +126,7 @@ const SECTIONS: LegalSection[] = [
           <li>How we can reach you for follow-up.</li>
         </ul>
         <p>
-          You can reach us by email at{" "}
-          <a
-            className="text-[#2D5016] underline-offset-4 hover:underline"
-            href="mailto:info@centraltexasholisticcarepllc.com"
-          >
-            info@centraltexasholisticcarepllc.com
-          </a>{" "}
-          or by phone at{" "}
+          You can reach us by phone at{" "}
           <a
             className="text-[#2D5016] underline-offset-4 hover:underline"
             href="tel:+12542132423"

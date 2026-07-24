@@ -1,5 +1,4 @@
 import {
-  Mail,
   MapPin,
   Phone,
   Clock,
@@ -90,7 +89,6 @@ const LOCAL_BUSINESS_SCHEMA = {
   name: "Central Texas Holistic Care",
   url: "https://centraltexasholisticcarepllc.com",
   telephone: "254-213-2423",
-  email: "info@centraltexasholisticcarepllc.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "311 E. Stan Schlueter Loop #207",
@@ -301,15 +299,6 @@ export default function Footer() {
                   className="text-white/70 transition-colors hover:text-white"
                 >
                   254-213-2423
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail className="mt-0.5 size-4 shrink-0 text-[#8BAD5A]" aria-hidden />
-                <a
-                  href="mailto:info@centraltexasholisticcarepllc.com"
-                  className="break-all text-white/70 transition-colors hover:text-white"
-                >
-                  info@centraltexasholisticcarepllc.com
                 </a>
               </li>
               <li className="flex items-start gap-3">

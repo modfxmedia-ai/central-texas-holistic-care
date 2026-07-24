@@ -12,7 +12,6 @@ import {
   Clock,
   Heart,
   Leaf,
-  MessageCircle,
   Phone,
   RefreshCw,
   ShieldCheck,
@@ -385,14 +384,6 @@ export default function HomeCTACard() {
                 >
                   <Phone className="size-4 text-[#6CBE45]" />
                   (254) 213-2423
-                </a>
-
-                <a
-                  href="mailto:info@centraltexasholisticcarepllc.com"
-                  className="inline-flex items-center justify-center gap-2 rounded-full px-2 py-3 text-sm font-semibold text-[#FAF6EE]/85 underline-offset-4 transition-colors hover:text-[#9DD270] hover:underline"
-                >
-                  <MessageCircle className="size-4" />
-                  Send a Message
                 </a>
               </motion.div>
             </div>

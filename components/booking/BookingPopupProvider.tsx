@@ -266,7 +266,7 @@ export default function BookingPopupProvider({
                       id="booking-popup-title"
                       className="font-heading text-base font-semibold leading-tight text-white sm:text-[17px]"
                     >
-                      Tell us a bit about you
+                      Let&apos;s get you scheduled
                     </h2>
                   </div>
                   <button

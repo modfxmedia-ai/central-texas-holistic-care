@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, MapPin, Phone } from "lucide-react";
 
 import PageHero from "@/components/layout/PageHero";
 
@@ -9,7 +9,6 @@ const CANONICAL = `${SITE_URL}/contact/`;
 
 const PHONE_DISPLAY = "(254) 213-2423";
 const PHONE_TEL = "+12542132423";
-const EMAIL = "info@centraltexasholisticcarepllc.com";
 const ADDRESS_LINE_1 = "311 E. Stan Schlueter Loop, Suite 207";
 const ADDRESS_LINE_2 = "Killeen, TX 76542";
 
@@ -81,23 +80,6 @@ export default function ContactPage() {
                     className="mt-0.5 block text-base font-semibold text-[#1a3a0a] hover:underline"
                   >
                     {PHONE_DISPLAY}
-                  </a>
-                </div>
-              </li>
-
-              <li className="flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-4 shadow-sm">
-                <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#1a3a0a]/8 text-[#1a3a0a]">
-                  <Mail className="size-5" />
-                </span>
-                <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-500">
-                    Email
-                  </p>
-                  <a
-                    href={`mailto:${EMAIL}`}
-                    className="mt-0.5 block break-all text-base font-semibold text-[#1a3a0a] hover:underline"
-                  >
-                    {EMAIL}
                   </a>
                 </div>
               </li>

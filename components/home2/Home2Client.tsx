@@ -66,7 +66,7 @@ const HERO_SLIDES: HeroSlide[] = [
     title: "Helping You Feel Your Best at Every Stage of Life.",
     description:
       "Comprehensive healthcare for men and women featuring hormone therapy, IV nutrition, wellness exams, stem cell therapy, weight management, and personalized treatment plans, all under one roof in Central Texas.",
-    ctaLabel: "Discover Our Care",
+    ctaLabel: "Meet the doctors",
     ctaHref: "/about-us/",
   },
   {

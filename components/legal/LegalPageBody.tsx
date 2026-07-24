@@ -119,14 +119,7 @@ export default function LegalPageBody({
                   Questions
                 </p>
                 <p className="mt-2">
-                  Contact us at{" "}
-                  <a
-                    className="font-semibold text-[#2D5016] underline-offset-4 hover:underline"
-                    href="mailto:info@centraltexasholisticcarepllc.com"
-                  >
-                    info@centraltexasholisticcarepllc.com
-                  </a>{" "}
-                  or call{" "}
+                  Contact us by phone at{" "}
                   <a
                     className="font-semibold text-[#2D5016] underline-offset-4 hover:underline"
                     href="tel:+12542132423"
