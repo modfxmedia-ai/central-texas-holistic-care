@@ -103,6 +103,18 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col" suppressHydrationWarning>
         <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-FT2E723L61"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-FT2E723L61');
+          `}
+        </Script>
+        <Script
           id="ld-organization"
           type="application/ld+json"
           strategy="afterInteractive"
