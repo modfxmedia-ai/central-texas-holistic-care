@@ -7,6 +7,8 @@ import Link from "next/link";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const CARRIERS = [
+  "TriWest",
+  "VA (Veterans Affairs)",
   "Medicare",
   "Medicaid",
   "BCBS Texas",
