@@ -33,12 +33,12 @@ const PHONE_DISPLAY = "(254) 213-2423";
 const PHONE_TEL = "+12542132423";
 
 const PAGE_TITLE =
-  "Stem Cell Therapy in Killeen, TX | Regenerative Injections | CTHC";
+  "Stem Cell Therapy in Killeen, TX | Central Texas Holistic Care";
 const PAGE_DESCRIPTION =
-  "Physician-supervised stem cell, exosome, and PRP therapy at Central Texas Holistic Care in Killeen, TX. Non-surgical regenerative injections for joints, tendons, hair, and whole-body recovery.";
+  "Physician-supervised stem cell, exosome, and PRP therapy in Killeen, TX. Non-surgical regenerative injections for joints, tendons, hair, and recovery.";
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: { absolute: PAGE_TITLE },
   description: PAGE_DESCRIPTION,
   alternates: { canonical: CANONICAL },
   openGraph: {
@@ -48,11 +48,20 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Central Texas Holistic Care",
     locale: "en_US",
+    images: [
+      {
+        url: `${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`,
+        width: 1200,
+        height: 630,
+        alt: PAGE_TITLE,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
+    images: [`${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`],
   },
   robots: { index: true, follow: true },
 };

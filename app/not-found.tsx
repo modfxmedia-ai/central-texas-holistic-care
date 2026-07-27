@@ -21,13 +21,13 @@ const PAGE_DESCRIPTION =
   "We couldn't find that page. Explore our hormone therapy, IV nutrition, and men's & women's health services or head back to the home page.";
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: { absolute: PAGE_TITLE },
   description: PAGE_DESCRIPTION,
   robots: { index: false, follow: true },
   openGraph: {
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
-    url: `${SITE_URL}/404`,
+    url: `${SITE_URL}/404/`,
     type: "website",
     siteName: "Central Texas Holistic Care",
     locale: "en_US",

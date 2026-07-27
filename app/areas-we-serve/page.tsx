@@ -25,12 +25,12 @@ const CANONICAL = `${SITE_URL}/areas-we-serve/`;
 const BOOKING_URL =
   "https://www.tebra.com/care/practice/central-texas-holistic-care-163683";
 
-const PAGE_TITLE = "Areas We Serve";
+const PAGE_TITLE = "Areas We Serve | Central Texas Holistic Care";
 const PAGE_DESCRIPTION =
-  "Central Texas Holistic Care serves Killeen, Harker Heights, Copperas Cove, and the surrounding Bell and Coryell County communities with hormone therapy, IV nutrition, testosterone replacement, and wellness care.";
+  "Central Texas Holistic Care serves Killeen, Harker Heights, Copperas Cove, and surrounding Bell and Coryell County communities with hormone therapy and IV.";
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: { absolute: PAGE_TITLE },
   description: PAGE_DESCRIPTION,
   alternates: { canonical: CANONICAL },
   openGraph: {
@@ -40,8 +40,21 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Central Texas Holistic Care",
     locale: "en_US",
+    images: [
+      {
+        url: `${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`,
+        width: 1200,
+        height: 630,
+        alt: PAGE_TITLE,
+      },
+    ],
   },
-  twitter: { card: "summary_large_image", title: PAGE_TITLE, description: PAGE_DESCRIPTION },
+  twitter: {
+    card: "summary_large_image",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: [`${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`],
+  },
   robots: { index: true, follow: true },
 };
 

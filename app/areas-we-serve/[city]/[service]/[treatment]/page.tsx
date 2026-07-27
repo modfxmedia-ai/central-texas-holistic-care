@@ -60,7 +60,7 @@ export async function generateMetadata({
 
   const canonical = `${SITE_URL}/areas-we-serve/${city.slug}/${service.slug}/${treatment.slug}/`;
   const title = `${treatment.name} in ${city.name}, TX`;
-  const description = `${treatment.shortDescription} Serving ${city.name}, ${city.county} County, about ${city.driveTimeMin} minutes from our Killeen clinic via ${city.primaryRoute}.`;
+  const description = `${treatment.shortDescription} Available in ${city.name}, TX.`;
 
   return {
     title,
@@ -73,8 +73,21 @@ export async function generateMetadata({
       type: "website",
       siteName: "Central Texas Holistic Care",
       locale: "en_US",
+      images: [
+        {
+          url: `${SITE_URL}/api/og?title=${encodeURIComponent(title)}`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`${SITE_URL}/api/og?title=${encodeURIComponent(title)}`],
+    },
     robots: { index: true, follow: true },
   };
 }

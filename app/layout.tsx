@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import BottomBookNowBanner from "@/components/layout/BottomBookNowBanner";
 import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 import "./globals.css";
 
@@ -16,8 +17,6 @@ const inter = Inter({
   display: "swap",
 });
 
-const SITE_URL = "https://centraltexasholisticcarepllc.com";
-const SITE_NAME = "Central Texas Holistic Care";
 const DEFAULT_DESCRIPTION =
   "Central Texas Holistic Care (CTHC) specializes in individualized health plans combining traditional family medicine with holistic therapies. Hormone therapy, IV nutrition, men's & women's health in Harker Heights, TX.";
 
@@ -106,7 +105,7 @@ export default function RootLayout({
         <Script
           id="ld-organization"
           type="application/ld+json"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <ScrollProgressBar />

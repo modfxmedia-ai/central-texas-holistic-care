@@ -8,12 +8,12 @@ const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/terms-of-service/`;
 const LAST_UPDATED = "2026-06-30";
 
-const PAGE_TITLE = "Terms of Service";
+const PAGE_TITLE = "Terms of Service | Central Texas Holistic Care";
 const PAGE_DESCRIPTION =
-  "The terms that govern your use of the Central Texas Holistic Care website and related online services, including acceptable use, intellectual property, disclaimers, and limitations of liability.";
+  "The terms governing your use of the Central Texas Holistic Care website: acceptable use, intellectual property, disclaimers, and limits of liability.";
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: { absolute: PAGE_TITLE },
   description: PAGE_DESCRIPTION,
   alternates: { canonical: CANONICAL },
   openGraph: {
@@ -23,8 +23,21 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Central Texas Holistic Care",
     locale: "en_US",
+    images: [
+      {
+        url: `${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`,
+        width: 1200,
+        height: 630,
+        alt: PAGE_TITLE,
+      },
+    ],
   },
-  twitter: { card: "summary_large_image", title: PAGE_TITLE, description: PAGE_DESCRIPTION },
+  twitter: {
+    card: "summary_large_image",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: [`${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`],
+  },
   robots: { index: true, follow: true },
 };
 

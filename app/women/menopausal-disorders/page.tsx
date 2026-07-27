@@ -6,12 +6,12 @@ import WomenSubpageClient from "@/components/women/WomenSubpageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/women/menopausal-disorders/`;
 
-const PAGE_TITLE = "Menopausal Disorders | central holistic care";
+const PAGE_TITLE = "Menopausal Disorders | Central Texas Holistic Care";
 const PAGE_DESCRIPTION =
-  "Comprehensive menopausal assessments at Central Texas Holistic Care, guidance, symptom relief, and personalized plans to navigate menopause with confidence and comfort.";
+  "Comprehensive menopausal care at Central Texas Holistic Care: guidance, symptom relief, and personalized plans to navigate menopause with comfort.";
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: { absolute: PAGE_TITLE },
   description: PAGE_DESCRIPTION,
   alternates: { canonical: CANONICAL },
   openGraph: {
@@ -21,11 +21,20 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Central Texas Holistic Care",
     locale: "en_US",
+    images: [
+      {
+        url: `${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`,
+        width: 1200,
+        height: 630,
+        alt: PAGE_TITLE,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
+    images: [`${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`],
   },
   robots: { index: true, follow: true },
 };

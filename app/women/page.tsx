@@ -6,12 +6,12 @@ import WomenPageClient from "./WomenPageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/women/`;
 
-const PAGE_TITLE = "Women | central holistic care";
+const PAGE_TITLE = "Women's Health | Central Texas Holistic Care";
 const PAGE_DESCRIPTION =
-  "Women's health services at Central Texas Holistic Care, comprehensive gynecological exams, menopausal care, and menstrual disorder treatment tailored to every life stage.";
+  "Women's health at Central Texas Holistic Care: gynecological exams, menopausal care, and menstrual disorder treatment tailored to every life stage.";
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: { absolute: PAGE_TITLE },
   description: PAGE_DESCRIPTION,
   alternates: { canonical: CANONICAL },
   openGraph: {
@@ -21,11 +21,20 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Central Texas Holistic Care",
     locale: "en_US",
+    images: [
+      {
+        url: `${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`,
+        width: 1200,
+        height: 630,
+        alt: PAGE_TITLE,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
+    images: [`${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`],
   },
   robots: { index: true, follow: true },
 };

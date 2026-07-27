@@ -14,10 +14,10 @@ const ADDRESS_LINE_2 = "Killeen, TX 76542";
 
 const PAGE_TITLE = "Contact Us | Central Texas Holistic Care";
 const PAGE_DESCRIPTION =
-  "Get in touch with Central Texas Holistic Care in Killeen, TX. Send us a message, ask questions about hormone therapy, IV nutrition, TRT, weight-loss, and wellness services, or request an appointment.";
+  "Contact Central Texas Holistic Care in Killeen, TX. Ask about hormone therapy, IV nutrition, TRT, weight loss, and wellness services, or book an appointment.";
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: { absolute: PAGE_TITLE },
   description: PAGE_DESCRIPTION,
   alternates: { canonical: CANONICAL },
   openGraph: {
@@ -27,11 +27,20 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Central Texas Holistic Care",
     locale: "en_US",
+    images: [
+      {
+        url: `${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`,
+        width: 1200,
+        height: 630,
+        alt: PAGE_TITLE,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
+    images: [`${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`],
   },
   robots: { index: true, follow: true },
 };

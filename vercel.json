@@ -67,6 +67,5 @@
       ]
     }
   ],
-  "cleanUrls": false,
-  "trailingSlash": true
+  "cleanUrls": false
 }

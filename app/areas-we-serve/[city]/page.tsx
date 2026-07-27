@@ -52,8 +52,21 @@ export async function generateMetadata({
       type: "website",
       siteName: "Central Texas Holistic Care",
       locale: "en_US",
+      images: [
+        {
+          url: `${SITE_URL}/api/og?title=${encodeURIComponent(meta.title)}`,
+          width: 1200,
+          height: 630,
+          alt: meta.title,
+        },
+      ],
     },
-    twitter: { card: "summary_large_image", title: meta.title, description: meta.description },
+    twitter: {
+      card: "summary_large_image",
+      title: meta.title,
+      description: meta.description,
+      images: [`${SITE_URL}/api/og?title=${encodeURIComponent(meta.title)}`],
+    },
     robots: { index: true, follow: true },
   };
 }

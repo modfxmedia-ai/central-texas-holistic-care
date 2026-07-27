@@ -8,12 +8,12 @@ const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/privacy-policy/`;
 const LAST_UPDATED = "2026-06-30";
 
-const PAGE_TITLE = "Privacy Policy";
+const PAGE_TITLE = "Privacy Policy | Central Texas Holistic Care";
 const PAGE_DESCRIPTION =
-  "How Central Texas Holistic Care collects, uses, protects, and shares your personal and health information, including your rights under HIPAA and Texas state law.";
+  "How Central Texas Holistic Care collects, uses, and protects your personal health information, including your rights under HIPAA and Texas state law.";
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: { absolute: PAGE_TITLE },
   description: PAGE_DESCRIPTION,
   alternates: { canonical: CANONICAL },
   openGraph: {
@@ -23,8 +23,21 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Central Texas Holistic Care",
     locale: "en_US",
+    images: [
+      {
+        url: `${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`,
+        width: 1200,
+        height: 630,
+        alt: PAGE_TITLE,
+      },
+    ],
   },
-  twitter: { card: "summary_large_image", title: PAGE_TITLE, description: PAGE_DESCRIPTION },
+  twitter: {
+    card: "summary_large_image",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: [`${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`],
+  },
   robots: { index: true, follow: true },
 };
 

@@ -6,12 +6,12 @@ import IVSubpageClient from "@/components/iv/IVSubpageClient";
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/iv-nutrition/workout-recovery/`;
 
-const PAGE_TITLE = "Workout Recovery | central holistic care";
+const PAGE_TITLE = "Workout Recovery IV Therapy | Central Texas Holistic Care";
 const PAGE_DESCRIPTION =
-  "Workout Recovery IV Therapy in Harker Heights, TX. Fluids, B-complex, B12, vitamin C, glutathione, zinc, taurine, and high-dose magnesium to accelerate muscle repair, reduce inflammation, and restore peak energy post-exercise.";
+  "Workout Recovery IV Therapy in Harker Heights, TX. Fluids, B-complex, B12, vitamin C, glutathione, zinc, taurine, and magnesium for faster muscle recovery.";
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: { absolute: PAGE_TITLE },
   description: PAGE_DESCRIPTION,
   alternates: { canonical: CANONICAL },
   openGraph: {
@@ -21,11 +21,20 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Central Texas Holistic Care",
     locale: "en_US",
+    images: [
+      {
+        url: `${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`,
+        width: 1200,
+        height: 630,
+        alt: PAGE_TITLE,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
+    images: [`${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`],
   },
   robots: { index: true, follow: true },
 };

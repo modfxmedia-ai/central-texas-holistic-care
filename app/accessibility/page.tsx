@@ -7,12 +7,12 @@ const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const CANONICAL = `${SITE_URL}/accessibility/`;
 const LAST_UPDATED = "2026-06-30";
 
-const PAGE_TITLE = "Accessibility Statement";
+const PAGE_TITLE = "Accessibility Statement | Central Texas Holistic Care";
 const PAGE_DESCRIPTION =
-  "Central Texas Holistic Care is committed to making our website and services accessible to everyone, including people with disabilities. Learn about our accessibility standards, in-clinic accommodations, and how to request assistance.";
+  "Central Texas Holistic Care is committed to WCAG 2.1 AA accessibility. Learn our standards, in-clinic accommodations, and how to request assistance.";
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: { absolute: PAGE_TITLE },
   description: PAGE_DESCRIPTION,
   alternates: { canonical: CANONICAL },
   openGraph: {
@@ -22,8 +22,21 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Central Texas Holistic Care",
     locale: "en_US",
+    images: [
+      {
+        url: `${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`,
+        width: 1200,
+        height: 630,
+        alt: PAGE_TITLE,
+      },
+    ],
   },
-  twitter: { card: "summary_large_image", title: PAGE_TITLE, description: PAGE_DESCRIPTION },
+  twitter: {
+    card: "summary_large_image",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: [`${SITE_URL}/api/og?title=${encodeURIComponent(PAGE_TITLE)}`],
+  },
   robots: { index: true, follow: true },
 };
 

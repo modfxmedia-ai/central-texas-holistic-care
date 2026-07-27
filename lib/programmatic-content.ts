@@ -34,18 +34,12 @@ export function composeMetaTitle(city: City, service: Service): string {
 export function composeMetaDescription(city: City, service: Service): string {
   const opener =
     service.slug === "iv-nutrition"
-      ? `Physician-supervised ${service.primaryKeyword} for ${city.name}, TX patients.`
+      ? `Physician-supervised ${service.primaryKeyword} in ${city.name}, TX.`
       : service.slug === "testosterone-therapy"
         ? `Lab-guided ${service.primaryKeyword} for men in ${city.name}, TX.`
-        : `Lab-guided ${service.primaryKeyword} for ${city.name}, TX.`;
+        : `Lab-guided ${service.primaryKeyword} in ${city.name}, TX.`;
 
-  const driveTime = formatDriveTime(city.driveTimeMin);
-  return `${opener} ${service.shortDescription} ${driveTime} from ${city.name} via ${city.primaryRoute}. Book a consultation.`;
-}
-
-function formatDriveTime(min: number): string {
-  if (min <= 2) return "Minutes";
-  return `About ${min} minutes`;
+  return `${opener} ${city.name} is ~${city.driveTimeMin} min from our clinic via ${city.primaryRoute}. Book a consultation.`;
 }
 
 export function composeH1(city: City, service: Service): string {
@@ -186,7 +180,7 @@ export function composeCityServiceCopy(city: City, service: Service): ComposedCo
 export function composeCityHubMeta(city: City): { title: string; description: string } {
   return {
     title: `${city.name}, TX`,
-    description: `Hormone therapy, IV nutrition, testosterone replacement, and wellness care for ${city.name}, TX residents. About ${city.driveTimeMin} minutes from ${city.name} via ${city.primaryRoute}. Book your consultation.`,
+    description: `Hormone therapy, IV nutrition, TRT, and wellness care for ${city.name}, TX. ~${city.driveTimeMin} min via ${city.primaryRoute}. Book a consultation.`,
   };
 }
 
