@@ -9,6 +9,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 const CARRIERS = [
   "VA (Veterans Affairs)",
   "Medicare",
+  "Tricare West",
   "Medicaid",
   "BCBS Texas",
   "Aetna",
@@ -19,7 +20,6 @@ const CARRIERS = [
   "Molina",
   "Amerigroup",
   "Multiplan",
-  "Tricare West",
   "Aetna Better Health TX",
 ] as const;
 
