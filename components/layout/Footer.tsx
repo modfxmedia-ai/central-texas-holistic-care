@@ -202,6 +202,7 @@ export default function Footer() {
 
   return (
     <footer
+      id="site-footer"
       className="relative mt-auto overflow-hidden border-t border-white/10 text-white/80"
       style={{ backgroundColor: "#0f2206" }}
     >

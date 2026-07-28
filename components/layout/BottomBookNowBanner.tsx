@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, CalendarCheck, Phone } from "lucide-react";
+import { ArrowRight, CalendarCheck, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const BOOKING_URL =
@@ -9,25 +9,52 @@ const BOOKING_URL =
 const PHONE_DISPLAY = "(254) 213-2423";
 const PHONE_TEL = "+12542132423";
 const SHOW_AFTER_PX = 600;
+const DISMISS_KEY = "cthc-book-banner-dismissed";
 
 export default function BottomBookNowBanner() {
-  const [visible, setVisible] = useState(false);
+  const [scrolledPast, setScrolledPast] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+  const [footerInView, setFooterInView] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    // Clear any previous session-dismiss flag so the banner is always shown.
     try {
-      sessionStorage.removeItem("cthc-book-banner-dismissed");
+      if (sessionStorage.getItem(DISMISS_KEY) === "1") {
+        setDismissed(true);
+      }
     } catch {
       /* ignore storage errors */
     }
     const onScroll = () => {
-      setVisible(window.scrollY > SHOW_AFTER_PX);
+      setScrolledPast(window.scrollY > SHOW_AFTER_PX);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const footer = document.getElementById("site-footer");
+    if (!footer) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setFooterInView(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
+  const handleDismiss = () => {
+    setDismissed(true);
+    try {
+      sessionStorage.setItem(DISMISS_KEY, "1");
+    } catch {
+      /* ignore storage errors */
+    }
+  };
+
+  const visible = scrolledPast && !dismissed && !footerInView;
 
   return (
     <AnimatePresence>
@@ -83,6 +110,14 @@ export default function BottomBookNowBanner() {
                 Book Appointment
                 <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
               </a>
+              <button
+                type="button"
+                onClick={handleDismiss}
+                aria-label="Dismiss"
+                className="inline-flex size-8 shrink-0 items-center justify-center rounded-full text-white/60 transition-colors hover:bg-white/10 hover:text-white"
+              >
+                <X className="size-4" />
+              </button>
             </div>
           </div>
         </motion.div>
@@ -90,3 +125,4 @@ export default function BottomBookNowBanner() {
     </AnimatePresence>
   );
 }
+
