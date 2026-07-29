@@ -264,7 +264,7 @@ function HeroSlider() {
 
 function AnnouncementMarquee() {
   const items = [
-    "Physician-led · Killeen, TX",
+    "Provider-led · Killeen, TX",
     "Most insurance accepted",
     "0% APR financing · Cherry & Denefits",
     "Same-day appointments",
@@ -342,7 +342,7 @@ function WelcomeSection() {
                   <Leaf className="size-4" />
                 </span>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#8a6f30]">
-                  Physician-Led
+                  Provider-Led
                 </p>
               </div>
               <p className="mt-3 text-sm leading-snug text-stone-700">

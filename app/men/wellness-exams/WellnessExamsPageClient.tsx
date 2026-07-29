@@ -255,7 +255,7 @@ function HeroSection() {
           className="mx-auto mt-8 flex max-w-2xl flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[12px] text-white/70"
         >
           {[
-            { icon: ShieldCheck, label: "Physician-led" },
+            { icon: ShieldCheck, label: "Provider-led" },
             { icon: ClipboardList, label: "Comprehensive screening" },
             { icon: Sparkles, label: "Personalized prevention plan" },
           ].map(({ icon: Icon, label }) => (

@@ -245,7 +245,7 @@ function HeroSection() {
           className="mx-auto mt-6 max-w-2xl text-[15px] leading-relaxed text-stone-200 sm:text-base"
         >
           Strength, energy, performance, and longevity, supported with
-          evidence-based, physician-led care designed around your labs and your
+          evidence-based, provider-led care designed around your labs and your
           life.
         </motion.p>
 
@@ -275,7 +275,7 @@ function HeroSection() {
           className="mx-auto mt-8 flex max-w-2xl flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[12px] text-white/70"
         >
           {[
-            { icon: ShieldCheck, label: "Physician-led" },
+            { icon: ShieldCheck, label: "Provider-led" },
             { icon: HeartPulse, label: "Root-cause care" },
             { icon: Sparkles, label: "Same-day visits" },
           ].map(({ icon: Icon, label }) => (

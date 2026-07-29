@@ -103,7 +103,7 @@ export default function GynecologicalExamsPage() {
         closingNote="At Central Texas Holistic Care, we provide compassionate, discreet, and expert care tailored to every stage of a woman's life."
         iconKey="stethoscope"
         trust={[
-          { iconKey: "shieldCheck", label: "Physician-led" },
+          { iconKey: "shieldCheck", label: "Provider-led" },
           { iconKey: "heartPulse", label: "Compassionate care" },
           { iconKey: "sparkles", label: "Every life stage" },
         ]}
@@ -160,7 +160,7 @@ export default function GynecologicalExamsPage() {
         whyPillars={[
           {
             iconKey: "shieldCheck",
-            title: "Physician-led",
+            title: "Provider-led",
             body: "Every exam is performed and reviewed by our clinicians, thorough, attentive, and never rushed.",
           },
           {

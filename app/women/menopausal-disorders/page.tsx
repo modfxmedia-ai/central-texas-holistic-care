@@ -103,7 +103,7 @@ export default function MenopausalDisordersPage() {
         ]}
         iconKey="sun"
         trust={[
-          { iconKey: "shieldCheck", label: "Physician-led" },
+          { iconKey: "shieldCheck", label: "Provider-led" },
           { iconKey: "heartPulse", label: "Symptom relief" },
           { iconKey: "sparkles", label: "Personalized plan" },
         ]}

@@ -259,7 +259,7 @@ function HeroSection() {
 
         <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-white/70 backdrop-blur">
           <Sparkles className="size-3 text-[#C4A862]" />
-          Physician-led &middot; Killeen, TX &middot; 0% APR financing
+          Provider-led &middot; Killeen, TX &middot; 0% APR financing
         </p>
       </div>
     </section>
@@ -273,7 +273,7 @@ function HeroSection() {
 const TRUST_FEATURES = [
   {
     icon: Stethoscope,
-    title: "Physician-led",
+    title: "Provider-led",
     body: "Every regenerative plan is designed and supervised by our medical team, not a franchise script.",
   },
   {

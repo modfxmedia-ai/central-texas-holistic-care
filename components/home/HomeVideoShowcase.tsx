@@ -9,7 +9,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 const POSTER_SRC = "/images/hero/doctor-1.png";
 const POSTER_ALT =
-  "Inside Central Texas Holistic Care, physician-led personalized consultation";
+  "Inside Central Texas Holistic Care, provider-led personalized consultation";
 // Swap the line below with the final clinic film when it's ready.
 const VIDEO_SRC = "/videos/hero-loop.mp4";
 
@@ -22,7 +22,7 @@ const TRUST_ITEMS = [
   {
     icon: ShieldCheck,
     label: "Board-certified",
-    sub: "Physician-led care team",
+    sub: "Provider-led care team",
   },
   {
     icon: Sparkles,

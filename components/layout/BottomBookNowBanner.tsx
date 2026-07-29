@@ -87,7 +87,7 @@ export default function BottomBookNowBanner() {
                   Ready to feel your best?
                 </p>
                 <p className="truncate text-[11px] text-white/75 sm:text-xs">
-                  Physician-led · Killeen, TX
+                  Provider-led · Killeen, TX
                 </p>
               </div>
             </div>

@@ -261,7 +261,7 @@ export default function HomeHero() {
             variants={fadeUp}
             className="mt-7 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg"
           >
-            Combining root-cause functional medicine with physician-led
+            Combining root-cause functional medicine with provider-led
             hormone therapy and IV nutrition to help your body perform the way
             it was designed to, through advanced testing, personalized
             protocols, and most insurance accepted with 0% APR financing.

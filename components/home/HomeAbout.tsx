@@ -182,7 +182,7 @@ export default function HomeAbout() {
                   <Leaf className="size-3.5 text-[#2D5016]" />
                 </span>
                 <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1a3a0a]">
-                  Physician-led · Killeen, TX
+                  Provider-led · Killeen, TX
                 </span>
               </div>
               <span aria-hidden className="hidden h-4 w-px bg-stone-200 sm:block" />
@@ -413,7 +413,7 @@ export default function HomeAbout() {
                     <div className="flex items-center gap-2 border-t border-[#FAF6EE]/15 pt-3">
                       <Sparkles className="size-3.5 flex-none text-[#C4A862]" />
                       <span className="text-[11px] leading-snug text-[#FAF6EE]/75">
-                        Physician-led &middot; Functional &amp; holistic medicine &middot; Killeen, TX
+                        Provider-led &middot; Functional &amp; holistic medicine &middot; Killeen, TX
                       </span>
                     </div>
                   </div>

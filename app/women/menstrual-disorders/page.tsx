@@ -104,7 +104,7 @@ export default function MenstrualDisordersPage() {
         closingNote="Whether you're dealing with PMS, PCOS, endometriosis, or unexplained irregularities, our team will design a treatment plan that supports hormonal balance and restores your well-being."
         iconKey="droplets"
         trust={[
-          { iconKey: "shieldCheck", label: "Physician-led" },
+          { iconKey: "shieldCheck", label: "Provider-led" },
           { iconKey: "heartPulse", label: "Cycle-focused" },
           { iconKey: "sparkles", label: "Individualized care" },
         ]}

@@ -314,7 +314,7 @@ export default function HomeProviders() {
         >
           <span className="inline-flex items-center gap-2">
             <Sparkles className="size-3 text-[#C4A862]" />
-            Physician-led
+            Provider-led
           </span>
           <span aria-hidden className="hidden h-3 w-px bg-white/20 sm:block" />
           <span className="inline-flex items-center gap-2">
