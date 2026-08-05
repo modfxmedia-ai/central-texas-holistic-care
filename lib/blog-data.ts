@@ -73,8 +73,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Hormone Therapy",
     categoryHref: "/hormone-therapy/",
     readMinutes: 8,
-    publishedAt: "2026-05-22",
-    updatedAt: "2026-07-10",
+    publishedAt: "2026-07-08",
     author: DR_AUGUSTIN,
     coverImage: "/images/blog-images/hormone-imbalance-blog-img-v2.webp",
     tags: ["Hormones", "Women's Health", "Perimenopause", "BHRT"],
@@ -172,8 +171,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "IV Nutrition",
     categoryHref: "/iv-nutrition/",
     readMinutes: 6,
-    publishedAt: "2026-06-04",
-    updatedAt: "2026-07-01",
+    publishedAt: "2026-07-15",
     author: DR_GARTH,
     coverImage: "/images/blog-images/iv-nutrition-therapy-blog-img.jpeg",
     tags: ["IV Therapy", "Wellness", "Immune Support", "Hydration"],
@@ -259,8 +257,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Men's Health",
     categoryHref: "/men/",
     readMinutes: 9,
-    publishedAt: "2026-06-19",
-    updatedAt: "2026-07-11",
+    publishedAt: "2026-07-22",
     author: DR_AUGUSTIN,
     coverImage: "/images/blog-images/testosterone-blog-img.jpg",
     tags: ["Testosterone", "Men's Health", "TRT", "Longevity"],
@@ -355,6 +352,226 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         text: "If two or more of the symptoms above have been quietly compounding, book a consultation. Bring recent labs if you have them, and bring your questions. This is your body, your decade, and your decision.",
+      },
+    ],
+  },
+  {
+    slug: "stay-hydrated-through-bell-countys-intense-summer-heat",
+    title: "Stay Hydrated Through Bell County's Intense Summer Heat",
+    excerpt:
+      "Central Texas summers push heat index values well past 105°F, and by the time you feel thirsty, you're already behind. Here's how our clinicians recommend building a hydration plan that actually holds up in Killeen's heat.",
+    category: "IV Nutrition",
+    categoryHref: "/iv-nutrition/",
+    readMinutes: 6,
+    publishedAt: "2026-07-29",
+    author: DR_GARTH,
+    coverImage:
+      "/images/blog-images/stay-hydrated-through-bell-countys-intense-summer-heat.webp",
+    tags: ["Hydration", "Summer Health", "IV Therapy", "Heat Safety"],
+    relatedServiceHref: "/iv-nutrition/",
+    relatedServiceLabel: "See IV Nutrition Menu",
+    content: [
+      {
+        type: "p",
+        text: "By July, Bell County routinely sits under a heat advisory, and by August, triple-digit afternoons stop making the news because they're simply expected. Between the asphalt, the humidity, and the hours spent outside at practice fields, job sites, and backyard barbecues, dehydration creeps up faster here than most people realize. At our Killeen clinic, the emergency walk-ins spike every summer for the same underlying reason: fluid and electrolyte loss that outpaced what plain water alone could replace.",
+      },
+      {
+        type: "p",
+        text: "The good news is that heat-related dehydration is almost entirely preventable with the right plan. Here's what we tell patients, and what we do differently for the ones who need more than a water bottle.",
+      },
+      {
+        type: "h2", text: "Why Central Texas heat is uniquely hard on your body",
+      },
+      {
+        type: "p",
+        text: "Heat index, not just air temperature, is what determines how efficiently your body can cool itself. When Bell County humidity climbs alongside 100°F-plus afternoons, sweat evaporates more slowly, so your core temperature rises even though you're sweating just as much, or more. That means you're losing sodium, potassium, and magnesium faster while your body's primary cooling mechanism is working at reduced efficiency.",
+      },
+      {
+        type: "callout",
+        title: "The thirst trap",
+        text: "Thirst is a lagging indicator. Studies show you're typically already 1-2% dehydrated, enough to measurably affect concentration and physical performance, by the time you feel thirsty.",
+      },
+      {
+        type: "h2", text: "Signs you're dehydrated before you feel it",
+      },
+      {
+        type: "list",
+        items: [
+          "Headache or a dull pressure behind the eyes by mid-afternoon",
+          "Dark yellow urine or noticeably less frequent bathroom trips",
+          "Fatigue or brain fog that hits earlier than usual",
+          "Muscle cramps, especially in the calves or hamstrings",
+          "Dizziness or lightheadedness when standing up quickly",
+          "Dry mouth, chapped lips, or unusually dry skin",
+        ],
+      },
+      {
+        type: "h2", text: "Who is most at risk in our climate",
+      },
+      {
+        type: "list",
+        items: [
+          "Outdoor workers in construction, landscaping, and roofing",
+          "Military personnel and families training or working outdoors at Fort Cavazos",
+          "Student athletes at summer practices and two-a-days",
+          "Adults over 60, whose thirst signal naturally weakens with age",
+          "Anyone on diuretics, blood pressure medication, or managing diabetes",
+          "Weekend warriors doing yard work or long outdoor workouts without an electrolyte plan",
+        ],
+      },
+      {
+        type: "h2", text: "Building a hydration plan that actually holds up",
+      },
+      {
+        type: "steps",
+        items: [
+          {
+            title: "Front-load your fluids",
+            text: "Don't wait for the heat of the day. Drink 16-20 oz of water within the first hour of waking, before you're already behind.",
+          },
+          {
+            title: "Add electrolytes, not just water",
+            text: "Plain water dilutes sodium further if you're sweating heavily. A sugar-free electrolyte mix during and after outdoor time replaces what sweat actually takes with you.",
+          },
+          {
+            title: "Time your intake around exposure",
+            text: "Drink roughly 8 oz every 15-20 minutes during sustained outdoor activity, rather than one large bottle afterward.",
+          },
+          {
+            title: "Watch your urine, not the clock",
+            text: "Pale, straw-colored urine is the simplest real-time indicator that your intake is keeping pace with your losses.",
+          },
+        ],
+      },
+      {
+        type: "quote",
+        text: "By the time a patient tells me they're thirsty, we're already playing catch-up. In this heat, hydration has to be proactive, not reactive.",
+        cite: "Dr. Larissa Garth, PA-C",
+      },
+      {
+        type: "h2", text: "When IV hydration therapy makes sense",
+      },
+      {
+        type: "p",
+        text: "For most days, water and electrolytes are enough. But after a day of heavy outdoor exposure, a missed hydration window, or when a headache and fatigue have already set in, IV fluids restore volume and electrolytes directly into the bloodstream, no waiting on digestion. It's the fastest way to reverse the deficit rather than slowly chasing it with sips of water for the rest of the evening.",
+      },
+      {
+        type: "p",
+        text: "Our Myers' Cocktail and hydration-focused drips pair saline with magnesium, B-vitamins, and electrolytes, and most patients feel the difference within the first 20-30 minutes of the infusion.",
+      },
+      {
+        type: "h2", text: "Simple habits for the rest of the summer",
+      },
+      {
+        type: "list",
+        items: [
+          "Keep a marked water bottle in your car, your desk, and by your bed",
+          "Add a pinch of salt or an electrolyte tablet to your morning water",
+          "Limit alcohol and excess caffeine on high heat-index days, both are mild diuretics",
+          "Schedule outdoor work or workouts before 9 a.m. or after 7 p.m. when possible",
+          "Know the signs of heat exhaustion and don't push through them",
+        ],
+      },
+      {
+        type: "p",
+        text: "If you already feel behind on hydration this week, or you want a plan in place before the next heat advisory, our clinicians can build one around your schedule, medications, and activity level. Walk-ins are welcome for same-day IV hydration.",
+      },
+    ],
+  },
+  {
+    slug: "summer-sleep-support-for-perimenopause-symptoms",
+    title:
+      "Navigating Perimenopause Symptoms When Summer Heat Disrupts Sleep",
+    excerpt:
+      "Hot flashes, night sweats, and warm Central Texas nights can make perimenopause sleep feel unpredictable. Here's how to build a cooler bedroom routine, and when it's time to talk to a menopause specialist.",
+    category: "Hormone Therapy",
+    categoryHref: "/hormone-therapy/",
+    readMinutes: 7,
+    publishedAt: "2026-08-05",
+    author: DR_AUGUSTIN,
+    coverImage:
+      "/images/blog-images/summer-sleep-support-for-perimenopause-symptoms.webp",
+    tags: ["Perimenopause", "Sleep", "Hot Flashes", "Women's Health"],
+    relatedServiceHref: "/women/menopausal-disorders/",
+    relatedServiceLabel: "Explore Menopausal Disorder Care",
+    content: [
+      {
+        type: "p",
+        text: "Perimenopause can make sleep feel unpredictable, especially when Central Texas summer nights stay warm. Hot flashes, night sweats, racing thoughts, and frequent waking can leave many women tired before the day even begins.",
+      },
+      {
+        type: "p",
+        text: "Perimenopause is the time before menopause when estrogen and progesterone levels change. Those shifts may affect body temperature, mood, menstrual cycles, and sleep. Summer heat can add another layer of discomfort, but a few thoughtful changes and the right medical support may help.",
+      },
+      { type: "h2", text: "Summer heat can amplify perimenopause symptoms" },
+      {
+        type: "p",
+        text: "Hot flashes and night sweats are often called vasomotor symptoms. During perimenopause, the brain's temperature control center may become more sensitive to small changes in body heat. A slight rise in temperature can lead to sudden warmth, flushing, sweating, or even chills afterward.",
+      },
+      {
+        type: "p",
+        text: "In Killeen and nearby Bell County communities, August heat does not always fade when the sun goes down. A warm bedroom, humid air, heavy bedding, and heat held inside the home can make it harder to cool off after a hot flash. Dehydration may also make a person feel less comfortable overnight.",
+      },
+      {
+        type: "callout",
+        title: "Sleep loss compounds quickly",
+        text: "Poor sleep can affect much more than morning energy. It may lead to irritability, trouble focusing, lower motivation to exercise, and added stress. Recurring sleep loss is not something women simply have to put up with.",
+      },
+      {
+        type: "p",
+        text: "A menopause specialist in Bell County can look at symptoms alongside medical history, medications, cycle changes, and personal care goals.",
+      },
+      { type: "h2", text: "Build a cooler bedroom and evening routine" },
+      {
+        type: "p",
+        text: "A comfortable sleep space can make a real difference during hot months. Small adjustments may help the body settle after a night sweat or hot flash.",
+      },
+      {
+        type: "list",
+        items: [
+          "Lower the thermostat when possible, or use fans to keep air moving",
+          "Choose breathable cotton or moisture-wicking sheets",
+          "Keep a cool pack or chilled washcloth near the bed",
+          "Wear lightweight sleepwear that can be removed or layered easily",
+          "Consider lighter blankets that are simple to move aside during the night",
+        ],
+      },
+      {
+        type: "p",
+        text: "Evening habits can also play a role. Hot showers, spicy foods, alcohol, and heavy meals close to bedtime can trigger or worsen hot flashes for some people. Staying hydrated throughout the day may be helpful, while avoiding large amounts of fluid right before bed may reduce bathroom trips.",
+      },
+      {
+        type: "p",
+        text: "A steady wind-down routine can give the mind and body a clearer signal that rest is coming. Gentle stretching, reading, slow breathing, and less screen time before bed may feel calming. It can also help to track patterns, including sleep interruptions, hot flashes, menstrual changes, stress, food, and alcohol. That record may offer useful details during a healthcare visit.",
+      },
+      { type: "h2", text: "Look beyond hot flashes when sleep changes persist" },
+      {
+        type: "p",
+        text: "Not every sleep problem in midlife is caused by perimenopause alone. Insomnia, snoring, gasping during sleep, frequent urination, anxiety, depression, thyroid concerns, and medication effects can all affect rest. A thorough assessment matters because several concerns may be happening at the same time.",
+      },
+      {
+        type: "list",
+        items: [
+          "Night sweats that happen often or disrupt sleep repeatedly",
+          "Sleep loss that affects work, relationships, or daily tasks",
+          "Periods that become unusually heavy, irregular, or difficult to manage",
+          "Mood changes that feel harder to cope with than usual",
+          "Symptoms that begin suddenly or become noticeably worse",
+        ],
+      },
+      {
+        type: "quote",
+        text: "Care should never be one-size-fits-all. A provider can discuss symptom patterns, preventive care needs, and possible testing when appropriate.",
+        cite: "Dr. Bimisa Augustin, DNP",
+      },
+      { type: "h2", text: "Personalized support for your next season" },
+      {
+        type: "p",
+        text: "At Central Texas Holistic Care, we provide patient-centered care in Killeen for women's health concerns, hormone questions, preventive care, IV nutrition, and regenerative services. A visit can make space for the full picture, including sleep quality, hot flashes, cycle changes, energy, nutrition, stress, and related health concerns.",
+      },
+      {
+        type: "p",
+        text: "We serve patients throughout Central Texas and accept many major insurance plans. When summer sleep problems keep returning, personalized support can help identify possible contributors and create a care plan that fits each person's health needs and preferences.",
       },
     ],
   },
