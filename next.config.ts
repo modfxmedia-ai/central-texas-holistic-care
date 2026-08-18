@@ -31,16 +31,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/get-financed",
-        destination: "/payment-plans/",
-        permanent: true,
-      },
-      {
-        source: "/get-financed/",
-        destination: "/payment-plans/",
-        permanent: true,
-      },
-      {
         source: "/products",
         destination: "/",
         permanent: true,
