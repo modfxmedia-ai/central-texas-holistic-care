@@ -18,8 +18,7 @@ const PHONE_DISPLAY = "(254) 213-2423";
 const ADDRESS_LINE_1 = "311 E. Stan Schlueter Loop #207";
 const ADDRESS_LINE_2 = "Killeen, TX 76542";
 const DIRECTIONS_URL =
-  "https://www.google.com/maps/dir/?api=1&destination=" +
-  encodeURIComponent("311 E. Stan Schlueter Loop #207, Killeen, TX 76542");
+  "https://www.google.com/maps/place/Central+Texas+Holistic+Care/@31.075632,-97.7480549,895m/data=!3m1!1e3!4m15!1m8!3m7!1s0x86454b020a215555:0xb6e37773caed83b4!2s311+E+Stan+Schlueter+Loop+%23207,+Killeen,+TX+76542,+USA!3b1!8m2!3d31.075632!4d-97.7480549!16s%2Fg%2F11rnfbj6qc!3m5!1s0x864549a554865219:0x19284a788b4a1a58!8m2!3d31.075632!4d-97.7480549!16s%2Fg%2F11ln_0df5q!5m1!1e1?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D";
 
 const MAP_EMBED_URL =
   "https://www.google.com/maps?q=" +

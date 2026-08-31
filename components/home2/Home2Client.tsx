@@ -23,6 +23,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { formatPublishedDate, getAllPosts } from "@/lib/blog-data";
+
 import HomeInsuranceMarquee from "@/components/home/HomeInsuranceMarquee";
 import { useBookingPopup } from "@/components/booking/BookingPopupProvider";
 
@@ -37,8 +39,7 @@ const PHONE_TEL = "+12542132423";
 const ADDRESS_LINE_1 = "311 E. Stan Schlueter Loop #207";
 const ADDRESS_LINE_2 = "Killeen, TX 76542";
 const DIRECTIONS_URL =
-  "https://www.google.com/maps/dir/?api=1&destination=" +
-  encodeURIComponent("311 E. Stan Schlueter Loop #207, Killeen, TX 76542");
+  "https://www.google.com/maps/place/Central+Texas+Holistic+Care/@31.075632,-97.7480549,895m/data=!3m1!1e3!4m15!1m8!3m7!1s0x86454b020a215555:0xb6e37773caed83b4!2s311+E+Stan+Schlueter+Loop+%23207,+Killeen,+TX+76542,+USA!3b1!8m2!3d31.075632!4d-97.7480549!16s%2Fg%2F11rnfbj6qc!3m5!1s0x864549a554865219:0x19284a788b4a1a58!8m2!3d31.075632!4d-97.7480549!16s%2Fg%2F11ln_0df5q!5m1!1e1?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D";
 const MAP_EMBED_URL =
   "https://www.google.com/maps?q=" +
   encodeURIComponent("311 E. Stan Schlueter Loop #207, Killeen, TX 76542") +
@@ -1094,50 +1095,19 @@ function TestimonialsSection() {
 /*                                Blog posts                                  */
 /* -------------------------------------------------------------------------- */
 
-type BlogPost = {
-  category: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  read: string;
-  href: string;
-  image: string;
-};
-
-const BLOG_POSTS: BlogPost[] = [
-  {
-    category: "Hormone Health",
-    title: "BHRT vs Synthetic Hormones: What's the Real Difference?",
-    excerpt:
-      "Bioidentical hormones are molecularly identical to what your body makes. Here's why that matters for safety, dosing, and how you feel.",
-    date: "March 12, 2026",
-    read: "6 min read",
-    href: "/hormone-therapy/",
-    image: "/images/source/bhrt-vs-synthetic-hormones.png",
-  },
-  {
-    category: "IV Therapy",
-    title: "What to Expect from Your First Myers' Cocktail",
-    excerpt:
-      "From the IV blend itself to how you'll feel in the hours and days after, a friendly walkthrough of our most popular drip.",
-    date: "March 5, 2026",
-    read: "5 min read",
-    href: "/iv-nutrition/myers-cocktail/",
-    image: "/images/source/myers-cocktail-first-visit.webp",
-  },
-  {
-    category: "Men's Health",
-    title: "Low T Symptoms: When Fatigue Means More Than 'Just Tired'",
-    excerpt:
-      "Stubborn weight, low drive, and brain fog can quietly point to low testosterone. Here's what to ask your provider, and the labs that actually matter.",
-    date: "February 27, 2026",
-    read: "7 min read",
-    href: "/men/testosterone/",
-    image: "/images/source/low-t-symptoms.webp",
-  },
-];
-
 function BlogSection() {
+  const latestPosts = getAllPosts()
+    .slice(0, 3)
+    .map((post) => ({
+      category: post.category,
+      title: post.title,
+      excerpt: post.excerpt,
+      date: formatPublishedDate(post.publishedAt),
+      read: `${post.readMinutes} min read`,
+      href: `/blog/${post.slug}/`,
+      image: post.coverImage,
+    }));
+
   return (
     <section className="relative w-full bg-[color:var(--color-cream-soft)] py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -1162,7 +1132,7 @@ function BlogSection() {
             </p>
           </div>
           <Link
-            href="/about-us/"
+            href="/blog/"
             className="group inline-flex items-center gap-2 rounded-full border border-[#1a3a0a]/20 bg-white px-5 py-2.5 text-sm font-semibold text-[#1a3a0a] hover:border-[#6CBE45] hover:bg-[#f0f5eb]"
           >
             View all articles
@@ -1171,9 +1141,9 @@ function BlogSection() {
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {BLOG_POSTS.map((post, i) => (
+          {latestPosts.map((post, i) => (
             <motion.article
-              key={post.title}
+              key={post.href}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10% 0px" }}
