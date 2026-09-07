@@ -223,12 +223,46 @@ function slugifyHeading(text: string): string {
     .replace(/\s+/g, "-");
 }
 
+function RichText({ text }: { text: string }) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return (
+    <>
+      {parts.map((part, i) => {
+        const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+        if (!match) return <span key={i}>{part}</span>;
+        const href = match[2];
+        const external = /^https?:\/\//i.test(href);
+        const className =
+          "font-semibold text-[#1a3a0a] underline decoration-[#C4A862]/70 underline-offset-2 hover:text-[#2D5016]";
+        if (external) {
+          return (
+            <a
+              key={i}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={className}
+            >
+              {match[1]}
+            </a>
+          );
+        }
+        return (
+          <Link key={i} href={href} className={className}>
+            {match[1]}
+          </Link>
+        );
+      })}
+    </>
+  );
+}
+
 function BlockRenderer({ block }: { block: BlogBlock }) {
   switch (block.type) {
     case "p":
       return (
         <p className="mt-6 text-[16.5px] leading-[1.85] text-stone-700">
-          {block.text}
+          <RichText text={block.text} />
         </p>
       );
     case "h2":
@@ -275,7 +309,9 @@ function BlockRenderer({ block }: { block: BlogBlock }) {
               className="flex items-start gap-3 text-[16px] leading-[1.7] text-stone-700"
             >
               <CheckCircle2 className="mt-1 size-4 shrink-0 text-[#6CBE45]" />
-              <span>{item}</span>
+              <span>
+                <RichText text={item} />
+              </span>
             </li>
           ))}
         </ul>
@@ -301,7 +337,7 @@ function BlockRenderer({ block }: { block: BlogBlock }) {
                   </p>
                 )}
                 <p className="mt-1 text-[15.5px] leading-[1.75] text-stone-700">
-                  {item.text}
+                  <RichText text={item.text} />
                 </p>
               </div>
             </li>
@@ -322,7 +358,7 @@ function BlockRenderer({ block }: { block: BlogBlock }) {
               {block.title}
             </p>
             <p className="mt-1.5 text-[15.5px] leading-relaxed text-stone-700">
-              {block.text}
+              <RichText text={block.text} />
             </p>
           </div>
         </aside>

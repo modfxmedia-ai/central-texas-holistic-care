@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 import BlogIndexClient from "./BlogIndexClient";
-import { getAllPosts } from "@/lib/blog-data";
+import { SITE_URL } from "@/lib/site";
+import { absoluteAssetUrl, getPublishedUiPosts } from "@/lib/ranked/ui";
 
-const SITE_URL = "https://centraltexasholisticcarepllc.com";
+export const revalidate = 3600;
+
 const CANONICAL = `${SITE_URL}/blog/`;
 
 const PAGE_TITLE = "Blog | Insights on Hormones, IV Nutrition & Whole-Person Care";
@@ -40,8 +42,8 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function BlogIndexPage() {
-  const posts = getAllPosts();
+export default async function BlogIndexPage() {
+  const posts = await getPublishedUiPosts();
 
   const blogSchema = {
     "@context": "https://schema.org",
@@ -65,7 +67,7 @@ export default function BlogIndexPage() {
         "@type": "Person",
         name: p.author.name,
       },
-      image: `${SITE_URL}${p.coverImage}`,
+      image: absoluteAssetUrl(p.coverImage),
     })),
   };
 

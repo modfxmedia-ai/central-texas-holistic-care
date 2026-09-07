@@ -3,18 +3,22 @@ import { notFound } from "next/navigation";
 import Script from "next/script";
 
 import BlogPostClient from "./BlogPostClient";
+import { SITE_URL } from "@/lib/site";
+import { getPublishedBlogSlugs } from "@/lib/ranked/posts";
 import {
-  BLOG_POSTS,
-  getPostBySlug,
-  getRelatedPosts,
-} from "@/lib/blog-data";
+  absoluteAssetUrl,
+  getPublishedRelatedPosts,
+  getPublishedUiPost,
+} from "@/lib/ranked/ui";
 
-const SITE_URL = "https://centraltexasholisticcarepllc.com";
+export const revalidate = 3600;
+export const dynamicParams = true;
 
 type Params = { slug: string };
 
-export function generateStaticParams(): Params[] {
-  return BLOG_POSTS.map((p) => ({ slug: p.slug }));
+export async function generateStaticParams(): Promise<Params[]> {
+  const slugs = await getPublishedBlogSlugs().catch(() => []);
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -23,10 +27,11 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPublishedUiPost(slug);
   if (!post) return {};
 
   const canonical = `${SITE_URL}/blog/${post.slug}/`;
+  const image = absoluteAssetUrl(post.coverImage);
 
   return {
     title: post.title,
@@ -44,7 +49,7 @@ export async function generateMetadata({
       authors: [post.author.name],
       images: [
         {
-          url: `${SITE_URL}${post.coverImage}`,
+          url: image,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -55,7 +60,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      images: [`${SITE_URL}${post.coverImage}`],
+      images: [image],
     },
     robots: { index: true, follow: true },
   };
@@ -67,18 +72,19 @@ export default async function BlogPostPage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPublishedUiPost(slug);
   if (!post) notFound();
 
-  const related = getRelatedPosts(post.slug, 2);
+  const related = await getPublishedRelatedPosts(post.slug, 2);
   const canonical = `${SITE_URL}/blog/${post.slug}/`;
+  const image = absoluteAssetUrl(post.coverImage);
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
-    image: `${SITE_URL}${post.coverImage}`,
+    image,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt ?? post.publishedAt,
     author: {

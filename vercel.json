@@ -67,5 +67,11 @@
       ]
     }
   ],
-  "cleanUrls": false
+  "cleanUrls": false,
+  "crons": [
+    {
+      "path": "/api/cron/publish-posts",
+      "schedule": "0 6 * * *"
+    }
+  ]
 }

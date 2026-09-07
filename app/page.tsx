@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import Home2Client from "@/components/home2/Home2Client";
+import { getPublishedUiPosts } from "@/lib/ranked/ui";
 
 const SITE_URL = "https://centraltexasholisticcarepllc.com";
 const PAGE_TITLE =
@@ -63,14 +64,19 @@ const webPageSchema = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  const latestBlogPosts = (await getPublishedUiPosts().catch(() => [])).slice(
+    0,
+    3,
+  );
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
-      <Home2Client />
+      <Home2Client latestBlogPosts={latestBlogPosts} />
     </>
   );
 }

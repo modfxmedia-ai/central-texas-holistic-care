@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
 
-import { BLOG_POSTS } from "@/lib/blog-data";
 import {
   getLiveCities,
   getLiveCityServicePairs,
   getLiveCityServiceTreatmentTriples,
 } from "@/lib/locations";
+import { getPublishedUiPosts } from "@/lib/ranked/ui";
 import { SITE_URL } from "@/lib/site";
 
 type SitemapEntry = MetadataRoute.Sitemap[number];
@@ -47,7 +47,7 @@ const STATIC_PAGES: ReadonlyArray<StaticPage> = [
 
 const PROGRAMMATIC_LAST_MODIFIED = "2026-06-30";
 
-export function generateSitemap(): MetadataRoute.Sitemap {
+export async function generateSitemap(): Promise<MetadataRoute.Sitemap> {
   const staticEntries: SitemapEntry[] = STATIC_PAGES.map(
     ({ path, lastModified, changeFrequency, priority }) => ({
       url: `${SITE_URL}${path}`,
@@ -81,7 +81,8 @@ export function generateSitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     }));
 
-  const blogEntries: SitemapEntry[] = BLOG_POSTS.map((post) => ({
+  const publishedPosts = await getPublishedUiPosts().catch(() => []);
+  const blogEntries: SitemapEntry[] = publishedPosts.map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}/`,
     lastModified: new Date(post.updatedAt ?? post.publishedAt),
     changeFrequency: "monthly",
@@ -97,6 +98,6 @@ export function generateSitemap(): MetadataRoute.Sitemap {
   ];
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return generateSitemap();
 }

@@ -23,7 +23,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import { formatPublishedDate, getAllPosts } from "@/lib/blog-data";
+import { formatPublishedDate, getAllPosts, type BlogPost } from "@/lib/blog-data";
 
 import HomeInsuranceMarquee from "@/components/home/HomeInsuranceMarquee";
 import { useBookingPopup } from "@/components/booking/BookingPopupProvider";
@@ -1095,8 +1095,8 @@ function TestimonialsSection() {
 /*                                Blog posts                                  */
 /* -------------------------------------------------------------------------- */
 
-function BlogSection() {
-  const latestPosts = getAllPosts()
+function BlogSection({ posts }: { posts: BlogPost[] }) {
+  const latestPosts = posts
     .slice(0, 3)
     .map((post) => ({
       category: post.category,
@@ -1389,7 +1389,13 @@ function LocationSection() {
 /*                                Page shell                                  */
 /* -------------------------------------------------------------------------- */
 
-export default function Home2Client() {
+export default function Home2Client({
+  latestBlogPosts,
+}: {
+  latestBlogPosts?: BlogPost[];
+}) {
+  const posts = latestBlogPosts?.length ? latestBlogPosts : getAllPosts();
+
   return (
     <>
       <HeroSlider />
@@ -1402,7 +1408,7 @@ export default function Home2Client() {
       <HRTFeatureSection />
       <JourneySection />
       <TestimonialsSection />
-      <BlogSection />
+      <BlogSection posts={posts} />
       <CTABand />
       <LocationSection />
     </>
